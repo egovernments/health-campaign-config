@@ -2,7 +2,7 @@
   "_comment": "Master dashboard which holds all the possible visualisation. Note new dashboards/visualisations can be added",
   "dashboards": [
     {
-      "name": "DSS_NATIONAL_HEALTH_DASHBOARD",
+      "name": "DSS_HEALTH_NATIONAL_DASHBOARD_LLIN_HEADING",
       "id": "national-health-dashboard",
       "isActive": "",
       "style": "linear",
@@ -10,7 +10,34 @@
         {
           "row": 1,
           "name": "DSS_NATIONAL_HEALTH",
-          "vizType": []
+          "vizArray": [
+            {
+              "id": 101,
+              "name": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "label": "DSS_HEALTH_BED_NETS_DISTRIBUTED",
+              "vizType": "collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "todayDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_BED_NETS_DISTRIBUTED_TODAY",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalDistributions",
+                  "name": "DSS_HEALTH_NATIONAL_BED_NETS_DISTRIBUTED_TOTAL",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -23,7 +50,7 @@
         {
           "row": 1,
           "name": "DCC_PROVINCIAL_HEALTH",
-          "vizType": []
+          "vizArray": []
         }
       ]
     },
@@ -36,7 +63,7 @@
         {
           "row": 1,
           "name": "DCC_DISTRICT_HEALTH",
-          "vizType": []
+          "vizArray": []
         }
       ]
     }
