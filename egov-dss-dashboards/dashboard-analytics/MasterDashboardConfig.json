@@ -2,7 +2,7 @@
   "_comment": "Master dashboard which holds all the possible visualisation. Note new dashboards/visualisations can be added",
   "dashboards": [
     {
-      "name": "DSS_NATIONAL_HEALTH_DASHBOARD",
+      "name": "DSS_HEALTH_NATIONAL_DASHBOARD_LLIN_HEADING",
       "id": "national-health-dashboard",
       "isActive": "",
       "style": "linear",
@@ -10,7 +10,34 @@
         {
           "row": 1,
           "name": "DSS_NATIONAL_HEALTH",
-          "vizType": []
+          "vizArray": [
+            {
+              "id": 102,
+              "name": "DSS_HEALTH_POPULATION_COVERED",
+              "label": "DSS_HEALTH_POPULATION_COVERED",
+              "vizType": "metric-collection",
+              "noUnit": false,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoveredToday",
+                  "name": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                },
+                {
+                  "id": "totalPopulationCovered",
+                  "name": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
