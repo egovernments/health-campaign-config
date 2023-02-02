@@ -449,5 +449,61 @@
       "insightInterval": "day"
     },
     "_comment": " "
+  },
+  "daysInventoryStockLastsProvince": {
+    "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Province filters\": {\n            \"bool\": {\n              \"must\": [\n                  {\n                    \"term\": {\n                      \"administrativeProvince\": \"\"\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"productVariant\": \"LLIN\"\n                    }\n                  }\n                ],\n              \"must_not\": [\n                   {\n                    \"term\": {\n                      \"district\": \"\"\n                    }\n                  } \n                ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n    \"Available Stock\": {\n      \"terms\": {\n        \"field\": \"district\",\n        \"order\": {\n          \"_key\": \"asc\"\n        }\n      },\n      \"aggs\": {\n        \"Incoming Stock\": {\n          \"filter\": {\n            \"term\": {\n              \"eventType\": \"INCOMING\"\n            }\n          },\n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        },\n        \"Outgoing Stock\": {\n          \"filter\": {\n            \"term\": {\n              \"eventType\": \"OUTGOING\"\n            }\n          }, \n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        },\n        \"Returned Stock\": {\n          \"filter\": {\n            \"term\": {\n              \"eventType\": \"RETURNED\"\n            }\n          }, \n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        },\n        \"Total Stock\": {\n          \"bucket_script\": {\n            \"buckets_path\": {\n              \"IS\": \"Incoming Stock>SUM\",\n              \"OS\": \"Outgoing Stock>SUM\",\n              \"RS\": \"Returned Stock>SUM\"\n            },\n            \"script\": \"params.IS-params.OS+params.RS\"\n          }\n        }\n      }\n    }\n  }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Province Filters\": {\n            \"bool\": {\n              \"must\":[\n                  {\n                    \"term\": {\n                      \"targetType\": \"HOUSEHOLD\"\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"administrativeProvince\": \"\"\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"productVariant\": \"LLIN\"\n                    }\n                  }\n                ],\n                \"must_not\": [\n                    {\n                    \"term\": {\n                      \"district\": \"\"\n                    }\n                  }\n                  ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"District targets\": {\n          \"terms\": {\n            \"field\": \"district\",\n             \"order\": {\n              \"_key\": \"asc\"\n            }\n          }, \n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Available Stock", "District targets"],
+    "insight": { },
+    "_comment": " "
+  },
+  "daysInventoryStockLastsDistrict": {
+    "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Province filters\": {\n            \"bool\": {\n              \"must\": [\n                  {\n                    \"term\": {\n                      \"productVariant\": \"LLIN\"\n                    }\n                  }\n                ],\n              \"must_not\": [\n                   {\n                    \"term\": {\n                      \"administrativeProvince\": \"\"\n                    }\n                  } \n                ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n    \"Available Stock\": {\n      \"terms\": {\n        \"field\": \"administrativeProvince\",\n        \"order\": {\n          \"_key\": \"asc\"\n        }\n      },\n      \"aggs\": {\n        \"Incoming Stock\": {\n          \"filter\": {\n            \"term\": {\n              \"eventType\": \"INCOMING\"\n            }\n          },\n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        },\n        \"Outgoing Stock\": {\n          \"filter\": {\n            \"term\": {\n              \"eventType\": \"OUTGOING\"\n            }\n          }, \n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        },\n        \"Returned Stock\": {\n          \"filter\": {\n            \"term\": {\n              \"eventType\": \"RETURNED\"\n            }\n          }, \n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        },\n        \"Total Stock\": {\n          \"bucket_script\": {\n            \"buckets_path\": {\n              \"IS\": \"Incoming Stock>SUM\",\n              \"OS\": \"Outgoing Stock>SUM\",\n              \"RS\": \"Returned Stock>SUM\"\n            },\n            \"script\": \"params.IS-params.OS+params.RS\"\n          }\n        }\n      }\n    }\n  }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Province Filters\": {\n            \"bool\": {\n              \"must\":[\n                  {\n                    \"term\": {\n                      \"targetType\": \"HOUSEHOLD\"\n                    }\n                  },\n                  {\n                    \"term\": {\n                      \"productVariant\": \"LLIN\"\n                    }\n                  }\n                ],\n                \"must_not\": [\n                    {\n                    \"term\": {\n                      \"administrativeProvince\": \"\"\n                    }\n                  }\n                  ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"AP targets\": {\n          \"terms\": {\n            \"field\": \"administrativeProvince\",\n             \"order\": {\n              \"_key\": \"asc\"\n            }\n          }, \n          \"aggs\": {\n            \"SUM\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Available Stock", "AP targets"],
+    "insight": { },
+    "_comment": " "
   }
 }
