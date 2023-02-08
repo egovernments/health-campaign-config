@@ -473,7 +473,7 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": ["Available Stock", "District targets"],
     "insight": { },
     "_comment": " "
@@ -501,7 +501,7 @@
     "valueType": "number",
     "drillChart": "none",
     "documentType": "_doc",
-    "action": "",
+    "action": "division",
     "aggregationPaths": ["Available Stock", "AP targets"],
     "insight": { },
     "_comment": " "
