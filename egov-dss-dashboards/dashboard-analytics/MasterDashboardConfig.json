@@ -322,6 +322,30 @@
           ]
         },
         {
+          "row": 4,
+          "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
+          "vizArray": [
+            {
+              "id": 216,
+              "name": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT_DAY",
+              "label": "DSS_HEALTH_DELIVERY_SUMMARY_BY_DISTRICT_DAY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "summaryByDistrictDay",
+                  "name": "DSS_HEALTH_SUMMARY_BY_DISTRICT",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
           ]
@@ -577,6 +601,30 @@
                   "name": "DSS_HEALTH_R_D_HOUSEHOLD_NOT_DELIVERED_DISTRICT",
                   "code": "",
                   "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
+          "vizArray": [
+            {
+              "id": 216,
+              "name": "DSS_HEALTH_DELIVERY_SUMMARY_BY_ADMINISTRATIVE_PROVINCE_DAY",
+              "label": "DSS_HEALTH_DELIVERY_SUMMARY_BY_ADMINISTRATIVE_PROVINCE_DAY",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "summaryByAdministrativeProvinceDay",
+                  "name": "DSS_HEALTH_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
+                  "code": "",
+                  "chartType": "table",
                   "filter": "",
                   "headers": []
                 }
