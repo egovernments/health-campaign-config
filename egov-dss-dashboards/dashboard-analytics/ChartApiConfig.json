@@ -2342,7 +2342,7 @@
           "total_count",
           "Overall Household target"
         ],
-        "newField": "Households Coverage",
+        "newField": "percentage_value",
         "_comments": ""
       }
     ],
@@ -2389,7 +2389,7 @@
           "total_count",
           "Overall Household target"
         ],
-        "newField": "Households Coverage",
+        "newField": "percentage_value",
         "_comments": ""
       }
     ],
@@ -2483,6 +2483,100 @@
     ],
     "insight": {
     },
+    "_comment": " "
+  },
+  "populationCoverageHeatMap": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\":{\n          \"must\": [\n              {\n                \"term\": {\n                    \"productVariant\": \"LLIN\"\n                }\n              },\n              {\n                \"term\": {\n                    \"targetType\": \"INDIVIDUAL\"\n                }\n              },\n              {\n                \"term\": {\n                    \"district\": \"\"\n                }\n              }\n              \n            ],\n            \"must_not\":[\n            {\n              \"term\": {\n                \"province\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Population Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }, \n            \"field\": \"province\"\n          },\n          \"aggs\": {\n            \"Overall Population target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "createdTime",
+        "requestQueryMap": "",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"isDelivered\": true\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Population covered\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"province\"\n          },\n          \"aggs\": {\n            \"Quantity\": {\n              \"sum\": {\n                \"field\": \"quantity\"\n              }\n            },\n            \"total_count\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Quantity\"\n                },\n                \"script\": \"params.target * 1.8\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "percentage",
+    "drillChart": "householdsCoverageHeatMapProvince",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Province",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Population target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Population target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "populationCoverageHeatMapProvince": {
+    "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"locationKey\": \"province\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Population Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Overall Population target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "createdTime",
+        "requestQueryMap": "{\"locationKey\": \"province\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"isDelivered\": true\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"total_count\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"district\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Total Population distributed\": {\n              \"value_count\": {\n                \"field\": \"id\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "percentage",
+    "drillChart": "",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Districts",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Population target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Population target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
     "_comment": " "
   }
 }

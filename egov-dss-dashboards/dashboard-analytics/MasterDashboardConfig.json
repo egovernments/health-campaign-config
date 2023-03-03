@@ -112,6 +112,24 @@
                   "headers": []
                 }
               ]
+            },
+            {
+              "id": 202,
+              "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
+              "label": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
+              "vizType": "heatmap",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "populationCoverageHeatMap",
+                  "name": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
+                  "code": "",
+                  "chartType": "heatmap",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             }
           ]
         },
