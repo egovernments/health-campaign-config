@@ -2506,7 +2506,7 @@
     "filterKeys": [],
     "chartType": "xtable",
     "valueType": "percentage",
-    "drillChart": "householdsCoverageHeatMapProvince",
+    "drillChart": "populationCoverageHeatMapProvince",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Province",
@@ -2547,7 +2547,7 @@
         "dateRefField": "createdTime",
         "requestQueryMap": "{\"locationKey\": \"province\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"isDelivered\": true\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"total_count\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"district\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Total Population distributed\": {\n              \"value_count\": {\n                \"field\": \"id\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"isDelivered\": true\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Population covered\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Quantity\": {\n              \"sum\": {\n                \"field\": \"quantity\"\n              }\n            },\n            \"total_count\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Quantity\"\n                },\n                \"script\": \"params.target * 1.8\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "filterKeys": [],
