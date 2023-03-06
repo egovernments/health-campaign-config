@@ -2354,7 +2354,6 @@
     "action": "",
     "plotLabel": "Provinces",
     "excludedColumns": ["Overall Population Target","Overall Household Target","Quantity","Total Population Covered"],
-    "listofkeys": ["Total Households Visited Today","Total Households Visited"],
     "hideInsights": true,
     "hideHeaderDenomination": true,
     "computedFields": [
