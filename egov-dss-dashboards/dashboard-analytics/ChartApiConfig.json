@@ -2484,5 +2484,28 @@
     "insight": {
     },
     "_comment": " "
+  },
+  "totalComplaintsRegisteredByType": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must_not\": [\n            {\n              \"terms\": {\n                \"service.applicationStatus\": [\"\"]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints Type\": {\n          \"terms\": {\n            \"field\": \"service.serviceCode.keyword\"\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "pie",
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Complaints Type"
+    ],
+    "insight": {},
+    "_comment": " "
   }
 }
