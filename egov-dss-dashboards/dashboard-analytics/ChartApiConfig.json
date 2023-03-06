@@ -2360,20 +2360,6 @@
     "computedFields": [
       {
         "postAggregationTheory" : "",
-        "actionName": "AdditiveComputedField",
-        "fields" : ["Total Households Visited Today"],
-        "newField" : "",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory" : "",
-        "actionName": "AdditiveComputedField",
-        "fields" : ["Total Households Visited"],
-        "newField" : "",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory" : "",
         "actionName": "PercentageComputedField",
         "fields" : ["Total Population Covered","Overall Population Target"],
         "newField" : "Population Coverage",
