@@ -2325,7 +2325,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "householdsCoverageHeatMapProvince",
     "documentType": "_doc",
     "action": "",
@@ -2372,7 +2372,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "",
     "documentType": "_doc",
     "action": "",
@@ -2490,7 +2490,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "populationCoverageHeatMapProvince",
     "documentType": "_doc",
     "action": "",
@@ -2537,7 +2537,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "",
     "documentType": "_doc",
     "action": "",
@@ -2854,6 +2854,53 @@
     "action": "",
     "aggregationPaths": ["Resolution time in hours"],
     "insight": { },
+    "_comment": " "
+  },
+  "bednetsCoverageHeatMapProvince": {
+    "chartName": "DSS_HEALTH_BEDNETS_COVERAGE_HEATMAP_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"locationKey\": \"province\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Bednets Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Overall Bednets target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "createdTime",
+        "requestQueryMap": "{\"locationKey\": \"province\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"isDelivered\": true\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Bednets covered\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"total_count\": {\n              \"sum\": {\n                \"field\": \"quantity\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Districts",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Bednets target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Bednets target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
     "_comment": " "
   }
 }
