@@ -236,21 +236,22 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "createdTime",
         "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\"aggs\":{\"Total visits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"deliveredTo\":\"HOUSEHOLD\"}},{\"term\": {\"productVariant\": \"LLIN\"}},{\"range\":{\"createdTime\":{\"lte\":\"now\"}}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"id\"}}}}}}"
+        "aggrQuery": "{\"aggs\":{\"Total visits\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"deliveredTo\":\"HOUSEHOLD\"}},{\"term\": {\"productVariant\": \"LLIN\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"id\"}}}}}}"
       },
       {
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "micro-plan-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Campaign Filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"targetType\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"province\": \"\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Overall target\": {\n          \"sum\": {\n            \"field\": \"overallTarget\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Overall target\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"targetType\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"province\": \"\"\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"TargetValue\": {\n          \"sum\": {\n            \"field\": \"overallTarget\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
     "valueType": "percentage",
+    "isCappedTillToday":true,
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
@@ -260,6 +261,13 @@
     ],
     "postAggregationTheory": "",
     "insight": {
+      "chartResponseMap": "totalHouseholdCoverageProvince",
+      "action": "differenceOfNumbers",
+      "upwardIndicator": "positive",
+      "downwardIndicator": "negative",
+      "textMessage": "$indicator$value% than last $insightInterval",
+      "colorCode": "#228B22",
+      "insightInterval": "dateRange"
     },
     "_comment": " "
   },
@@ -278,7 +286,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "micro-plan-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Campaign Filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"targetType\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n                ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Overall target\": {\n          \"sum\": {\n            \"field\": \"overallTarget\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filters\": {\n        \"filters\": {\n          \"Overall target\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"targetType\": \"HOUSEHOLD\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n                ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"TargetValue\": {\n          \"sum\": {\n            \"field\": \"overallTarget\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
@@ -323,10 +331,10 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "createdTime",
         "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"Total Distributions\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"range\": {\n                \"createdTime\": {\n                  \"lte\" : \"now\"                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"distributions\": {\n          \"sum\": {\n            \"field\": \"quantity\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Total Distributions\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"distributions\": {\n          \"sum\": {\n            \"field\": \"quantity\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
@@ -401,14 +409,15 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "",
+        "dateRefField": "createdTime",
         "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"Total Distributions Coverage\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"range\": {\n                \"createdTime\": {\n                  \"lte\" : \"now\"                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"distributions\": {\n          \"sum\": {\n            \"field\": \"quantity\"\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Total Distributions Coverage\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\":[\n            {\n              \"term\":{\n                \"deliveredTo\":\"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\":{\n                \"productVariant\":\"LLIN\"\n              }\n            }]\n        }\n      },\n      \"aggs\": {\n        \"overallQuantity\": {\n          \"sum\": {\n            \"field\": \"quantity\"\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "metric",
     "valueType": "percentage",
+    "isCappedTillToday":true,
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
@@ -423,7 +432,7 @@
       "downwardIndicator": "negative",
       "textMessage": "$indicator$value% than last $insightInterval",
       "colorCode": "#228B22",
-      "insightInterval": "day"
+      "insightInterval": "dateRange"
     },
     "_comment": " "
   },
@@ -575,6 +584,7 @@
     ],
     "chartType": "metric",
     "valueType": "percentage",
+    "isCappedTillToday":true,
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
@@ -589,7 +599,7 @@
       "downwardIndicator": "negative",
       "textMessage": "$indicator$value% than last $insightInterval",
       "colorCode": "#228B22",
-      "insightInterval": "day"
+      "insightInterval": "dateRange"
     },
     "_comment": " "
   },
@@ -2280,7 +2290,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
         "indexName": "project-task-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"Total Distributions\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"range\": {\n                \"createdTime\": {\n                  \"lte\": \"now\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Distributions by AP's\": {\n          \"terms\": {\n            \"field\": \"administrativeProvince\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Distributions\": {\n              \"sum\": {\n                \"script\": {\n                  \"source\": \"doc['quantity'].value*(-1)\"\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Total Distributions\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"range\": {\n                \"createdTime\": {\n                  \"lte\": \"now\"\n                }\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Distributions by APs\": {\n          \"terms\": {\n            \"field\": \"administrativeProvince\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Distributions\": {\n              \"sum\": {\n                \"script\": {\n                  \"source\": \"doc['quantity'].value*(-1)\"\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "line",
@@ -2288,7 +2298,7 @@
       {
         "postAggregationTheory" : "",
         "actionName": "SumComputedField",
-        "fields" : ["Overall Target","Distributions by AP's"],
+        "fields" : ["Overall Target","Distributions by APs"],
         "newField" : "Required Stock",
         "_comments": ""
       }
@@ -2301,7 +2311,7 @@
     "documentType": "_doc",
     "action": "",
     "computeMultiPaths": true,
-    "aggregationPaths": ["Available Stock","Overall Target","Distributions by AP's"],
+    "aggregationPaths": ["Available Stock","Overall Target","Distributions by APs"],
     "insight": { },
     "_comment": " "
   },
@@ -2325,7 +2335,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "householdsCoverageHeatMapProvince",
     "documentType": "_doc",
     "action": "",
@@ -2372,7 +2382,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "",
     "documentType": "_doc",
     "action": "",
@@ -2490,7 +2500,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "populationCoverageHeatMapProvince",
     "documentType": "_doc",
     "action": "",
@@ -2537,7 +2547,7 @@
     ],
     "filterKeys": [],
     "chartType": "xtable",
-    "valueType": "percentage",
+    "valueType": "number",
     "drillChart": "",
     "documentType": "_doc",
     "action": "",
@@ -2562,6 +2572,740 @@
     },
     "hideInsights": true,
     "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "totalComplaintsRegistered": {
+    "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"open\",\n                  \"resolved\",\n                  \"rejected\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints Status\": {\n          \"terms\": {\n            \"field\": \"Data.service.applicationStatus.keyword\",\n            \"size\": 10\n          },\n          \"aggs\": {\n            \"Complaints Breakdown\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "pie",
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Complaints Status"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "complaintsByDistrictTotal": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"open\",\n                  \"resolved\",\n                  \"rejected\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints by District\": {\n          \"terms\": {\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Breakdown\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Complaints by District"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "totalComplaintsRegisteredByType": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n\"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must_not\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus\": [\n                  \"\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints Type\": {\n          \"terms\": {\n            \"field\": \"Data.service.serviceCode.keyword\"\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "pie",
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Complaints Type"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "complaintsByAPTotal": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_AP_TOTAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\":\"Data.province.keyword\",\"district\":\"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"open\",\n                  \"resolved\",\n                  \"rejected\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints by AP\": {\n          \"terms\": {\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Breakdown\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Complaints by AP"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "complaintsByStatusBreakdownProvincial": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCIAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Open filter by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"open\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Open Complaints by District\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Resolved filter by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"resolved\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Resolved Complaints by District\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Rejected filter by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"rejected\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Rejected Complaints by District\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Open Complaints by District","Resolved Complaints by District","Rejected Complaints by District"],
+    "insight": { },
+    "_comment": " "
+  },
+  "complaintsByStatusBreakdownDistrict": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Open filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"open\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Open Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Resolved filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"resolved\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Resolved Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Rejected filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"rejected\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Rejected Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Open Complaints by APs","Resolved Complaints by APs","Rejected Complaints by APs"],
+    "insight": { },
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryProvince": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.province.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Open filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"open\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Open Complaints by Districts\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Open Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Resolved filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"resolved\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Resolved Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Resolved Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Rejected filter by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"rejected\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Rejected Complaints by Districts\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Rejected Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Districts",
+    "excludedColumns": ["Resolved Complaints Count", "Rejected Complaints Count", "Open Complaints Count"],
+    "hideInsights": true,
+    "showFooter": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Resolved Complaints Count", "Rejected Complaints Count", "Open Complaints Count"],
+        "newField" : "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Resolved Complaints Count"],
+        "newField" : "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Rejected Complaints Count"],
+        "newField" : "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Open Complaints Count"],
+        "newField" : "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  "complaintsByStatusSummaryDistrict": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.province.keyword\", \"district\":\"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Open filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"open\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Open Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Open Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Resolved filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"resolved\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Resolved Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Resolved Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"Rejected filter by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.applicationStatus.keyword\": \"rejected\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Rejected Complaints by APs\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Rejected Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "showFooter": true,
+    "plotLabel": "APs",
+    "excludedColumns": ["Resolved Complaints Count", "Rejected Complaints Count", "Open Complaints Count"],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Resolved Complaints Count", "Rejected Complaints Count", "Open Complaints Count"],
+        "newField" : "Registered",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Resolved Complaints Count"],
+        "newField" : "Resolved",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Rejected Complaints Count"],
+        "newField" : "Rejected",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : ["Open Complaints Count"],
+        "newField" : "Open",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  "averageResolutionTimeProvince":{
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Solved filter's\": {\n      \"filters\": {\n        \"filters\": {\n          \"NAME\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"Data.service.applicationStatus.keyword\": [\n                      \"resolved\",\n                      \"rejected\"\n                    ]\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Resolution time in hours\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Created Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Last Modified Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            },\n            \"Difference of Time\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"CT\": \"Created Time\",\n                  \"LMT\": \"Last Modified Time\",\n                  \"CC\": \"Complaints Count\"\n                },\n                \"script\": \"(params.LMT-params.CT)/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Resolution time in hours"],
+    "insight": { },
+    "_comment": " "
+  },
+  "averageResolutionTimeDistrict":{
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Solved filter's\": {\n      \"filters\": {\n        \"filters\": {\n          \"NAME\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"Data.service.applicationStatus.keyword\": [\n                      \"resolved\",\n                      \"rejected\"\n                    ]\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Resolution time in hours\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Created Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Last Modified Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            },\n            \"Difference of Time\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"CT\": \"Created Time\",\n                  \"LMT\": \"Last Modified Time\",\n                  \"CC\": \"Complaints Count\"\n                },\n                \"script\": \"(params.LMT-params.CT)/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Resolution time in hours"],
+    "insight": { },
+    "_comment": " "
+  },
+  "bednetsCoverageHeatMapProvince": {
+    "chartName": "DSS_HEALTH_BEDNETS_COVERAGE_HEATMAP_PROVINCE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"locationKey\": \"province\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Bednets Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Overall Bednets target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "createdTime",
+        "requestQueryMap": "{\"locationKey\": \"province\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"deliveredTo\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"isDelivered\": true\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Bednets covered\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"total_count\": {\n              \"sum\": {\n                \"field\": \"quantity\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Districts",
+    "excludedColumns": [
+      "S.N.",
+      "Overall Bednets target"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "total_count",
+          "Overall Bednets target"
+        ],
+        "newField": "percentage_value",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
+  "InventorySummaryByDistrict": {
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"targetType\": \"PRODUCT\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Product Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Target per day\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for range\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*365\"\n              }\n            },\n            \"Target for days to last\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*100\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"INCOMING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"district\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"OUTGOING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"district\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Outgoing\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"district\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"district\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"INCOMING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Outgoing Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"OUTGOING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Total Stock\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"IS\": \"Incoming Stock>SUM\",\n                  \"OS\": \"Outgoing Stock>SUM\"\n                },\n                \"script\": \"params.IS-params.OS\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "InventorySummaryByAP",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Inventory summary By District",
+    "filterKeys": [
+      {"key": "district", "column": "Inventory summary By District"}
+    ],
+    "divisorFields": [],
+    "showFooter": false,
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "excludedColumns": ["SUM","Target for range","Target per day","Target for days to last","Incoming","Outgoing","Total Stock"],
+    "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for range" ],
+        "newField" : "Nets Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Incoming" ],
+        "newField" : "Incoming Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Outgoing" ],
+        "newField" : "Outgoing Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Total Stock" ],
+        "newField" : "Stock Left",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "PercentageComputedField",
+        "fields" : [ "Total Stock","Target for days to last" ],
+        "newField" : "Days To Last",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  "InventorySummaryByAP": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"targetType\": \"PRODUCT\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"locality\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Product Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"administrativeProvince\"\n          },\n          \"aggs\": {\n            \"Target per day\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for range\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*365\"\n              }\n            },\n            \"Target for days to last\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*100\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"locality\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"INCOMING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"administrativeProvince\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"locality\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"OUTGOING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"administrativeProvince\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Outgoing\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"locality\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"administrativeProvince\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"administrativeProvince\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"INCOMING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Outgoing Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"OUTGOING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Total Stock\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"IS\": \"Incoming Stock>SUM\",\n                  \"OS\": \"Outgoing Stock>SUM\"\n                },\n                \"script\": \"params.IS-params.OS\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "InventorySummaryByLocality",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Inventory summary By AP",
+    "filterKeys": [
+      {"key": "administrativeProvince", "column": "Inventory summary By AP"}
+    ],
+    "divisorFields": [],
+    "showFooter": false,
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "excludedColumns": ["SUM","Target for range","Target per day","Target for days to last","Incoming","Outgoing","Total Stock"],
+    "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for range" ],
+        "newField" : "Nets Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Incoming" ],
+        "newField" : "Incoming Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Outgoing" ],
+        "newField" : "Outgoing Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Total Stock" ],
+        "newField" : "Stock Left",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "PercentageComputedField",
+        "fields" : [ "Total Stock","Target for days to last" ],
+        "newField" : "Days To Last",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  "InventorySummaryByLocality": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_LOCALITY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"targetType\": \"PRODUCT\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"village\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"locality\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Product Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"locality\"\n          },\n          \"aggs\": {\n            \"Target per day\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for range\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*365\"\n              }\n            },\n            \"Target for days to last\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*100\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"village\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"INCOMING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"locality\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"locality\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"village\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"OUTGOING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"locality\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"locality\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Outgoing\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"village\": \"\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"locality\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"locality\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"INCOMING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Outgoing Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"OUTGOING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Total Stock\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"IS\": \"Incoming Stock>SUM\",\n                  \"OS\": \"Outgoing Stock>SUM\"\n                },\n                \"script\": \"params.IS-params.OS\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "InventorySummaryByVillage",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Inventory summary By Locality",
+    "filterKeys": [
+      {"key": "locality", "column": "Inventory summary By Locality"}
+    ],
+    "divisorFields": [],
+    "showFooter": false,
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "excludedColumns": ["SUM","Target for range","Target per day","Target for days to last","Incoming","Outgoing","Total Stock"],
+    "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for range" ],
+        "newField" : "Nets Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Incoming" ],
+        "newField" : "Incoming Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Outgoing" ],
+        "newField" : "Outgoing Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Total Stock" ],
+        "newField" : "Stock Left",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "PercentageComputedField",
+        "fields" : [ "Total Stock","Target for days to last" ],
+        "newField" : "Days To Last",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  "InventorySummaryByVillage": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_VILLAGE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\",\"locality\":\"locality\"}",
+        "indexName": "micro-plan-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"targetType\": \"PRODUCT\"\n              }\n            },\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"village\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Product Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"village\"\n          },\n          \"aggs\": {\n            \"Target per day\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for range\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*365\"\n              }\n            },\n            \"Target for days to last\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"target\": \"Target per day\"\n                },\n                \"script\": \"(params.target)*100\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\",\"locality\":\"locality\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"INCOMING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"village\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"village\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "eventTimestamp",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\",\"locality\":\"locality\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                },\n                {\n                  \"term\": {\n                    \"eventType\": \"OUTGOING\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"village\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"village\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Outgoing\": {\n              \"sum\": {\n                \"field\": \"physicalCount\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"province\",\"district\":\"district\",\"administrativeProvince\":\"administrativeProvince\",\"locality\":\"locality\"}",
+        "indexName": "stock-event-index-v1",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"term\": {\n                    \"productVariant\": \"LLIN\"\n                  }\n                }\n              ],\n              \"must_not\": [\n                {\n                  \"term\": {\n                    \"village\": \"\"\n                  }\n                }\n              ]\n            }\n          },\n      \"aggs\": {\n        \"Available Stock\": {\n          \"terms\": {\n            \"size\": 500,\n            \"field\": \"village\",\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Incoming Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"INCOMING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Outgoing Stock\": {\n              \"filter\": {\n                \"term\": {\n                  \"eventType\": \"OUTGOING\"\n                }\n              },\n              \"aggs\": {\n                \"SUM\": {\n                  \"sum\": {\n                    \"field\": \"physicalCount\"\n                  }\n                }\n              }\n            },\n            \"Total Stock\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"IS\": \"Incoming Stock>SUM\",\n                  \"OS\": \"Outgoing Stock>SUM\"\n                },\n                \"script\": \"params.IS-params.OS\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Inventory summary By Village",
+    "filterKeys": [
+      {"key": "village", "column": "Inventory summary By Village"}
+    ],
+    "divisorFields": [],
+    "showFooter": false,
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "excludedColumns": ["SUM","Target for range","Target per day","Target for days to last","Incoming","Outgoing","Total Stock"],
+    "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for range" ],
+        "newField" : "Nets Target",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Incoming" ],
+        "newField" : "Incoming Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Outgoing" ],
+        "newField" : "Outgoing Stock",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Total Stock" ],
+        "newField" : "Stock Left",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory" : "",
+        "actionName": "PercentageComputedField",
+        "fields" : [ "Total Stock","Target for days to last" ],
+        "newField" : "Days To Last",
+        "_comments": ""
+      }
+    ],
+    "insight": {
+    },
+    "_comment": " "
+  },
+  "complaintsByTypeBreakdownProvincial": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"LoginError by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"LoginError\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Login Error\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"AppMalfunction by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"AppMalfunction\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"App Malfunction\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"StolenDevice by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"StolenDevice\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Stolen Device\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"SyncError by Districts\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"SyncError\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Sync Error\": {\n          \"terms\": {\n            \"field\": \"Data.district.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["LoginError","App Malfunction","Stolen Device","Sync Error"],
+    "insight": { },
+    "_comment": " "
+  },
+  "complaintsByTypeBreakdownDistrict": {
+    "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"province\", \"district\": \"district\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"LoginError by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"LoginError\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Login Errors\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"AppMalfunction by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"AppMalfunction\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"App Malfunctions\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"StolenDevice by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"StolenDevice\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Stolen Devices\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    },\n    \"SyncError by APs\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"Data.service.serviceCode.keyword\": \"SyncError\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Sync Errors\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            }\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Login Error","App Malfunction","Stolen Device","Sync Error"],
+    "insight": { },
     "_comment": " "
   }
 }
