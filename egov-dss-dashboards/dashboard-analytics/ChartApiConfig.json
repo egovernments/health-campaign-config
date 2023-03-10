@@ -2370,7 +2370,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"locationKey\": \"province\"}",
         "indexName": "micro-plan-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Overall Household target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"HOUSEHOLD\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Household Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"target\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for daterange\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"SUM\": \"target\"\n                },\n                \"script\": \"(params.SUM) * 365\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
@@ -2389,15 +2389,22 @@
     "plotLabel": "Districts",
     "excludedColumns": [
       "S.N.",
-      "Overall Household target"
+      "Target for daterange"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for daterange" ],
+        "newField" : "Household Target",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "total_count",
-          "Overall Household target"
+          "Household Target"
         ],
         "newField": "percentage_value",
         "_comments": ""
@@ -2405,7 +2412,7 @@
     ],
     "insight": {
     },
-    "hideInsights": true,
+    "hideInsights": false,
     "hideHeaderDenomination": true,
     "_comment": " "
   },
@@ -2535,7 +2542,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"locationKey\": \"province\"}",
         "indexName": "micro-plan-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Population Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Overall Population target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Population Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"target\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for daterange\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"SUM\": \"target\"\n                },\n                \"script\": \"(params.SUM) * 365\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
@@ -2554,15 +2561,22 @@
     "plotLabel": "Districts",
     "excludedColumns": [
       "S.N.",
-      "Overall Population target"
+      "Target for daterange"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for daterange" ],
+        "newField" : "Population Target",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "total_count",
-          "Overall Population target"
+          "Population Target"
         ],
         "newField": "percentage_value",
         "_comments": ""
@@ -2570,7 +2584,7 @@
     ],
     "insight": {
     },
-    "hideInsights": true,
+    "hideInsights": false,
     "hideHeaderDenomination": true,
     "_comment": " "
   },
@@ -2874,7 +2888,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"locationKey\": \"province\"}",
         "indexName": "micro-plan-index-v1",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"INDIVIDUAL\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Bednets Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"Overall Bednets target\": {\n              \"sum\": {\n                \"field\": \"overallTarget\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGS\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"term\": {\n                \"productVariant\": \"LLIN\"\n              }\n            },\n            {\n              \"term\": {\n                \"targetType\": \"PRODUCT\"\n              }\n            },\n            {\n              \"term\": {\n                \"administrativeProvince\": \"\"\n              }\n            }\n          ],\n          \"must_not\": [\n            {\n              \"term\": {\n                \"district\": \"\"\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Bednets Target\": {\n          \"terms\": {\n            \"size\": 500,\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"district\"\n          },\n          \"aggs\": {\n            \"target\": {\n              \"sum\": {\n                \"field\": \"targetPerDay\"\n              }\n            },\n            \"Target for daterange\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"SUM\": \"target\"\n                },\n                \"script\": \"(params.SUM) * 365\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       },
       {
         "module": "COMMON",
@@ -2893,15 +2907,22 @@
     "plotLabel": "Districts",
     "excludedColumns": [
       "S.N.",
-      "Overall Bednets target"
+      "Target for daterange"
     ],
     "computedFields": [
+      {
+        "postAggregationTheory" : "repsonseToDifferenceOfDates",
+        "actionName": "AdditiveComputedField",
+        "fields" : [ "Target for daterange" ],
+        "newField" : "Bednets Target",
+        "_comments": ""
+      },
       {
         "postAggregationTheory": "",
         "actionName": "PercentageComputedField",
         "fields": [
           "total_count",
-          "Overall Bednets target"
+          "Bednets Target"
         ],
         "newField": "percentage_value",
         "_comments": ""
