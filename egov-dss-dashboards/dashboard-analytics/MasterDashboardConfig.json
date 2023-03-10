@@ -734,7 +734,17 @@
                   "code": "",
                   "chartType": "table",
                   "filter": "",
-                  "headers": []
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "complaintsByStatusSummaryDay",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
@@ -1340,8 +1350,18 @@
                   "code": "",
                   "chartType": "table",
                   "filter": "",
-                  "headers": []
-                }
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
+                {
+                  "id": "complaintsByStatusSummaryDay",
+                  "name": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": [],
+                  "tabName": "DAYWISE"
+                }     
               ]
             }
           ]
