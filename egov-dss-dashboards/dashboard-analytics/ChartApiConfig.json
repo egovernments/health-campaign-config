@@ -599,6 +599,7 @@
     "drillChart": "none",
     "documentType": "_doc",
     "action": "percentage",
+    "isCappedTillToday":true,
     "aggregationPaths": [
       "Total Distributions Coverage",
       "Bednets Target"
