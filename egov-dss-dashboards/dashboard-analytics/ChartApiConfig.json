@@ -3716,22 +3716,70 @@
     "chartType": "line",
     "isCumulative": false,
     "valueType": "number",
-    "drillChart": "none",
+    "drillChart": "averageResolutionTimeDistrict",
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": ["Resolution time in hours"],
+    "filterKeys": [{"key": "district"}],
     "insight": { },
     "_comment": " "
   },
   "averageResolutionTimeDistrict":{
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT",
     "queries": [
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\"}",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\", \"administrativeProvince\":\"Data.administrativeProvince.keyword\"}",
         "indexName": "pgr-services",
-        "aggrQuery": "{\n  \"aggs\": {\n    \"Solved filter's\": {\n      \"filters\": {\n        \"filters\": {\n          \"NAME\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"Data.service.applicationStatus.keyword\": [\n                      \"resolved\",\n                      \"rejected\"\n                    ]\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Resolution time in hours\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Created Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Last Modified Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            },\n            \"Difference of Time\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"CT\": \"Created Time\",\n                  \"LMT\": \"Last Modified Time\",\n                  \"CC\": \"Complaints Count\"\n                },\n                \"script\": \"(params.LMT-params.CT)/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Solved filter's\": {\n      \"filters\": {\n        \"filters\": {\n          \"NAME\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"Data.service.applicationStatus.keyword\": [\n                      \"resolved\",\n                      \"rejected\"\n                    ]\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Resolution time in hours\": {\n          \"terms\": {\n            \"field\": \"Data.administrativeProvince.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Created Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Last Modified Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            },\n            \"Difference of Time\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"CT\": \"Created Time\",\n                  \"LMT\": \"Last Modified Time\",\n                  \"CC\": \"Complaints Count\"\n                },\n                \"script\": \"(params.LMT-params.CT)/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageResolutionTimeAP",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Resolution time in hours"],
+    "filterKeys": [{"key": "administrativeProvince"}],
+    "insight": { },
+    "_comment": " "
+  },
+  "averageResolutionTimeAP":{
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_AP",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\", \"administrativeProvince\":\"Data.administrativeProvince.keyword\", \"locality\":\"Data.locality.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Solved filter's\": {\n      \"filters\": {\n        \"filters\": {\n          \"NAME\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"Data.service.applicationStatus.keyword\": [\n                      \"resolved\",\n                      \"rejected\"\n                    ]\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Resolution time in hours\": {\n          \"terms\": {\n            \"field\": \"Data.locality.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Created Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Last Modified Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            },\n            \"Difference of Time\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"CT\": \"Created Time\",\n                  \"LMT\": \"Last Modified Time\",\n                  \"CC\": \"Complaints Count\"\n                },\n                \"script\": \"(params.LMT-params.CT)/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "averageResolutionTimeLocality",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": ["Resolution time in hours"],
+    "filterKeys": [{"key": "locality"}],
+    "insight": { },
+    "_comment": " "
+  },
+  "averageResolutionTimeLocality":{
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_LOCALITY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\", \"administrativeProvince\":\"Data.administrativeProvince.keyword\", \"locality\":\"Data.locality.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"Solved filter's\": {\n      \"filters\": {\n        \"filters\": {\n          \"NAME\": {\n            \"bool\": {\n              \"must\": [\n                {\n                  \"terms\": {\n                    \"Data.service.applicationStatus.keyword\": [\n                      \"resolved\",\n                      \"rejected\"\n                    ]\n                  }\n                }\n              ]\n            }\n          }\n        }\n      },\n      \"aggs\": {\n        \"Resolution time in hours\": {\n          \"terms\": {\n            \"field\": \"Data.village.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Count\": {\n              \"value_count\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Created Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.createdTime\"\n              }\n            },\n            \"Last Modified Time\": {\n              \"sum\": {\n                \"field\": \"Data.service.auditDetails.lastModifiedTime\"\n              }\n            },\n            \"Difference of Time\": {\n              \"bucket_script\": {\n                \"buckets_path\": {\n                  \"CT\": \"Created Time\",\n                  \"LMT\": \"Last Modified Time\",\n                  \"CC\": \"Complaints Count\"\n                },\n                \"script\": \"(params.LMT-params.CT)/3600000/params.CC\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}"
       }
     ],
     "chartType": "line",
@@ -3741,6 +3789,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": ["Resolution time in hours"],
+    "filterKeys": [{"key": "village"}],
     "insight": { },
     "_comment": " "
   },
@@ -4271,14 +4320,16 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "ComplaintsShareByAP",
     "documentType": "_doc",
     "action": "divisionbyconstant",
     "aggregationPaths": ["Complaints by District","Total Complaints"],
+    "filterKeys": [{"key": "administrativeProvince"}],
     "insight": { },
     "_comment": " "
   },
   "ComplaintsShareByAP": {
+    "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
     "queries": [
       {
@@ -4300,10 +4351,72 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "ComplaintsShareByLocality",
     "documentType": "_doc",
     "action": "divisionbyconstant",
     "aggregationPaths": ["Complaints by Administrative Province","Total Complaints"],
+    "filterKeys": [{"key": "locality"}],
+    "insight": { },
+    "_comment": " "
+  },
+  "ComplaintsShareByLocality": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\",\"administrativeProvince\":\"Data.administrativeProvince.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"open\",\n                  \"resolved\",\n                  \"rejected\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints by Locality\": {\n          \"terms\": {\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"Data.locality.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Breakdown\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\",\"administrativeProvince\":\"Data.administrativeProvince.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must_not\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Complaints\": {\n          \"value_count\": {\n            \"field\": \"Data.service.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "ComplaintsShareByVillage",
+    "documentType": "_doc",
+    "action": "divisionbyconstant",
+    "aggregationPaths": ["Complaints by Locality","Total Complaints"],
+    "filterKeys": [{"key": "village"}],
+    "insight": { },
+    "_comment": " "
+  },
+  "ComplaintsShareByVillage": {
+    "kind": "drillDown",
+    "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\",\"administrativeProvince\":\"Data.administrativeProvince.keyword\", \"locality\":\"Data.locality.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"open\",\n                  \"resolved\",\n                  \"rejected\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Complaints by Village\": {\n          \"terms\": {\n            \"order\": {\n              \"_key\": \"asc\"\n            },\n            \"field\": \"Data.village.keyword\",\n            \"size\": 500\n          },\n          \"aggs\": {\n            \"Complaints Breakdown\": {\n              \"value_count\": {\n                \"field\": \"Data.service.id.keyword\"\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.service.auditDetails.lastModifiedTime",
+        "requestQueryMap": "{\"province\": \"Data.province.keyword\", \"district\": \"Data.district.keyword\",\"administrativeProvince\":\"Data.administrativeProvince.keyword\", \"locality\":\"Data.locality.keyword\"}",
+        "indexName": "pgr-services",
+        "aggrQuery": "{\n  \"aggs\": {\n    \"AGGR\": {\n      \"filter\": {\n        \"bool\": {\n          \"must_not\": [\n            {\n              \"terms\": {\n                \"Data.service.applicationStatus.keyword\": [\n                  \"\"\n                ]\n              }\n            }\n          ]\n        }\n      },\n      \"aggs\": {\n        \"Total Complaints\": {\n          \"value_count\": {\n            \"field\": \"Data.service.id.keyword\"\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "divisionbyconstant",
+    "aggregationPaths": ["Complaints by Village","Total Complaints"],
     "insight": { },
     "_comment": " "
   },
