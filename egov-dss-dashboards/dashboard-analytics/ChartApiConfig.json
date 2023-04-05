@@ -598,6 +598,7 @@
     "valueType": "percentage",
     "drillChart": "none",
     "documentType": "_doc",
+    "isCappedTillToday":true,
     "action": "percentage",
     "isCappedTillToday":true,
     "aggregationPaths": [
