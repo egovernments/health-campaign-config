@@ -182,7 +182,7 @@ ServiceMaps:
         type: general
         isBulk: true
         id: $.service.serviceRequestId
-        jsonPath: $.ServiceWrappers.*
+        jsonPath: $.ServiceWrappers.service.*
         timeStampField: $.service.auditDetails.lastModifiedTime
         fieldsToBeMasked: ["$.service.citizen.userName", "$.service.citizen.name", "$.service.citizen.mobileNumber", "$.service.citizen.emailId"]
         customJsonMapping:
