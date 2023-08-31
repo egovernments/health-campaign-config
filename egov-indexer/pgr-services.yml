@@ -181,7 +181,7 @@ ServiceMaps:
       - name: pgr-services
         type: general
         isBulk: true
-        id: $.service.serviceRequestId
+        id: $..service.serviceRequestId
         jsonPath: $.ServiceWrappers.*
         timeStampField: $.service.auditDetails.createdTime
         fieldsToBeMasked: ["$.service.citizen.userName", "$.service.citizen.name", "$.service.citizen.mobileNumber", "$.service.citizen.emailId"]
