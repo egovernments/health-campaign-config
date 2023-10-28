@@ -61,6 +61,8 @@ serviceMaps:
             - jsonPath: $.*.auditDetails.lastModifiedBy
             - jsonPath: $.*.auditDetails.createdTime
             - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.clientAuditDetails.clientCreatedTime
+            - jsonPath: $.*.clientAuditDetails.clientLastModifiedTime
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
             - jsonPath: $.*.individualId
@@ -148,6 +150,7 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.*.auditDetails.lastModifiedBy
             - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.clientAuditDetails.clientLastModifiedTime
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.userDetails.username
             - jsonPath: $.*.userDetails.password
@@ -254,6 +257,7 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedTime
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.clientAuditDetails.clientLastModifiedTime
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
             - jsonPath: $.*.isSystemUserActive
