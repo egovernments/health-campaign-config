@@ -1,32 +1,32 @@
 ServiceMaps:
-  serviceName: Project Service
+  serviceName: referralmanagement
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-bulk-project-index-v1-health-topic
+    - topic: transformer-producer-bulk-referral-management-index-v1-health-topic
       configKey: INDEX
       indexes:
-        - name: project-index-v1
-          type: projects
+        - name: referral-management-index-v1
+          type: referrals
           id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
-            indexMapping: { "Data": { } }
+            indexMapping: { "Data": {} }
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.lastModifiedTime
+          timeStampField: $.createdTime
         - name: user-sync-index-v1
           type: users
           id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
-            indexMapping: { "Data": { } }
+            indexMapping: { "Data": {} }
             fieldMapping:
               - inJsonPath: $.lastModifiedBy
                 outJsonPath: $.Data.userId
-              - inJsonPath: $.lastModifiedTime
+              - inJsonPath: $.createdTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.province
                 outJsonPath: $.Data.province
@@ -40,92 +40,61 @@ ServiceMaps:
                 outJsonPath: $.Data.village
           timeStampField: $.lastModifiedTime
 
-    - topic: save-project-beneficiary-health-topic
+    - topic: save-referral-health-topic
       configKey: INDEX
       indexes:
-        - name: project-beneficiary-index-v1
-          type: project-beneficiary
+        - name: referral-index-v1
+          type: referral
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-project-beneficiary-health-topic
+    - topic: update-referral-health-topic
       configKey: INDEX
       indexes:
-        - name: project-beneficiary-index-v1
-          type: project-beneficiary
+        - name: referral-index-v1
+          type: referral
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-beneficiary-health-topic
+    - topic: delete-referral-health-topic
       configKey: INDEX
       indexes:
-        - name: project-beneficiary-index-v1
-          type: project-beneficiary
+        - name: referral-index-v1
+          type: referral
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-
-    - topic: save-project-resource-health-topic
+    - topic: save-side-effect-health-topic
       configKey: INDEX
       indexes:
-        - name: project-resource-index-v1
-          type: project-resource
+        - name: side-effect-index-v1
+          type: side-effect
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-project-resource-health-topic
+    - topic: update-side-effect-health-topic
       configKey: INDEX
       indexes:
-        - name: project-resource-index-v1
-          type: project-resource
+        - name: side-effect-index-v1
+          type: side-effect
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: delete-project-resource-health-topic
+    - topic: delete-side-effect-health-topic
       configKey: INDEX
       indexes:
-        - name: project-resource-index-v1
-          type: project-resource
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
-    - topic: save-project-facility-health-topic
-      configKey: INDEX
-      indexes:
-        - name: project-facility-index-v1
-          type: project-facility
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.createdTime
-
-    - topic: update-project-facility-health-topic
-      configKey: INDEX
-      indexes:
-        - name: project-facility-index-v1
-          type: project-facility
-          id: $.id
-          isBulk: true
-          jsonPath: $.*
-          timeStampField: $.auditDetails.lastModifiedTime
-
-    - topic: delete-project-facility-health-topic
-      configKey: INDEX
-      indexes:
-        - name: project-facility-index-v1
-          type: project-facility
+        - name: side-effect-index-v1
+          type: side-effect
           id: $.id
           isBulk: true
           jsonPath: $.*
