@@ -84,7 +84,7 @@ serviceMaps:
       fromTopic: create-generated-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_cm_generated_resource_details (id,filestoreid, type,"status",count,tenantid,hierarchyType, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);
+        - query: INSERT INTO eg_cm_generated_resource_details (id,filestoreid, type,"status",count,tenantid,hierarchyType, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails,campaignid) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);
           basePath: generatedResource.*
           jsonMaps:
             - jsonPath: $.generatedResource.*.id
@@ -101,7 +101,7 @@ serviceMaps:
             - jsonPath: $.generatedResource.*.additionalDetails
               type: JSON
               dbType: JSONB
-
+            - jsonPath: $.generatedResource.*.campaignId
 
 
 
@@ -130,6 +130,12 @@ serviceMaps:
       description: Create campaign details in the eg_cm_campaign_details table
       fromTopic: save-project-campaign-details
       isTransaction: true
+      isAuditEnabled: true
+      module: HCM
+      objecIdJsonPath: $.id
+      tenantIdJsonPath: $.tenantId
+      transactionCodeJsonPath: $.campaignNumber
+      auditAttributeBasePath: $.CampaignDetails
       queryMaps:
         - query: INSERT INTO eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId,startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?, ?,?, ?,?, ?, ?, ?, ?, ?, ?, ?,?,?);
           basePath: $.CampaignDetails
@@ -163,6 +169,12 @@ serviceMaps:
       description: Update campaign details in the eg_cm_campaign_details table
       fromTopic: update-project-campaign-details
       isTransaction: true
+      isAuditEnabled: true
+      module: HCM
+      objecIdJsonPath: $.id
+      tenantIdJsonPath: $.tenantId
+      transactionCodeJsonPath: $.campaignNumber
+      auditAttributeBasePath: $.CampaignDetails
       queryMaps:
         - query: UPDATE eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?,startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
           basePath: $.CampaignDetails
@@ -185,3 +197,47 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.CampaignDetails.id
+
+            - version: 1.0
+      name: CreateProcessTrack
+      description: Create process track in the eg_cm_campaign_process table
+      fromTopic: save-process-track
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO health.eg_cm_campaign_process(id, campaignId, "type","status",details,createdtime, lastmodifiedtime,additionaldetails) VALUES (?,?,?,?,?,?,?,?);
+          basePath: processDetails.*
+          jsonMaps:
+            - jsonPath: $.processDetails.*.id
+            - jsonPath: $.processDetails.*.campaignId
+            - jsonPath: $.processDetails.*.type
+            - jsonPath: $.processDetails.*.status
+            - jsonPath: $.processDetails.*.details
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.processDetails.*.createdTime
+            - jsonPath: $.processDetails.*.lastModifiedTime
+            - jsonPath: $.processDetails.*.additionalDetails
+              type: JSON
+              dbType: JSONB
+
+    - version: 1.0
+      name: UpdateProcessTrack
+      description: Update process track in the eg_cm_campaign_process table
+      fromTopic: update-process-track
+      isTransaction: true
+      queryMaps:
+        - query: UPDATE health.eg_cm_campaign_process SET campaignId = ?, "type" = ?, "status" = ?,details = ?,createdtime = ?,lastmodifiedtime = ?,additionaldetails = ? WHERE id = ?;
+          basePath: $.processDetails
+          jsonMaps:
+            - jsonPath: $.processDetails.campaignId
+            - jsonPath: $.processDetails.type
+            - jsonPath: $.processDetails.status
+            - jsonPath: $.processDetails.details
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.processDetails.createdTime
+            - jsonPath: $.processDetails.lastModifiedTime
+            - jsonPath: $.processDetails.additionalDetails
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.processDetails.id
