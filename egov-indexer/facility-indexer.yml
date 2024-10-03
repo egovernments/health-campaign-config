@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: facility-index-v1
           type: facility
-          id: $.clientReferenceId
+          id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime

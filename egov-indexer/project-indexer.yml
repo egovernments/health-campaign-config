@@ -15,14 +15,39 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.auditDetails.lastModifiedTime
+              - inJsonPath: $.boundaryHierarchy.province
+                outJsonPath: $.Data.province
+              - inJsonPath: $.boundaryHierarchy.district
+                outJsonPath: $.Data.district
+              - inJsonPath: $.boundaryHierarchy.administrativeProvince
+                outJsonPath: $.Data.administrativeProvince
+              - inJsonPath: $.boundaryHierarchy.locality
+                outJsonPath: $.Data.locality
+              - inJsonPath: $.boundaryHierarchy.village
+                outJsonPath: $.Data.village
+          timeStampField: $.createdTime
+        - name: user-sync-index-v1
+          type: users
+          id: $.id
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $.createdBy
+                outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.createdTime
+                outJsonPath: $.Data.createdTime
+              - inJsonPath: $.boundaryHierarchy
+                outJsonPath: $.Data.boundaryHierarchy
+          timeStampField: $.createdTime
 
     - topic: save-project-beneficiary-topic
       configKey: INDEX
       indexes:
         - name: project-beneficiary-index-v1
           type: project-beneficiary
-          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
+          id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
@@ -32,7 +57,7 @@ ServiceMaps:
       indexes:
         - name: project-beneficiary-index-v1
           type: project-beneficiary
-          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
+          id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
@@ -42,7 +67,7 @@ ServiceMaps:
       indexes:
         - name: project-beneficiary-index-v1
           type: project-beneficiary
-          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
+          id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime

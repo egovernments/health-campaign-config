@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: stock-index-v1
           type: stock
-          id: $.clientReferenceId,$.tenantId
+          id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -15,39 +15,39 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.createdTime
+          timeStampField: $.lastModifiedTime
         - name: user-sync-index-v1
           type: users
-          id: $.id,$.tenantId,$.clientReferenceId
+          id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.createdBy
+              - inJsonPath: $.lastModifiedBy
                 outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.createdTime
+                outJsonPath: $.Data.clientCreatedTime
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
               - inJsonPath: $.role
                 outJsonPath: $.Data.role
               - inJsonPath: $.boundaryHierarchy
                 outJsonPath: $.Data.boundaryHierarchy
-              - inJsonPath: $.createdTime
-                outJsonPath: $.Data.clientCreatedTime
               - inJsonPath: $.syncedTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.syncedTimeStamp
                 outJsonPath: $.Data.syncedTimeStamp
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.@timestamp
-              - inJsonPath: $.taskDates
-                outJsonPath: $.Data.taskDates
               - inJsonPath: $.syncedDate
                 outJsonPath: $.Data.syncedDate
-              - inJsonPath: $.userAddress
-                outJsonPath: $.Data.userAddress
-              - inJsonPath: $.additionalDetails
-                outJsonPath: $.Data.additionalDetails
+              - inJsonPath: $.latitude
+                outJsonPath: $.Data.latitude
+              - inJsonPath: $.longitude
+                outJsonPath: $.Data.longitude
+              - inJsonPath: $.nameOfUser
+                outJsonPath: $.Data.syncedNameOfUser
           timeStampField: $.createdTime
 
     - topic: transformer-producer-stock-recon-index-v1-topic

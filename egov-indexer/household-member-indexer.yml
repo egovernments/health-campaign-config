@@ -1,30 +1,30 @@
 ServiceMaps:
-  serviceName: individual
+  serviceName: household
   version: 1.0.0
   mappings:
-    - topic: save-individual-topic
+    - topic: save-household-member-topic
       configKey: INDEX
       indexes:
-        - name: individual-index-v1
-          type: individual
+        - name: household-member-index-v1
+          type: household
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
-    - topic: update-individual-topic
+    - topic: update-household-member-topic
       configKey: INDEX
       indexes:
-        - name: individual-index-v1
-          type: individual
+        - name: household-member-index-v1
+          type: household
           id: $.id
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
-    - topic: delete-individual-topic
+    - topic: delete-household-member-topic
       configKey: INDEX
       indexes:
-        - name: individual-index-v1
-          type: individual
+        - name: household-member-index-v1
+          type: household
           id: $.id
           isBulk: true
           jsonPath: $.*

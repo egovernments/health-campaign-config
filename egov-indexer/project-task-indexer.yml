@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: project-task-index-v1
           type: tasks
-          id: $.clientReferenceId,$.projectBeneficiaryClientReferenceId,$.tenantId
+          id: $.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -24,28 +24,24 @@ ServiceMaps:
           customJsonMapping:
             indexMapping: { "Data": {} }
             fieldMapping:
-              - inJsonPath: $.createdBy
+              - inJsonPath: $.lastModifiedBy
                 outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.createdTime
+                outJsonPath: $.Data.clientCreatedTime
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
               - inJsonPath: $.role
                 outJsonPath: $.Data.role
               - inJsonPath: $.boundaryHierarchy
                 outJsonPath: $.Data.boundaryHierarchy
-              - inJsonPath: $.createdTime
-                outJsonPath: $.Data.clientCreatedTime
               - inJsonPath: $.syncedTime
                 outJsonPath: $.Data.createdTime
               - inJsonPath: $.syncedTimeStamp
                 outJsonPath: $.Data.syncedTimeStamp
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.@timestamp
-              - inJsonPath: $.taskDates
-                outJsonPath: $.Data.taskDates
               - inJsonPath: $.syncedDate
                 outJsonPath: $.Data.syncedDate
-              - inJsonPath: $.userAddress
-                outJsonPath: $.Data.userAddress
-              - inJsonPath: $.additionalDetails
-                outJsonPath: $.Data.additionalDetails
+              - inJsonPath: $.nameOfUser
+                outJsonPath: $.Data.syncedNameOfUser
           timeStampField: $.createdTime
