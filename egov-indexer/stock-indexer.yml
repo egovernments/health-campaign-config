@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: stock-index-v1
           type: stock
-          id: $.id
+          id: $.clientReferenceId,$.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -15,31 +15,53 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.lastModifiedTime
+          timeStampField: $.createdTime
         - name: user-sync-index-v1
           type: users
-          id: $.id
+          id: $.id,$.tenantId,$.clientReferenceId
           isBulk: true
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.lastModifiedBy
-                outJsonPath: $.Data.userId
-              - inJsonPath: $.lastModifiedTime
+              - inJsonPath: $.createdBy
+                outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.userName
+                outJsonPath: $.Data.syncedUserName
+              - inJsonPath: $.role
+                outJsonPath: $.Data.role
+              - inJsonPath: $.boundaryHierarchy
+                outJsonPath: $.Data.boundaryHierarchy
+              - inJsonPath: $.createdTime
+                outJsonPath: $.Data.clientCreatedTime
+              - inJsonPath: $.syncedTime
                 outJsonPath: $.Data.createdTime
-              - inJsonPath: $.province
-                outJsonPath: $.Data.province
-              - inJsonPath: $.district
-                outJsonPath: $.Data.district
-              - inJsonPath: $.administrativeProvince
-                outJsonPath: $.Data.administrativeProvince
-              - inJsonPath: $.locality
-                outJsonPath: $.Data.locality
-              - inJsonPath: $.village
-                outJsonPath: $.Data.village
-              - inJsonPath: $.latitude
-                outJsonPath: $.Data.latitude
-              - inJsonPath: $.longitude
-                outJsonPath: $.Data.longitude
-          timeStampField: $.lastModifiedTime
+              - inJsonPath: $.syncedTimeStamp
+                outJsonPath: $.Data.syncedTimeStamp
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.@timestamp
+              - inJsonPath: $.taskDates
+                outJsonPath: $.Data.taskDates
+              - inJsonPath: $.syncedDate
+                outJsonPath: $.Data.syncedDate
+              - inJsonPath: $.userAddress
+                outJsonPath: $.Data.userAddress
+              - inJsonPath: $.additionalDetails
+                outJsonPath: $.Data.additionalDetails
+          timeStampField: $.createdTime
+
+    - topic: transformer-producer-stock-recon-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: stock-reconciliation-index-v1
+          type: reconciliation
+          id: $.stockReconciliation.id
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.stockReconciliation.auditDetails.createdTime
+

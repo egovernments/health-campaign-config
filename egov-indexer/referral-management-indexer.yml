@@ -1,75 +1,30 @@
 ServiceMaps:
-  serviceName: service-request
+  serviceName: referralmanagement
   version: 1.0.0
   mappings:
-    - topic: transformer-producer-service-request-index-v1-topic
+    - topic: transformer-producer-referral-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: service-task-v1
-          type: service
-          id: $.clientReferenceId,$.tenantId
-          isBulk: true
-          jsonPath: $
-          customJsonMapping:
-            indexMapping: { "Data": {} }
-            fieldMapping:
-              - inJsonPath: $
-                outJsonPath: $.Data
-          timeStampField: $.createdTime
-        - name: user-sync-index-v1
-          type: users
-          id: $.id
+        - name: referral-index-v1
+          type: referral
+          id: $.referral.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.createdBy
-                outJsonPath: $.Data.syncedUserId
-              - inJsonPath: $.userName
-                outJsonPath: $.Data.syncedUserName
-              - inJsonPath: $.role
-                outJsonPath: $.Data.role
-              - inJsonPath: $.createdTime
-                outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.boundaryHierarchy
-                outJsonPath: $.Data.boundaryHierarchy
-              - inJsonPath: $.syncedTime
-                outJsonPath: $.Data.createdTime
-              - inJsonPath: $.syncedTimeStamp
-                outJsonPath: $.Data.syncedTimeStamp
-              - inJsonPath: $.@timestamp
-                outJsonPath: $.Data.@timestamp
-              - inJsonPath: $.taskDates
-                outJsonPath: $.Data.taskDates
-              - inJsonPath: $.userAddress
-                outJsonPath: $.Data.userAddress
-              - inJsonPath: $.additionalDetails
-                outJsonPath: $.Data.additionalDetails
-          timeStampField: $.createdTime
-    - topic: transformer-producer-service-index-v2-topic
-      configKey: INDEX
-      indexes:
-        - name: referral-service-task-v1
-          type: service
-          id: $.id,$.ageGroup
-          isBulk: true
-          jsonPath: $
-          customJsonMapping:
-            indexMapping: { "Data": {} }
-            fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.createdTime
+          timeStampField: $.referral.auditDetails.createdTime
         - name: user-sync-index-v1
           type: users
-          id: $.id,$.ageGroup
+          id: $.referral.id,$.referral.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.createdBy
+              - inJsonPath: $.referral.clientAuditDetails.createdBy
                 outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
@@ -77,44 +32,55 @@ ServiceMaps:
                 outJsonPath: $.Data.role
               - inJsonPath: $.boundaryHierarchy
                 outJsonPath: $.Data.boundaryHierarchy
-              - inJsonPath: $.createdTime
+              - inJsonPath: $.referral.clientAuditDetails.createdTime
                 outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.syncedTime
+              - inJsonPath: $.referral.auditDetails.lastModifiedTime
                 outJsonPath: $.Data.createdTime
-              - inJsonPath: $.syncedTimeStamp
+              - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.syncedTimeStamp
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.@timestamp
               - inJsonPath: $.taskDates
                 outJsonPath: $.Data.taskDates
+              - inJsonPath: $.syncedDate
+                outJsonPath: $.Data.syncedDate
               - inJsonPath: $.userAddress
                 outJsonPath: $.Data.userAddress
-              - inJsonPath: $.additionalDetails
-                outJsonPath: $.Data.additionalDetails
-          timeStampField: $.createdTime
-    - topic: transformer-producer-hfreferral-service-index-topic
+          timeStampField: $.referral.auditDetails.lastModifiedTime
+
+    - topic: delete-referral-topic
       configKey: INDEX
       indexes:
-        - name: hf-referral-service-task-v1
-          type: service
+        - name: referral-index-v1
+          type: referral
           id: $.id
           isBulk: true
-          jsonPath: $
-          customJsonMapping:
-            indexMapping: { "Data": {} }
-            fieldMapping:
-              - inJsonPath: $
-                outJsonPath: $.Data
-          timeStampField: $.createdTime
-        - name: user-sync-index-v1
-          type: users
-          id: $.id
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+
+    - topic: transformer-producer-side-effect-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: side-effect-index-v1
+          type: side-effect
+          id: $.sideEffect.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-              - inJsonPath: $.createdBy
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.sideEffect.auditDetails.createdTime
+        - name: user-sync-index-v1
+          type: users
+          id: $.sideEffect.id,$.sideEffect.tenantId
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $.sideEffect.clientAuditDetails.createdBy
                 outJsonPath: $.Data.syncedUserId
               - inJsonPath: $.userName
                 outJsonPath: $.Data.syncedUserName
@@ -122,18 +88,55 @@ ServiceMaps:
                 outJsonPath: $.Data.role
               - inJsonPath: $.boundaryHierarchy
                 outJsonPath: $.Data.boundaryHierarchy
-              - inJsonPath: $.createdTime
+              - inJsonPath: $.sideEffect.clientAuditDetails.createdTime
                 outJsonPath: $.Data.clientCreatedTime
-              - inJsonPath: $.syncedTime
+              - inJsonPath: $.sideEffect.auditDetails.lastModifiedTime
                 outJsonPath: $.Data.createdTime
-              - inJsonPath: $.syncedTimeStamp
+              - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.syncedTimeStamp
               - inJsonPath: $.@timestamp
                 outJsonPath: $.Data.@timestamp
               - inJsonPath: $.taskDates
                 outJsonPath: $.Data.taskDates
+              - inJsonPath: $.syncedDate
+                outJsonPath: $.Data.syncedDate
               - inJsonPath: $.userAddress
                 outJsonPath: $.Data.userAddress
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
-          timeStampField: $.createdTime
+          timeStampField: $.sideEffect.auditDetails.lastModifiedTime
+
+    - topic: delete-side-effect-topic
+      configKey: INDEX
+      indexes:
+        - name: side-effect-index-v1
+          type: side-effect
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+
+    - topic: transformer-producer-hfreferral-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: hf-referral-index-v1
+          type: hfreferral
+          id: $.hfReferral.id
+          isBulk: true
+          jsonPath: $.*
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.hfReferral.clientAuditDetails.lastModifiedTime
+
+    - topic: delete-hfreferral-topic
+      configKey: INDEX
+      indexes:
+        - name: hf-referral-index-v1
+          type: hfreferral
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime

@@ -169,7 +169,12 @@
       "id": "provincial-health-dashboard",
       "isActive": "",
       "style": "linear",
-      "hideFilterFields": ["DDR", "Ulb", "Denomination", "ModuleFilter"],
+      "hideFilterFields": [
+        "DDR",
+        "Ulb",
+        "Denomination",
+        "ModuleFilter"
+      ],
       "visualizations": [
         {
           "row": 1,
@@ -1008,7 +1013,7 @@
           ]
         },
         {
-          "row" : 1,
+          "row": 1,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
@@ -1090,6 +1095,78 @@
               ]
             }
           ]
+        },
+         {
+          "row": 1,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 401,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "smc",
+                  "pageName": "national",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_KIBANA_MAPS",
+          "vizArray": [
+            {
+              "id": 401,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "smc",
+                  "pageName": "province",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 402,
+              "name": "DSS_HEALTH_KIBANA_SCREEN",
+              "label": "DSS_HEALTH_KIBANA_SCREEN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisor",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "moduleName": "smc",
+                  "pageName": "district",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1097,7 +1174,12 @@
       "name": "DSS_HEALTH_OVERVIEW_DASHBOARD_LLIN_HEADING",
       "id": "district-health-dashboard",
       "isActive": "",
-      "hideFilterFields": ["DDR", "Ulb", "Denomination", "ModuleFilter"],
+      "hideFilterFields": [
+        "DDR",
+        "Ulb",
+        "Denomination",
+        "ModuleFilter"
+      ],
       "style": "linear",
       "visualizations": [
         {
@@ -1905,7 +1987,7 @@
           ]
         },
         {
-          "row" : 1,
+          "row": 1,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {

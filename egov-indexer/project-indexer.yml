@@ -15,37 +15,14 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.lastModifiedTime
-        - name: user-sync-index-v1
-          type: users
-          id: $.id
-          isBulk: true
-          jsonPath: $
-          customJsonMapping:
-            indexMapping: { "Data": { } }
-            fieldMapping:
-              - inJsonPath: $.lastModifiedBy
-                outJsonPath: $.Data.userId
-              - inJsonPath: $.lastModifiedTime
-                outJsonPath: $.Data.createdTime
-              - inJsonPath: $.province
-                outJsonPath: $.Data.province
-              - inJsonPath: $.district
-                outJsonPath: $.Data.district
-              - inJsonPath: $.administrativeProvince
-                outJsonPath: $.Data.administrativeProvince
-              - inJsonPath: $.locality
-                outJsonPath: $.Data.locality
-              - inJsonPath: $.village
-                outJsonPath: $.Data.village
-          timeStampField: $.lastModifiedTime
+          timeStampField: $.auditDetails.lastModifiedTime
 
     - topic: save-project-beneficiary-topic
       configKey: INDEX
       indexes:
         - name: project-beneficiary-index-v1
           type: project-beneficiary
-          id: $.id
+          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
@@ -55,7 +32,7 @@ ServiceMaps:
       indexes:
         - name: project-beneficiary-index-v1
           type: project-beneficiary
-          id: $.id
+          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
@@ -65,7 +42,7 @@ ServiceMaps:
       indexes:
         - name: project-beneficiary-index-v1
           type: project-beneficiary
-          id: $.id
+          id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
