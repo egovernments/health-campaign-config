@@ -15,7 +15,7 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.auditDetails.lastModifiedTime
+          timeStampField: $.createdTime
 
     - topic: save-project-beneficiary-topic
       configKey: INDEX

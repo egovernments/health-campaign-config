@@ -15,4 +15,4 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.auditDetails.lastModifiedTime
+          timeStampField: $.createdTime

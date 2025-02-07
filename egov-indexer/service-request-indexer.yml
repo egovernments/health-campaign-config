@@ -46,6 +46,14 @@ ServiceMaps:
                 outJsonPath: $.Data.userAddress
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
+              - inJsonPath: $.projectId
+                outJsonPath: $.Data.projectId
+              - inJsonPath: $.projectType
+                outJsonPath: $.Data.projectType
+              - inJsonPath: $.projectTypeId
+                outJsonPath: $.Data.projectTypeId
+              - inJsonPath: $.projectName
+                outJsonPath: $.Data.projectName
           timeStampField: $.createdTime
     - topic: transformer-producer-service-index-v2-topic
       configKey: INDEX
@@ -91,6 +99,14 @@ ServiceMaps:
                 outJsonPath: $.Data.userAddress
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
+              - inJsonPath: $.projectId
+                outJsonPath: $.Data.projectId
+              - inJsonPath: $.projectType
+                outJsonPath: $.Data.projectType
+              - inJsonPath: $.projectTypeId
+                outJsonPath: $.Data.projectTypeId
+              - inJsonPath: $.projectName
+                outJsonPath: $.Data.projectName
           timeStampField: $.createdTime
     - topic: transformer-producer-hfreferral-service-index-topic
       configKey: INDEX
@@ -136,4 +152,12 @@ ServiceMaps:
                 outJsonPath: $.Data.userAddress
               - inJsonPath: $.additionalDetails
                 outJsonPath: $.Data.additionalDetails
+              - inJsonPath: $.projectId
+                outJsonPath: $.Data.projectId
+              - inJsonPath: $.projectType
+                outJsonPath: $.Data.projectType
+              - inJsonPath: $.projectTypeId
+                outJsonPath: $.Data.projectTypeId
+              - inJsonPath: $.projectName
+                outJsonPath: $.Data.projectName
           timeStampField: $.createdTime

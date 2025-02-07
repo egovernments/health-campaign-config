@@ -10,15 +10,39 @@
       "dashboards": [
         {
           "name": "National Health Dashboard",
-          "id": "national-health-dashboard"
+          "id": "national-health-dashboard-smc"
         },
         {
           "name": "Provincial Health Dashboard",
-          "id": "provincial-health-dashboard"
+          "id": "provincial-health-dashboard-smc"
         },
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard"
+          "id": "district-health-dashboard-smc"
+        },
+        {
+          "name": "National Health Dashboard IRS",
+          "id": "national-health-dashboard-irs"
+        },
+        {
+          "name": "Provincial Health Dashboard IRS",
+          "id": "provincial-health-dashboard-irs"
+        },
+        {
+          "name": "District Health Dashboard IRS",
+          "id": "district-health-dashboard-irs"
+        },
+        {
+          "name": "National Health Dashboard LLIN",
+          "id": "national-health-dashboard-llin"
+        },
+        {
+          "name": "Provincial Health Dashboard LLIN",
+          "id": "provincial-health-dashboard-llin"
+        },
+        {
+          "name": "District Health Dashboard LLIN",
+          "id": "district-health-dashboard-llin"
         }
       ]
     },
@@ -31,11 +55,27 @@
       "dashboards": [
         {
           "name": "Provincial Health Dashboard",
-          "id": "provincial-health-dashboard"
+          "id": "provincial-health-dashboard-smc"
         },
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard"
+          "id": "district-health-dashboard-smc"
+        },
+        {
+          "name": "Provincial Health Dashboard IRS",
+          "id": "provincial-health-dashboard-irs"
+        },
+        {
+          "name": "District Health Dashboard IRS",
+          "id": "district-health-dashboard-irs"
+        },
+        {
+          "name": "Provincial Health Dashboard LLIN",
+          "id": "provincial-health-dashboard-llin"
+        },
+        {
+          "name": "District Health Dashboard LLIN",
+          "id": "district-health-dashboard-llin"
         }
       ]
     },
@@ -48,7 +88,15 @@
       "dashboards": [
         {
           "name": "District Health Dashboard",
-          "id": "district-health-dashboard"
+          "id": "district-health-dashboard-smc"
+        },
+        {
+          "name": "District Health Dashboard IRS",
+          "id": "district-health-dashboard-irs"
+        },
+        {
+          "name": "District Health Dashboard LLIN",
+          "id": "district-health-dashboard-llin"
         }
       ]
     }
