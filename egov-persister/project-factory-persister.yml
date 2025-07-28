@@ -85,7 +85,7 @@ serviceMaps:
       fromTopic: create-generated-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_cm_generated_resource_details (id,filestoreid, type,"status",count,tenantid,hierarchyType, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails, campaignid, locale) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+        - query: INSERT INTO eg_cm_generated_resource_details (id,filestoreid, type,"status",count,tenantid,hierarchyType, createdby, createdtime, lastmodifiedby, lastmodifiedtime, additionaldetails,campaignid, locale) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?);
           basePath: generatedResource.*
           jsonMaps:
             - jsonPath: $.generatedResource.*.id
@@ -104,6 +104,7 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.generatedResource.*.campaignId
             - jsonPath: $.generatedResource.*.locale
+
 
 
     - version: 1.0
@@ -138,7 +139,7 @@ serviceMaps:
       transactionCodeJsonPath: $.campaignNumber
       auditAttributeBasePath: $.CampaignDetails
       queryMaps:
-        - query: INSERT INTO eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId, parentId,isActive, startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?, ?,?, ?,?, ?, ?, ?,?,?, ?, ?, ?, ?,?,?);
+        - query: INSERT INTO eg_cm_campaign_details(id, tenantId, "status","action",campaignName,projectType, campaignNumber,hierarchyType,boundaryCode, projectId,parentId,isActive,startDate,endDate, createdBy, createdTime, lastModifiedBy, lastModifiedTime, additionalDetails,campaignDetails) VALUES (?,?,?,?,?,?, ?,?, ?,?,?,?, ?, ?, ?, ?, ?, ?,?,?);
           basePath: $.CampaignDetails
           jsonMaps:
             - jsonPath: $.CampaignDetails.id
@@ -172,8 +173,14 @@ serviceMaps:
       description: Update campaign details in the eg_cm_campaign_details table
       fromTopic: update-project-campaign-details
       isTransaction: true
+      isAuditEnabled: true
+      module: HCM
+      objecIdJsonPath: $.id
+      tenantIdJsonPath: $.tenantId
+      transactionCodeJsonPath: $.campaignNumber
+      auditAttributeBasePath: $.CampaignDetails
       queryMaps:
-        - query: UPDATE eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?, parentId = ?, isActive = ?, startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
+        - query: UPDATE eg_cm_campaign_details SET campaignName = ?, "status" = ?, action = ?, projectType = ?, hierarchyType = ?, boundaryCode = ?, projectId = ?, parentId = ?, isActive = ?,startDate=?,endDate=?, lastModifiedBy = ?, lastModifiedTime = ?, additionalDetails = ?, campaignDetails = ? WHERE id = ?;
           basePath: $.CampaignDetails
           jsonMaps:
             - jsonPath: $.CampaignDetails.campaignName
@@ -196,8 +203,7 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.CampaignDetails.id
-      
-      
+
     - version: 1.0
       name: CreateProcessTrack
       description: Create process track in the eg_cm_campaign_process table
@@ -220,7 +226,7 @@ serviceMaps:
               type: JSON
               dbType: JSONB
 
-    - version: 1.0
+    - version: 1.0  
       name: UpdateProcessTrack
       description: Update process track in the eg_cm_campaign_process table
       fromTopic: update-process-track
@@ -241,3 +247,115 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.processDetails.id
+
+
+    - version: 1.0
+      name: CreateSheetData
+      description: Create sheet data in the eg_cm_campaign_data table
+      fromTopic: save-sheet-data
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO eg_cm_campaign_data(campaignnumber, "type",uniqueidentifier,data,uniqueidafterprocess, "status") VALUES (?,?,?,?,?,?);
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.campaignNumber
+            - jsonPath: $.datas.*.type
+            - jsonPath: $.datas.*.uniqueIdentifier
+            - jsonPath: $.datas.*.data
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.datas.*.uniqueIdAfterProcess
+            - jsonPath: $.datas.*.status
+
+
+    - version: 1.0
+      name: UpdateSheetData
+      description: Update sheet data in the eg_cm_campaign_data table
+      fromTopic: update-sheet-data
+      isTransaction: true
+      queryMaps:
+        - query: UPDATE eg_cm_campaign_data SET data = ?,uniqueidafterprocess = ?, "status" = ? WHERE uniqueidentifier = ? AND "type" = ? AND campaignnumber = ?;
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.data
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.datas.*.uniqueIdAfterProcess
+            - jsonPath: $.datas.*.status
+            - jsonPath: $.datas.*.uniqueIdentifier
+            - jsonPath: $.datas.*.type
+            - jsonPath: $.datas.*.campaignNumber
+
+    - version: 1.0
+      name: CreateMappingData
+      description: Create mapping data in the eg_cm_campaign_mapping_data table
+      fromTopic: save-mapping-data
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO eg_cm_campaign_mapping_data(campaignnumber,"type",uniqueIdentifierForData,boundaryCode,mappingId,"status") VALUES (?,?,?,?,?,?);
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.campaignNumber
+            - jsonPath: $.datas.*.type
+            - jsonPath: $.datas.*.uniqueIdentifierForData
+            - jsonPath: $.datas.*.boundaryCode
+            - jsonPath: $.datas.*.mappingId
+            - jsonPath: $.datas.*.status
+
+
+    - version: 1.0
+      name: UpdateMappingData
+      description: Update mapping data in the eg_cm_campaign_mapping_data table
+      fromTopic: update-mapping-data
+      isTransaction: true
+      queryMaps:
+        - query: UPDATE eg_cm_campaign_mapping_data SET mappingId = ?, "status" = ? WHERE uniqueIdentifierForData = ? AND campaignnumber = ? AND "type" = ? AND boundaryCode = ?;
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.mappingId
+            - jsonPath: $.datas.*.status
+            - jsonPath: $.datas.*.uniqueIdentifierForData
+            - jsonPath: $.datas.*.campaignNumber
+            - jsonPath: $.datas.*.type
+            - jsonPath: $.datas.*.boundaryCode
+
+    - version: 1.0
+      name: DeleteMappingData
+      description: Delete mapping data in the eg_cm_campaign_mapping_data table
+      fromTopic: delete-mapping-data
+      isTransaction: true
+      queryMaps:
+        - query: DELETE FROM eg_cm_campaign_mapping_data WHERE uniqueIdentifierForData = ? AND campaignnumber = ? AND "type" = ? AND boundaryCode = ?;
+          basePath: datas.*
+          jsonMaps:
+            - jsonPath: $.datas.*.uniqueIdentifierForData
+            - jsonPath: $.datas.*.campaignNumber
+            - jsonPath: $.datas.*.type
+            - jsonPath: $.datas.*.boundaryCode
+
+
+    - version: 1.0
+      name: CreateProcessData
+      description: Create process data in the eg_cm_campaign_process_data table
+      fromTopic: save-process-data
+      isTransaction: true
+      queryMaps:
+        - query: INSERT INTO eg_cm_campaign_process_data(campaignnumber,processName, "status") VALUES (?,?,?);
+          basePath: processes.*
+          jsonMaps:
+            - jsonPath: $.processes.*.campaignNumber
+            - jsonPath: $.processes.*.processName
+            - jsonPath: $.processes.*.status
+
+    - version: 1.0
+      name: UpdateProcessData
+      description: Update process data in the eg_cm_campaign_process_data table
+      fromTopic: update-process-data
+      isTransaction: true
+      queryMaps:
+        - query: UPDATE eg_cm_campaign_process_data SET "status" = ? WHERE campaignnumber = ? AND processName = ?;
+          basePath: processes.*
+          jsonMaps:
+            - jsonPath: $.processes.*.status
+            - jsonPath: $.processes.*.campaignNumber
+            - jsonPath: $.processes.*.processName
