@@ -16,6 +16,10 @@ ServiceMaps:
           fieldMapping:
           - inJsonPath: $
             outJsonPath: $.Data
+          - inJsonPath: $
+            outJsonPath: $.Data
+          - inJsonPath: $.service.auditDetails
+            outJsonPath: $.Data.auditDetails
           - inJsonPath: $.service.tenantId
             outJsonPath: $.Data.tenantId
           externalUriMapping:
@@ -106,6 +110,8 @@ ServiceMaps:
           fieldMapping:
           - inJsonPath: $
             outJsonPath: $.Data
+          - inJsonPath: $.service.auditDetails
+            outJsonPath: $.Data.auditDetails
           - inJsonPath: $.service.tenantId
             outJsonPath: $.Data.tenantId
           externalUriMapping:
@@ -145,6 +151,8 @@ ServiceMaps:
               uriResponseMapping:
                 - inJsonPath: $.ProcessInstances
                   outJsonPath: $.Data.history
+                - inJsonPath: $.ProcessInstances[0]
+                  outJsonPath: $.Data.currentProcessInstance
           mdmsMapping:
           - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
             moduleName: tenant
