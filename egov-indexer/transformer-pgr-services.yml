@@ -1,53 +1,55 @@
 ServiceMaps:
- serviceName: Public Grievance Redressal - rainmaker
- version: 1.0.0
- mappings:
-  - topic: transformer-save-pgr-service
-    configKey: INDEX
-    indexes:
-      - name: transformer-pgr-services
-        type: general
-        id: $.service.serviceRequestId
-        jsonPath: $
-        isBulk: true
-        customJsonMapping:
-          indexMapping: { "Data": {} }
-          fieldMapping:
-            - inJsonPath: $
-              outJsonPath: $.Data
-        timeStampField: $.service.auditDetails.lastModifiedTime
-      - name: user-sync-index-v1
-        type: users
-        id: $.id
-        isBulk: true
-        jsonPath: $
-        customJsonMapping:
-          indexMapping: { "Data": { } }
-          fieldMapping:
-            - inJsonPath: $.lastModifiedBy
-              outJsonPath: $.Data.syncedUserId
-            - inJsonPath: $.createdTime
-              outJsonPath: $.Data.clientCreatedTime
-            - inJsonPath: $.userName
-              outJsonPath: $.Data.syncedUserName
-            - inJsonPath: $.role
-              outJsonPath: $.Data.role
-            - inJsonPath: $.boundaryHierarchy
-              outJsonPath: $.Data.boundaryHierarchy
-            - inJsonPath: $.syncedTime
-              outJsonPath: $.Data.createdTime
-            - inJsonPath: $.syncedTimeStamp
-              outJsonPath: $.Data.syncedTimeStamp
-            - inJsonPath: $.@timestamp
-              outJsonPath: $.Data.@timestamp
-            - inJsonPath: $.nameOfUser
-              outJsonPath: $.Data.syncedNameOfUser
-            - inJsonPath: $.projectId
-              outJsonPath: $.Data.projectId
-            - inJsonPath: $.projectType
-              outJsonPath: $.Data.projectType
-            - inJsonPath: $.projectTypeId
-              outJsonPath: $.Data.projectTypeId
-            - inJsonPath: $.projectName
-              outJsonPath: $.Data.projectName
-        timeStampField: $.lastModifiedTime
+  serviceName: Public Grievance Redressal - rainmaker
+  version: 1.0.0
+  mappings:
+    - topic: transformer-save-pgr-service
+      configKey: INDEX
+      indexes:
+        - name: transformer-pgr-services
+          type: general
+          id: $.service.serviceRequestId
+          jsonPath: $
+          isBulk: true
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.service.auditDetails.lastModifiedTime
+        - name: user-sync-index-v1
+          type: users
+          id: $.id
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $.lastModifiedBy
+                outJsonPath: $.Data.syncedUserId
+              - inJsonPath: $.createdTime
+                outJsonPath: $.Data.clientCreatedTime
+              - inJsonPath: $.userName
+                outJsonPath: $.Data.syncedUserName
+              - inJsonPath: $.role
+                outJsonPath: $.Data.role
+              - inJsonPath: $.boundaryHierarchy
+                outJsonPath: $.Data.boundaryHierarchy
+              - inJsonPath: $.syncedTime
+                outJsonPath: $.Data.createdTime
+              - inJsonPath: $.syncedTimeStamp
+                outJsonPath: $.Data.syncedTimeStamp
+              - inJsonPath: $.@timestamp
+                outJsonPath: $.Data.@timestamp
+              - inJsonPath: $.nameOfUser
+                outJsonPath: $.Data.syncedNameOfUser
+              - inJsonPath: $.projectId
+                outJsonPath: $.Data.projectId
+              - inJsonPath: $.projectType
+                outJsonPath: $.Data.projectType
+              - inJsonPath: $.projectTypeId
+                outJsonPath: $.Data.projectTypeId
+              - inJsonPath: $.projectName
+                outJsonPath: $.Data.projectName
+          timeStampField: $.lastModifiedTime
