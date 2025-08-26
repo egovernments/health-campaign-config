@@ -56,6 +56,10 @@ ServiceMaps:
                 outJsonPath: $.Data.projectTypeId
               - inJsonPath: $.projectName
                 outJsonPath: $.Data.projectName
+              - inJsonPath: $.campaignNumber
+                outJsonPath: $.Data.campaignNumber
+              - inJsonPath: $.campaignId
+                outJsonPath: $.Data.campaignId              
           timeStampField: $.createdTime
 
     - topic: transformer-producer-stock-recon-index-v1-topic
