@@ -43537,7 +43537,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"campaignId\": \"Data.campaignId.keyword\"}",
         "indexName": "service-task-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedPositiveForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"nested\":{\"path\":\"Data.attributes\",\"query\":{\"term\":{\"Data.attributes.value.value.keyword\":\"POSITIVE\"}}}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"TestedPositiveForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"PositiveForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"TestedPositiveForMalaria\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.attributes.value.value.keyword\":\"POSITIVE\"}},{\"term\":{\"Data.checklistName.keyword\":\"HF_RF_FEVER\"}},{\"terms\":{\"Data.role.keyword\":[\"HEALTH_FACILITY_WORKER\",\"HEALTH_FACILITY_SUPERVISOR\"]}}]}},\"aggs\":{\"TestedPositiveForMalaria Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"PositiveForMalaria Children Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "chartType": "line",
