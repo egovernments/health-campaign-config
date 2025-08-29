@@ -36949,7 +36949,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "beneficiariesNotAdministeredByReasonBarChartAdministrativeProvinceICCD",
     "filterKeys": [
       {
         "key": "administrativeProvince"
@@ -37019,7 +37019,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "none",
+    "drillChart": "beneficiariesNotAdministeredByReasonBarChartLocalityICCD",
     "filterKeys": [
       {
         "key": "locality"
