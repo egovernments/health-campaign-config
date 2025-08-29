@@ -36984,7 +36984,7 @@
   },
   "beneficiariesNotAdministeredByReasonBarChartAdministrativeProvinceICCD": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_BENEFICIARIES_NOT_ADMINISTERED_BARCHART_AP_ICCD",
+    "chartName": "DSS_HEALTH_BENEFICIARIES_NOT_ADMINISTERED_BARCHART_LOCALITY_ICCD",
     "queries": [
       {
         "module": "COMMON",
@@ -37054,7 +37054,7 @@
   },
   "beneficiariesNotAdministeredByReasonBarChartLocalityICCD": {
     "kind": "drillDown",
-    "chartName": "DSS_HEALTH_BENEFICIARIES_NOT_ADMINISTERED_BARCHART_AP_ICCD",
+    "chartName": "DSS_HEALTH_BENEFICIARIES_NOT_ADMINISTERED_BARCHART_VILLAGE_ICCD",
     "queries": [
       {
         "module": "COMMON",
