@@ -10825,6 +10825,32 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_CUSTOM_CHART",
+          "vizArray": [
+            {
+              "id": 810,
+              "name": "DSS_CUSTOM_CHART",
+              "label": "DSS_CUSTOM_CHART",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "customChart",
+                  "name": "DSS_HEALTH_CUSTOM_CHART",
+                  "code": "",
+                  "moduleName": "iccd",
+                  "pageName": "custom-chart",
+                  "chartType": "kibanaComponent",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
