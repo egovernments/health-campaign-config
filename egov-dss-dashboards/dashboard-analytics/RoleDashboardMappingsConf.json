@@ -122,6 +122,48 @@
       ]
     },
     {
+      "_comment": "This role is for national level supervisor who can access National health dashboards",
+      "roleId": 11,
+      "roleName": "NationalSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "Bednets ICCD Dashboard Level One",
+          "id": "national-health-dashboard-bednets-iccd"
+        },
+        {
+          "name": "Bednets ICCD Dashboard Level Two",
+          "id": "provincial-health-dashboard-bednets-iccd"
+        },
+        {
+          "name": "Bednets ICCD Dashboard Level Three",
+          "id": "distrcit-health-dashboard-bednets-iccd"
+        }
+      ]
+    },
+    {
+      "_comment": "This role is for national level supervisor who can access National health dashboards",
+      "roleId": 11,
+      "roleName": "NationalSupervisor",
+      "isSuper": "",
+      "orgId": "",
+      "dashboards": [
+        {
+          "name": "IRS ICCD Dashboard Level One",
+          "id": "national-health-dashboard-irs-iccd"
+        },
+        {
+          "name": "IRS ICCD Dashboard Level Two",
+          "id": "provincial-health-dashboard-irs-iccd"
+        },
+        {
+          "name": "IRS ICCD Dashboard Level Three",
+          "id": "distrcit-health-dashboard-irs-iccd"
+        }
+      ]
+    },
+    {
       "_comment": "This role is for provincial level supervisor who can access Provincial health dashboards",
       "roleId": 12,
       "roleName": "ProvincialSupervisor",
