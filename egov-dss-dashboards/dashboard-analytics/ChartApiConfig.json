@@ -50811,7 +50811,8 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-    "actualVsPlannedHouseholdLineGraphDistricIRSICCD": {
+  
+  "actualVsPlannedHouseholdLineGraphDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_DISTRICTactualVsPlannedHouseholdLineGraphProvince",
     "queries": [
       {
@@ -50846,7 +50847,7 @@
     "insight": {},
     "_comment": " "
   },
-  "actualVsPlannedHouseholdLineGraphProvincIRSICCD": {
+  "actualVsPlannedHouseholdLineGraphProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_HOUSEHOLD_LINE_GRAPH_PROVINCE",
     "queries": [
       {
@@ -50881,7 +50882,7 @@
     "insight": {},
     "_comment": " "
   },
-  "actualVsPlannedPopulationLineGraphDistricIRSICCD": {
+  "actualVsPlannedPopulationLineGraphDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_DISTRICT",
     "queries": [
       {
@@ -50916,7 +50917,7 @@
     "insight": {},
     "_comment": " "
   },
-  "actualVsPlannedPopulationLineGraphProvincIRSICCD": {
+  "actualVsPlannedPopulationLineGraphProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_ACTUAL_VS_PLANNED_POPULATION_LINE_GRAPH_PROVINCE",
     "queries": [
       {
@@ -50951,7 +50952,7 @@
     "insight": {},
     "_comment": " "
   },
-  "attendanceSprayOperatorsAIRSICCD": {
+  "attendanceSprayOperatorsAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_AP",
     "queries": [
@@ -50980,7 +50981,7 @@
     "insight": {},
     "_comment": " "
   },
-  "attendanceSprayOperatorsAPPercenIRSICCD": {
+  "attendanceSprayOperatorsAPPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_AP_PERCENT",
     "queries": [
@@ -51018,7 +51019,7 @@
       }
     ]
   },
-  "attendanceSprayOperatorsDistricIRSICCD": {
+  "attendanceSprayOperatorsDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT",
     "queries": [
       {
@@ -51047,7 +51048,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "attendanceSprayOperatorsDistrictPercenIRSICCD": {
+  "attendanceSprayOperatorsDistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_DISTRICT_PERCENT",
     "queries": [
       {
@@ -51085,7 +51086,7 @@
     ],
     "kind": "drillDown"
   },
-  "attendanceSprayOperatorsLocalitIRSICCD": {
+  "attendanceSprayOperatorsLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY",
     "queries": [
@@ -51114,7 +51115,7 @@
     "insight": {},
     "_comment": " "
   },
-  "attendanceSprayOperatorsLocalityPercenIRSICCD": {
+  "attendanceSprayOperatorsLocalityPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_LOCALITY_PERCENT",
     "queries": [
@@ -51152,7 +51153,7 @@
       }
     ]
   },
-  "attendanceSprayOperatorsVillagIRSICCD": {
+  "attendanceSprayOperatorsVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_VILLAGE",
     "queries": [
@@ -51181,7 +51182,7 @@
     "insight": {},
     "_comment": " "
   },
-  "attendanceSprayOperatorsVillagePercenIRSICCD": {
+  "attendanceSprayOperatorsVillagePercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_ATTENDANCE_SPRAY_OPERATOR_VILLAGE_PERCENT",
     "queries": [
@@ -51219,7 +51220,7 @@
       }
     ]
   },
-  "averageNumberOfHousesSprayedByAIRSICCD": {
+  "averageNumberOfHousesSprayedByAPIRSICCD": {
     "chartName": "AVERAGE_NO_OF_HOUSES_SPRAYED",
     "queries": [
       {
@@ -51257,7 +51258,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "averageNumberOfHousesSprayedByDistricIRSICCD": {
+  "averageNumberOfHousesSprayedByDistrictIRSICCD": {
     "chartName": "AVERAGE_NO_OF_HOUSES_SPRAYED",
     "queries": [
       {
@@ -51295,7 +51296,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "averageNumberOfHousesSprayedByLocalitIRSICCD": {
+  "averageNumberOfHousesSprayedByLocalityIRSICCD": {
     "chartName": "AVERAGE_NO_OF_HOUSES_SPRAYED",
     "queries": [
       {
@@ -51333,7 +51334,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "averageNumberOfHousesSprayedByVillagIRSICCD": {
+  "averageNumberOfHousesSprayedByVillageIRSICCD": {
     "chartName": "AVERAGE_NO_OF_HOUSES_SPRAYED",
     "queries": [
       {
@@ -51370,7 +51371,7 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeAIRSICCD": {
+  "averageResolutionTimeAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_AP",
     "queries": [
@@ -51399,7 +51400,7 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeDistricIRSICCD": {
+  "averageResolutionTimeDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_DISTRICT",
     "queries": [
@@ -51428,7 +51429,7 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeLocalitIRSICCD": {
+  "averageResolutionTimeLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_AVERAGE_RESOLUTION_TIME_LOCALITY",
     "queries": [
@@ -51457,7 +51458,7 @@
     "insight": {},
     "_comment": " "
   },
-  "averageResolutionTimeProvincIRSICCD": {
+  "averageResolutionTimeProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_AVVERAGE_RESOLUTION_TIME_PROVINCE",
     "queries": [
       {
@@ -51486,7 +51487,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "checklistCompletionRateAIRSICCD": {
+  "checklistCompletionRateApIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_AP",
     "queries": [
       {
@@ -51512,7 +51513,7 @@
     "insight": {},
     "_comment": " "
   },
-  "checklistCompletionRateBySupervisorsBoundarySummaryAIRSICCD": {
+  "checklistCompletionRateBySupervisorsBoundarySummaryApIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_AP",
     "queries": [
@@ -51587,7 +51588,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "checklistCompletionRateBySupervisorsBoundarySummaryDistricIRSICCD": {
+  "checklistCompletionRateBySupervisorsBoundarySummaryDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT",
     "queries": [
       {
@@ -51662,7 +51663,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "checklistCompletionRateBySupervisorsBoundarySummaryLocalitIRSICCD": {
+  "checklistCompletionRateBySupervisorsBoundarySummaryLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_LOCALITY",
     "queries": [
@@ -51737,7 +51738,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "checklistCompletionRateBySupervisorsBoundarySummaryVillagIRSICCD": {
+  "checklistCompletionRateBySupervisorsBoundarySummaryVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_VILLAGE",
     "queries": [
@@ -51806,7 +51807,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "checklistCompletionRateBySupervisorsDaySummarIRSICCD": {
+  "checklistCompletionRateBySupervisorsDaySummaryIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY",
     "queries": [
       {
@@ -51873,7 +51874,7 @@
     "insight": {},
     "_comment": " "
   },
-  "checklistCompletionRateDistricIRSICCD": {
+  "checklistCompletionRateDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_CHECKLISTS_COMPLETION_RATE_DISTRICT",
     "queries": [
       {
@@ -51899,7 +51900,7 @@
     "insight": {},
     "_comment": " "
   },
-  "checklistCompletionRateOfDistrictSupervisoIRSICCD": {
+  "checklistCompletionRateOfDistrictSupervisorIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
@@ -51925,7 +51926,7 @@
     "insight": {},
     "_comment": " "
   },
-  "checklistCompletionRateOfNationalSupervisoIRSICCD": {
+  "checklistCompletionRateOfNationalSupervisorIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
@@ -51951,7 +51952,7 @@
     "insight": {},
     "_comment": " "
   },
-  "checklistCompletionRateOfProvincialSupervisoIRSICCD": {
+  "checklistCompletionRateOfProvincialSupervisorIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
@@ -51977,7 +51978,7 @@
     "insight": {},
     "_comment": " "
   },
-  "checklistCompletionRateOfTeamSupervisoIRSICCD": {
+  "checklistCompletionRateOfTeamSupervisorIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
     "queries": [
       {
@@ -52003,7 +52004,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByAPTotaIRSICCD": {
+  "complaintsByAPTotalIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_AP_TOTAL",
     "queries": [
       {
@@ -52033,7 +52034,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByDistrictTotaIRSICCD": {
+  "complaintsByDistrictTotalIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_DISTRICT_TOTAL",
     "queries": [
       {
@@ -52063,7 +52064,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByLocalityTotaIRSICCD": {
+  "complaintsByLocalityTotalIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_LOCALITY_TOTAL",
     "queries": [
@@ -52093,7 +52094,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownAIRSICCD": {
+  "complaintsByStatusBreakdownAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_AP",
     "queries": [
@@ -52125,7 +52126,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownDistricIRSICCD": {
+  "complaintsByStatusBreakdownDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_DISTRICT",
     "queries": [
       {
@@ -52157,7 +52158,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByStatusBreakdownLocalitIRSICCD": {
+  "complaintsByStatusBreakdownLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_LOCALITY",
     "queries": [
       {
@@ -52183,7 +52184,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusBreakdownProvinciaIRSICCD": {
+  "complaintsByStatusBreakdownProvincialIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_BREAKDOWN_PROVINCIAL",
     "queries": [
       {
@@ -52215,7 +52216,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByStatusSummaryAIRSICCD": {
+  "complaintsByStatusSummaryAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_AP",
     "queries": [
@@ -52291,7 +52292,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryDaIRSICCD": {
+  "complaintsByStatusSummaryDayIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DAY",
     "queries": [
       {
@@ -52360,7 +52361,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByStatusSummaryDistricIRSICCD": {
+  "complaintsByStatusSummaryDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_DISTRICT",
     "queries": [
@@ -52436,7 +52437,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryLocalitIRSICCD": {
+  "complaintsByStatusSummaryLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_Locality",
     "queries": [
@@ -52512,7 +52513,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "complaintsByStatusSummaryProvincIRSICCD": {
+  "complaintsByStatusSummaryProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_STATUS_SUMMARY_PROVINCE",
     "queries": [
       {
@@ -52588,7 +52589,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByTypeBreakdownAIRSICCD": {
+  "complaintsByTypeBreakdownAPIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_AP",
     "queries": [
       {
@@ -52625,7 +52626,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByTypeBreakdownDistricIRSICCD": {
+  "complaintsByTypeBreakdownDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_DISTRICT",
     "queries": [
       {
@@ -52662,7 +52663,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByTypeBreakdownLocalitIRSICCD": {
+  "complaintsByTypeBreakdownLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_LOCALITY",
     "queries": [
       {
@@ -52693,7 +52694,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByTypeBreakdownProvinciaIRSICCD": {
+  "complaintsByTypeBreakdownProvincialIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_TYPE_BREAKDOWN_PROVINCIAL",
     "queries": [
       {
@@ -52730,7 +52731,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "complaintsByTypeDrilldowIRSICCD": {
+  "complaintsByTypeDrilldownIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE",
     "queries": [
@@ -52755,7 +52756,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsByVillageTotaIRSICCD": {
+  "complaintsByVillageTotalIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_VILLAGE_TOTAL",
     "queries": [
@@ -52780,7 +52781,7 @@
     "insight": {},
     "_comment": " "
   },
-  "complaintsLisIRSICCD": {
+  "complaintsListIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_LIST_SUMMARY",
     "queries": [
@@ -52838,7 +52839,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "ComplaintsShareByAIRSICCD": {
+  "ComplaintsShareByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
     "queries": [
@@ -52876,7 +52877,7 @@
     "insight": {},
     "_comment": " "
   },
-  "ComplaintsShareByDistricIRSICCD": {
+  "ComplaintsShareByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
     "queries": [
       {
@@ -52914,7 +52915,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "ComplaintsShareByLocalitIRSICCD": {
+  "ComplaintsShareByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
     "queries": [
@@ -52952,7 +52953,7 @@
     "insight": {},
     "_comment": " "
   },
-  "ComplaintsShareByVillagIRSICCD": {
+  "ComplaintsShareByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_BOUNDARY",
     "queries": [
@@ -52985,7 +52986,7 @@
     "insight": {},
     "_comment": " "
   },
-  "coverageByProvincIRSICCD": {
+  "coverageByProvinceIRSICCD": {
     "chartName": "DSS_COVERAGE_BY_PROVINCE",
     "queries": [
       {
@@ -53110,7 +53111,7 @@
     "insight": {},
     "_comment": " "
   },
-  "dataQualityExcessSummaryAIRSICCD": {
+  "dataQualityExcessSummaryApIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY_AP",
     "queries": [
@@ -53155,7 +53156,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityExcessSummaryByDistributoIRSICCD": {
+  "dataQualityExcessSummaryByDistributorIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY_VILLAGE_BY_DISTRIBUTOR",
     "queries": [
@@ -53194,7 +53195,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityExcessSummaryDistricIRSICCD": {
+  "dataQualityExcessSummaryDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY_DISTRICT",
     "queries": [
@@ -53239,7 +53240,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityExcessSummaryLocalitIRSICCD": {
+  "dataQualityExcessSummaryLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY_LOCALITY",
     "queries": [
@@ -53284,7 +53285,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityExcessSummaryVillagIRSICCD": {
+  "dataQualityExcessSummaryVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_EXCESS_SUMMARY_VILLAGE",
     "queries": [
@@ -53329,7 +53330,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityRecordsSummaryAIRSICCD": {
+  "dataQualityRecordsSummaryAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_AP",
     "queries": [
@@ -53438,7 +53439,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityRecordsSummaryByDistributoIRSICCD": {
+  "dataQualityRecordsSummaryByDistributorIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_VILLAGE_BY_DISTRIBUTOR",
     "queries": [
@@ -53524,7 +53525,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityRecordsSummaryDistricIRSICCD": {
+  "dataQualityRecordsSummaryDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_DISTRICT",
     "queries": [
       {
@@ -53633,7 +53634,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "dataQualityRecordsSummaryLocalitIRSICCD": {
+  "dataQualityRecordsSummaryLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_LOCALITY",
     "queries": [
@@ -53742,7 +53743,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "dataQualityRecordsSummaryVillagIRSICCD": {
+  "dataQualityRecordsSummaryVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_VILLAGE",
     "queries": [
@@ -53851,7 +53852,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "daysInventoryStockLastsDistricIRSICCD": {
+  "daysInventoryStockLastsDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_DISTRICT",
     "queries": [
       {
@@ -53882,7 +53883,7 @@
     "insight": {},
     "_comment": " "
   },
-  "daysInventoryStockLastsProvincIRSICCD": {
+  "daysInventoryStockLastsProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_DAYS_INVENTORY_CAN_LAST_PROVINCE",
     "queries": [
       {
@@ -53913,7 +53914,7 @@
     "insight": {},
     "_comment": " "
   },
-  "distributionCoverageDistricIRSICCD": {
+  "distributionCoverageDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_DISTRICT",
     "queries": [
       {
@@ -53952,7 +53953,7 @@
     },
     "_comment": " "
   },
-  "distributionCoverageProvincIRSICCD": {
+  "distributionCoverageProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_COVERAGE_PROVINCE",
     "queries": [
       {
@@ -53991,7 +53992,7 @@
     },
     "_comment": " "
   },
-  "distributionsByRangIRSICCD": {
+  "distributionsByRangeIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTIONS_DATE_RANGE",
     "queries": [
       {
@@ -54013,7 +54014,7 @@
     "insight": {},
     "_comment": " "
   },
-  "distributionTargetDistricIRSICCD": {
+  "distributionTargetDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_DISTRICT",
     "queries": [
       {
@@ -54037,7 +54038,7 @@
     "insight": {},
     "_comment": " "
   },
-  "distributionTargetProvincIRSICCD": {
+  "distributionTargetProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_DISTRIBUTION_TARGET_PROVINCE",
     "queries": [
       {
@@ -54063,7 +54064,7 @@
     "insight": {},
     "_comment": " "
   },
-  "entriesDoneByWMsAIRSICCD": {
+  "entriesDoneByWMsApIRSICCD": {
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_AP",
     "queries": [
       {
@@ -54093,7 +54094,7 @@
     ],
     "kind": "drillDown"
   },
-  "entriesDoneByWMsDistricIRSICCD": {
+  "entriesDoneByWMsDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT",
     "queries": [
       {
@@ -54123,7 +54124,7 @@
     ],
     "kind": "drillDown"
   },
-  "entriesDoneByWMsLocalitIRSICCD": {
+  "entriesDoneByWMsLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_LOCALITY",
     "queries": [
       {
@@ -54153,7 +54154,7 @@
     ],
     "kind": "drillDown"
   },
-  "entriesDoneByWMsVillagIRSICCD": {
+  "entriesDoneByWMsVillageIRSICCD": {
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_VILLAGE",
     "queries": [
       {
@@ -54177,7 +54178,7 @@
     "insight": {},
     "_comment": " "
   },
-  "houseCoverageRatioByAIRSICCD": {
+  "houseCoverageRatioByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSE_COVERAGE_BY_AP",
     "queries": [
@@ -54215,7 +54216,7 @@
     "insight": {},
     "_comment": " "
   },
-  "houseCoverageRatioByDistricIRSICCD": {
+  "houseCoverageRatioByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSE_COVERAGE_BY_DISTRICT",
     "queries": [
       {
@@ -54253,7 +54254,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "houseCoverageRatioByLocalitIRSICCD": {
+  "houseCoverageRatioByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSE_COVERAGE_BY_LOCALITY",
     "queries": [
@@ -54291,7 +54292,7 @@
     "insight": {},
     "_comment": " "
   },
-  "houseCoverageRatioByVillagIRSICCD": {
+  "houseCoverageRatioByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSE_COVERAGE_BY_VILLAGE",
     "queries": [
@@ -54329,7 +54330,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdsCoverageBarchartByAIRSICCD": {
+  "householdsCoverageBarchartByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_AP",
     "queries": [
@@ -54381,7 +54382,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdsCoverageBarchartByDistricIRSICCD": {
+  "householdsCoverageBarchartByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_DISTRICT",
     "queries": [
       {
@@ -54433,7 +54434,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "householdsCoverageBarchartByLocalitIRSICCD": {
+  "householdsCoverageBarchartByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_LOCALITY",
     "queries": [
@@ -54485,7 +54486,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdsCoverageBarchartByVillagIRSICCD": {
+  "householdsCoverageBarchartByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_BAR_CHART_BY_VILLAGE",
     "queries": [
@@ -54532,7 +54533,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdsCoverageHeatMapDistricIRSICCD": {
+  "householdsCoverageHeatMapDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_DISTRICT",
     "queries": [
       {
@@ -54590,7 +54591,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "householdsCoverageHeatMaIRSICCD": {
+  "householdsCoverageHeatMapIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP",
     "queries": [
       {
@@ -54637,7 +54638,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "householdsCoverageHeatMapProvincIRSICCD": {
+  "householdsCoverageHeatMapProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
       {
@@ -54695,7 +54696,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "householdSprayedTargetDistricIRSICCD": {
+  "householdSprayedTargetDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_SPRAYED_DISTRICT",
     "queries": [
       {
@@ -54721,7 +54722,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdSprayedTargetProvincIRSICCD": {
+  "householdSprayedTargetProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_TARGET_HOUSEHOLD_SPRAYED_PROVINCE",
     "queries": [
       {
@@ -54747,7 +54748,7 @@
     "insight": {},
     "_comment": " "
   },
-  "householdSprayedWithinDateRangIRSICCD": {
+  "householdSprayedWithinDateRangeIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_SPRAYED_OVER_DATERANGE",
     "queries": [
       {
@@ -54769,7 +54770,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesNotSprayedAIRSICCD": {
+  "housesNotSprayedAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_AP",
     "queries": [
@@ -54799,7 +54800,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesNotSprayedAPPercenIRSICCD": {
+  "housesNotSprayedAPPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_AP_PERCENT",
     "queries": [
@@ -54837,7 +54838,7 @@
       }
     ]
   },
-  "housesNotSprayedDistricIRSICCD": {
+  "housesNotSprayedDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DISTRICT",
     "queries": [
       {
@@ -54867,7 +54868,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "housesNotSprayedDistrictPercenIRSICCD": {
+  "housesNotSprayedDistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DISTRICT_PERCENT",
     "queries": [
       {
@@ -54905,7 +54906,7 @@
     ],
     "kind": "drillDown"
   },
-  "housesNotSprayedLocalitIRSICCD": {
+  "housesNotSprayedLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_LOCALITY",
     "queries": [
@@ -54935,7 +54936,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesNotSprayedLocalityPercenIRSICCD": {
+  "housesNotSprayedLocalityPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_LOCALITY_PERCENT",
     "queries": [
@@ -54973,7 +54974,7 @@
       }
     ]
   },
-  "housesNotSprayedVillagIRSICCD": {
+  "housesNotSprayedVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_VILLAGE",
     "queries": [
@@ -54998,7 +54999,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesNotSprayedVillagePercenIRSICCD": {
+  "housesNotSprayedVillagePercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_VILLAGE_PERCENT",
     "queries": [
@@ -55031,7 +55032,7 @@
     "insight": {},
     "_comment": " "
   },
-  "houseStructureTypesCoverageDistricIRSICCD": {
+  "houseStructureTypesCoverageDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE_DISTRICT",
     "queries": [
       {
@@ -55055,7 +55056,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "houseStructureTypesCoverageDrilldownDistricIRSICCD": {
+  "houseStructureTypesCoverageDrilldownDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE_DRILLDOWN_DISTRICT",
     "queries": [
@@ -55079,7 +55080,7 @@
     "insight": {},
     "_comment": " "
   },
-  "houseStructureTypesCoverageDrilldownProvincIRSICCD": {
+  "houseStructureTypesCoverageDrilldownProvinceIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE_DRILLDOWN_PROVINCE",
     "queries": [
@@ -55103,7 +55104,7 @@
     "insight": {},
     "_comment": " "
   },
-  "houseStructureTypesCoverageProvincIRSICCD": {
+  "houseStructureTypesCoverageProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_HOUSE_STRUCTURE_TYPES_COVERAGE_PROVINCE",
     "queries": [
       {
@@ -55127,7 +55128,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "housesWithMoreThanTenRoomsByAIRSICCD": {
+  "housesWithMoreThanTenRoomsByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS_AP",
     "queries": [
@@ -55156,7 +55157,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTenRoomsByDistricIRSICCD": {
+  "housesWithMoreThanTenRoomsByDistrictIRSICCD": {
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS_DISTRICT",
     "queries": [
       {
@@ -55185,7 +55186,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "housesWithMoreThanTenRoomsByLocalitIRSICCD": {
+  "housesWithMoreThanTenRoomsByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS_LOCALITY",
     "queries": [
@@ -55214,7 +55215,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTenRoomsByVillagIRSICCD": {
+  "housesWithMoreThanTenRoomsByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TEN_ROOMS_VILLAGE",
     "queries": [
@@ -55243,7 +55244,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTwentyMembersByAIRSICCD": {
+  "housesWithMoreThanTwentyMembersByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_AP",
     "queries": [
@@ -55272,7 +55273,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTwentyMembersByDistricIRSICCD": {
+  "housesWithMoreThanTwentyMembersByDistrictIRSICCD": {
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT",
     "queries": [
       {
@@ -55301,7 +55302,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "housesWithMoreThanTwentyMembersByLocalitIRSICCD": {
+  "housesWithMoreThanTwentyMembersByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_LOCALITY",
     "queries": [
@@ -55330,7 +55331,7 @@
     "insight": {},
     "_comment": " "
   },
-  "housesWithMoreThanTwentyMembersByVillagIRSICCD": {
+  "housesWithMoreThanTwentyMembersByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_VILLAGE",
     "queries": [
@@ -55359,7 +55360,7 @@
     "insight": {},
     "_comment": " "
   },
-  "iecNotVisitedByAIRSICCD": {
+  "iecNotVisitedByAPIRSICCD": {
     "chartName": "DSS_HEALTH_IEC_NOT_VISITED_AP",
     "queries": [
       {
@@ -55388,7 +55389,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "iecNotVisitedByDistricIRSICCD": {
+  "iecNotVisitedByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_IEC_NOT_VISITED_DISTRICT",
     "queries": [
       {
@@ -55417,7 +55418,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "iecNotVisitedByLocalitIRSICCD": {
+  "iecNotVisitedByLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_IEC_NOT_VISITED_LOCALITY",
     "queries": [
       {
@@ -55446,7 +55447,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "iecNotVisitedByVillagIRSICCD": {
+  "iecNotVisitedByVillageIRSICCD": {
     "chartName": "DSS_HEALTH_IEC_NOT_VISITED_VILLAGE",
     "queries": [
       {
@@ -55474,7 +55475,7 @@
     "insight": {},
     "_comment": " "
   },
-  "incompatibleHousesBarchartAIRSICCD": {
+  "incompatibleHousesBarchartApIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_AP",
     "queries": [
@@ -55504,7 +55505,7 @@
       }
     ]
   },
-  "incompatibleHousesBarchartApPercenIRSICCD": {
+  "incompatibleHousesBarchartApPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_AP_PERCENT",
     "queries": [
@@ -55542,7 +55543,7 @@
       }
     ]
   },
-  "incompatibleHousesBarchartDistricIRSICCD": {
+  "incompatibleHousesBarchartDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_DISTRICT",
     "queries": [
       {
@@ -55572,7 +55573,7 @@
     ],
     "kind": "drillDown"
   },
-  "incompatibleHousesBarchartDistrictPercenIRSICCD": {
+  "incompatibleHousesBarchartDistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_DISTRICT_PERCENT",
     "queries": [
       {
@@ -55610,7 +55611,7 @@
     ],
     "kind": "drillDown"
   },
-  "incompatibleHousesBarchartLocalitIRSICCD": {
+  "incompatibleHousesBarchartLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_LOCALITY",
     "queries": [
@@ -55640,7 +55641,7 @@
       }
     ]
   },
-  "incompatibleHousesBarchartLocalityPercenIRSICCD": {
+  "incompatibleHousesBarchartLocalityPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_LOCALITY_PERCENT",
     "queries": [
@@ -55678,7 +55679,7 @@
       }
     ]
   },
-  "incompatibleHousesBarchartVillagIRSICCD": {
+  "incompatibleHousesBarchartVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_VILLAGE",
     "queries": [
@@ -55703,7 +55704,7 @@
     "insight": {},
     "_comment": " "
   },
-  "incompatibleHousesBarchartVillagePercenIRSICCD": {
+  "incompatibleHousesBarchartVillagePercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_VILLAGE_PERCENT",
     "queries": [
@@ -55736,7 +55737,7 @@
     "insight": {},
     "_comment": " "
   },
-  "incompatibleHousesByStructureTypeDistricIRSICCD": {
+  "incompatibleHousesByStructureTypeDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES_DISTRICT",
     "queries": [
       {
@@ -55760,7 +55761,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "incompatibleHousesByStructureTypeDrilldownDistricIRSICCD": {
+  "incompatibleHousesByStructureTypeDrilldownDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES_DRILLDOWN_DISTRICT",
     "queries": [
@@ -55784,7 +55785,7 @@
     "insight": {},
     "_comment": " "
   },
-  "incompatibleHousesByStructureTypeDrilldownProvincIRSICCD": {
+  "incompatibleHousesByStructureTypeDrilldownProvinceIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES_DRILLDOWN_PROVINCE",
     "queries": [
@@ -55808,7 +55809,7 @@
     "insight": {},
     "_comment": " "
   },
-  "incompatibleHousesByStructureTypeProvincIRSICCD": {
+  "incompatibleHousesByStructureTypeProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPATIBLE_HOUSES_STRUCTURE_TYPES_PROVINCE",
     "queries": [
       {
@@ -55832,7 +55833,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "incompleteRecordsByAIRSICCD": {
+  "incompleteRecordsByAPIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES",
     "queries": [
       {
@@ -55884,7 +55885,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "incompleteRecordsByDistricIRSICCD": {
+  "incompleteRecordsByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES",
     "queries": [
       {
@@ -55936,7 +55937,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "incompleteRecordsByLocalitIRSICCD": {
+  "incompleteRecordsByLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES",
     "queries": [
       {
@@ -55988,7 +55989,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "incompleteRecordsByVillagIRSICCD": {
+  "incompleteRecordsByVillageIRSICCD": {
     "chartName": "DSS_HEALTH_INCOMPLETE_HOUSES",
     "queries": [
       {
@@ -56039,7 +56040,7 @@
     "insight": {},
     "_comment": " "
   },
-  "insecticideUsageEfficiencyByAIRSICCD": {
+  "insecticideUsageEfficiencyByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY_BY_AP",
     "queries": [
@@ -56077,7 +56078,7 @@
     "insight": {},
     "_comment": " "
   },
-  "insecticideUsageEfficiencyByDistricIRSICCD": {
+  "insecticideUsageEfficiencyByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY_BY_DISTRICT",
     "queries": [
       {
@@ -56115,7 +56116,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "insecticideUsageEfficiencyByLocalitIRSICCD": {
+  "insecticideUsageEfficiencyByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY_BY_LOCALITY",
     "queries": [
@@ -56153,7 +56154,7 @@
     "insight": {},
     "_comment": " "
   },
-  "insecticideUsageEfficiencyByVillagIRSICCD": {
+  "insecticideUsageEfficiencyByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INSECTICIDE_USAGE_EFFICIENCY_BY_VILLAGE",
     "queries": [
@@ -56191,7 +56192,7 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryStockInHandDistricIRSICCD": {
+  "inventoryStockInHandDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_DISTRICT",
     "queries": [
       {
@@ -56244,7 +56245,7 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryStockInHandProvincIRSICCD": {
+  "inventoryStockInHandProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_INVENTORY_STOCK_IN_HAND_PROVINCE",
     "queries": [
       {
@@ -56297,7 +56298,7 @@
     "insight": {},
     "_comment": " "
   },
-  "InventorySummaryByAIRSICCD": {
+  "InventorySummaryByAPIRSICCD": {
     "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_AP",
     "queries": [
       {
@@ -56424,7 +56425,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "InventorySummaryByDistricIRSICCD": {
+  "InventorySummaryByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT",
     "queries": [
       {
@@ -56551,7 +56552,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "InventorySummaryByWarehousIRSICCD": {
+  "InventorySummaryByWarehouseIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_INVENTORY_SUMMARY_BY_WAREHOUSE",
     "queries": [
@@ -56629,7 +56630,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "inventoryTheoreticalVsManualStockAIRSICCD": {
+  "inventoryTheoreticalVsManualStockApIRSICCD": {
     "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_AP",
     "queries": [
       {
@@ -56666,7 +56667,7 @@
     "insight": {},
     "_comment": " "
   },
-  "inventoryTheoreticalVsManualStockDistricIRSICCD": {
+  "inventoryTheoreticalVsManualStockDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT",
     "queries": [
       {
@@ -56703,7 +56704,7 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByAIRSICCD": {
+  "locationNotEnabledByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_AP",
     "queries": [
@@ -56732,7 +56733,7 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByDistricIRSICCD": {
+  "locationNotEnabledByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT",
     "queries": [
       {
@@ -56761,7 +56762,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "locationNotEnabledByLocalitIRSICCD": {
+  "locationNotEnabledByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_LOCALITY",
     "queries": [
@@ -56790,7 +56791,7 @@
     "insight": {},
     "_comment": " "
   },
-  "locationNotEnabledByVillagIRSICCD": {
+  "locationNotEnabledByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_LOCATION_NOT_ENABLED_VILLAGE",
     "queries": [
@@ -56819,7 +56820,7 @@
     "insight": {},
     "_comment": " "
   },
-  "moreThanTwoBottlesUsedByAIRSICCD": {
+  "moreThanTwoBottlesUsedByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED_AP",
     "queries": [
@@ -56848,7 +56849,7 @@
     "insight": {},
     "_comment": " "
   },
-  "moreThanTwoBottlesUsedByDistricIRSICCD": {
+  "moreThanTwoBottlesUsedByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED_DISTRICT",
     "queries": [
       {
@@ -56877,7 +56878,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "moreThanTwoBottlesUsedByLocalitIRSICCD": {
+  "moreThanTwoBottlesUsedByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED_LOCALITY",
     "queries": [
@@ -56906,7 +56907,7 @@
     "insight": {},
     "_comment": " "
   },
-  "moreThanTwoBottlesUsedByVillagIRSICCD": {
+  "moreThanTwoBottlesUsedByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED_VILLAGE",
     "queries": [
@@ -56935,7 +56936,7 @@
     "insight": {},
     "_comment": " "
   },
-  "openComplaintsLisIRSICCD": {
+  "openComplaintsListIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_LIST_SUMMARY",
     "queries": [
@@ -56989,7 +56990,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "openComplaintsSummaryByAIRSICCD": {
+  "openComplaintsSummaryByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_AP",
     "queries": [
@@ -57029,7 +57030,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "openComplaintsSummaryByDistricIRSICCD": {
+  "openComplaintsSummaryByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_DISTRICT",
     "queries": [
       {
@@ -57069,7 +57070,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "openComplaintsSummaryByLocalitIRSICCD": {
+  "openComplaintsSummaryByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_LOCALITY",
     "queries": [
@@ -57109,7 +57110,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "openComplaintsSummaryByVillagIRSICCD": {
+  "openComplaintsSummaryByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_OPEN_COMPLAINTS_SUMMARY_BY_VILLAGE",
     "queries": [
@@ -57149,7 +57150,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "overviewPopulationCoverageAchievedDistricIRSICCD": {
+  "overviewPopulationCoverageAchievedDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_DISTRICT",
     "queries": [
       {
@@ -57188,7 +57189,7 @@
     },
     "_comment": " "
   },
-  "overviewPopulationCoverageAchievedProvincIRSICCD": {
+  "overviewPopulationCoverageAchievedProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERAGE_ACHIEVED_PROVINCE",
     "queries": [
       {
@@ -57227,7 +57228,7 @@
     },
     "_comment": " "
   },
-  "overviewPopulationCovereIRSICCD": {
+  "overviewPopulationCoveredIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_COVERED",
     "queries": [
       {
@@ -57249,7 +57250,7 @@
     "insight": {},
     "_comment": " "
   },
-  "overviewPopulationTargetedDistricIRSICCD": {
+  "overviewPopulationTargetedDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_DISTRICT",
     "queries": [
       {
@@ -57273,7 +57274,7 @@
     "insight": {},
     "_comment": " "
   },
-  "overviewPopulationTargetedProvincIRSICCD": {
+  "overviewPopulationTargetedProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_POPULATION_TARGETED_PROVINCE",
     "queries": [
       {
@@ -57299,7 +57300,7 @@
     "insight": {},
     "_comment": " "
   },
-  "overviewTotalPopulationCovereIRSICCD": {
+  "overviewTotalPopulationCoveredIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_POPULATION_COVERED",
     "queries": [
       {
@@ -57330,7 +57331,7 @@
     },
     "_comment": " "
   },
-  "populationCoverageHeatMapDistricIRSICCD": {
+  "populationCoverageHeatMapDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_DISTRICT",
     "queries": [
       {
@@ -57385,7 +57386,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "populationCoverageHeatMaIRSICCD": {
+  "populationCoverageHeatMapIRSICCD": {
     "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP",
     "queries": [
       {
@@ -57432,7 +57433,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "populationCoverageHeatMapProvincIRSICCD": {
+  "populationCoverageHeatMapProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_POPULATION_COVERAGE_HEATMAP_PROVINCE",
     "queries": [
       {
@@ -57487,7 +57488,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "populationCoveredTodaIRSICCD": {
+  "populationCoveredTodayIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_POPULATION_COVERED_TODAY",
     "queries": [
       {
@@ -57518,7 +57519,7 @@
     },
     "_comment": " "
   },
-  "productReturnedBarChartAIRSICCD": {
+  "productReturnedBarChartAPIRSICCD": {
     "chartName": "DSS_HEALTH_PRODUCT_RETURNED_AP",
     "queries": [
       {
@@ -57547,7 +57548,7 @@
     "insight": {},
     "_comment": " "
   },
-  "productReturnedBarChartDistricIRSICCD": {
+  "productReturnedBarChartDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_PRODUCT_RETURNED_DISTRICT",
     "queries": [
       {
@@ -57576,7 +57577,7 @@
     "insight": {},
     "_comment": " "
   },
-  "secondarySprayingHousesBarchartAIRSICCD": {
+  "secondarySprayingHousesBarchartApIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_AP",
     "queries": [
@@ -57605,7 +57606,7 @@
       }
     ]
   },
-  "secondarySprayingHousesBarchartApPercenIRSICCD": {
+  "secondarySprayingHousesBarchartApPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_AP_PERCENT",
     "queries": [
@@ -57642,7 +57643,7 @@
       }
     ]
   },
-  "secondarySprayingHousesBarchartDistricIRSICCD": {
+  "secondarySprayingHousesBarchartDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_DISTRICT",
     "queries": [
       {
@@ -57671,7 +57672,7 @@
     ],
     "kind": "drillDown"
   },
-  "secondarySprayingHousesBarchartDistrictPercenIRSICCD": {
+  "secondarySprayingHousesBarchartDistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_DISTRICT_PERCENT",
     "queries": [
       {
@@ -57708,7 +57709,7 @@
     ],
     "kind": "drillDown"
   },
-  "secondarySprayingHousesBarchartLocalitIRSICCD": {
+  "secondarySprayingHousesBarchartLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_LOCALITY",
     "queries": [
@@ -57737,7 +57738,7 @@
       }
     ]
   },
-  "secondarySprayingHousesBarchartLocalityPercenIRSICCD": {
+  "secondarySprayingHousesBarchartLocalityPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_LOCALITY_PERCENT",
     "queries": [
@@ -57774,7 +57775,7 @@
       }
     ]
   },
-  "secondarySprayingHousesBarchartVillagIRSICCD": {
+  "secondarySprayingHousesBarchartVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_VILLAGE",
     "queries": [
@@ -57798,7 +57799,7 @@
     "insight": {},
     "_comment": " "
   },
-  "secondarySprayingHousesBarchartVillagePercenIRSICCD": {
+  "secondarySprayingHousesBarchartVillagePercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SECONDARY_SPRAYING_HOUSES_VILLAGE_PERCENT",
     "queries": [
@@ -57830,7 +57831,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayCoverageBarChartAIRSICCD": {
+  "sprayCoverageBarChartAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_AP",
     "queries": [
@@ -57859,7 +57860,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayCoverageBarChartAPPercenIRSICCD": {
+  "sprayCoverageBarChartAPPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_AP_PERCENT",
     "queries": [
@@ -57910,7 +57911,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayCoverageBarChartDistricIRSICCD": {
+  "sprayCoverageBarChartDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_DISTRICT",
     "queries": [
       {
@@ -57939,7 +57940,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "sprayCoverageBarChartDistrictPercenIRSICCD": {
+  "sprayCoverageBarChartDistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_DISTRICT_PERCENT",
     "queries": [
       {
@@ -57990,7 +57991,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "sprayCoverageBarChartLocalitIRSICCD": {
+  "sprayCoverageBarChartLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_LOCALITY",
     "queries": [
@@ -58019,7 +58020,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayCoverageBarChartLocalityPercenIRSICCD": {
+  "sprayCoverageBarChartLocalityPercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_LOCALITY_PERCENT",
     "queries": [
@@ -58070,7 +58071,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayCoverageBarChartVillagIRSICCD": {
+  "sprayCoverageBarChartVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_VILLAGE",
     "queries": [
@@ -58099,7 +58100,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayCoverageBarChartVillagePercenIRSICCD": {
+  "sprayCoverageBarChartVillagePercentIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAY_COVERAGE_VILLAGE_PERCENT",
     "queries": [
@@ -58150,7 +58151,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayedHousesByVulnerabilityBreakdownInAIRSICCD": {
+  "sprayedHousesByVulnerabilityBreakdownInAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAYED_HOUSES_BY_VULNERABILITY_BREAKDOWN_AP",
     "queries": [
@@ -58181,7 +58182,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayedHousesByVulnerabilityBreakdownInDistricIRSICCD": {
+  "sprayedHousesByVulnerabilityBreakdownInDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SPRAYED_HOUSES_BY_VULNERABILITY_BREAKDOWN_DISTRICT",
     "queries": [
@@ -58212,7 +58213,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayedHousesByVulnerabilityBreakdownInLocalitIRSICCD": {
+  "sprayedHousesByVulnerabilityBreakdownInLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_SPRAYED_HOUSES_BY_VULNERABILITY_BREAKDOWN_LOCALITY",
     "queries": [
       {
@@ -58237,7 +58238,7 @@
     "insight": {},
     "_comment": " "
   },
-  "sprayedHousesByVulnerabilityBreakdownInProvincIRSICCD": {
+  "sprayedHousesByVulnerabilityBreakdownInProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_SPRAYED_HOUSES_BY_VULNERABILITY_BREAKDOWN_PROVINCE",
     "queries": [
       {
@@ -58268,7 +58269,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "summaryByAdministrativeProvinceDaIRSICCD": {
+  "summaryByAdministrativeProvinceDayIRSICCD": {
     "chartName": "DSS_HEALTH_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
     "queries": [
       {
@@ -58563,7 +58564,7 @@
     "insight": {},
     "_comment": " "
   },
-  "summaryByAdministrativeProvincIRSICCD": {
+  "summaryByAdministrativeProvinceIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_BY_ADMINISTRATIVE_PROVINCE",
     "queries": [
@@ -58887,7 +58888,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "summaryByDistrictDaIRSICCD": {
+  "summaryByDistrictDayIRSICCD": {
     "chartName": "DSS_HEALTH_SUMMARY_BY_DISTRICT",
     "queries": [
       {
@@ -59182,7 +59183,7 @@
     "insight": {},
     "_comment": " "
   },
-  "summaryByDistricIRSICCD": {
+  "summaryByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_SUMMARY_BY_DISTRICT",
     "queries": [
       {
@@ -59506,7 +59507,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "summaryByLocalitIRSICCD": {
+  "summaryByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_BY_LOCALITY",
     "queries": [
@@ -59830,7 +59831,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "summaryByVillagIRSICCD": {
+  "summaryByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_BY_VILLAGE",
     "queries": [
@@ -60148,7 +60149,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "summaryTeamPerformanceByAIRSICCD": {
+  "summaryTeamPerformanceByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_BY_AP",
     "queries": [
@@ -60276,7 +60277,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "summaryTeamPerformanceByDistricIRSICCD": {
+  "summaryTeamPerformanceByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_BY_DISTRICT",
     "queries": [
       {
@@ -60404,7 +60405,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "summaryTeamPerformanceByLocalitIRSICCD": {
+  "summaryTeamPerformanceByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_BY_LOCALITY",
     "queries": [
@@ -60532,7 +60533,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "summaryTeamPerformanceByVillagIRSICCD": {
+  "summaryTeamPerformanceByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_BY_VILLAGE",
     "queries": [
@@ -60660,7 +60661,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "summaryTeamPerformanceProvincialByDaIRSICCD": {
+  "summaryTeamPerformanceProvincialByDayIRSICCD": {
     "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_PROVINCIAL_BY_DAY",
     "queries": [
       {
@@ -60765,7 +60766,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "summaryTeamPerformanceProvincialByDistributoIRSICCD": {
+  "summaryTeamPerformanceProvincialByDistributorIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE_PROVINCIAL_BY_DISTRIBUTOR",
     "queries": [
@@ -60871,7 +60872,7 @@
     "sort": "sortKeyAsc",
     "_comment": " "
   },
-  "supervisorUserSynIRSICCD": {
+  "supervisorUserSyncIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE",
     "queries": [
       {
@@ -60938,7 +60939,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "suspectedFraudsByAIRSICCD": {
+  "suspectedFraudsByAPIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_AP",
     "queries": [
@@ -60967,7 +60968,7 @@
     "insight": {},
     "_comment": " "
   },
-  "suspectedFraudsByDistricIRSICCD": {
+  "suspectedFraudsByDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_DISTRICT",
     "queries": [
       {
@@ -60996,7 +60997,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "suspectedFraudsByLocalitIRSICCD": {
+  "suspectedFraudsByLocalityIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_LOCALITY",
     "queries": [
@@ -61025,7 +61026,7 @@
     "insight": {},
     "_comment": " "
   },
-  "suspectedFraudsByVillagIRSICCD": {
+  "suspectedFraudsByVillageIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUSPECTED_FRAUDS_VILLAGE",
     "queries": [
@@ -61054,7 +61055,7 @@
     "insight": {},
     "_comment": " "
   },
-  "teamSupervisorUserSynIRSICCD": {
+  "teamSupervisorUserSyncIRSICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISOR_USER_SYNC_RATE",
     "queries": [
       {
@@ -61121,7 +61122,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "todayDistributionIRSICCD": {
+  "todayDistributionsIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_TODAY_USED_QUANTITY",
     "queries": [
       {
@@ -61152,7 +61153,7 @@
     },
     "_comment": " "
   },
-  "todaysSprayeIRSICCD": {
+  "todaysSprayedIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_HOUSEHOLDS_SPRAYED_TODAY",
     "queries": [
       {
@@ -61183,7 +61184,7 @@
     },
     "_comment": " "
   },
-  "totalComplaintsRegisteredByStatusDrilldowIRSICCD": {
+  "totalComplaintsRegisteredByStatusDrilldownIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_STATUS",
     "queries": [
@@ -61208,7 +61209,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalComplaintsRegisteredByTypIRSICCD": {
+  "totalComplaintsRegisteredByTypeIRSICCD": {
     "chartName": "DSS_HEALTH_COMPLAINTS_BY_TYPE",
     "queries": [
       {
@@ -61237,7 +61238,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "totalComplaintsRegistereIRSICCD": {
+  "totalComplaintsRegisteredIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COMPLAINTS_BREAKDOWN",
     "queries": [
       {
@@ -61266,7 +61267,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "totalDistributionIRSICCD": {
+  "totalDistributionsIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_TOTAL_USED_QUANTITY",
     "queries": [
       {
@@ -61288,7 +61289,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalDistributionsTillTodaIRSICCD": {
+  "totalDistributionsTillTodayIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_TOTAL_DISTRIBUTED_TILL_TODAY",
     "queries": [
       {
@@ -61319,7 +61320,7 @@
     },
     "_comment": " "
   },
-  "totalHouseholdCoverageDistricIRSICCD": {
+  "totalHouseholdCoverageDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_VISITS_DISTRICT",
     "queries": [
       {
@@ -61359,7 +61360,7 @@
     },
     "_comment": " "
   },
-  "totalHouseholdCoverageProvincIRSICCD": {
+  "totalHouseholdCoverageProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_COVERAGE_HOUSEHOLD_SPRAYED_PROVINCE",
     "queries": [
       {
@@ -61399,7 +61400,7 @@
     },
     "_comment": " "
   },
-  "totalHousesNotSprayedByReasonDistricIRSICCD": {
+  "totalHousesNotSprayedByReasonDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DISTRICT",
     "queries": [
       {
@@ -61423,7 +61424,7 @@
     "_comment": "",
     "kind": "drillDown"
   },
-  "totalHousesNotSprayedByReasonDrilldownDistricIRSICCD": {
+  "totalHousesNotSprayedByReasonDrilldownDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DRILLDOWN_DISTRICT",
     "queries": [
@@ -61447,7 +61448,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalHousesNotSprayedByReasonDrilldownNationaIRSICCD": {
+  "totalHousesNotSprayedByReasonDrilldownNationalIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DRILLDOWN_NATIONAL",
     "queries": [
@@ -61471,7 +61472,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalHousesNotSprayedByReasonDrilldownProvincIRSICCD": {
+  "totalHousesNotSprayedByReasonDrilldownProvinceIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_DRILLDOWN_PROVINCE",
     "queries": [
@@ -61495,7 +61496,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalHousesNotSprayedByReasonNationaIRSICCD": {
+  "totalHousesNotSprayedByReasonNationalIRSICCD": {
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_NATIONAL",
     "queries": [
       {
@@ -61519,7 +61520,7 @@
     "_comment": "",
     "kind": "drillDown"
   },
-  "totalHousesNotSprayedByReasonProvincIRSICCD": {
+  "totalHousesNotSprayedByReasonProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_NOT_SPRAYED_BY_REASON_PROVINCE",
     "queries": [
       {
@@ -61543,7 +61544,7 @@
     "_comment": "",
     "kind": "drillDown"
   },
-  "totalHousesRefusedDistricIRSICCD": {
+  "totalHousesRefusedDistrictIRSICCD": {
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED_DISTRICT",
     "queries": [
@@ -61568,7 +61569,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalHousesRefusedProvincIRSICCD": {
+  "totalHousesRefusedProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_TOTAL_HOUSEHOLDS_REFUSED_PROVINCE",
     "queries": [
       {
@@ -61599,7 +61600,7 @@
     "_comment": " ",
     "kind": "drillDown"
   },
-  "totalPopulationCovereIRSICCD": {
+  "totalPopulationCoveredIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_TOTAL_POPULATION_COVERED",
     "queries": [
       {
@@ -61621,7 +61622,7 @@
     "insight": {},
     "_comment": " "
   },
-  "totalSprayeIRSICCD": {
+  "totalSprayedIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_SPRAYED",
     "queries": [
       {
@@ -61652,7 +61653,7 @@
     },
     "_comment": " "
   },
-  "totalSprayedNationaIRSICCD": {
+  "totalSprayedNationalIRSICCD": {
     "chartName": "DSS_HEALTH_NATIONAL_TOTAL_HOUSEHOLD_SPRAYED_NATIONAL",
     "queries": [
       {
@@ -61674,7 +61675,7 @@
     "insight": {},
     "_comment": " "
   },
-  "userSyncSummaryDistricIRSICCD": {
+  "userSyncSummaryDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_USER_SYNC_SUMMARY",
     "queries": [
       {
@@ -61741,7 +61742,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "userSyncSummaryProvincIRSICCD": {
+  "userSyncSummaryProvinceIRSICCD": {
     "chartName": "DSS_HEALTH_USER_SYNC_SUMMARY",
     "queries": [
       {
@@ -61808,7 +61809,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "vulnerablePopulationCoverageChildrenU5AIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5ApIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_AP",
     "queries": [
       {
@@ -61838,7 +61839,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoverageChildrenU5ApPercenIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5ApPercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_AP_PERCENT",
     "queries": [
       {
@@ -61876,7 +61877,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoverageChildrenU5DistricIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5DistrictIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_DISTRICT",
     "queries": [
       {
@@ -61906,7 +61907,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoverageChildrenU5DistrictPercenIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5DistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_DISTRICT_PERCENT",
     "queries": [
       {
@@ -61944,7 +61945,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoverageChildrenU5LocalitIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5LocalityIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_LOCALITY",
     "queries": [
       {
@@ -61974,7 +61975,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoverageChildrenU5LocalityPercenIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5LocalityPercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_LOCALITY_PERCENT",
     "queries": [
       {
@@ -62012,7 +62013,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoverageChildrenU5VillagIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5VillageIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_VILLAGE",
     "queries": [
       {
@@ -62036,7 +62037,7 @@
     "insight": {},
     "_comment": " "
   },
-  "vulnerablePopulationCoverageChildrenU5VillagePercenIRSICCD": {
+  "vulnerablePopulationCoverageChildrenU5VillagePercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_CHILDREN_U5_VILLAGE_PERCENT",
     "queries": [
       {
@@ -62068,7 +62069,7 @@
     "insight": {},
     "_comment": " "
   },
-  "vulnerablePopulationCoveragePregnantWomenAIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenApIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_AP",
     "queries": [
       {
@@ -62098,7 +62099,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoveragePregnantWomenApPercenIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenApPercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_AP_PERCENT",
     "queries": [
       {
@@ -62136,7 +62137,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoveragePregnantWomenDistricIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenDistrictIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_DISTRICT",
     "queries": [
       {
@@ -62166,7 +62167,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoveragePregnantWomenDistrictPercenIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenDistrictPercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_DISTRICT_PERCENT",
     "queries": [
       {
@@ -62204,7 +62205,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoveragePregnantWomenLocalitIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenLocalityIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_LOCALITY",
     "queries": [
       {
@@ -62234,7 +62235,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoveragePregnantWomenLocalityPercenIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenLocalityPercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_LOCALITY_PERCENT",
     "queries": [
       {
@@ -62272,7 +62273,7 @@
     ],
     "kind": "drillDown"
   },
-  "vulnerablePopulationCoveragePregnantWomenVillagIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenVillageIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_VILLAGE",
     "queries": [
       {
@@ -62296,7 +62297,7 @@
     "insight": {},
     "_comment": " "
   },
-  "vulnerablePopulationCoveragePregnantWomenVillagePercenIRSICCD": {
+  "vulnerablePopulationCoveragePregnantWomenVillagePercentIRSICCD": {
     "chartName": "DSS_HEALTH_VULNERABLE_POPULATION_COVERAGE_PREGNANT_WOMEN_VILLAGE_PERCENT",
     "queries": [
       {
@@ -62328,7 +62329,7 @@
     "insight": {},
     "_comment": " "
   },
-  "warehouseDistributionLatLongPointIRSICCD": {
+  "warehouseDistributionLatLongPointsIRSICCD": {
     "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
@@ -62383,7 +62384,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoarIRSICCD": {
+  "warehouseDistributionLatLongTableAvlRcvdDispDistrictWiseProvincialBoardIRSICCD": {
     "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
@@ -62419,7 +62420,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableAvlRcvdDispFacilitieIRSICCD": {
+  "warehouseDistributionLatLongTableAvlRcvdDispFacilitiesIRSICCD": {
     "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
@@ -62455,7 +62456,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoarIRSICCD": {
+  "warehouseDistributionLatLongTableDaysStockLastsDistrictWiseProvincialBoardIRSICCD": {
     "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
@@ -62490,7 +62491,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoarIRSICCD": {
+  "warehouseDistributionLatLongTableStockStatusDistrictWiseProvincialBoardIRSICCD": {
     "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
@@ -62547,7 +62548,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoarIRSICCD": {
+  "warehouseDistributionLatLongTableWarNumDistrictWiseProvincialBoardIRSICCD": {
     "chartName": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
     "queries": [
       {
@@ -62574,7 +62575,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "warehouseManagerUserSynIRSICCD": {
+  "warehouseManagerUserSyncIRSICCD": {
     "chartName": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE",
     "queries": [
       {
@@ -62641,7 +62642,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "totalHouseholdSprayeIRSICCD": {
+  "totalHouseholdSprayedIRSICCD": {
     "chartName": "DSS_TOTAL_HOUSEHOLD_SPRAYED",
     "queries": [
       {
@@ -62672,7 +62673,7 @@
     },
     "_comment": ""
   },
-  "totalBottlesUseIRSICCD": {
+  "totalBottlesUsedIRSICCD": {
     "chartName": "DSS_TOTAL_BOTTLES_USED",
     "queries": [
       {
@@ -62703,7 +62704,7 @@
     },
     "_comment": ""
   },
-  "percentTargetAchievementTodaIRSICCD": {
+  "percentTargetAchievementTodayIRSICCD": {
     "chartName": "DSS_PERCENT_TARGET_ACHIEVEMENT_TODAY",
     "queries": [
       {
@@ -62740,7 +62741,7 @@
     },
     "_comment": ""
   },
-  "coverageByUseIRSICCD": {
+  "coverageByUserIRSICCD": {
     "chartName": "DSS_HEALTH_IRS_COVERAGE_BY_USER",
     "queries": [
       {
@@ -62859,7 +62860,7 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
-  "performanceByUseIRSICCD": {
+  "performanceByUserIRSICCD": {
     "chartName": "DSS_HEALTH_IRS_PERFORMANCE_BY_USER",
     "queries": [
       {
@@ -62906,4 +62907,5 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   }
+  
 }
