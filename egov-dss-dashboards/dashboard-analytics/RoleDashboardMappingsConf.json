@@ -138,7 +138,7 @@
         },
         {
           "name": "Bednets ICCD Dashboard Level Three",
-          "id": "distrcit-health-dashboard-bednets-iccd"
+          "id": "district-health-dashboard-bednets-iccd"
         }
       ]
     },
@@ -159,7 +159,7 @@
         },
         {
           "name": "IRS ICCD Dashboard Level Three",
-          "id": "distrcit-health-dashboard-irs-iccd"
+          "id": "district-health-dashboard-irs-iccd"
         }
       ]
     },
