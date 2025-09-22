@@ -12494,30 +12494,6 @@
           "name": "DSS_HEALTH_OVERVIEW",
           "vizArray": [
             {
-              "id": 200,
-              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "vizType": "bannercard",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "userSyncSummaryProvinceBednetsICCD",
-                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_HEALTH_OVERVIEW",
-          "vizArray": [
-            {
               "id": 201,
               "name": "DSS_HEALTH_HOUSEHOLDS",
               "label": "DSS_HEALTH_HOUSEHOLDS",
@@ -12735,8 +12711,32 @@
             }
           ]
         },
-        {
+         {
           "row": 1,
+          "name": "DSS_HEALTH_OVERVIEW",
+          "vizArray": [
+            {
+              "id": 200,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "userSyncSummaryProvinceBednetsICCD",
+                  "name": "DSS_HEALTH_USER_SYNC_SUMMARY",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -12798,7 +12798,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -12832,7 +12832,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -12893,7 +12893,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -12936,7 +12936,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -12960,7 +12960,7 @@
           ]
         },
         {
-          "row": 6,
+          "row": 7,
           "name": "DSS_HEALTH_REGISTRATION_DELIVERY",
           "vizArray": [
             {
@@ -13234,6 +13234,30 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
+              "id": 240,
+              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
+              "vizType": "bannercard",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "warehouseManagerUserSyncIRSICCD",
+                  "name": "DSS_HEALTH_WAREHOUSE_MANAGER_USER_SYNC_RATE",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_INVENTORY",
+          "vizArray": [
+            {
               "id": 241,
               "name": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
               "label": "DSS_HEALTH_DAYS_INVENTORY_CAN_LAST",
@@ -13272,7 +13296,7 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
@@ -13336,7 +13360,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
