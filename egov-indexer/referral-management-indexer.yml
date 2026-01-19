@@ -54,6 +54,10 @@ ServiceMaps:
                 outJsonPath: $.Data.projectTypeId
               - inJsonPath: $.projectName
                 outJsonPath: $.Data.projectName
+              - inJsonPath: $.campaignNumber
+                outJsonPath: $.Data.campaignNumber
+              - inJsonPath: $.campaignId
+                outJsonPath: $.Data.campaignId  
           timeStampField: $.referral.auditDetails.lastModifiedTime
 
     - topic: delete-referral-topic
@@ -120,6 +124,10 @@ ServiceMaps:
                 outJsonPath: $.Data.projectTypeId
               - inJsonPath: $.projectName
                 outJsonPath: $.Data.projectName
+              - inJsonPath: $.campaignNumber
+                outJsonPath: $.Data.campaignNumber
+              - inJsonPath: $.campaignId
+                outJsonPath: $.Data.campaignId  
           timeStampField: $.sideEffect.auditDetails.lastModifiedTime
 
     - topic: delete-side-effect-topic
