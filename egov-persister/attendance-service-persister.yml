@@ -91,7 +91,7 @@ serviceMaps:
    transactionCodeJsonPath: $.registerId
    auditAttributeBasePath: $.attendees.*
    queryMaps:
-    - query: INSERT INTO eg_wms_attendance_attendee(id,tenantid,individual_id,register_id,enrollment_date,deenrollment_date,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?);
+    - query: INSERT INTO eg_wms_attendance_attendee(id,tenantid,individual_id,register_id,enrollment_date,deenrollment_date,additionaldetails,createdby,lastmodifiedby,createdtime,lastmodifiedtime, tag) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);
       basePath: $.attendees.*
       jsonMaps:
 
@@ -118,6 +118,8 @@ serviceMaps:
        - jsonPath: $.attendees.*.auditDetails.createdTime
 
        - jsonPath: $.attendees.*.auditDetails.lastModifiedTime
+
+       - jsonPath: $.attendees.*.tag
    
  - version: 1.0
    name: staff registration
@@ -320,7 +322,7 @@ serviceMaps:
    transactionCodeJsonPath: $.registerNumber
    auditAttributeBasePath:  $.attendanceRegister.*
    queryMaps:
-      - query: UPDATE eg_wms_attendance_register set name=?, startdate=?, enddate=?, status=?,additionaldetails=?,lastmodifiedby=?, lastmodifiedtime=?, localitycode=?, reviewstatus=? where id=?;
+      - query: UPDATE eg_wms_attendance_register set name=?, startdate=?, enddate=?, status=?,additionaldetails=?,lastmodifiedby=?, lastmodifiedtime=?, localitycode=?, reviewstatus=?, period_statuses=? where id=?;
         basePath: $.attendanceRegister.*
         jsonMaps:           
           - jsonPath: $.attendanceRegister.*.name
@@ -343,6 +345,10 @@ serviceMaps:
 
           - jsonPath: $.attendanceRegister.*.reviewStatus
           
+          - jsonPath: $.attendanceRegister.*.periodStatuses
+            type: JSON
+            dbType: JSONB
+              
           - jsonPath: $.attendanceRegister.*.id
 
  - version: 1.0
@@ -356,7 +362,7 @@ serviceMaps:
    transactionCodeJsonPath: $.registerId
    auditAttributeBasePath:  $.attendees.*
    queryMaps:  
-      - query: UPDATE eg_wms_attendance_attendee set individual_id=?, register_id=?, enrollment_date=?, deenrollment_date=?,additionaldetails=?,lastmodifiedby=?, lastmodifiedtime=? where id=?;
+      - query: UPDATE eg_wms_attendance_attendee set individual_id=?, register_id=?, enrollment_date=?, deenrollment_date=?, tag=?,additionaldetails=?,lastmodifiedby=?, lastmodifiedtime=? where id=?;
         basePath: $.attendees.*
         jsonMaps:   
          - jsonPath: $.attendees.*.individualId
@@ -366,6 +372,8 @@ serviceMaps:
          - jsonPath: $.attendees.*.enrollmentDate
 
          - jsonPath: $.attendees.*.denrollmentDate
+
+         - jsonPath: $.attendees.*.tag
 
          - jsonPath: $.attendees.*.additionalDetails
            type: JSON
