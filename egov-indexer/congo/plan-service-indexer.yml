@@ -1,0 +1,74 @@
+ServiceMaps:
+  serviceName: plan-service
+  version: 1.0.0
+  mappings:
+    - topic: os-save-plan
+      configKey: INDEX
+      indexes:
+        - name: os-plan-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Plan
+          customJsonMapping:
+            indexMapping: {"Data":{}}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: os-update-plan
+      configKey: INDEX
+      indexes:
+        - name: os-plan-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Plan
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: os-bulk-update-plan
+      configKey: INDEX
+      indexes:
+        - name: os-plan-index-v1
+          type: general
+          id: $.id
+          isBulk: true
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Plans
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: os-save-plan-facility
+      configKey: INDEX
+      indexes:
+        - name: os-plan-facility-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.PlanFacility
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: os-update-plan-facility
+      configKey: INDEX
+      indexes:
+        - name: os-plan-facility-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.PlanFacility
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data

@@ -1,0 +1,22 @@
+ServiceMaps:
+  serviceName: Uploader
+  version: 1.0.0
+  mappings:
+  - topic: os-save-upload-jobs
+    configKey: INDEX
+    indexes:
+    - name: os-uploaderindex-v1
+      type: jobs
+      id: $.code
+      isBulk: false
+      jsonPath: $.UploadJob
+      timeStampField: $.auditDetails.createdTime
+  - topic: os-update-upload-jobs
+    configKey: INDEX
+    indexes:
+    - name: os-uploaderindex-v1
+      type: jobs
+      id: $.code
+      isBulk: false
+      jsonPath: $.UploadJob
+      timeStampField: $.auditDetails.createdTime

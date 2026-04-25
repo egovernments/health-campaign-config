@@ -1,0 +1,40 @@
+ServiceMaps:
+  serviceName: product
+  version: 1.0.0
+  mappings:
+  - topic: os-save-product-variant-topic
+    configKey: INDEX
+    indexes:
+    - name: os-product-variant-index-v1
+      type: product-variant
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: os-save-product-topic
+    configKey: INDEX
+    indexes:
+    - name: os-product-index-v1
+      type: product
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: os-update-product-topic
+    configKey: INDEX
+    indexes:
+    - name: os-product-index-v1
+      type: product
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: os-update-product-variant-topic
+    configKey: INDEX
+    indexes:
+    - name: os-product-variant-index-v1
+      type: product-variant-update
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime

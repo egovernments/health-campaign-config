@@ -1,0 +1,95 @@
+ServiceMaps:
+  serviceName: service-request
+  version: 1.0.0
+  mappings:
+  - topic: os-transformer-producer-service-request-index-v1-topic
+    configKey: INDEX
+    indexes:
+    - name: os-service-task-v1
+      type: service
+      id: $.clientReferenceId,$.tenantId
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.createdTime
+    - name: os-user-sync-index-v1
+      type: users
+      id: $.id
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $.createdBy
+          outJsonPath: $.Data.syncedUserId
+        - inJsonPath: $.userName
+          outJsonPath: $.Data.syncedUserName
+        - inJsonPath: $.role
+          outJsonPath: $.Data.role
+        - inJsonPath: $.createdTime
+          outJsonPath: $.Data.clientCreatedTime
+        - inJsonPath: $.boundaryHierarchy
+          outJsonPath: $.Data.boundaryHierarchy
+        - inJsonPath: $.syncedTime
+          outJsonPath: $.Data.createdTime
+        - inJsonPath: $.syncedTimeStamp
+          outJsonPath: $.Data.syncedTimeStamp
+        - inJsonPath: $.@timestamp
+          outJsonPath: $.Data.@timestamp
+        - inJsonPath: $.taskDates
+          outJsonPath: $.Data.taskDates
+        - inJsonPath: $.userAddress
+          outJsonPath: $.Data.userAddress
+        - inJsonPath: $.additionalDetails
+          outJsonPath: $.Data.additionalDetails
+      timeStampField: $.createdTime
+  - topic: os-transformer-producer-hfreferral-fever-index-topic
+    configKey: INDEX
+    indexes:
+    - name: os-hf-referral-fever-index
+      type: service
+      id: $.id
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.createdTime
+  - topic: os-transformer-producer-hfreferral-drug-reaction-index-topic
+    configKey: INDEX
+    indexes:
+    - name: os-hf-referral-drug-reaction-index
+      type: service
+      id: $.id
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.createdTime
+  - topic: os-transformer-producer-extra-transformed-checklist-index-topic
+    configKey: INDEX
+    indexes:
+    - name: os-transformed-checklist-index-v1
+      type: service
+      id: $.id,$.tenantId
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping: { "Data": { } }
+        fieldMapping:
+          - inJsonPath: $
+            outJsonPath: $.Data
+      timeStampField: $.createdTime
