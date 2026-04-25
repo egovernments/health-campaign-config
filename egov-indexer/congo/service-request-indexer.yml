@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: service-request
   version: 1.0.0
   mappings:
-  - topic: os-transformer-producer-service-request-index-v1-topic
+  - topic: congo-transformer-producer-service-request-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-service-task-v1
+    - name: congo-service-task-v1
       type: service
       id: $.clientReferenceId,$.tenantId
       isBulk: true
@@ -17,7 +17,7 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-    - name: os-user-sync-index-v1
+    - name: congo-user-sync-index-v1
       type: users
       id: $.id
       isBulk: true
@@ -49,10 +49,10 @@ ServiceMaps:
         - inJsonPath: $.additionalDetails
           outJsonPath: $.Data.additionalDetails
       timeStampField: $.createdTime
-  - topic: os-transformer-producer-hfreferral-fever-index-topic
+  - topic: congo-transformer-producer-hfreferral-fever-index-topic
     configKey: INDEX
     indexes:
-    - name: os-hf-referral-fever-index
+    - name: congo-hf-referral-fever-index
       type: service
       id: $.id
       isBulk: true
@@ -64,10 +64,10 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-  - topic: os-transformer-producer-hfreferral-drug-reaction-index-topic
+  - topic: congo-transformer-producer-hfreferral-drug-reaction-index-topic
     configKey: INDEX
     indexes:
-    - name: os-hf-referral-drug-reaction-index
+    - name: congo-hf-referral-drug-reaction-index
       type: service
       id: $.id
       isBulk: true
@@ -79,10 +79,10 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-  - topic: os-transformer-producer-extra-transformed-checklist-index-topic
+  - topic: congo-transformer-producer-extra-transformed-checklist-index-topic
     configKey: INDEX
     indexes:
-    - name: os-transformed-checklist-index-v1
+    - name: congo-transformed-checklist-index-v1
       type: service
       id: $.id,$.tenantId
       isBulk: true

@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: Public Grievance Redressal - rainmaker
   version: 1.0.0
   mappings:
-    - topic: os-inbox-pgr-events
+    - topic: congo-inbox-pgr-events
       configKey: INDEX
       indexes:
-        - name: os-inbox-pgr-services
+        - name: congo-inbox-pgr-services
           type: general
           id: $.service.serviceRequestId
           jsonPath: $
@@ -22,10 +22,10 @@ ServiceMaps:
               - inJsonPath: $.service.processInstance
                 outJsonPath: $.Data.currentProcessInstance
 
-    - topic: os-inbox-pgr-events
+    - topic: congo-inbox-pgr-events
       configKey: INDEX
       indexes:
-        - name: os-inbox-pgr-services
+        - name: congo-inbox-pgr-services
           type: general
           id: $.service.serviceRequestId
           jsonPath: $
@@ -42,10 +42,10 @@ ServiceMaps:
               - inJsonPath: $.service.processInstance
                 outJsonPath: $.Data.currentProcessInstance
 
-    - topic: os-pgr-services-inboxIndex
+    - topic: congo-pgr-services-inboxIndex
       configKey: LEGACYINDEX
       indexes:
-        - name: os-inbox-pgr-services-legacy
+        - name: congo-inbox-pgr-services-legacy
           type: general
           isBulk: true
           id: $.service.serviceRequestId
@@ -63,10 +63,10 @@ ServiceMaps:
               - inJsonPath: $.service.ProcessInstances[0]
                 outJsonPath: $.Data.currentProcessInstance
 
-    - topic: os-pgr-service-reindex
+    - topic: congo-pgr-service-reindex
       configKey: REINDEX
       indexes:
-        - name: os-pgrreindex-v2
+        - name: congo-pgrreindex-v2
           type: general
           id: $.Data.service.serviceRequestId
           isBulk: true

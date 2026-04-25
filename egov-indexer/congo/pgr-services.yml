@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: Public Grievance Redressal - rainmaker
   version: 1.0.0
   mappings:
-    - topic: os-save-pgr-request
+    - topic: congo-save-pgr-request
       configKey: INDEX
       indexes:
-        - name: os-pgr-services
+        - name: congo-pgr-services
           type: general
           id: $.service.serviceRequestId
           jsonPath: $
@@ -28,37 +28,37 @@ ServiceMaps:
             externalUriMapping:
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=PROVINCE,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.province
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=DISTRICT,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.district
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=ADMINISTRATIVEPOST,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.administrativeProvince
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=LOCALITY,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.locality
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=VILLAGE,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.village
               - path: http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search
                 queryParam: businessIds=$.service.serviceRequestId,history=true,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.ProcessInstances
                     outJsonPath: $.Data.history
@@ -68,7 +68,7 @@ ServiceMaps:
               - path: http:/mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: common-masters
                 masterName: Department
-                tenantId: os
+                tenantId: congo
                 filter: "[?(@.code == $department)]"
                 filterMapping:
                   - variable: $department
@@ -79,7 +79,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: RAINMAKER-PGR
                 masterName: ServiceDefs
-                tenantId: os
+                tenantId: congo
                 filter: "[?((@.serviceCode == $servicecode) && (@.active == true))]"
                 filterMapping:
                   - variable: $servicecode
@@ -90,7 +90,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: tenant
                 masterName: tenants
-                tenantId: os
+                tenantId: congo
                 filter: "[?(@.code == $tenant)]"
                 filterMapping:
                   - variable: $tenant
@@ -99,10 +99,10 @@ ServiceMaps:
                   - inJsonPath: $.MdmsRes.tenant.tenants
                     outJsonPath: $.Data.tenantData
 
-    - topic: os-update-pgr-request
+    - topic: congo-update-pgr-request
       configKey: INDEX
       indexes:
-        - name: os-pgr-services
+        - name: congo-pgr-services
           type: general
           id: $.service.serviceRequestId
           jsonPath: $
@@ -120,37 +120,37 @@ ServiceMaps:
             externalUriMapping:
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=PROVINCE,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.province
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=DISTRICT,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.district
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=ADMINISTRATIVEPOST,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.administrativeProvince
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=LOCALITY,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.locality
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=VILLAGE,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.village
               - path: http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search
                 queryParam: businessIds=$.service.serviceRequestId,history=true,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.ProcessInstances
                     outJsonPath: $.Data.history
@@ -160,7 +160,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: tenant
                 masterName: tenants
-                tenantId: os
+                tenantId: congo
                 filter: "[?(@.code == $tenant)]"
                 filterMapping:
                   - variable: $tenant
@@ -171,7 +171,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: RAINMAKER-PGR
                 masterName: ServiceDefs
-                tenantId: os
+                tenantId: congo
                 filter: "[?((@.serviceCode == $servicecode) && (@.active == true))]"
                 filterMapping:
                   - variable: $servicecode
@@ -180,10 +180,10 @@ ServiceMaps:
                   - inJsonPath: $.MdmsRes.RAINMAKER-PGR.ServiceDefs.*.slaHours
                     outJsonPath: $.Data.slaHours
 
-    - topic: os-pgr-services-legacyIndex
+    - topic: congo-pgr-services-legacyIndex
       configKey: LEGACYINDEX
       indexes:
-        - name: os-pgr-services
+        - name: congo-pgr-services
           type: general
           isBulk: true
           id: $.service.serviceRequestId
@@ -198,37 +198,37 @@ ServiceMaps:
             externalUriMapping:
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.province
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=DISTRICT,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.district
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=ADMINISTRATIVEPOST,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.administrativeProvince
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=LOCALITY,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.locality
               - path: http://boundary-service.egov:8080/boundary-service/boundary-relationships/_search
                 queryParam: hierarchyTypeCode=MICROPLAN,boundaryType=VILLAGE,codes=$.service.address.locality.code,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.TenantBoundary[0].boundary[0].code
                     outJsonPath: $.Data.village
               - path: http://egov-workflow-v2.egov:8080/egov-workflow-v2/egov-wf/process/_search
                 queryParam: businessIds=$.service.serviceRequestId,history=true,tenantId=$.service.tenantId
-                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "os","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "os" } ] } } }
+                apiRequest: { "RequestInfo": { "apiId": "org.egov.pt","ver": "1.0","ts": 1502890899493,"action": "asd","did": "4354648646","key": "xyz","msgId": "654654","requesterId": "61","authToken": "d9994555-7656-4a67-ab3a-a952a0d4dfc8","userInfo": { "id": 1,"uuid": "1fec8102-0e02-4d0a-b283-cd80d5dab067","type": "EMPLOYEE","tenantId": "congo","roles": [ { "name": "Employee","code": "EMPLOYEE","tenantId": "congo" } ] } } }
                 uriResponseMapping:
                   - inJsonPath: $.ProcessInstances
                     outJsonPath: $.Data.history
@@ -236,7 +236,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: tenant
                 masterName: tenants
-                tenantId: os
+                tenantId: congo
                 filter: "[?(@.code == $tenant)]"
                 filterMapping:
                   - variable: $tenant
@@ -244,10 +244,10 @@ ServiceMaps:
                 uriResponseMapping:
                   - inJsonPath: $.MdmsRes.tenant.tenants
                     outJsonPath: $.Data.tenantData
-    - topic: os-pgr-service-reindex
+    - topic: congo-pgr-service-reindex
       configKey: REINDEX
       indexes:
-        - name: os-pgrreindex-v2
+        - name: congo-pgrreindex-v2
           type: general
           id: $.Data.service.serviceRequestId
           isBulk: true

@@ -2,19 +2,19 @@ ServiceMaps:
   serviceName: Uploader
   version: 1.0.0
   mappings:
-  - topic: os-save-upload-jobs
+  - topic: congo-save-upload-jobs
     configKey: INDEX
     indexes:
-    - name: os-uploaderindex-v1
+    - name: congo-uploaderindex-v1
       type: jobs
       id: $.code
       isBulk: false
       jsonPath: $.UploadJob
       timeStampField: $.auditDetails.createdTime
-  - topic: os-update-upload-jobs
+  - topic: congo-update-upload-jobs
     configKey: INDEX
     indexes:
-    - name: os-uploaderindex-v1
+    - name: congo-uploaderindex-v1
       type: jobs
       id: $.code
       isBulk: false

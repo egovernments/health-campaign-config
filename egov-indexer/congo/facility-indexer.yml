@@ -2,19 +2,19 @@ ServiceMaps:
   serviceName: facility
   version: 1.0.0
   mappings:
-  - topic: os-save-facility-topic
+  - topic: congo-save-facility-topic
     configKey: INDEX
     indexes:
-    - name: os-facility-index-v1
+    - name: congo-facility-index-v1
       type: facility
       id: $.clientReferenceId
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.createdTime
-  - topic: os-update-facility-topic
+  - topic: congo-update-facility-topic
     configKey: INDEX
     indexes:
-    - name: os-facility-index-v1
+    - name: congo-facility-index-v1
       type: facility
       id: $.clientReferenceId
       isBulk: true

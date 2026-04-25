@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: stock
   version: 1.0.0
   mappings:
-  - topic: os-transformer-producer-bulk-stock-index-v1-topic
+  - topic: congo-transformer-producer-bulk-stock-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-stock-index-v1
+    - name: congo-stock-index-v1
       type: stock
       id: $.id,$.tenantId
       isBulk: true
@@ -17,7 +17,7 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-    - name: os-user-sync-index-v1
+    - name: congo-user-sync-index-v1
       type: users
       id: $.id,$.tenantId,$.clientReferenceId
       isBulk: true
@@ -51,10 +51,10 @@ ServiceMaps:
         - inJsonPath: $.additionalDetails
           outJsonPath: $.Data.additionalDetails
       timeStampField: $.createdTime
-  - topic: os-transformer-producer-stock-recon-index-v1-topic
+  - topic: congo-transformer-producer-stock-recon-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-stock-reconciliation-index-v1
+    - name: congo-stock-reconciliation-index-v1
       type: reconciliation
       id: $.stockReconciliation.id
       isBulk: true

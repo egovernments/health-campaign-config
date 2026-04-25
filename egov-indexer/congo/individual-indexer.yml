@@ -2,28 +2,28 @@ ServiceMaps:
   serviceName: individual
   version: 1.0.0
   mappings:
-  - topic: os-save-individual-topic
+  - topic: congo-save-individual-topic
     configKey: INDEX
     indexes:
-    - name: os-individual-index-v1
+    - name: congo-individual-index-v1
       type: individual
       id: $.clientReferenceId
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.createdTime
-  - topic: os-update-individual-topic
+  - topic: congo-update-individual-topic
     configKey: INDEX
     indexes:
-    - name: os-individual-index-v1
+    - name: congo-individual-index-v1
       type: individual
       id: $.clientReferenceId
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.lastModifiedTime
-  - topic: os-delete-individual-topic
+  - topic: congo-delete-individual-topic
     configKey: INDEX
     indexes:
-    - name: os-individual-index-v1
+    - name: congo-individual-index-v1
       type: individual
       id: $.clientReferenceId
       isBulk: true

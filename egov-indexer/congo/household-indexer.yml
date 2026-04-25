@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: household
   version: 1.0.0
   mappings:
-  - topic: os-transformer-producer-household-index-v1-topic
+  - topic: congo-transformer-producer-household-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-household-index-v1
+    - name: congo-household-index-v1
       type: household
       id: $.household.clientReferenceId
       isBulk: true
@@ -17,19 +17,19 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.household.clientAuditDetails.lastModifiedTime
-  - topic: os-delete-household-topic
+  - topic: congo-delete-household-topic
     configKey: INDEX
     indexes:
-    - name: os-household-index-v1
+    - name: congo-household-index-v1
       type: household
       id: $.clientReferenceId
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.lastModifiedTime
-  - topic: os-transformer-producer-household-member-index-v1-topic
+  - topic: congo-transformer-producer-household-member-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-household-member-index-v1
+    - name: congo-household-member-index-v1
       type: member
       id: $.householdMember.clientReferenceId
       isBulk: true
@@ -41,10 +41,10 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.householdMember.clientAuditDetails.lastModifiedTime
-  - topic: os-delete-household-member-topic
+  - topic: congo-delete-household-member-topic
     configKey: INDEX
     indexes:
-    - name: os-household-member-index-v1
+    - name: congo-household-member-index-v1
       type: member
       id: $.id
       isBulk: true

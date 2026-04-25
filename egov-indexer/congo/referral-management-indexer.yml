@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: referralmanagement
   version: 1.0.0
   mappings:
-  - topic: os-transformer-producer-referral-index-v1-topic
+  - topic: congo-transformer-producer-referral-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-referral-index-v1
+    - name: congo-referral-index-v1
       type: referral
       id: $.referral.id
       isBulk: true
@@ -17,7 +17,7 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.referral.auditDetails.createdTime
-    - name: os-user-sync-index-v1
+    - name: congo-user-sync-index-v1
       type: users
       id: $.referral.id,$.referral.tenantId
       isBulk: true
@@ -49,19 +49,19 @@ ServiceMaps:
         - inJsonPath: $.userAddress
           outJsonPath: $.Data.userAddress
       timeStampField: $.referral.auditDetails.lastModifiedTime
-  - topic: os-delete-referral-topic
+  - topic: congo-delete-referral-topic
     configKey: INDEX
     indexes:
-    - name: os-referral-index-v1
+    - name: congo-referral-index-v1
       type: referral
       id: $.id
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.lastModifiedTime
-  - topic: os-transformer-producer-side-effect-index-v1-topic
+  - topic: congo-transformer-producer-side-effect-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-side-effect-index-v1
+    - name: congo-side-effect-index-v1
       type: side-effect
       id: $.sideEffect.id
       isBulk: true
@@ -73,7 +73,7 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.sideEffect.auditDetails.createdTime
-    - name: os-user-sync-index-v1
+    - name: congo-user-sync-index-v1
       type: users
       id: $.sideEffect.id,$.sideEffect.tenantId
       isBulk: true
@@ -107,19 +107,19 @@ ServiceMaps:
         - inJsonPath: $.additionalDetails
           outJsonPath: $.Data.additionalDetails
       timeStampField: $.sideEffect.auditDetails.lastModifiedTime
-  - topic: os-delete-side-effect-topic
+  - topic: congo-delete-side-effect-topic
     configKey: INDEX
     indexes:
-    - name: os-side-effect-index-v1
+    - name: congo-side-effect-index-v1
       type: side-effect
       id: $.id
       isBulk: true
       jsonPath: $.*
       timeStampField: $.auditDetails.lastModifiedTime
-  - topic: os-transformer-producer-hfreferral-index-v1-topic
+  - topic: congo-transformer-producer-hfreferral-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-hf-referral-index-v1
+    - name: congo-hf-referral-index-v1
       type: hfreferral
       id: $.hfReferral.id
       isBulk: true
@@ -131,10 +131,10 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.hfReferral.clientAuditDetails.lastModifiedTime
-  - topic: os-delete-hfreferral-topic
+  - topic: congo-delete-hfreferral-topic
     configKey: INDEX
     indexes:
-    - name: os-hf-referral-index-v1
+    - name: congo-hf-referral-index-v1
       type: hfreferral
       id: $.id
       isBulk: true

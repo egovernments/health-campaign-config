@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: plan-service
   version: 1.0.0
   mappings:
-    - topic: os-save-plan
+    - topic: congo-save-plan
       configKey: INDEX
       indexes:
-        - name: os-plan-index-v1
+        - name: congo-plan-index-v1
           type: general
           id: $.id
           timeStampField: $.auditDetails.createdTime
@@ -16,10 +16,10 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
 
-    - topic: os-update-plan
+    - topic: congo-update-plan
       configKey: INDEX
       indexes:
-        - name: os-plan-index-v1
+        - name: congo-plan-index-v1
           type: general
           id: $.id
           timeStampField: $.auditDetails.createdTime
@@ -30,10 +30,10 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
 
-    - topic: os-bulk-update-plan
+    - topic: congo-bulk-update-plan
       configKey: INDEX
       indexes:
-        - name: os-plan-index-v1
+        - name: congo-plan-index-v1
           type: general
           id: $.id
           isBulk: true
@@ -45,10 +45,10 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
 
-    - topic: os-save-plan-facility
+    - topic: congo-save-plan-facility
       configKey: INDEX
       indexes:
-        - name: os-plan-facility-index-v1
+        - name: congo-plan-facility-index-v1
           type: general
           id: $.id
           timeStampField: $.auditDetails.createdTime
@@ -59,10 +59,10 @@ ServiceMaps:
               - inJsonPath: $
                 outJsonPath: $.Data
 
-    - topic: os-update-plan-facility
+    - topic: congo-update-plan-facility
       configKey: INDEX
       indexes:
-        - name: os-plan-facility-index-v1
+        - name: congo-plan-facility-index-v1
           type: general
           id: $.id
           timeStampField: $.auditDetails.createdTime

@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: Tracer
   version: 1.0.0
   mappings:
-  - topic: os-error-details-indexer-topic
+  - topic: congo-error-details-indexer-topic
     configKey: INDEX
     indexes:
-    - name: os-egov-tracer-error-details
+    - name: congo-egov-tracer-error-details
       type: general
       id: $.uuid
       isBulk: true

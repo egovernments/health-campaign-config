@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: Public Grievance Redressal - rainmaker
   version: 1.0.0
   mappings:
-  - topic: os-transformer-save-pgr-request
+  - topic: congo-transformer-save-pgr-request
     configKey: INDEX
     indexes:
-    - name: os-transformer-pgr-services
+    - name: congo-transformer-pgr-services
       type: general
       id: $.service.serviceRequestId
       jsonPath: $

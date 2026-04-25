@@ -2,10 +2,10 @@ ServiceMaps:
   serviceName: project
   version: 1.0.0
   mappings:
-  - topic: os-transformer-producer-bulk-project-task-index-v1-topic
+  - topic: congo-transformer-producer-bulk-project-task-index-v1-topic
     configKey: INDEX
     indexes:
-    - name: os-project-task-index-v1
+    - name: congo-project-task-index-v1
       type: tasks
       id: $.clientReferenceId,$.projectBeneficiaryClientReferenceId,$.tenantId
       isBulk: true
@@ -17,7 +17,7 @@ ServiceMaps:
         - inJsonPath: $
           outJsonPath: $.Data
       timeStampField: $.createdTime
-    - name: os-user-sync-index-v1
+    - name: congo-user-sync-index-v1
       type: users
       id: $.id
       isBulk: true
