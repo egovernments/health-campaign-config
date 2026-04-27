@@ -1,0 +1,31 @@
+ServiceMaps:
+  serviceName: individual
+  version: 1.0.0
+  mappings:
+  - topic: congob-save-individual-topic
+    configKey: INDEX
+    indexes:
+    - name: congob-individual-index-v1
+      type: individual
+      id: $.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: congob-update-individual-topic
+    configKey: INDEX
+    indexes:
+    - name: congob-individual-index-v1
+      type: individual
+      id: $.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: congob-delete-individual-topic
+    configKey: INDEX
+    indexes:
+    - name: congob-individual-index-v1
+      type: individual
+      id: $.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime

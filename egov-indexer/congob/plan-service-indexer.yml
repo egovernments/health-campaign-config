@@ -1,0 +1,74 @@
+ServiceMaps:
+  serviceName: plan-service
+  version: 1.0.0
+  mappings:
+    - topic: congob-save-plan
+      configKey: INDEX
+      indexes:
+        - name: congob-plan-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Plan
+          customJsonMapping:
+            indexMapping: {"Data":{}}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: congob-update-plan
+      configKey: INDEX
+      indexes:
+        - name: congob-plan-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Plan
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: congob-bulk-update-plan
+      configKey: INDEX
+      indexes:
+        - name: congob-plan-index-v1
+          type: general
+          id: $.id
+          isBulk: true
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Plans
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: congob-save-plan-facility
+      configKey: INDEX
+      indexes:
+        - name: congob-plan-facility-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.PlanFacility
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+
+    - topic: congob-update-plan-facility
+      configKey: INDEX
+      indexes:
+        - name: congob-plan-facility-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.PlanFacility
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
