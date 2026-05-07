@@ -1,0 +1,52 @@
+ServiceMaps:
+  serviceName: household
+  version: 1.0.0
+  mappings:
+  - topic: chad-transformer-producer-household-index-v1-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-household-index-v1
+      type: household
+      id: $.household.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.household.clientAuditDetails.lastModifiedTime
+  - topic: chad-delete-household-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-household-index-v1
+      type: household
+      id: $.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: chad-transformer-producer-household-member-index-v1-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-household-member-index-v1
+      type: member
+      id: $.householdMember.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.householdMember.clientAuditDetails.lastModifiedTime
+  - topic: chad-delete-household-member-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-household-member-index-v1
+      type: member
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime

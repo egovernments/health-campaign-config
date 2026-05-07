@@ -1,0 +1,142 @@
+ServiceMaps:
+  serviceName: referralmanagement
+  version: 1.0.0
+  mappings:
+  - topic: chad-transformer-producer-referral-index-v1-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-referral-index-v1
+      type: referral
+      id: $.referral.id
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.referral.auditDetails.createdTime
+    - name: chad-user-sync-index-v1
+      type: users
+      id: $.referral.id,$.referral.tenantId
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $.referral.clientAuditDetails.createdBy
+          outJsonPath: $.Data.syncedUserId
+        - inJsonPath: $.userName
+          outJsonPath: $.Data.syncedUserName
+        - inJsonPath: $.role
+          outJsonPath: $.Data.role
+        - inJsonPath: $.boundaryHierarchy
+          outJsonPath: $.Data.boundaryHierarchy
+        - inJsonPath: $.referral.clientAuditDetails.createdTime
+          outJsonPath: $.Data.clientCreatedTime
+        - inJsonPath: $.referral.auditDetails.lastModifiedTime
+          outJsonPath: $.Data.createdTime
+        - inJsonPath: $.@timestamp
+          outJsonPath: $.Data.syncedTimeStamp
+        - inJsonPath: $.@timestamp
+          outJsonPath: $.Data.@timestamp
+        - inJsonPath: $.taskDates
+          outJsonPath: $.Data.taskDates
+        - inJsonPath: $.syncedDate
+          outJsonPath: $.Data.syncedDate
+        - inJsonPath: $.userAddress
+          outJsonPath: $.Data.userAddress
+      timeStampField: $.referral.auditDetails.lastModifiedTime
+  - topic: chad-delete-referral-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-referral-index-v1
+      type: referral
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: chad-transformer-producer-side-effect-index-v1-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-side-effect-index-v1
+      type: side-effect
+      id: $.sideEffect.id
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.sideEffect.auditDetails.createdTime
+    - name: chad-user-sync-index-v1
+      type: users
+      id: $.sideEffect.id,$.sideEffect.tenantId
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $.sideEffect.clientAuditDetails.createdBy
+          outJsonPath: $.Data.syncedUserId
+        - inJsonPath: $.userName
+          outJsonPath: $.Data.syncedUserName
+        - inJsonPath: $.role
+          outJsonPath: $.Data.role
+        - inJsonPath: $.boundaryHierarchy
+          outJsonPath: $.Data.boundaryHierarchy
+        - inJsonPath: $.sideEffect.clientAuditDetails.createdTime
+          outJsonPath: $.Data.clientCreatedTime
+        - inJsonPath: $.sideEffect.auditDetails.lastModifiedTime
+          outJsonPath: $.Data.createdTime
+        - inJsonPath: $.@timestamp
+          outJsonPath: $.Data.syncedTimeStamp
+        - inJsonPath: $.@timestamp
+          outJsonPath: $.Data.@timestamp
+        - inJsonPath: $.taskDates
+          outJsonPath: $.Data.taskDates
+        - inJsonPath: $.syncedDate
+          outJsonPath: $.Data.syncedDate
+        - inJsonPath: $.userAddress
+          outJsonPath: $.Data.userAddress
+        - inJsonPath: $.additionalDetails
+          outJsonPath: $.Data.additionalDetails
+      timeStampField: $.sideEffect.auditDetails.lastModifiedTime
+  - topic: chad-delete-side-effect-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-side-effect-index-v1
+      type: side-effect
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: chad-transformer-producer-hfreferral-index-v1-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-hf-referral-index-v1
+      type: hfreferral
+      id: $.hfReferral.id
+      isBulk: true
+      jsonPath: $.*
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.hfReferral.clientAuditDetails.lastModifiedTime
+  - topic: chad-delete-hfreferral-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-hf-referral-index-v1
+      type: hfreferral
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime

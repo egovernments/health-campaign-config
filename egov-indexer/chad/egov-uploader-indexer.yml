@@ -1,0 +1,22 @@
+ServiceMaps:
+  serviceName: Uploader
+  version: 1.0.0
+  mappings:
+  - topic: chad-save-upload-jobs
+    configKey: INDEX
+    indexes:
+    - name: chad-uploaderindex-v1
+      type: jobs
+      id: $.code
+      isBulk: false
+      jsonPath: $.UploadJob
+      timeStampField: $.auditDetails.createdTime
+  - topic: chad-update-upload-jobs
+    configKey: INDEX
+    indexes:
+    - name: chad-uploaderindex-v1
+      type: jobs
+      id: $.code
+      isBulk: false
+      jsonPath: $.UploadJob
+      timeStampField: $.auditDetails.createdTime

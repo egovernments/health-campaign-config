@@ -1,0 +1,22 @@
+ServiceMaps:
+  serviceName: facility
+  version: 1.0.0
+  mappings:
+  - topic: chad-save-facility-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-facility-index-v1
+      type: facility
+      id: $.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: chad-update-facility-topic
+    configKey: INDEX
+    indexes:
+    - name: chad-facility-index-v1
+      type: facility
+      id: $.clientReferenceId
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime

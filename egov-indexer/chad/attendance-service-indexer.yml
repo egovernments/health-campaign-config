@@ -1,0 +1,85 @@
+ServiceMaps:
+  serviceName: attendance-service
+  version: 1.0.0
+  mappings:
+  - topic: chad-save-attendance
+    configKey: INDEX
+    indexes:
+    - name: chad-attendance-index-v1
+      type: attendance
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: chad-update-attendance
+    configKey: INDEX
+    indexes:
+    - name: chad-attendance-index-v1
+      type: attendance
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: chad-save-attendee
+    configKey: INDEX
+    indexes:
+    - name: chad-attendee-index-v1
+      type: attendee
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: chad-update-attendee
+    configKey: INDEX
+    indexes:
+    - name: chad-attendee-index-v1
+      type: attendee
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: chad-save-staff
+    configKey: INDEX
+    indexes:
+    - name: chad-staff-index-v1
+      type: staff
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.createdTime
+  - topic: chad-update-staff
+    configKey: INDEX
+    indexes:
+    - name: chad-staff-index-v1
+      type: staff
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.auditDetails.lastModifiedTime
+  - topic: chad-transformer-save-attendance-register
+    configKey: INDEX
+    indexes:
+    - name: chad-transformed-attendance-register-index-v1
+      type: attendance-register
+      id: $.attendanceRegister.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.attendanceRegister.auditDetails.lastModifiedTime
+  - topic: chad-transformer-save-attendance-log
+    configKey: INDEX
+    indexes:
+    - name: chad-attendance-log-index-v1
+      type: attendance-log
+      id: $.attendanceLog.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.attendanceLog.auditDetails.lastModifiedTime
+  - topic: chad-update-attendance-log
+    configKey: INDEX
+    indexes:
+    - name: chad-attendance-log-index-v1
+      type: attendance-log
+      id: $.id
+      isBulk: true
+      jsonPath: $.*
+      timeStampField: $.time

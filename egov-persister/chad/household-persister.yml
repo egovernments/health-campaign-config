@@ -1,0 +1,257 @@
+serviceMaps:
+  serviceName: household
+  mappings:
+  - version: 1.0
+    description: Persists household.
+    fromTopic: chad-save-household-topic
+    isTransaction: true
+    isAuditEnabled: true
+    module: HOUSEHOLD
+    objecIdJsonPath: $.id
+    tenantIdJsonPath: $.tenantId
+    
+    transactionCodeJsonPath: $.clientReferenceId
+    auditAttributeBasePath: $.*
+    queryMaps:
+    - query: INSERT INTO chad.HOUSEHOLD(id, tenantId, clientReferenceId, numberOfMembers,
+        addressId, additionalDetails, householdType, createdBy, lastModifiedBy, createdTime, lastModifiedTime,
+        rowVersion, isDeleted, clientCreatedTime, clientLastModifiedTime, clientCreatedBy,
+        clientLastModifiedBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      basePath: $.*
+      jsonMaps:
+      - jsonPath: $.*.id
+      - jsonPath: $.*.tenantId
+      - jsonPath: $.*.clientReferenceId
+      - jsonPath: $.*.memberCount
+      - jsonPath: $.*.address.id
+      - jsonPath: $.*.additionalFields
+        type: JSON
+        dbType: JSONB
+      - jsonPath: $.*.householdType
+      - jsonPath: $.*.auditDetails.createdBy
+      - jsonPath: $.*.auditDetails.lastModifiedBy
+      - jsonPath: $.*.auditDetails.createdTime
+      - jsonPath: $.*.auditDetails.lastModifiedTime
+      - jsonPath: $.*.rowVersion
+      - jsonPath: $.*.isDeleted
+      - jsonPath: $.*.clientAuditDetails.createdTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.createdBy
+      - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+    - query: INSERT INTO chad.ADDRESS(id, clientReferenceId, tenantid, doorno, latitude,
+        longitude, locationAccuracy, type, addressline1, addressline2, landmark, city,
+        pincode, buildingName, street, localityCode) VALUES (?, ?, ?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?, ?, ?, ?, ?);
+      basePath: $.*.address
+      jsonMaps:
+      - jsonPath: $.*.address.id
+      - jsonPath: $.*.address.clientReferenceId
+      - jsonPath: $.*.address.tenantId
+      - jsonPath: $.*.address.doorNo
+      - jsonPath: $.*.address.latitude
+      - jsonPath: $.*.address.longitude
+      - jsonPath: $.*.address.locationAccuracy
+      - jsonPath: $.*.address.type
+      - jsonPath: $.*.address.addressLine1
+      - jsonPath: $.*.address.addressLine2
+      - jsonPath: $.*.address.landmark
+      - jsonPath: $.*.address.city
+      - jsonPath: $.*.address.pincode
+      - jsonPath: $.*.address.buildingName
+      - jsonPath: $.*.address.street
+      - jsonPath: $.*.address.locality.code
+  - version: 1.0
+    description: Updates household.
+    fromTopic: chad-update-household-topic
+    isTransaction: true
+    isAuditEnabled: true
+    module: HOUSEHOLD-UPDATE
+    objecIdJsonPath: $.id
+    tenantIdJsonPath: $.tenantId
+    
+    transactionCodeJsonPath: $.clientReferenceId
+    auditAttributeBasePath: $.*
+    queryMaps:
+    - query: UPDATE chad.HOUSEHOLD SET tenantId = ?, clientReferenceId = ?, numberOfMembers
+        = ?, addressId = ?, additionalDetails = ?, lastModifiedBy = ?, lastModifiedTime
+        = ?, rowVersion = ?, isDeleted = ?, clientLastModifiedTime = ?, clientLastModifiedBy
+        = ? WHERE ID = ?;
+      basePath: $.*
+      jsonMaps:
+      - jsonPath: $.*.tenantId
+      - jsonPath: $.*.clientReferenceId
+      - jsonPath: $.*.memberCount
+      - jsonPath: $.*.address.id
+      - jsonPath: $.*.additionalFields
+        type: JSON
+        dbType: JSONB
+      - jsonPath: $.*.auditDetails.lastModifiedBy
+      - jsonPath: $.*.auditDetails.lastModifiedTime
+      - jsonPath: $.*.rowVersion
+      - jsonPath: $.*.isDeleted
+      - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+      - jsonPath: $.*.id
+    - query: INSERT INTO chad.ADDRESS(id, clientReferenceId, tenantid, doorno, latitude,
+        longitude, locationAccuracy, type, addressline1, addressline2, landmark, city,
+        pincode, buildingName, street, localityCode) VALUES (?, ?, ?, ?, ?, ?, ?,
+        ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(id) DO UPDATE SET tenantId = ?,
+        doorno = ?, latitude = ?, longitude = ?, locationAccuracy = ?, type = ?, addressline1
+        = ?, addressline2 = ?, landmark = ?, city = ?, pincode = ?, buildingName =
+        ?, street = ?, localityCode = ?;
+      basePath: $.*.address
+      jsonMaps:
+      - jsonPath: $.*.address.id
+      - jsonPath: $.*.address.clientReferenceId
+      - jsonPath: $.*.address.tenantId
+      - jsonPath: $.*.address.doorNo
+      - jsonPath: $.*.address.latitude
+      - jsonPath: $.*.address.longitude
+      - jsonPath: $.*.address.locationAccuracy
+      - jsonPath: $.*.address.type
+      - jsonPath: $.*.address.addressLine1
+      - jsonPath: $.*.address.addressLine2
+      - jsonPath: $.*.address.landmark
+      - jsonPath: $.*.address.city
+      - jsonPath: $.*.address.pincode
+      - jsonPath: $.*.address.buildingName
+      - jsonPath: $.*.address.street
+      - jsonPath: $.*.address.locality.code
+      - jsonPath: $.*.address.tenantId
+      - jsonPath: $.*.address.doorNo
+      - jsonPath: $.*.address.latitude
+      - jsonPath: $.*.address.longitude
+      - jsonPath: $.*.address.locationAccuracy
+      - jsonPath: $.*.address.type
+      - jsonPath: $.*.address.addressLine1
+      - jsonPath: $.*.address.addressLine2
+      - jsonPath: $.*.address.landmark
+      - jsonPath: $.*.address.city
+      - jsonPath: $.*.address.pincode
+      - jsonPath: $.*.address.buildingName
+      - jsonPath: $.*.address.street
+      - jsonPath: $.*.address.locality.code
+  - version: 1.0
+    description: Deletes household.
+    fromTopic: chad-delete-household-topic
+    isTransaction: true
+    isAuditEnabled: true
+    module: HOUSEHOLD-DELETE
+    objecIdJsonPath: $.id
+    tenantIdJsonPath: $.tenantId
+    
+    transactionCodeJsonPath: $.householdClientReferenceId
+    auditAttributeBasePath: $.*
+    queryMaps:
+    - query: UPDATE chad.HOUSEHOLD SET lastModifiedBy = ?, lastModifiedTime = ?, clientLastModifiedTime
+        = ?, clientLastModifiedBy = ?,  rowVersion = ?, isDeleted = ?, additionalDetails=?
+        WHERE ID = ?;
+      basePath: $.*
+      jsonMaps:
+      - jsonPath: $.*.auditDetails.lastModifiedBy
+      - jsonPath: $.*.auditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+      - jsonPath: $.*.rowVersion
+      - jsonPath: $.*.isDeleted
+      - jsonPath: $.*.additionalFields
+        type: JSON
+        dbType: JSONB
+      - jsonPath: $.*.id
+  - version: 1.0
+    description: Persists household member.
+    fromTopic: chad-save-household-member-topic
+    isTransaction: true
+    isAuditEnabled: true
+    module: HOUSEHOLD-MEMBER
+    objecIdJsonPath: $.id
+    tenantIdJsonPath: $.tenantId
+    
+    transactionCodeJsonPath: $.householdClientReferenceId
+    auditAttributeBasePath: $.*
+    queryMaps:
+    - query: INSERT INTO chad.HOUSEHOLD_MEMBER(id, tenantId, clientReferenceId, individualId,
+        individualClientReferenceId, householdId, householdClientReferenceId, isHeadOfHousehold,
+        additionalDetails, createdBy, lastModifiedBy, createdTime, lastModifiedTime,
+        rowVersion, isDeleted, clientCreatedTime, clientLastModifiedTime, clientCreatedBy,
+        clientLastModifiedBy) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+        ?, ?, ?, ?);
+      basePath: $.*
+      jsonMaps:
+      - jsonPath: $.*.id
+      - jsonPath: $.*.tenantId
+      - jsonPath: $.*.clientReferenceId
+      - jsonPath: $.*.individualId
+      - jsonPath: $.*.individualClientReferenceId
+      - jsonPath: $.*.householdId
+      - jsonPath: $.*.householdClientReferenceId
+      - jsonPath: $.*.isHeadOfHousehold
+      - jsonPath: $.*.additionalFields
+        type: JSON
+        dbType: JSONB
+      - jsonPath: $.*.auditDetails.createdBy
+      - jsonPath: $.*.auditDetails.lastModifiedBy
+      - jsonPath: $.*.auditDetails.createdTime
+      - jsonPath: $.*.auditDetails.lastModifiedTime
+      - jsonPath: $.*.rowVersion
+      - jsonPath: $.*.isDeleted
+      - jsonPath: $.*.clientAuditDetails.createdTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.createdBy
+      - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+  - version: 1.0
+    description: Update household member.
+    fromTopic: chad-update-household-member-topic
+    isTransaction: true
+    isAuditEnabled: true
+    module: HOUSEHOLD-MEMBER-UPDATE
+    objecIdJsonPath: $.id
+    tenantIdJsonPath: $.tenantId
+    
+    transactionCodeJsonPath: $.individualId
+    auditAttributeBasePath: $.*
+    queryMaps:
+    - query: UPDATE chad.HOUSEHOLD_MEMBER SET isHeadOfHousehold=?, additionalDetails=?,
+        lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, isDeleted=?, clientLastModifiedTime
+        = ?, clientLastModifiedBy = ? WHERE individualId=? AND householdId=? AND isDeleted=false;
+      basePath: $.*
+      jsonMaps:
+      - jsonPath: $.*.isHeadOfHousehold
+      - jsonPath: $.*.additionalFields
+        type: JSON
+        dbType: JSONB
+      - jsonPath: $.*.auditDetails.lastModifiedBy
+      - jsonPath: $.*.auditDetails.lastModifiedTime
+      - jsonPath: $.*.rowVersion
+      - jsonPath: $.*.isDeleted
+      - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+      - jsonPath: $.*.individualId
+      - jsonPath: $.*.householdId
+  - version: 1.0
+    description: Deletes household Member.
+    fromTopic: chad-delete-household-member-topic
+    isTransaction: true
+    isAuditEnabled: true
+    module: HOUSEHOLD-MEMBER-DELETE
+    objecIdJsonPath: $.id
+    tenantIdJsonPath: $.tenantId
+    
+    transactionCodeJsonPath: $.id
+    auditAttributeBasePath: $.*
+    queryMaps:
+    - query: UPDATE chad.HOUSEHOLD_MEMBER SET lastModifiedBy = ?, lastModifiedTime =
+        ?, clientLastModifiedTime = ?, clientLastModifiedBy = ?, rowVersion = ?, isDeleted
+        = ?, additionalDetails=? WHERE ID = ?;
+      basePath: $.*
+      jsonMaps:
+      - jsonPath: $.*.auditDetails.lastModifiedBy
+      - jsonPath: $.*.auditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+      - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+      - jsonPath: $.*.rowVersion
+      - jsonPath: $.*.isDeleted
+      - jsonPath: $.*.additionalFields
+        type: JSON
+        dbType: JSONB
+      - jsonPath: $.*.id
