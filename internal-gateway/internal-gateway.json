@@ -1,0 +1,14 @@
+{
+   "/health-expense-calculator/.*":{
+      "chad":"http://health-expense-calculator.chad:8080",
+      "congob":"http://health-expense-calculator.congob:8080"
+   },
+   "/project-factory/.*":{
+      "chad":"http://project-factory.chad:8080",
+      "congob":"http://project-factory.congob:8080"
+   },
+   "/excel-ingestion/.*":{
+      "chad":"http://excel-ingestion.chad:8080",
+      "congob":"http://excel-ingestion.congob:8080"
+   }
+}
