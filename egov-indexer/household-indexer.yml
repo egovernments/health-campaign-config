@@ -2,16 +2,23 @@ ServiceMaps:
   serviceName: household
   version: 1.0.0
   mappings:
-    - topic: save-household-topic
+    - topic: transformer-producer-household-index-v1-topic
       configKey: INDEX
       indexes:
         - name: household-index-v1
           type: household
-          id: $.id
+          id: $.household.clientReferenceId
           isBulk: true
           jsonPath: $.*
-          timeStampField: $.auditDetails.createdTime
-    - topic: update-household-topic
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.household.clientAuditDetails.lastModifiedTime
+
+    - topic: delete-household-topic
       configKey: INDEX
       indexes:
         - name: household-index-v1
@@ -20,11 +27,38 @@ ServiceMaps:
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
-    - topic: delete-household-topic
+
+    - topic: transformer-producer-amp-household-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: household-index-v1
+        - name: amp-household-index-v1
           type: household
+          id: $.household.clientReferenceId
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.household.auditDetails.createdTime
+
+    - topic: transformer-producer-household-member-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: household-member-index-v1
+          type: member
+          id: $.householdMember.clientReferenceId
+          isBulk: true
+          jsonPath: $.*
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.householdMember.clientAuditDetails.lastModifiedTime
+
+    - topic: delete-household-member-topic
+      configKey: INDEX
+      indexes:
+        - name: household-member-index-v1
+          type: member
           id: $.id
           isBulk: true
           jsonPath: $.*
