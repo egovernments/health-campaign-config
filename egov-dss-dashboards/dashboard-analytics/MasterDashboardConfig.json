@@ -10851,6 +10851,156 @@
               ]
             }
           ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_ENUMERATION",
+          "vizArray": [
+            {
+              "id": 811,
+              "name": "DSS_HEALTH_HOUSEHOLDS_REGISTERED_IN_ENUMERATION",
+              "label": "DSS_HEALTH_HOUSEHOLDS_REGISTERED_IN_ENUMERATION",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "householdsRegisteredInEnumeration",
+                  "name": "DSS_HEALTH_HOUSEHOLDS_REGISTERED_IN_ENUMERATION",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 812,
+              "name": "DSS_HEALTH_TOTAL_CHILDREN_ENUMERATED",
+              "label": "DSS_HEALTH_TOTAL_CHILDREN_ENUMERATED",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "totalChildrenEnumeratedEnumeration",
+                  "name": "DSS_HEALTH_TOTAL_CHILDREN_ENUMERATED",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 813,
+              "name": "DSS_HEALTH_GUEST_MEMBER_COUNT",
+              "label": "DSS_HEALTH_GUEST_MEMBER_COUNT",
+              "vizType": "stacked-collection",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "guestMemberCountEnumeration",
+                  "name": "DSS_HEALTH_GUEST_MEMBER_COUNT",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_ENUMERATION",
+          "vizArray": [
+            {
+              "id": 815,
+              "name": "DSS_HEALTH_GENDER_BREAKDOWN",
+              "label": "DSS_HEALTH_GENDER_BREAKDOWN",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "genderBreakdownEnumeration",
+                  "name": "DSS_HEALTH_GENDER_BREAKDOWN_ENUMERATION",
+                  "code": "",
+                  "chartType": "donut",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
+              "id": 816,
+              "name": "DSS_HEALTH_CHILDREN_BY_AGE_BAND",
+              "label": "DSS_HEALTH_CHILDREN_BY_AGE_BAND",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "childrenByAgeBandEnumeration",
+                  "name": "DSS_HEALTH_CHILDREN_BY_AGE_BAND_ENUMERATION",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_ENUMERATION",
+          "vizArray": [
+            {
+              "id": 817,
+              "name": "DSS_HEALTH_ENUMERATED_NOT_VACCINATED",
+              "label": "DSS_HEALTH_ENUMERATED_NOT_VACCINATED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "enumeratedNotVaccinatedEnumeration",
+                  "name": "DSS_HEALTH_ENUMERATED_NOT_VACCINATED",
+                  "code": "",
+                  "chartType": "table",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 4,
+          "name": "DSS_HEALTH_ENUMERATION",
+          "vizArray": [
+            {
+              "id": 818,
+              "name": "DSS_HEALTH_COVERAGE_BY_SETTLEMENT_TYPE",
+              "label": "DSS_HEALTH_COVERAGE_BY_SETTLEMENT_TYPE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "coverageBySettlementTypeEnumeration",
+                  "name": "DSS_HEALTH_COVERAGE_BY_SETTLEMENT_TYPE",
+                  "code": "",
+                  "chartType": "sideBySideBar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
