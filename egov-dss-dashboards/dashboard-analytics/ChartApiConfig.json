@@ -62906,6 +62906,202 @@
     "hideInsights": true,
     "hideHeaderDenomination": true,
     "_comment": " "
+  },
+  "householdsRegisteredInEnumeration": {
+    "chartName": "DSS_HEALTH_HOUSEHOLDS_REGISTERED_IN_ENUMERATION",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.household.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "household-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Households Registered\":{\"value_count\":{\"field\":\"Data.household.id.keyword\"}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Households Registered"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "totalChildrenEnumeratedEnumeration": {
+    "chartName": "DSS_HEALTH_TOTAL_CHILDREN_ENUMERATED",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.projectBeneficiary.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "chad-project-beneficiary-index-v1-test",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Children Enumerated\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.additionalDetails.ageInMonths\":{\"lte\":59}}},{\"term\":{\"Data.additionalDetails.isHeadOfHousehold\":false}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiary.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Total Children Enumerated"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "guestMemberCountEnumeration": {
+    "chartName": "DSS_HEALTH_GUEST_MEMBER_COUNT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.projectBeneficiary.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "chad-project-beneficiary-index-v1-test",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Guest Members\":{\"filter\":{\"term\":{\"Data.additionalDetails.isGuestMember\":true}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiary.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "metric",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Guest Members"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "genderBreakdownEnumeration": {
+    "chartName": "DSS_HEALTH_GENDER_BREAKDOWN_ENUMERATION",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.projectBeneficiary.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "chad-project-beneficiary-index-v1-test",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Gender Breakdown\":{\"terms\":{\"field\":\"Data.additionalDetails.gender.keyword\",\"size\":10}}}}"
+      }
+    ],
+    "chartType": "pie",
+    "isCumulative": false,
+    "valueType": "number",
+    "showLabel": true,
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Gender Breakdown"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "childrenByAgeBandEnumeration": {
+    "chartName": "DSS_HEALTH_CHILDREN_BY_AGE_BAND_ENUMERATION",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.projectBeneficiary.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "chad-project-beneficiary-index-v1-test",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Children By Age Band\":{\"range\":{\"field\":\"Data.additionalDetails.ageInMonths\",\"ranges\":[{\"key\":\"0-11 Months\",\"from\":0,\"to\":12},{\"key\":\"12-23 Months\",\"from\":12,\"to\":24},{\"key\":\"24-59 Months\",\"from\":24,\"to\":60}]},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiary.id.keyword\"}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Children By Age Band"
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "enumeratedNotVaccinatedEnumeration": {
+    "chartName": "DSS_HEALTH_ENUMERATED_NOT_VACCINATED",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.projectBeneficiary.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "chad-project-beneficiary-index-v1-test",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.healthCenter.keyword\"}},\"aggs\":{\"Enumerated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthCenter.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Enumeration Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiary.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Vaccinated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.healthCenter.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Vaccination Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "Health Center",
+    "excludedColumns": [
+      "S.N.",
+      "Enumeration Count",
+      "Vaccination Count"
+    ],
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": ["Enumeration Count"],
+        "newField": "Total Enumerated",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": ["Vaccination Count"],
+        "newField": "Total Vaccinated",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "_comment": " "
+  },
+  "coverageBySettlementTypeEnumeration": {
+    "chartName": "DSS_HEALTH_COVERAGE_BY_SETTLEMENT_TYPE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.projectBeneficiary.clientAuditDetails.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "chad-project-beneficiary-index-v1-test",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Children Enumerated\":{\"terms\":{\"field\":\"Data.additionalDetails.settlementType.keyword\",\"size\":20},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.projectBeneficiary.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "indexName": "project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.isDelivered\":true}}]}},\"aggs\":{\"Children Vaccinated\":{\"terms\":{\"field\":\"Data.additionalDetails.settlementType.keyword\",\"size\":20},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "number",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "aggregationPaths": [
+      "Children Enumerated",
+      "Children Vaccinated"
+    ],
+    "insight": {},
+    "_comment": " "
   }
-  
+
 }
