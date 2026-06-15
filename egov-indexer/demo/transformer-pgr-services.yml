@@ -1,0 +1,49 @@
+ServiceMaps:
+  serviceName: Public Grievance Redressal - rainmaker
+  version: 1.0.0
+  mappings:
+  - topic: demo-transformer-save-pgr-request
+    configKey: INDEX
+    indexes:
+    - name: demo-transformer-pgr-services
+      type: general
+      id: $.service.serviceRequestId
+      jsonPath: $
+      isBulk: true
+      customJsonMapping:
+        indexMapping:
+          Data: {}
+        fieldMapping:
+        - inJsonPath: $
+          outJsonPath: $.Data
+      timeStampField: $.service.auditDetails.lastModifiedTime
+    - name: demo-user-sync-index-v1
+      type: users
+      id: $.service.serviceRequestId
+      isBulk: true
+      jsonPath: $
+      customJsonMapping:
+        indexMapping:
+          Data: { additionalDetails: {} }
+        fieldMapping:
+          - inJsonPath: $.service.serviceRequestId
+            outJsonPath: $.Data.serviceRequestId
+          - inJsonPath: $.service.auditDetails.createdBy
+            outJsonPath: $.Data.syncedUserId
+          - inJsonPath: $.userName
+            outJsonPath: $.Data.syncedUserName
+          - inJsonPath: $.role
+            outJsonPath: $.Data.role
+          - inJsonPath: $.boundaryHierarchy
+            outJsonPath: $.Data.boundaryHierarchy
+          - inJsonPath: $.service.auditDetails.createdTime
+            outJsonPath: $.Data.clientCreatedTime
+          - inJsonPath: $.service.auditDetails.createdTime
+            outJsonPath: $.Data.createdTime
+          - inJsonPath: $.taskDates
+            outJsonPath: $.Data.taskDates
+          - inJsonPath: $.campaignNumber
+            outJsonPath: $.Data.campaignNumber
+          - inJsonPath: $.campaignId
+            outJsonPath: $.Data.campaignId
+      timeStampField: $.service.auditDetails.createdTime

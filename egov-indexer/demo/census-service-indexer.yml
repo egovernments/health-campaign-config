@@ -1,0 +1,44 @@
+ServiceMaps:
+  serviceName: census-service
+  version: 1.0.0
+  mappings:
+    - topic: demo-census-create-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-census-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Census
+          customJsonMapping:
+            indexMapping: {"Data":{}}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+    - topic: demo-census-update-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-census-index-v1
+          type: general
+          id: $.id
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Census
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+    - topic: demo-census-bulk-update-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-census-index-v1
+          type: general
+          id: $.id
+          isBulk: true
+          timeStampField: $.auditDetails.createdTime
+          jsonPath: $.Census
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
