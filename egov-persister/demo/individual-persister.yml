@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Persists Individual
-      fromTopic: demo-save-individual-topic
+      fromTopic: demo-save-individual-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL
@@ -76,6 +76,7 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedTime
             - jsonPath: $.*.clientAuditDetails.createdBy
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+
         - query: INSERT INTO demo.individual_address(individualId, addressId, type, createdBy, lastModifiedBy, createdTime, lastModifiedTime, isDeleted) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.*.address.*
           jsonMaps:
@@ -115,9 +116,10 @@ serviceMaps:
             - jsonPath: $.*.skills.*.auditDetails.createdTime
             - jsonPath: $.*.skills.*.auditDetails.lastModifiedTime
             - jsonPath: $.*.skills.*.isDeleted
+
     - version: 1.0
       description: Updates Individual
-      fromTopic: demo-update-individual-topic
+      fromTopic: demo-update-individual-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL
@@ -246,9 +248,10 @@ serviceMaps:
             - jsonPath: $.*.skills.*.experience
             - jsonPath: $.*.skills.*.auditDetails.lastModifiedBy
             - jsonPath: $.*.skills.*.auditDetails.lastModifiedTime
+
     - version: 1.0
       description: Deletes Individual and related Entities
-      fromTopic: demo-delete-individual-topic
+      fromTopic: demo-delete-individual-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL
@@ -291,9 +294,10 @@ serviceMaps:
             - jsonPath: $.*.skills.*.auditDetails.lastModifiedTime
             - jsonPath: $.*.skills.*.isDeleted
             - jsonPath: $.*.skills.*.id
+
     - version: 1.0
       description: Updates userId and userUuid received from user-service into an individual
-      fromTopic: demo-update-user-id-topic
+      fromTopic: demo-update-user-id-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL

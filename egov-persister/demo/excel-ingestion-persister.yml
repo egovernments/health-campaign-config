@@ -7,7 +7,7 @@ serviceMaps:
       fromTopic: demo-save-generated-file
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_ex_in_generated_files(id, referenceId,referenceType, tenantId, type, hierarchyType, fileStoreId, status, additionalDetails, locale, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO demo.eg_ex_in_generated_files(id, referenceId,referenceType, tenantId, type, hierarchyType, fileStoreId, status, additionalDetails, locale, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO NOTHING;
           basePath: $
           jsonMaps:
             - jsonPath: $.id
@@ -26,6 +26,7 @@ serviceMaps:
             - jsonPath: $.auditDetails.lastModifiedBy
             - jsonPath: $.auditDetails.createdTime
             - jsonPath: $.auditDetails.lastModifiedTime
+
     - version: 1.0
       name: UpdateGeneratedFile
       description: Update generated file record in the eg_ex_in_generated_files table
@@ -44,13 +45,14 @@ serviceMaps:
             - jsonPath: $.auditDetails.lastModifiedBy
             - jsonPath: $.auditDetails.lastModifiedTime
             - jsonPath: $.id
+
     - version: 1.0
       name: SaveProcessingFile
       description: Create processing file record in the eg_ex_in_excel_processing table
       fromTopic: demo-save-processing-file
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_ex_in_excel_processing(id, referenceId,referenceType, tenantId, type, hierarchyType, fileStoreId, processedFileStoreId, status,processedStatus, additionalDetails, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?, ?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO demo.eg_ex_in_excel_processing(id, referenceId,referenceType, tenantId, type, hierarchyType, fileStoreId, processedFileStoreId, status,processedStatus, additionalDetails, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?, ?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO NOTHING;
           basePath: $
           jsonMaps:
             - jsonPath: $.id
@@ -70,6 +72,7 @@ serviceMaps:
             - jsonPath: $.auditDetails.lastModifiedBy
             - jsonPath: $.auditDetails.createdTime
             - jsonPath: $.auditDetails.lastModifiedTime
+
     - version: 1.0
       name: UpdateProcessingFile
       description: Update processing file record in the eg_ex_in_excel_processing table
@@ -88,13 +91,14 @@ serviceMaps:
             - jsonPath: $.auditDetails.lastModifiedBy
             - jsonPath: $.auditDetails.lastModifiedTime
             - jsonPath: $.id
+
     - version: 1.0
       name: SaveSheetDataTemp
       description: Bulk insert parsed sheet data into eg_ex_in_sheet_data_temp table
       fromTopic: demo-save-sheet-data-temp
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_ex_in_sheet_data_temp(referenceId, tenantId, fileStoreId, sheetName, rowNumber, rowJson, createdBy, createdTime, deleteTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO demo.eg_ex_in_sheet_data_temp(referenceId, tenantId, fileStoreId, sheetName, rowNumber, rowJson, createdBy, createdTime, deleteTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (referenceId, fileStoreId, sheetName, rowNumber) DO NOTHING;
           basePath: sheetData.*
           jsonMaps:
             - jsonPath: $.sheetData.*.referenceId
@@ -108,6 +112,7 @@ serviceMaps:
             - jsonPath: $.sheetData.*.createdBy
             - jsonPath: $.sheetData.*.createdTime
             - jsonPath: $.sheetData.*.deleteTime
+
     - version: 1.0
       name: DeleteSheetDataTemp
       description: Delete sheet data from eg_ex_in_sheet_data_temp table by tenantId, referenceId and fileStoreId

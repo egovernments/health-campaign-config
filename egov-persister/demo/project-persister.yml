@@ -3,7 +3,7 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Saves a project staff
-      fromTopic: demo-save-project-staff-topic
+      fromTopic: demo-save-project-staff-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -31,9 +31,10 @@ serviceMaps:
             - jsonPath: $.*.auditDetails.lastModifiedTime
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
+
     - version: 1.0
       description: Update Project Staff
-      fromTopic: demo-update-project-staff-topic
+      fromTopic: demo-update-project-staff-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -58,9 +59,10 @@ serviceMaps:
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Deletes Project Staff
-      fromTopic: demo-delete-project-staff-topic
+      fromTopic: demo-delete-project-staff-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -81,9 +83,10 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Saves a project beneficiary
-      fromTopic: demo-save-project-beneficiary-topic
+      fromTopic: demo-save-project-beneficiary-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -117,9 +120,10 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.createdBy
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.tag
+
     - version: 1.0
       description: Update Project Beneficiary
-      fromTopic: demo-update-project-beneficiary-topic
+      fromTopic: demo-update-project-beneficiary-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -148,9 +152,10 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.tag
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Deletes Project Beneficiaries
-      fromTopic: demo-delete-project-beneficiary-topic
+      fromTopic: demo-delete-project-beneficiary-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -173,10 +178,11 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.*.id
+
     - version: 1.0
       name: Projects
       description: Persists project details in project table
-      fromTopic: demo-save-project
+      fromTopic: demo-save-project-health
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -190,83 +196,148 @@ serviceMaps:
           basePath: $.Projects.*
           jsonMaps:
             - jsonPath: $.Projects.*.id
+
             - jsonPath: $.Projects.*.tenantId
+
             - jsonPath: $.Projects.*.projectNumber
+
             - jsonPath: $.Projects.*.name
+
             - jsonPath: $.Projects.*.projectType
+
             - jsonPath: $.Projects.*.projectTypeId
+
             - jsonPath: $.Projects.*.projectSubType
+
             - jsonPath: $.Projects.*.department
+
             - jsonPath: $.Projects.*.description
+
             - jsonPath: $.Projects.*.referenceID
+
             - jsonPath: $.Projects.*.startDate
+
             - jsonPath: $.Projects.*.endDate
+
             - jsonPath: $.Projects.*.isTaskEnabled
+
             - jsonPath: $.Projects.*.parent
+
             - jsonPath: $.Projects.*.projectHierarchy
+
             - jsonPath: $.Projects.*.natureOfWork
+
             - jsonPath: $.Projects.*.additionalDetails
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.Projects.*.isDeleted
+
             - jsonPath: $.Projects.*.rowVersion
+
             - jsonPath: $.Projects.*.auditDetails.createdBy
+
             - jsonPath: $.Projects.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.auditDetails.createdTime
+
             - jsonPath: $.Projects.*.auditDetails.lastModifiedTime
+
+
         - query: INSERT INTO demo.project_address(id,tenantId,projectId,doorNo,latitude,longitude,locationAccuracy,type,addressLine1,addressLine2,landmark,city,pinCode,buildingName,street,boundaryType,boundary) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
           basePath: $.Projects.*.address
           jsonMaps:
             - jsonPath: $.Projects.*.address.id
+
             - jsonPath: $.Projects.*.address.tenantId
+
             - jsonPath: $.Projects.*.id
+
             - jsonPath: $.Projects.*.address.doorNo
+
             - jsonPath: $.Projects.*.address.latitude
+
             - jsonPath: $.Projects.*.address.longitude
+
             - jsonPath: $.Projects.*.address.locationAccuracy
+
             - jsonPath: $.Projects.*.address.type
+
             - jsonPath: $.Projects.*.address.addressLine1
+
             - jsonPath: $.Projects.*.address.addressLine2
+
             - jsonPath: $.Projects.*.address.landmark
+
             - jsonPath: $.Projects.*.address.city
+
             - jsonPath: $.Projects.*.address.pincode
+
             - jsonPath: $.Projects.*.address.buildingName
+
             - jsonPath: $.Projects.*.address.street
+
             - jsonPath: $.Projects.*.address.boundaryType
+
             - jsonPath: $.Projects.*.address.boundary
+
+
         - query: INSERT INTO demo.project_target(id,projectId,beneficiaryType,totalNo,targetNo,isDeleted,createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?,?,?,?,?,?,?,?,?,?);
           basePath: $.Projects.*.targets.*
           jsonMaps:
             - jsonPath: $.Projects.*.targets.*.id
+
             - jsonPath: $.Projects[*][?({id} in @.targets[*].id)].id
+
             - jsonPath: $.Projects.*.targets.*.beneficiaryType
+
             - jsonPath: $.Projects.*.targets.*.totalNo
+
             - jsonPath: $.Projects.*.targets.*.targetNo
+
             - jsonPath: $.Projects.*.targets.*.isDeleted
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.createdBy
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.createdTime
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.lastModifiedTime
+
+
         - query: INSERT INTO demo.project_document(id,projectId,documentType,filestoreId,documentUid,additionalDetails,status,createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?,?,?,?,?,?,?,?,?,?,?);
           basePath: $.Projects.*.documents.*
           jsonMaps:
             - jsonPath: $.Projects.*.documents.*.id
+
             - jsonPath: $.Projects[*][?({id} in @.documents[*].id)].id
+
             - jsonPath: $.Projects.*.documents.*.documentType
+
             - jsonPath: $.Projects.*.documents.*.fileStoreId
+
             - jsonPath: $.Projects.*.documents.*.documentUid
+
             - jsonPath: $.Projects.*.additionalDetails
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.Projects.*.documents.*.status
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.createdBy
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.createdTime
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.lastModifiedTime
+
+
     - version: 1.0
       name: Projects
       description: Updates project details in project table
-      fromTopic: demo-update-project
+      fromTopic: demo-update-project-health
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -279,90 +350,164 @@ serviceMaps:
         - query: UPDATE demo.project SET name = ?, projectType = ?, projectTypeId = ?, projectSubType = ?, department = ?, description = ?, referenceId = ?, startDate = ?, endDate = ?, isTaskEnabled = ?, natureOfWork = ?, additionalDetails = ?, isDeleted = ?, rowVersion = ?, lastModifiedBy = ?, lastModifiedTime = ? WHERE id = ?;
           basePath: $.Projects.*
           jsonMaps:
+
             - jsonPath: $.Projects.*.name
+
             - jsonPath: $.Projects.*.projectType
+
             - jsonPath: $.Projects.*.projectTypeId
+
             - jsonPath: $.Projects.*.projectSubType
+
             - jsonPath: $.Projects.*.department
+
             - jsonPath: $.Projects.*.description
+
             - jsonPath: $.Projects.*.referenceID
+
             - jsonPath: $.Projects.*.startDate
+
             - jsonPath: $.Projects.*.endDate
+
             - jsonPath: $.Projects.*.isTaskEnabled
+
             - jsonPath: $.Projects.*.natureOfWork
+
             - jsonPath: $.Projects.*.additionalDetails
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.Projects.*.isDeleted
+
             - jsonPath: $.Projects.*.rowVersion
+
             - jsonPath: $.Projects.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.auditDetails.lastModifiedTime
+
             - jsonPath: $.Projects.*.id
+
+
         - query: UPDATE demo.project_address SET doorNo = ?, latitude=?, longitude=?, locationAccuracy=?, type=?, addressLine1=?, addressLine2=?, landmark=?, city=?, pinCode=?, buildingName=?, street=?, boundaryType=?, boundary=? WHERE id=?;
           basePath: $.Projects.*.address
           jsonMaps:
+
             - jsonPath: $.Projects.*.address.doorNo
+
             - jsonPath: $.Projects.*.address.latitude
+
             - jsonPath: $.Projects.*.address.longitude
+
             - jsonPath: $.Projects.*.address.locationAccuracy
+
             - jsonPath: $.Projects.*.address.type
+
             - jsonPath: $.Projects.*.address.addressLine1
+
             - jsonPath: $.Projects.*.address.addressLine2
+
             - jsonPath: $.Projects.*.address.landmark
+
             - jsonPath: $.Projects.*.address.city
+
             - jsonPath: $.Projects.*.address.pincode
+
             - jsonPath: $.Projects.*.address.buildingName
+
             - jsonPath: $.Projects.*.address.street
+
             - jsonPath: $.Projects.*.address.boundaryType
+
             - jsonPath: $.Projects.*.address.boundary
+
             - jsonPath: $.Projects.*.address.id
+
+
         - query: INSERT INTO demo.project_target(id,projectId,beneficiaryType,totalNo,targetNo,isDeleted,createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?,?,?,?,?,?,?,?,?,?) ON CONFLICT (id) DO UPDATE SET beneficiaryType = ?, totalNo =?, targetNo=?, isDeleted=?, lastModifiedBy=?, lastModifiedTime=?;
           basePath: $.Projects.*.targets.*
           jsonMaps:
+
             - jsonPath: $.Projects.*.targets.*.id
+
             - jsonPath: $.Projects[*][?({id} in @.targets[*].id)].id
+
             - jsonPath: $.Projects.*.targets.*.beneficiaryType
+
             - jsonPath: $.Projects.*.targets.*.totalNo
+
             - jsonPath: $.Projects.*.targets.*.targetNo
+
             - jsonPath: $.Projects.*.targets.*.isDeleted
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.createdBy
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.createdTime
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.lastModifiedTime
+
             - jsonPath: $.Projects.*.targets.*.beneficiaryType
+
             - jsonPath: $.Projects.*.targets.*.totalNo
+
             - jsonPath: $.Projects.*.targets.*.targetNo
+
             - jsonPath: $.Projects.*.targets.*.isDeleted
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.targets.*.auditDetails.lastModifiedTime
+
+
         - query: INSERT INTO demo.project_document(id,projectId,documentType,filestoreId,documentUid,additionalDetails,status,createdBy,lastModifiedBy,createdTime,lastModifiedTime) VALUES (?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT (id) DO UPDATE SET documentType=?, filestoreId=?, documentUid=?, additionalDetails=?, status=?, lastModifiedBy=?, lastModifiedTime=?;
           basePath: $.Projects.*.documents.*
           jsonMaps:
+
             - jsonPath: $.Projects.*.documents.*.id
+
             - jsonPath: $.Projects[*][?({id} in @.documents[*].id)].id
+
             - jsonPath: $.Projects.*.documents.*.documentType
+
             - jsonPath: $.Projects.*.documents.*.fileStoreId
+
             - jsonPath: $.Projects.*.documents.*.documentUid
+
             - jsonPath: $.Projects.*.additionalDetails
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.Projects.*.documents.*.status
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.createdBy
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.createdTime
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.lastModifiedTime
+
             - jsonPath: $.Projects.*.documents.*.documentType
+
             - jsonPath: $.Projects.*.documents.*.fileStoreId
+
             - jsonPath: $.Projects.*.documents.*.documentUid
+
             - jsonPath: $.Projects.*.additionalDetails
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.Projects.*.documents.*.status
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.documents.*.auditDetails.lastModifiedTime
+
+
     - version: 1.0
       description: Saves a project resource
-      fromTopic: demo-save-project-resource-topic
+      fromTopic: demo-save-project-resource-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -389,9 +534,10 @@ serviceMaps:
             - jsonPath: $.*.auditDetails.lastModifiedTime
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
+
     - version: 1.0
       description: Update a project resourcce
-      fromTopic: demo-update-project-resource-topic
+      fromTopic: demo-update-project-resource-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -416,9 +562,10 @@ serviceMaps:
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Delete a project resourcce
-      fromTopic: demo-delete-project-resource-topic
+      fromTopic: demo-delete-project-resource-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -436,9 +583,10 @@ serviceMaps:
             - jsonPath: $.*.rowVersion
             - jsonPath: $.*.isDeleted
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Saves a project facility
-      fromTopic: demo-save-project-facility-topic
+      fromTopic: demo-save-project-facility-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -448,25 +596,37 @@ serviceMaps:
       transactionCodeJsonPath: $.id
       auditAttributeBasePath: $.*
       queryMaps:
+
         - query: INSERT INTO demo.project_facility (id, tenantId, projectId, facilityId, additionalDetails, createdBy, lastModifiedBy, createdTime, lastModifiedTime, rowVersion, isDeleted) VALUES (?,?,?,?,?,?,?,?,?,?,?);
           basePath: $.*
           jsonMaps:
             - jsonPath: $.*.id
+
             - jsonPath: $.*.tenantId
+
             - jsonPath: $.*.projectId
+
             - jsonPath: $.*.facilityId
+
             - jsonPath: $.*.additionalFields
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.*.auditDetails.createdBy
+
             - jsonPath: $.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.*.auditDetails.createdTime
+
             - jsonPath: $.*.auditDetails.lastModifiedTime
+
             - jsonPath: $.*.rowVersion
+
             - jsonPath: $.*.isDeleted
+
     - version: 1.0
       description: Update Project Facility
-      fromTopic: demo-update-project-facility-topic
+      fromTopic: demo-update-project-facility-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -476,22 +636,31 @@ serviceMaps:
       transactionCodeJsonPath: $.id
       auditAttributeBasePath: $.*
       queryMaps:
+
         - query: UPDATE demo.project_facility SET projectId=?, facilityId=?, additionalDetails=?, lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, isDeleted=? WHERE id = ?
           basePath: $.*
           jsonMaps:
             - jsonPath: $.*.projectId
+
             - jsonPath: $.*.facilityId
+
             - jsonPath: $.*.additionalFields
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.*.auditDetails.lastModifiedTime
+
             - jsonPath: $.*.rowVersion
+
             - jsonPath: $.*.isDeleted
+
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Deletes Project Facility
-      fromTopic: demo-delete-project-facility-topic
+      fromTopic: demo-delete-project-facility-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
@@ -512,6 +681,8 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.*.id
+
+
     - version: 1.0
       name: Projects
       description: Updates project dates only  in project table
@@ -522,10 +693,15 @@ serviceMaps:
           basePath: $.Projects.*
           jsonMaps:
             - jsonPath: $.Projects.*.startDate
+
             - jsonPath: $.Projects.*.endDate
+
             - jsonPath: $.Projects.*.additionalDetails
               type: JSON
               dbType: JSONB
+
             - jsonPath: $.Projects.*.auditDetails.lastModifiedBy
+
             - jsonPath: $.Projects.*.auditDetails.lastModifiedTime
+
             - jsonPath: $.Projects.*.id

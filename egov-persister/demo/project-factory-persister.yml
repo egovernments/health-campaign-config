@@ -7,7 +7,7 @@ serviceMaps:
       fromTopic: demo-create-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_cm_resource_details (id, tenantid, campaignid, type, parentresourceid, filestoreid, processedfilestoreid, filename, "status", "action", isactive, hierarchytype, additionaldetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+        - query: INSERT INTO demo.eg_cm_resource_details (id, tenantId, campaignId, "type", parentresourceid, fileStoreId, processedFileStoreId, filename, "status", "action", isactive, hierarchytype, additionalDetails, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.id
@@ -29,13 +29,15 @@ serviceMaps:
             - jsonPath: $.ResourceDetails.auditDetails.lastModifiedBy
             - jsonPath: $.ResourceDetails.auditDetails.createdTime
             - jsonPath: $.ResourceDetails.auditDetails.lastModifiedTime
+
+
     - version: 1.0
       name: UpdateResourceDetails
       description: Update resource details in the eg_cm_resource_details table
       fromTopic: demo-update-resource-details
       isTransaction: true
       queryMaps:
-        - query: UPDATE demo.eg_cm_resource_details SET "status" = ?, "action" = ?, isactive = ?, filestoreid = ?, processedfilestoreid = ?, filename = ?, hierarchytype = ?, additionaldetails = ?, lastmodifiedby = ?, lastmodifiedtime = ? WHERE id = ?;
+        - query: UPDATE demo.eg_cm_resource_details SET "status" = ?, "action" = ?, isactive = ?, fileStoreId = ?, processedFileStoreId = ?, filename = ?, hierarchyType = ?, additionaldetails = ?, lastModifiedBy = ?, lastModifiedTime = ? WHERE id = ?;
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.status
@@ -51,6 +53,8 @@ serviceMaps:
             - jsonPath: $.ResourceDetails.auditDetails.lastModifiedBy
             - jsonPath: $.ResourceDetails.auditDetails.lastModifiedTime
             - jsonPath: $.ResourceDetails.id
+
+
     - version: 1.0
       name: CreateResourceActivity
       description: Create resource activity in the eg_cm_resource_activity table
@@ -80,6 +84,8 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.Activities.*.resourceDetailsId
+
+
     - version: 1.0
       name: CreateForGenerateApiResources
       description: Create Api resource in the eg_cm_generated_resource_details table
@@ -105,6 +111,9 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.generatedResource.*.campaignId
             - jsonPath: $.generatedResource.*.locale
+
+
+
     - version: 1.0
       name: UpdateForGenerateApiResources
       description: Update Api resource in the eg_cm_generated_resource_details table
@@ -123,6 +132,8 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.generatedResource.*.id
+
+
     - version: 1.0
       name: CreateCampaignDetails
       description: Create campaign details in the eg_cm_campaign_details table
@@ -162,6 +173,8 @@ serviceMaps:
             - jsonPath: $.CampaignDetails.campaignDetails
               type: JSON
               dbType: JSONB
+
+
     - version: 1.0
       name: UpdateCampaignDetails
       description: Update campaign details in the eg_cm_campaign_details table
@@ -197,6 +210,7 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.CampaignDetails.id
+
     - version: 1.0
       name: CreateProcessTrack
       description: Create process track in the eg_cm_campaign_process table
@@ -218,6 +232,7 @@ serviceMaps:
             - jsonPath: $.processDetails.*.additionalDetails
               type: JSON
               dbType: JSONB
+
     - version: 1.0
       name: UpdateProcessTrack
       description: Update process track in the eg_cm_campaign_process table
@@ -239,6 +254,8 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.processDetails.id
+
+
     - version: 1.0
       name: CreateSheetData
       description: Create sheet data in the eg_cm_campaign_data table
@@ -256,6 +273,8 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.datas.*.uniqueIdAfterProcess
             - jsonPath: $.datas.*.status
+
+
     - version: 1.0
       name: UpdateSheetData
       description: Update sheet data in the eg_cm_campaign_data table
@@ -273,6 +292,7 @@ serviceMaps:
             - jsonPath: $.datas.*.uniqueIdentifier
             - jsonPath: $.datas.*.type
             - jsonPath: $.datas.*.campaignNumber
+
     - version: 1.0
       name: CreateMappingData
       description: Create mapping data in the eg_cm_campaign_mapping_data table
@@ -288,6 +308,8 @@ serviceMaps:
             - jsonPath: $.datas.*.boundaryCode
             - jsonPath: $.datas.*.mappingId
             - jsonPath: $.datas.*.status
+
+
     - version: 1.0
       name: UpdateMappingData
       description: Update mapping data in the eg_cm_campaign_mapping_data table
@@ -303,6 +325,7 @@ serviceMaps:
             - jsonPath: $.datas.*.campaignNumber
             - jsonPath: $.datas.*.type
             - jsonPath: $.datas.*.boundaryCode
+
     - version: 1.0
       name: DeleteMappingData
       description: Delete mapping data in the eg_cm_campaign_mapping_data table
@@ -316,6 +339,8 @@ serviceMaps:
             - jsonPath: $.datas.*.campaignNumber
             - jsonPath: $.datas.*.type
             - jsonPath: $.datas.*.boundaryCode
+
+
     - version: 1.0
       name: CreateProcessData
       description: Create process data in the eg_cm_campaign_process_data table
@@ -332,6 +357,7 @@ serviceMaps:
             - jsonPath: $.processes.*.auditDetails.lastModifiedBy
             - jsonPath: $.processes.*.auditDetails.createdTime
             - jsonPath: $.processes.*.auditDetails.lastModifiedTime
+
     - version: 1.0
       name: UpdateProcessData
       description: Update process data in the eg_cm_campaign_process_data table

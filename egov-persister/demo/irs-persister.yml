@@ -3,13 +3,13 @@ serviceMaps:
   mappings:
     - version: 1.0
       description: Saves a user action task
-      fromTopic: demo-save-user-action-project-task-topic
+      fromTopic: demo-save-user-action-project-task-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
       objecIdJsonPath: $.id
       tenantIdJsonPath: $.tenantId
-      
+      userUuidJsonPath: $.[0].auditDetails.createdBy
       transactionCodeJsonPath: $.clientReferenceId
       auditAttributeBasePath: $.*
       queryMaps:
@@ -40,15 +40,16 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.createdBy
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.rowVersion
+
     - version: 1.0
       description: Updates a user action task
-      fromTopic: demo-update-user-action-project-task-topic
+      fromTopic: demo-update-user-action-project-task-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
       objecIdJsonPath: $.id
       tenantIdJsonPath: $.tenantId
-      
+      userUuidJsonPath: $.[0].auditDetails.createdBy
       transactionCodeJsonPath: $.clientReferenceId
       auditAttributeBasePath: $.*
       queryMaps:
@@ -74,15 +75,16 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedTime
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.id
+
     - version: 1.0
       description: Saves a location tracking task
-      fromTopic: demo-save-location-capture-project-topic
+      fromTopic: demo-save-location-capture-project-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: PROJECT
       objecIdJsonPath: $.id
       tenantIdJsonPath: $.tenantId
-      
+      userUuidJsonPath: $.[0].auditDetails.createdBy
       transactionCodeJsonPath: $.clientReferenceId
       auditAttributeBasePath: $.*
       queryMaps:
