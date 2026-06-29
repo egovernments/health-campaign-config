@@ -25,6 +25,8 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.ResourceDetails.referenceId
+
+
     - version: 1.0
       name: UpdateProcessedBoundaryManagement
       description: Update processed boundary management entry in the eg_bm_processed_template table
@@ -43,6 +45,8 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.ResourceDetails.referenceId
             - jsonPath: $.ResourceDetails.id
+
+
     - version: 1.0
       name: CreateGeneratedBoundaryManagement
       description: Create generated boundary management entry in the eg_bm_generated_template table
@@ -66,6 +70,8 @@ serviceMaps:
               type: JSON
               dbType: JSONB
             - jsonPath: $.generatedResource.*.referenceId
+
+
     - version: 1.0
       name: UpdateGeneratedBoundaryManagement
       description: Update generated boundary management entry in the eg_bm_generated_template table

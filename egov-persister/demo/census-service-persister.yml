@@ -37,6 +37,7 @@ serviceMaps:
             - jsonPath: $.Census.auditDetails.createdTime
             - jsonPath: $.Census.auditDetails.lastModifiedBy
             - jsonPath: $.Census.auditDetails.lastModifiedTime
+
         - query: INSERT INTO demo.population_by_demographics(id, census_id, demographic_variable, population_distribution, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Census.populationByDemographics.*
           jsonMaps:
@@ -50,6 +51,7 @@ serviceMaps:
             - jsonPath: $.Census.auditDetails.createdTime
             - jsonPath: $.Census.auditDetails.lastModifiedBy
             - jsonPath: $.Census.auditDetails.lastModifiedTime
+
         - query: INSERT INTO demo.additional_field(id, census_id, key, value, show_on_ui, editable, "order") VALUES (?, ?, ?, ?, ?, ?, ?);
           basePath: $.Census.additionalFields.*
           jsonMaps:
@@ -60,6 +62,7 @@ serviceMaps:
             - jsonPath: $.Census.additionalFields.*.showOnUi
             - jsonPath: $.Census.additionalFields.*.editable
             - jsonPath: $.Census.additionalFields.*.order
+
     - version: 1.0
       name: census
       description: Updates census details
@@ -86,6 +89,7 @@ serviceMaps:
             - jsonPath: $.Census.auditDetails.lastModifiedBy
             - jsonPath: $.Census.auditDetails.lastModifiedTime
             - jsonPath: $.Census.id
+
         - query: INSERT INTO demo.population_by_demographics(id, census_id, demographic_variable, population_distribution, created_by, created_time, last_modified_by, last_modified_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET demographic_variable = ?, population_distribution = ?, last_modified_by = ?, last_modified_time = ?;
           basePath: $.Census.populationByDemographics.*
           jsonMaps:
@@ -105,6 +109,7 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.Census.auditDetails.lastModifiedBy
             - jsonPath: $.Census.auditDetails.lastModifiedTime
+
         - query: INSERT INTO demo.additional_field(id, census_id, key, value, show_on_ui, editable, "order") VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT (id) DO UPDATE SET value = ?, show_on_ui = ?, editable = ?, "order" = ?;
           basePath: $.Census.additionalFields.*
           jsonMaps:

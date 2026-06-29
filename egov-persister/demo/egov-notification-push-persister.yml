@@ -1,9 +1,10 @@
 serviceMaps:
   serviceName: egov-notification-push
   mappings:
+
     - version: 1.0
       description: Save/override device token
-      fromTopic: demo-save-push-device-token
+      fromTopic: demo-save-push-device-token-health
       isTransaction: true
       queryMaps:
         - query: >-
@@ -27,9 +28,10 @@ serviceMaps:
             - jsonPath: $.deviceTokens.*.auditDetails.createdTime
             - jsonPath: $.deviceTokens.*.auditDetails.lastModifiedBy
             - jsonPath: $.deviceTokens.*.auditDetails.lastModifiedTime
+
     - version: 1.0
       description: Delete device token
-      fromTopic: demo-delete-push-device-token
+      fromTopic: demo-delete-push-device-token-health
       isTransaction: true
       queryMaps:
         - query: >-
@@ -41,9 +43,10 @@ serviceMaps:
             - jsonPath: $.deviceTokens.*.deviceToken
             - jsonPath: $.deviceTokens.*.tenantId
             - jsonPath: $.deviceTokens.*.facilityId
+
     - version: 1.0
       description: Unregister device token (delete all rows for userId+deviceToken, regardless of facilityId)
-      fromTopic: demo-unregister-push-device-token
+      fromTopic: demo-unregister-push-device-token-health
       isTransaction: true
       queryMaps:
         - query: >-
