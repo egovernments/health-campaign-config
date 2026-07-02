@@ -2,21 +2,21 @@ ServiceMaps:
   serviceName: facility
   version: 1.0.0
   mappings:
-  - topic: demo-save-facility-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-facility-index-v1
-      type: facility
-      id: $.clientReferenceId
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.createdTime
-  - topic: demo-update-facility-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-facility-index-v1
-      type: facility
-      id: $.clientReferenceId
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-save-facility-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-facility-index-v1
+          type: facility
+          id: $.clientReferenceId
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-facility-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-facility-index-v1
+          type: facility
+          id: $.clientReferenceId
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
