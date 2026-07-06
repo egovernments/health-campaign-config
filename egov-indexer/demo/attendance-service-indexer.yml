@@ -2,63 +2,129 @@ ServiceMaps:
   serviceName: attendance-service
   version: 1.0.0
   mappings:
-  - topic: demo-transformer-producer-attendee-index
-    configKey: INDEX
-    indexes:
-    - name: demo-attendee-index-v1
-      type: attendee
-      id: $.attendee.id
-      isBulk: true
-      jsonPath: $.*
-      customJsonMapping:
-        indexMapping:
-          Data: {}
-        fieldMapping:
-          - inJsonPath: $
-            outJsonPath: $.Data
-      timeStampField: $.attendee.auditDetails.createdTime
-  - topic: demo-transformer-producer-attendance-staff-index
-    configKey: INDEX
-    indexes:
-    - name: demo-staff-index-v1
-      type: staff
-      id: $.staff.id
-      isBulk: true
-      jsonPath: $.*
-      customJsonMapping:
-        indexMapping:
-          Data: {}
-        fieldMapping:
-          - inJsonPath: $
-            outJsonPath: $.Data
-      timeStampField: $.staff.auditDetails.createdTime
-  - topic: demo-transformer-save-attendance-register
-    configKey: INDEX
-    indexes:
-    - name: demo-transformed-attendance-register-index-v1
-      type: attendance-register
-      id: $.attendanceRegister.id
-      isBulk: true
-      jsonPath: $.*
-      customJsonMapping:
-        indexMapping:
-          Data: {}
-        fieldMapping:
-          - inJsonPath: $
-            outJsonPath: $.Data
-      timeStampField: $.attendanceRegister.auditDetails.lastModifiedTime
-  - topic: demo-transformer-save-attendance-log
-    configKey: INDEX
-    indexes:
-    - name: demo-attendance-log-index-v1
-      type: attendance-log
-      id: $.attendanceLog.id
-      isBulk: true
-      jsonPath: $.*
-      customJsonMapping:
-        indexMapping:
-          Data: {}
-        fieldMapping:
-          - inJsonPath: $
-            outJsonPath: $.Data
-      timeStampField: $.attendanceLog.auditDetails.lastModifiedTime
+    - topic: demo-save-attendance
+      configKey: INDEX
+      indexes:
+        - name: demo-attendance-index-v1
+          type: attendance
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-attendance
+      configKey: INDEX
+      indexes:
+        - name: demo-attendance-index-v1
+          type: attendance
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-save-attendee
+      configKey: INDEX
+      indexes:
+        - name: demo-attendee-index-v1
+          type: attendees
+          id: $.id
+          isBulk: true
+          jsonPath: $.attendees
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-attendee
+      configKey: INDEX
+      indexes:
+        - name: demo-attendee-index-v1
+          type: attendees
+          id: $.id
+          isBulk: true
+          jsonPath: $.attendees
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-save-staff
+      configKey: INDEX
+      indexes:
+        - name: demo-staff-index-v1
+          type: staff
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-staff
+      configKey: INDEX
+      indexes:
+        - name: demo-staff-index-v1
+          type: staff
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-transformer-save-attendance-register
+      configKey: INDEX
+      indexes:
+        - name: demo-transformed-attendance-register-index-v1
+          type: attendance-register
+          id: $.attendanceRegister.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.attendanceRegister.auditDetails.lastModifiedTime
+    - topic: demo-transformer-save-attendance-log-health
+      configKey: INDEX
+      indexes:
+        - name: demo-attendance-log-index-v1
+          type: attendance-log
+          id: $.attendanceLog.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.attendanceLog.auditDetails.lastModifiedTime
+    - topic: demo-update-attendance-log
+      configKey: INDEX
+      indexes:
+        - name: demo-attendance-log-index-v1
+          type: attendance-log
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.time
+    - topic: demo-transformer-producer-attendance-staff-index
+      configKey: INDEX
+      indexes:
+        - name: demo-staff-index-v1
+          type: staff
+          id: $.staff.id
+          isBulk: true
+          jsonPath: $.*
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.staff.auditDetails.createdTime
+    - topic: demo-transformer-save-attendance-register
+      configKey: INDEX
+      indexes:
+        - name: demo-transformed-attendance-register-index-v1
+          type: attendance-register
+          id: $.attendanceRegister.id
+          isBulk: true
+          jsonPath: $.*
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.attendanceRegister.auditDetails.lastModifiedTime
+    - topic: demo-transformer-save-attendance-log
+      configKey: INDEX
+      indexes:
+        - name: demo-attendance-log-index-v1
+          type: attendance-log
+          id: $.attendanceLog.id
+          isBulk: true
+          jsonPath: $.*
+          customJsonMapping:
+            indexMapping:
+              Data: {}
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.attendanceLog.auditDetails.lastModifiedTime

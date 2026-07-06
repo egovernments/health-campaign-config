@@ -4,7 +4,7 @@ serviceMaps:
     - version: 1.0
       name: Muster roll
       description: Persists muster roll details in DB
-      fromTopic: demo-save-musterroll-health
+      fromTopic: demo-save-musterroll
       isTransaction: true
       isAuditEnabled: true
       module: MST
@@ -74,7 +74,7 @@ serviceMaps:
             - jsonPath: $.musterRoll.individualEntries.*.attendanceEntries.*.auditDetails.lastModifiedTime
     - version: 1.0
       description: Update Muster Roll details
-      fromTopic: demo-update-musterroll-health
+      fromTopic: demo-update-musterroll
       isTransaction: true
       isAuditEnabled: true
       module: MST

@@ -4,7 +4,7 @@ serviceMaps:
     - version: 1.0
       name: bill create
       description: create bill in eg_expense_bill
-      fromTopic: demo-expense-bill-create-health
+      fromTopic: demo-expense-bill-create
       isAuditEnabled: true
       module: BILL
       objecIdJsonPath: $.id
@@ -56,7 +56,7 @@ serviceMaps:
     - version: 1.0
       name: bill update
       description: update bill in eg_expense_bill
-      fromTopic: demo-expense-bill-update-health
+      fromTopic: demo-expense-bill-update
       isAuditEnabled: true
       module: BILL
       objecIdJsonPath: $.id
@@ -551,7 +551,7 @@ serviceMaps:
     - version: 1.0
       name: bill detail status update
       description: update bill detail status in demo.eg_expense_billdetail only — does not touch eg_expense_bill
-      fromTopic: demo-expense-billdetail-update-health
+      fromTopic: demo-expense-billdetail-update
       isAuditEnabled: true
       module: BILL
       objecIdJsonPath: $.bill.id

@@ -7,7 +7,7 @@ serviceMaps:
       fromTopic: demo-create-resource-details
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_cm_resource_details (id, tenantid, campaignid, type, parentresourceid, filestoreid, processedfilestoreid, filename, "status", "action", isactive, hierarchytype, additionaldetails, createdby, lastmodifiedby, createdtime, lastmodifiedtime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+        - query: INSERT INTO demo.eg_cm_resource_details (id, tenantId, campaignId, "type", parentresourceid, fileStoreId, processedFileStoreId, filename, "status", "action", isactive, hierarchytype, additionalDetails, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.id
@@ -35,7 +35,7 @@ serviceMaps:
       fromTopic: demo-update-resource-details
       isTransaction: true
       queryMaps:
-        - query: UPDATE demo.eg_cm_resource_details SET "status" = ?, "action" = ?, isactive = ?, filestoreid = ?, processedfilestoreid = ?, filename = ?, hierarchytype = ?, additionaldetails = ?, lastmodifiedby = ?, lastmodifiedtime = ? WHERE id = ?;
+        - query: UPDATE demo.eg_cm_resource_details SET "status" = ?, "action" = ?, isactive = ?, fileStoreId = ?, processedFileStoreId = ?, filename = ?, hierarchyType = ?, additionaldetails = ?, lastModifiedBy = ?, lastModifiedTime = ? WHERE id = ?;
           basePath: $.ResourceDetails
           jsonMaps:
             - jsonPath: $.ResourceDetails.status

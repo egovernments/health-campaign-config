@@ -2,99 +2,98 @@ ServiceMaps:
   serviceName: Project Service
   version: 1.0.0
   mappings:
-  - topic: demo-transformer-producer-bulk-project-index-v1-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-index-v1
-      type: projects
-      id: $.id
-      isBulk: true
-      jsonPath: $
-      customJsonMapping:
-        indexMapping:
-          Data: {}
-        fieldMapping:
-        - inJsonPath: $
-          outJsonPath: $.Data
-      timeStampField: $.lastModifiedTime
-  - topic: demo-save-project-beneficiary-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-beneficiary-index-v1
-      type: project-beneficiary
-      id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.createdTime
-  - topic: demo-update-project-beneficiary-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-beneficiary-index-v1
-      type: project-beneficiary
-      id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
-  - topic: demo-delete-project-beneficiary-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-beneficiary-index-v1
-      type: project-beneficiary
-      id: $.clientReferenceId,$.beneficiaryClientReferenceId,$.tenantId
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
-  - topic: demo-save-project-resource-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-resource-index-v1
-      type: project-resource
-      id: $.id
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.createdTime
-  - topic: demo-update-project-resource-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-resource-index-v1
-      type: project-resource
-      id: $.id
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
-  - topic: demo-delete-project-resource-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-resource-index-v1
-      type: project-resource
-      id: $.id
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
-  - topic: demo-save-project-facility-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-facility-index-v1
-      type: project-facility
-      id: $.id
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.createdTime
-  - topic: demo-update-project-facility-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-facility-index-v1
-      type: project-facility
-      id: $.id
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
-  - topic: demo-delete-project-facility-topic
-    configKey: INDEX
-    indexes:
-    - name: demo-project-facility-index-v1
-      type: project-facility
-      id: $.id
-      isBulk: true
-      jsonPath: $.*
-      timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-transformer-producer-bulk-project-index-v1-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-index-v1
+          type: projects
+          id: $.id
+          isBulk: true
+          jsonPath: $
+          customJsonMapping:
+            indexMapping: { "Data": { } }
+            fieldMapping:
+              - inJsonPath: $
+                outJsonPath: $.Data
+          timeStampField: $.createdTime
+    - topic: demo-save-project-beneficiary-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-beneficiary-index-v1
+          type: project-beneficiary
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-project-beneficiary-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-beneficiary-index-v1
+          type: project-beneficiary
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-delete-project-beneficiary-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-beneficiary-index-v1
+          type: project-beneficiary
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-save-project-resource-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-resource-index-v1
+          type: project-resource
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-project-resource-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-resource-index-v1
+          type: project-resource
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-delete-project-resource-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-resource-index-v1
+          type: project-resource
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-save-project-facility-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-facility-index-v1
+          type: project-facility
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.createdTime
+    - topic: demo-update-project-facility-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-facility-index-v1
+          type: project-facility
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
+    - topic: demo-delete-project-facility-topic
+      configKey: INDEX
+      indexes:
+        - name: demo-project-facility-index-v1
+          type: project-facility
+          id: $.id
+          isBulk: true
+          jsonPath: $.*
+          timeStampField: $.auditDetails.lastModifiedTime
