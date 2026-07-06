@@ -4,7 +4,7 @@ serviceMaps:
     # ── INSERT: Save new scheduled notification ──
     - version: 1.0
       description: Persists scheduled notification
-      fromTopic: demo-save-scheduled-notification-topic-health
+      fromTopic: demo-save-scheduled-notification-topic
       isTransaction: true
       queryMaps:
         - query: >-
@@ -44,11 +44,10 @@ serviceMaps:
             - jsonPath: $.*.auditDetails.createdTime
             - jsonPath: $.*.auditDetails.lastModifiedBy
             - jsonPath: $.*.auditDetails.lastModifiedTime
-
     # ── UPDATE: Update existing scheduled notification ──
     - version: 1.0
       description: Updates scheduled notification
-      fromTopic: demo-update-scheduled-notification-topic-health
+      fromTopic: demo-update-scheduled-notification-topic
       isTransaction: true
       queryMaps:
         - query: >-

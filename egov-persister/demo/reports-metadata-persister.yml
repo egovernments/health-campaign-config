@@ -13,14 +13,15 @@ serviceMaps:
       transactionCodeJsonPath: $.dag_run_id
       auditAttributeBasePath: $.*
       queryMaps:
-        - query: INSERT INTO demo.REPORTS_METADATA(tenantId, dagRunId, dagName, campaignIdentifier, reportName, triggerFrequency, triggerTime, fileStoreId) VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO demo.REPORTS_METADATA(dagRunId, dagName, campaignIdentifier, reportName, triggerFrequency, fileStoreId, triggerTime, tenantId, reportRange) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $
           jsonMaps:
-            - jsonPath: $.tenant_id
             - jsonPath: $.dag_run_id
             - jsonPath: $.dag_name
             - jsonPath: $.campaign_identifier
             - jsonPath: $.report_name
             - jsonPath: $.trigger_frequency
-            - jsonPath: $.trigger_time
             - jsonPath: $.file_store_id
+            - jsonPath: $.trigger_time
+            - jsonPath: $.tenant_id
+            - jsonPath: $.report_dates

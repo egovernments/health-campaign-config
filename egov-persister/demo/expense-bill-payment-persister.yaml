@@ -273,7 +273,6 @@ serviceMaps:
             - jsonPath: $.task.additionalDetails
               type: JSON
               dbType: JSONB
-
     - version: 1.0
       name: bill verification task details create
       description: create bill verification task details in demo.eg_expense_task_details
@@ -309,7 +308,6 @@ serviceMaps:
           jsonMaps:
             - jsonPath: $.status
             - jsonPath: $.id
-
     - version: 1.0
       name: task details update
       description: update task details in demo.eg_expense_task_details

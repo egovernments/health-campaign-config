@@ -4,7 +4,7 @@ serviceMaps:
     - version: 1.0
       name: idpool
       description: Persists a batch of unique IDs into the id_pool table
-      fromTopic: demo-save-in-id-pool
+      fromTopic: save-in-id-pool
       isTransaction: true
       isAuditEnabled: true
       module: HEALTH-IDGEN
@@ -14,7 +14,7 @@ serviceMaps:
       transactionCodeJsonPath: $.id
       auditAttributeBasePath: $.idPool.*
       queryMaps:
-        - query: INSERT INTO demo.id_pool (id, status, tenantId, additionalFields, createdBy, lastModifiedBy, createdTime, lastModifiedTime, rowVersion)
+        - query: INSERT INTO id_pool (id, status, tenantId, additionalFields, createdBy, lastModifiedBy, createdTime, lastModifiedTime, rowVersion)
             VALUES (?, 'UNASSIGNED', ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT (id) DO NOTHING;
           basePath: $.idPool.*
@@ -33,7 +33,7 @@ serviceMaps:
     - version: 1.0
       name: idpool-status-update
       description: Updates status of IDs dynamically
-      fromTopic: demo-update-id-pool-status
+      fromTopic: update-id-pool-status
       isTransaction: true
       isAuditEnabled: true
       module: HEALTH-IDGEN
@@ -44,7 +44,7 @@ serviceMaps:
       auditAttributeBasePath: $.idPool.*
       queryMaps:
         - query: |
-            UPDATE demo.id_pool SET status = ?, lastModifiedBy = ?, lastModifiedTime = ?, additionalFields = ?
+            UPDATE id_pool SET status = ?, lastModifiedBy = ?, lastModifiedTime = ?, additionalFields = ?
             WHERE id = ?;
           basePath: $.idPool.*
           jsonMaps:

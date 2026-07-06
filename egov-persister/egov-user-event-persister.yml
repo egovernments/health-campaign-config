@@ -2,107 +2,153 @@ serviceMaps:
   serviceName: mSeva Event Notification
   mappings:
   - version: 1.0
-    name: mSeva
+    name: mSeva 
     description: Persists events into the table
-    fromTopic: demo-save-user-events
+    fromTopic: save-user-events
     isTransaction: true
-    isAuditEnabled: true
-    module: USER-EVENT
-    objecIdJsonPath: $.id
-    tenantIdJsonPath: $.tenantId
-    
-    transactionCodeJsonPath: $.clientReferenceId
-    auditAttributeBasePath: $.*
     queryMaps:
-    - query: INSERT INTO demo.eg_usrevents_events(tenantid, id, source, eventtype, category,
-        name, postedby, referenceid, description, status, eventdetails, actions, recepient,
-        createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?,
-        ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-      basePath: $.events.*
+    - query: INSERT INTO eg_usrevents_events(tenantid, id, source, eventtype, category, name, postedby, referenceid, description, status, eventdetails, actions, recepient, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+      basePath: events.*
       jsonMaps:
+
+
       - jsonPath: $.events.*.tenantId
+
       - jsonPath: $.events.*.id
+
       - jsonPath: $.events.*.source
+
       - jsonPath: $.events.*.eventType
+      
       - jsonPath: $.events.*.eventCategory
+      
       - jsonPath: $.events.*.name
+      
       - jsonPath: $.events.*.postedBy
+      
       - jsonPath: $.events.*.referenceId
+
       - jsonPath: $.events.*.description
+
       - jsonPath: $.events.*.status
+
       - jsonPath: $.events.*.eventDetails
         type: JSON
         dbType: JSONB
+
       - jsonPath: $.events.*.actions
         type: JSON
         dbType: JSONB
+      
       - jsonPath: $.events.*.recepient
         type: JSON
         dbType: JSONB
+
       - jsonPath: $.events.*.auditDetails.createdBy
+
       - jsonPath: $.events.*.auditDetails.createdTime
+
       - jsonPath: $.events.*.auditDetails.lastModifiedBy
+
       - jsonPath: $.events.*.auditDetails.lastModifiedTime
-    - query: INSERT INTO demo.eg_usrevents_recepnt_event_registry(recepient, eventid)
-        VALUES (?, ?);
+      
+      
+      
+    - query: INSERT INTO eg_usrevents_recepnt_event_registry(recepient, eventid) VALUES (?, ?);
+
       basePath: events.*.recepientEventMap.*
       jsonMaps:
+
+
       - jsonPath: $.events.*.recepientEventMap.*.recepient
+
       - jsonPath: $.events.*.recepientEventMap.*.eventId
+      
+      
+      
+
+
   - version: 1.0
     name: mSeva
     description: Updates event details in the table
-    fromTopic: demo-update-user-events
+    fromTopic: update-user-events
     isTransaction: true
-    isAuditEnabled: true
-    module: USER-EVENT-UPDATE
-    objecIdJsonPath: $.id
-    tenantIdJsonPath: $.tenantId
-    
-    transactionCodeJsonPath: $.clientReferenceId
-    auditAttributeBasePath: $.*
     queryMaps:
-    - query: UPDATE demo.eg_usrevents_events SET description = ?, status = ?, name =
-        ?, category = ?, eventdetails = ?, actions = ?, recepient = ? , lastmodifiedby
-        = ?, lastmodifiedtime = ? WHERE id = ?;
+    - query: UPDATE eg_usrevents_events SET description = ?, status = ?, name = ?, category = ?, eventdetails = ?, actions = ?, recepient = ? , lastmodifiedby = ?, lastmodifiedtime = ? WHERE id = ?;
+
       basePath: events.*
       jsonMaps:
+
       - jsonPath: $.events.*.description
+
       - jsonPath: $.events.*.status
+
       - jsonPath: $.events.*.name
+
       - jsonPath: $.events.*.eventCategory
+            
       - jsonPath: $.events.*.eventDetails
         type: JSON
         dbType: JSONB
+
       - jsonPath: $.events.*.actions
         type: JSON
         dbType: JSONB
+      
       - jsonPath: $.events.*.recepient
         type: JSON
         dbType: JSONB
+
       - jsonPath: $.events.*.auditDetails.lastModifiedBy
+
       - jsonPath: $.events.*.auditDetails.lastModifiedTime
+      
       - jsonPath: $.events.*.id
-    - query: DELETE FROM demo.eg_usrevents_recepnt_event_registry WHERE eventid = ?;
+      
+      
+
+    - query: DELETE FROM eg_usrevents_recepnt_event_registry WHERE eventid = ?;
+
       basePath: events.*
       jsonMaps:
+      
       - jsonPath: $.events.*.id
-    - query: INSERT INTO demo.eg_usrevents_recepnt_event_registry(recepient, eventid)
-        VALUES (?, ?);
+      
+      
+      
+    - query: INSERT INTO eg_usrevents_recepnt_event_registry(recepient, eventid) VALUES (?, ?);
+
       basePath: events.*.recepientEventMap.*
       jsonMaps:
+
+
       - jsonPath: $.events.*.recepientEventMap.*.recepient
-      - jsonPath: $.events.*.recepientEventMap.*.eventId
+
+      - jsonPath: $.events.*.recepientEventMap.*.eventId  
+      
+      
+      
+
+
   - version: 1.0
-    name: mSeva
+    name: mSeva 
     description: Persists user last login details
-    fromTopic: demo-user-events-lat
+    fromTopic: user-events-lat
     isTransaction: true
-    queryMaps:
-    - query: INSERT INTO demo.eg_usrevents_user_lat(userid, lastaccesstime) VALUES (?,
-        ?) ON CONFLICT (userid) DO UPDATE SET lastaccesstime = ?;
+    queryMaps:      
+    - query: INSERT INTO eg_usrevents_user_lat(userid, lastaccesstime) VALUES (?, ?) ON CONFLICT (userid) DO UPDATE SET lastaccesstime = ?;
+
       basePath: lastAccessDetails
       jsonMaps:
+
+
       - jsonPath: $.lastAccessDetails.userId
-      - jsonPath: $.lastAccessDetails.lastAccessTime
-      - jsonPath: $.lastAccessDetails.lastAccessTime
+
+      - jsonPath: $.lastAccessDetails.lastAccessTime   
+      
+      - jsonPath: $.lastAccessDetails.lastAccessTime   
+
+
+
+
