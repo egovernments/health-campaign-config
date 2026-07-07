@@ -101,7 +101,7 @@ serviceMaps:
             businessserviceid, state,applicationStatus,sla,docuploadrequired,
             isstartstate, isterminatestate,isStateUpdatable, createdby,
             createdtime, lastmodifiedby, lastmodifiedtime) VALUES
-            (nextval('seq_demo.eg_wf_state_v2'),? , ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            (nextval('demo.seq_eg_wf_state_v2'),? , ?, ?, ?, ?, ?, ?, ?, ?, ?,
             ?, ?, ?, ?);
           basePath: BusinessServices.*.states.*
           jsonMaps:
@@ -167,7 +167,7 @@ serviceMaps:
             businessserviceid, state,applicationStatus,sla,docuploadrequired,
             isstartstate, isterminatestate,isStateUpdatable, createdby,
             createdtime, lastmodifiedby, lastmodifiedtime) VALUES
-            (nextval('seq_demo.eg_wf_state_v2'), ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
+            (nextval('demo.seq_eg_wf_state_v2'), ?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
             ?, ?, ?) ON CONFLICT (uuid) DO UPDATE SET
             state=EXCLUDED.state,applicationStatus=EXCLUDED.applicationStatus,sla=EXCLUDED.sla,docuploadrequired=EXCLUDED.docuploadrequired,isstartstate=EXCLUDED.isstartstate,
             isterminatestate=EXCLUDED.isterminatestate,isStateUpdatable=EXCLUDED.isStateUpdatable,
