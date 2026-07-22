@@ -5,7 +5,7 @@ ServiceMaps:
     - topic: transformer-error-topic
       configKey: INDEX
       indexes:
-        - name: transformer-error-index-v1
+        - name: demo-transformer-error-index-v1
           type: errors
           id: $.id
           isBulk: false
