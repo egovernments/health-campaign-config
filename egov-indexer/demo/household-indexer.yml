@@ -43,7 +43,7 @@ ServiceMaps:
           isBulk: true
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
-    - topic: demo-transformer-producer-household-index-v1-health-topic
+    - topic: demo-transformer-producer-household-index-v1-topic
       configKey: INDEX
       indexes:
         - name: demo-household-index-v1
