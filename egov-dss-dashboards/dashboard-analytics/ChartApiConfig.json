@@ -2847,7 +2847,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
       }
@@ -5737,7 +5737,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints\":{\"terms\":{\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -5767,7 +5767,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints\":{\"terms\":{\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -6189,7 +6189,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"PENDING_ASSIGNMENT\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"RESOLVED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"REJECTED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -7220,7 +7220,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -7718,7 +7718,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Other\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"Other\"}}]}},\"aggs\":{\"Other Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"PerformanceIssue\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"PerformanceIssue\"}}]}},\"aggs\":{\"PerformanceIssue Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SecurityIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SecurityIssues\"}}]}},\"aggs\":{\"SecurityIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"DataIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"DataIssues\"}}]}},\"aggs\":{\"DataIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"TechnicalIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"TechnicalIssues\"}}]}},\"aggs\":{\"TechnicalIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"UserAccountIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"UserAccountIssues\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SyncNotWorking\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SyncNotWorking\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"NotEnoughStock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"NotEnoughStock\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -8266,7 +8266,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"% of Total Complaints\":{\"terms\":{\"order\":{\"_key\":\"asc\"},\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       },
@@ -16305,7 +16305,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -27969,7 +27969,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.service.applicationStatus\":[\"\"]}}]}},\"aggs\":{\"Complaints Type\":{\"terms\":{\"field\":\"Data.service.serviceCode.keyword\"},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -27998,7 +27998,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.service.applicationStatus\":[\"\"]}}]}},\"aggs\":{\"Complaints Type\":{\"terms\":{\"field\":\"Data.service.serviceCode.keyword\"},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -28056,7 +28056,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -34182,7 +34182,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -40150,7 +40150,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.service.applicationStatus\":[\"\"]}}]}},\"aggs\":{\"Complaints Type\":{\"terms\":{\"field\":\"Data.service.serviceCode.keyword\"},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -40180,7 +40180,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"selectedType\": \"Data.service.serviceCode.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"selectedType\": \"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -40204,7 +40204,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"PENDING_ASSIGNMENT\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"RESOLVED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"REJECTED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -40326,7 +40326,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Other\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"Other\"}}]}},\"aggs\":{\"Other Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"PerformanceIssue\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"PerformanceIssue\"}}]}},\"aggs\":{\"PerformanceIssue Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SecurityIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SecurityIssues\"}}]}},\"aggs\":{\"SecurityIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"DataIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"DataIssues\"}}]}},\"aggs\":{\"DataIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"TechnicalIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"TechnicalIssues\"}}]}},\"aggs\":{\"TechnicalIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"UserAccountIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"UserAccountIssues\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SyncNotWorking\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SyncNotWorking\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"NotEnoughStock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"NotEnoughStock\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -40615,7 +40615,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
       }
@@ -40731,7 +40731,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -40808,7 +40808,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -41162,7 +41162,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -41203,7 +41203,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -44185,7 +44185,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
       }
@@ -44710,7 +44710,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"PENDING_ASSIGNMENT\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"RESOLVED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"REJECTED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -44888,7 +44888,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -45039,7 +45039,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -45214,7 +45214,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Other\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"Other\"}}]}},\"aggs\":{\"Other Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"PerformanceIssue\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"PerformanceIssue\"}}]}},\"aggs\":{\"PerformanceIssue Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SecurityIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SecurityIssues\"}}]}},\"aggs\":{\"SecurityIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"DataIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"DataIssues\"}}]}},\"aggs\":{\"DataIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"TechnicalIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"TechnicalIssues\"}}]}},\"aggs\":{\"TechnicalIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"UserAccountIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"UserAccountIssues\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -46621,7 +46621,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -46660,7 +46660,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -49816,7 +49816,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedType\":\"Data.service.serviceCode.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedType\":\"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -49840,7 +49840,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.service.applicationStatus\":[\"\"]}}]}},\"aggs\":{\"Complaints Type\":{\"terms\":{\"field\":\"Data.service.serviceCode.keyword\"},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -49869,7 +49869,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -51526,7 +51526,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Solved filter's\":{\"filters\":{\"filters\":{\"NAME\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"RESOLVED\",\"REJECTED\"]}}]}}}},\"aggs\":{\"Resolution time in hours\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Created Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.createdTime\"}},\"Last Modified Time\":{\"sum\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}},\"Difference of Time\":{\"bucket_script\":{\"buckets_path\":{\"CT\":\"Created Time\",\"LMT\":\"Last Modified Time\",\"CC\":\"Complaints Count\"},\"script\":\"(params.LMT-params.CT)/3600000/params.CC\"}}}}}}}}"
       }
@@ -52252,7 +52252,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.applicationStatus.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"PENDING_ASSIGNMENT\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"RESOLVED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"REJECTED\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -52430,7 +52430,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -52581,7 +52581,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Resolved filter by APs\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"RESOLVED\"}}]}},\"aggs\":{\"Resolved Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Resolved Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}},\"Rejected filter by Districts\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"REJECTED\"}}]}},\"aggs\":{\"Rejected Complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Rejected Complaints Count\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
@@ -52762,7 +52762,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedStack\":\"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Other\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"Other\"}}]}},\"aggs\":{\"Other Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"PerformanceIssue\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"PerformanceIssue\"}}]}},\"aggs\":{\"PerformanceIssue Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SecurityIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SecurityIssues\"}}]}},\"aggs\":{\"SecurityIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"DataIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"DataIssues\"}}]}},\"aggs\":{\"DataIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"TechnicalIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"TechnicalIssues\"}}]}},\"aggs\":{\"TechnicalIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"UserAccountIssues\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"UserAccountIssues\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"SyncNotWorking\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"SyncNotWorking\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}},\"NotEnoughStock\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.serviceCode.keyword\":\"NotEnoughStock\"}}]}},\"aggs\":{\"UserAccountIssues Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -57059,7 +57059,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -57098,7 +57098,7 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"Open\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.service.applicationStatus.keyword\":\"PENDING_ASSIGNMENT\"}}]}},\"aggs\":{\"Open complaints\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Open Complaints count\":{\"date_range\":{\"field\":\"Data.@timestamp\",\"keyed\":true,\"ranges\":[{\"from\":\"now-6h\",\"to\":\"now\",\"key\":\"open since 6h\"},{\"from\":\"now-12h\",\"to\":\"now-6h\",\"key\":\"open since 6h-12h\"},{\"from\":\"now-24h\",\"to\":\"now-12h\",\"key\":\"open since 12h-24h\"},{\"from\":\"now-48h\",\"to\":\"now-24h\",\"key\":\"open since 24h-48h\"},{\"to\":\"now-48h\",\"key\":\"open for more than 48h\"}]}}}}}}}}"
       }
@@ -61253,7 +61253,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedType\":\"Data.service.serviceCode.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedType\":\"Data.service.serviceCode.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -61277,7 +61277,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must_not\":[{\"terms\":{\"Data.service.applicationStatus\":[\"\"]}}]}},\"aggs\":{\"Complaints Type\":{\"terms\":{\"field\":\"Data.service.serviceCode.keyword\"},\"aggs\":{\"Complaints Count\":{\"value_count\":{\"field\":\"Data.service.id.keyword\"}}}}}}}}"
       }
@@ -61306,7 +61306,7 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.service.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-transformer-pgr-services",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.service.applicationStatus.keyword\":[\"PENDING_ASSIGNMENT\",\"RESOLVED\",\"REJECTED\"]}}]}},\"aggs\":{\"Complaints Status\":{\"terms\":{\"field\":\"Data.service.applicationStatus.keyword\",\"size\":10},\"aggs\":{\"Complaints Breakdown\":{\"value_count\":{\"field\":\"Data.service.auditDetails.lastModifiedTime\"}}}}}}}}"
       }
