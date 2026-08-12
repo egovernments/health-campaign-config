@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: Public Grievance Redressal - rainmaker
   version: 1.0.0
   mappings:
-  - topic: demo-transformer-save-pgr-request
+  - topic: demo-transformer-save-pgr-services
     configKey: INDEX
     indexes:
     - name: demo-transformer-pgr-services
