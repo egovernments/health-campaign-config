@@ -2,14 +2,14 @@ ServiceMaps:
   serviceName: Public Grievance Redressal - rainmaker
   version: 1.0.0
   mappings:
-  - topic: demo-transformer-save-pgr-service
+  - topic: demo-transformer-save-pgr-request
     configKey: INDEX
     indexes:
     - name: demo-transformer-pgr-services
       type: general
       id: $.service.serviceRequestId
       jsonPath: $
-      isBulk: false
+      isBulk: true
       customJsonMapping:
         indexMapping:
           Data: {}
@@ -20,7 +20,7 @@ ServiceMaps:
     - name: demo-user-sync-index-v1
       type: users
       id: $.service.serviceRequestId
-      isBulk: false
+      isBulk: true
       jsonPath: $
       customJsonMapping:
         indexMapping:
