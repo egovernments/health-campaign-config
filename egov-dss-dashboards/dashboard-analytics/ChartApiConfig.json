@@ -7741,7 +7741,8 @@
       "SecurityIssues",
       "DataIssues",
       "TechnicalIssues",
-      "UserAccountIssues"
+      "UserAccountIssues",
+      "SyncNotWorking"
     ],
     "insight": {},
     "_comment": " ",
