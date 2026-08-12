@@ -16090,6 +16090,7 @@
   },
   "openComplaintsListSMC": {
     "kind": "drillDown",
+    "dateRefField": "Data.service.auditDetails.lastModifiedTime",
     "chartName": "DSS_HEALTH_COMPLAINTS_LIST_SUMMARY",
     "queries": [
       {
@@ -41321,6 +41322,7 @@
   },
   "openComplaintsListICCD": {
     "kind": "drillDown",
+    "dateRefField": "Data.service.auditDetails.lastModifiedTime",
     "chartName": "DSS_HEALTH_COMPLAINTS_LIST_SUMMARY_ICCD",
     "queries": [
       {
