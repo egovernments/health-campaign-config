@@ -9,7 +9,7 @@ ServiceMaps:
       type: general
       id: $.service.serviceRequestId
       jsonPath: $
-      isBulk: true
+      isBulk: false
       customJsonMapping:
         indexMapping:
           Data: {}
@@ -20,7 +20,7 @@ ServiceMaps:
     - name: demo-user-sync-index-v1
       type: users
       id: $.service.serviceRequestId
-      isBulk: true
+      isBulk: false
       jsonPath: $
       customJsonMapping:
         indexMapping:
