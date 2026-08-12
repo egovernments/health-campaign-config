@@ -67,7 +67,7 @@ ServiceMaps:
               - path: http:/mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: common-masters
                 masterName: Department
-                tenantId: mz
+                tenantId: demo
                 filter: "[?(@.code == $department)]"
                 filterMapping:
                   - variable: $department
@@ -78,7 +78,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: RAINMAKER-PGR
                 masterName: ServiceDefs
-                tenantId: mz
+                tenantId: demo
                 filter: "[?((@.serviceCode == $servicecode) && (@.active == true))]"
                 filterMapping:
                   - variable: $servicecode
@@ -89,7 +89,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: tenant
                 masterName: tenants
-                tenantId: mz
+                tenantId: demo
                 filter: "[?(@.code == $tenant)]"
                 filterMapping:
                   - variable: $tenant
@@ -158,7 +158,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: tenant
                 masterName: tenants
-                tenantId: mz
+                tenantId: demo
                 filter: "[?(@.code == $tenant)]"
                 filterMapping:
                   - variable: $tenant
@@ -169,7 +169,7 @@ ServiceMaps:
               - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: RAINMAKER-PGR
                 masterName: ServiceDefs
-                tenantId: mz
+                tenantId: demo
                 filter: "[?((@.serviceCode == $servicecode) && (@.active == true))]"
                 filterMapping:
                   - variable: $servicecode
