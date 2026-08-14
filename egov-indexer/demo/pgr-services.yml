@@ -64,7 +64,7 @@ ServiceMaps:
                   - inJsonPath: $.ProcessInstances[0]
                     outJsonPath: $.Data.currentProcessInstance
             mdmsMapping:
-              - path: http:/mdms-v2.egov:8080/mdms-v2/v1/_search
+              - path: http://mdms-v2.egov:8080/mdms-v2/v1/_search
                 moduleName: common-masters
                 masterName: Department
                 tenantId: demo
