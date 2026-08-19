@@ -6,7 +6,7 @@ serviceMaps:
       fromTopic: demo-save-pgr-request
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_pgr_service_v2(id, tenantid, servicecode,hierarchytype, servicerequestid, description, accountid, additionaldetails, applicationstatus, source, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO demo.eg_pgr_service_v2(id, tenantid, servicecode,hierarchytype, servicerequestid, description, accountid, additionaldetails, applicationstatus, source, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?,?, ?, ?, ?, ?, ?, ?);
           basePath: service
           jsonMaps:
             - jsonPath: $.service.id
