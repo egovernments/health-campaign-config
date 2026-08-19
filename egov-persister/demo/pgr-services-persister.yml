@@ -6,12 +6,13 @@ serviceMaps:
       fromTopic: demo-save-pgr-request
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_pgr_service_v2(id, tenantid, servicecode, servicerequestid, description, accountid, additionaldetails, applicationstatus, source, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO demo.eg_pgr_service_v2(id, tenantid, servicecode,hierarchytype, servicerequestid, description, accountid, additionaldetails, applicationstatus, source, createdby, createdtime, lastmodifiedby, lastmodifiedtime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: service
           jsonMaps:
             - jsonPath: $.service.id
             - jsonPath: $.service.tenantId
             - jsonPath: $.service.serviceCode
+            - jsonPath: $.service.hierarchyType
             - jsonPath: $.service.serviceRequestId
             - jsonPath: $.service.description
             - jsonPath: $.service.accountId
@@ -56,10 +57,11 @@ serviceMaps:
       fromTopic: demo-update-pgr-request
       isTransaction: true
       queryMaps:
-        - query: UPDATE demo.eg_pgr_service_v2 SET servicecode=?, rating = ?,servicerequestid=?, description=?, accountid=?, additionaldetails=?, applicationstatus=?, lastmodifiedby=?, lastmodifiedtime=? WHERE id=?;
+        - query: UPDATE demo.eg_pgr_service_v2 SET servicecode=?,hierarchytype=?, rating = ?,servicerequestid=?, description=?, accountid=?, additionaldetails=?, applicationstatus=?, lastmodifiedby=?, lastmodifiedtime=? WHERE id=?;
           basePath: service
           jsonMaps:
             - jsonPath: $.service.serviceCode
+            - jsonPath: $.service.hierarchyType
             - jsonPath: $.service.rating
             - jsonPath: $.service.serviceRequestId
             - jsonPath: $.service.description
