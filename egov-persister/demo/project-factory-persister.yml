@@ -245,7 +245,7 @@ serviceMaps:
       fromTopic: demo-save-sheet-data
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO demo.eg_cm_campaign_data(campaignnumber, "type",uniqueidentifier,data,uniqueidafterprocess, "status") VALUES (?,?,?,?,?,?);
+        - query: INSERT INTO demo.eg_cm_campaign_data(campaignnumber, "type",uniqueidentifier,data,uniqueidafterprocess, "status",isdeleted) VALUES (?,?,?,?,?,?,?);
           basePath: datas.*
           jsonMaps:
             - jsonPath: $.datas.*.campaignNumber
@@ -256,13 +256,14 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.datas.*.uniqueIdAfterProcess
             - jsonPath: $.datas.*.status
+            - jsonPath: $.datas.*.isDeleted
     - version: 1.0
       name: UpdateSheetData
       description: Update sheet data in the eg_cm_campaign_data table
       fromTopic: demo-update-sheet-data
       isTransaction: true
       queryMaps:
-        - query: UPDATE demo.eg_cm_campaign_data SET data = ?,uniqueidafterprocess = ?, "status" = ? WHERE uniqueidentifier = ? AND "type" = ? AND campaignnumber = ?;
+        - query: UPDATE demo.eg_cm_campaign_data SET data = ?,uniqueidafterprocess = ?, "status" = ?,isdeleted = ? WHERE uniqueidentifier = ? AND "type" = ? AND campaignnumber = ?;
           basePath: datas.*
           jsonMaps:
             - jsonPath: $.datas.*.data
@@ -270,6 +271,7 @@ serviceMaps:
               dbType: JSONB
             - jsonPath: $.datas.*.uniqueIdAfterProcess
             - jsonPath: $.datas.*.status
+            - jsonPath: $.datas.*.isDeleted
             - jsonPath: $.datas.*.uniqueIdentifier
             - jsonPath: $.datas.*.type
             - jsonPath: $.datas.*.campaignNumber
