@@ -148,7 +148,7 @@ serviceMaps:
     - version: 1
       name: hrms
       description: Persists employee details in the table
-      fromTopic: demo-update-hrms-employee
+      fromTopic: demo-egov-hrms-update
       isTransaction: true
       queryMaps:
         - query: DELETE from demo.eg_hrms_employee WHERE uuid=?
