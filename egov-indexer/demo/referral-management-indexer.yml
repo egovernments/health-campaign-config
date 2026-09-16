@@ -5,7 +5,7 @@ ServiceMaps:
     - topic: demo-transformer-producer-referral-index-v1-topic
       configKey: INDEX
       indexes:
-        - name: demo-referral-management-index-v1
+        - name: demo-referral-index-v1
           type: referrals
           id: $.id
           isBulk: true
