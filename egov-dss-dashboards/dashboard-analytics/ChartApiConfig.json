@@ -38947,7 +38947,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 10 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
