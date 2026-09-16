@@ -12993,7 +12993,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13011,7 +13011,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByAPSMC": {
     "kind": "drillDown",
@@ -13022,7 +13022,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13040,7 +13040,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByDistrictIRS": {
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT",
@@ -13050,7 +13050,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13068,7 +13068,7 @@
       }
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility.",
     "kind": "drillDown"
   },
   "housesWithMoreThanTwentyMembersByDistrictSMC": {
@@ -13079,7 +13079,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13097,7 +13097,7 @@
       }
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility.",
     "kind": "drillDown"
   },
   "housesWithMoreThanTwentyMembersByLocalityIRS": {
@@ -13109,7 +13109,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13127,7 +13127,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByLocalitySMC": {
     "kind": "drillDown",
@@ -13138,7 +13138,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13156,7 +13156,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByVillageIRS": {
     "kind": "drillDown",
@@ -13167,7 +13167,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13185,7 +13185,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByVillageSMC": {
     "kind": "drillDown",
@@ -13196,7 +13196,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -13214,7 +13214,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "iecNotVisitedByAPIRS": {
     "chartName": "DSS_HEALTH_IEC_NOT_VISITED_AP",
@@ -38965,7 +38965,7 @@
       }
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility.",
     "kind": "drillDown"
   },
   "housesWithMoreThanTwentyMembersByAPICCD": {
@@ -38977,7 +38977,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -38995,7 +38995,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByLocalityICCD": {
     "kind": "drillDown",
@@ -39006,7 +39006,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39024,7 +39024,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByVillageICCD": {
     "kind": "drillDown",
@@ -39035,7 +39035,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39053,7 +39053,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "entriesDoneByWMsDistrictICCD": {
     "chartName": "DSS_HEALTH_ENTRIES_DONE_BY_WMS_DISTRICT_ICCD",
@@ -55301,7 +55301,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -55319,7 +55319,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByDistrictIRSICCD": {
     "chartName": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS_DISTRICT",
@@ -55329,7 +55329,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -55347,7 +55347,7 @@
       }
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility.",
     "kind": "drillDown"
   },
   "housesWithMoreThanTwentyMembersByLocalityIRSICCD": {
@@ -55359,7 +55359,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -55377,7 +55377,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "housesWithMoreThanTwentyMembersByVillageIRSICCD": {
     "kind": "drillDown",
@@ -55388,7 +55388,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":20}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -55406,7 +55406,7 @@
       }
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Threshold is > 10 members (product decision 2026-09-16); chart id / localization codes still say TWENTY for backward compatibility."
   },
   "iecNotVisitedByAPIRSICCD": {
     "chartName": "DSS_HEALTH_IEC_NOT_VISITED_AP",
