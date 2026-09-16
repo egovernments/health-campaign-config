@@ -10741,92 +10741,6 @@
           ]
         },
         {
-          "row": 2,
-          "name": "DSS_HEALTH_SPECIFIC_KPIS",
-          "vizArray": [
-            {
-              "id": 807,
-              "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP",
-              "label": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "administeredByAgeGroupDistrictICCD",
-                  "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_DISTRICT_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                },
-                {
-                  "id": "administeredByAgeGroupDistrictPercentICCD",
-                  "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_DISTRICT_PERCENT_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                }
-              ]
-            },
-            {
-              "id": 808,
-              "name": "DSS_HEALTH_ADMINISTERED_BY_HEIGHT_GROUP",
-              "label": "DSS_HEALTH_ADMINISTERED_BY_HEIGHT_GROUP",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "administeredByHeightGroupDistrictICCD",
-                  "name": "DSS_HEALTH_ADMINISTERED_BY_HEIGHT_GROUP_DISTRICT_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_HEALTH_SPECIFIC_KPIS",
-          "vizArray": [
-            {
-              "id": 809,
-              "name": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA",
-              "label": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA",
-              "vizType": "chart",
-              "noUnit": true,
-              "charts": [
-                {
-                  "id": "testedPositiveForMalariaDistrictsICCD",
-                  "name": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA_DISTRICTS_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                },
-                {
-                  "id": "testedPositiveForMalariaDistrictPercentICCD",
-                  "name": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA_DISTRICT_PERCENT_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "row": 1,
           "name": "DSS_CUSTOM_CHART",
           "vizArray": [
@@ -12225,93 +12139,1588 @@
               ]
             }
           ]
-        },
-        {
-          "row": 2,
-          "name": "DSS_HEALTH_SPECIFIC_KPIS",
-          "vizArray": [
-            {
-              "id": 811,
-              "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP",
-              "label": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "administeredByAgeGroupApICCD",
-                  "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                },
-                {
-                  "id": "administeredByAgeGroupApPercentICCD",
-                  "name": "DSS_HEALTH_ADMINISTERED_BY_AGE_GROUP_AP_PERCENT_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                }
-              ]
-            },
-            {
-              "id": 812,
-              "name": "DSS_HEALTH_ADMINISTERED_BY_HEIGHT_GROUP",
-              "label": "DSS_HEALTH_ADMINISTERED_BY_HEIGHT_GROUP",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "administeredByHeightGroupAPICCD",
-                  "name": "DSS_HEALTH_ADMINISTERED_BY_HEIGHT_GROUP_AP_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_HEALTH_SPECIFIC_KPIS",
-          "vizArray": [
-            {
-              "id": 813,
-              "name": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA",
-              "label": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA",
-              "vizType": "chart",
-              "noUnit": true,
-              "charts": [
-                {
-                  "id": "testedPositiveForMalariaAPICCD",
-                  "name": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA_AP_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                },
-                {
-                  "id": "testedPositiveForMalariaAPPercentICCD",
-                  "name": "DSS_HEALTH_TESTED_POSITIVE_FOR_MALARIA_AP_PERCENT_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                }
-              ]
-            }
-          ]
-        }
+        }r 97] ↳ search-project-staff
+[worker 74] 
+[worker 74] ↳ search-project
+[worker 33] 
+[worker 33] ↳ search-boundary-relationship
+[worker 79]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1363ms]
+[worker 93]   ✓  Access token returned
+[worker 93]   ✓  User uuid returned
+[worker 93] 
+[worker 93] ↳ search-project-staff
+[worker 87]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1363ms]
+[worker 79]   ✓  Access token returned
+[worker 79]   ✓  User uuid returned
+[worker 79] 
+[worker 79] ↳ search-project-staff
+[worker 27]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_03_KAMZO&includeChildren=true [200 OK, 789B, 268ms]
+[worker 87]   ✓  Access token returned
+[worker 87]   ✓  User uuid returned
+[worker 77]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 405ms]
+[worker 27]   ✓  Village administrative area returned
+[worker 31]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_02_DADIN_KOWA&includeChildren=true [200 OK, 799B, 272ms]
+[worker 27] 
+[worker 27] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 87] 
+[worker 87] ↳ search-project-staff
+[worker 27] 
+[worker 27] ❏ individualBased / Registration
+[worker 27] ↳ create-household
+[worker 40]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 299ms]
+[worker 31]   ✓  Village administrative area returned
+[worker 86]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1297ms]
+[worker 77] 
+[worker 77] ↳ search-project
+[worker 31] 
+[worker 31] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 31] 
+[worker 31] ❏ individualBased / Registration
+[worker 31] ↳ create-household
+[worker 40]   ✓  Village codes found
+[worker 92]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1761ms]
+[worker 32]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 281ms]
+[worker 40] 
+[worker 40] ↳ search-village-boundary
+[worker 97]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 282ms]
+[worker 86]   ✓  Access token returned
+[worker 86]   ✓  User uuid returned
+[worker 86] 
+[worker 86] ↳ search-project-staff
+[worker 32] 
+[worker 32] ↳ search-boundary-relationship
+[worker 97] 
+[worker 97] ↳ search-project
+[worker 92]   ✓  Access token returned
+[worker 84]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1620ms]
+[worker 92]   ✓  User uuid returned
+[worker 92] 
+[worker 92] ↳ search-project-staff
+[worker 85]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1280ms]
+[worker 33]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_KE_KARE_PRIMARY_HEALTH_CENTRE&includeChildren=true [200 OK, 1.69kB, 348ms]
+[worker 33]   ✓  Village codes found
+[worker 84]   ✓  Access token returned
+[worker 84]   ✓  User uuid returned
+[worker 33] 
+[worker 33] ↳ search-village-boundary
+[worker 84] 
+[worker 84] ↳ search-project-staff
+[worker 93]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 317ms]
+[worker 85]   ✓  Access token returned
+[worker 85]   ✓  User uuid returned
+[worker 85] 
+[worker 85] ↳ search-project-staff
+[worker 90]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1525ms]
+[worker 93] 
+[worker 93] ↳ search-project
+[worker 79]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 328ms]
+[worker 27]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.85kB, 301ms]
+[worker 90]   ✓  Access token returned
+[worker 90]   ✓  User uuid returned
+[worker 79] 
+[worker 79] ↳ search-project
+[worker 27]   ✓  Household clientReferenceId returned
+[worker 27]   ┌
+[worker 27]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 27]   │ sehold","id":"H-2026-09-16-041486"}'
+[worker 87]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 324ms]
+[worker 40]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_03_KAMZO&includeChildren=true [200 OK, 789B, 260ms]
+[worker 90] 
+[worker 90] ↳ search-project-staff
+[worker 27]   └
+[worker 27] 
+[worker 27] ↳ create-individual
+[worker 40]   ✓  Village administrative area returned
+[worker 31]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.87kB, 297ms]
+[worker 40] 
+[worker 40] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 87] 
+[worker 87] ↳ search-project
+[worker 40] 
+[worker 40] ❏ individualBased / Registration
+[worker 40] ↳ create-household
+[worker 31]   ✓  Household clientReferenceId returned
+[worker 32]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_04_KE_MADAMFARA_HEALTH_POST&includeChildren=true [200 OK, 1.04kB, 259ms]
+[worker 31]   ┌
+[worker 31]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 31]   │ sehold","id":"H-2026-09-16-041487"}'
+[worker 96]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1554ms]
+[worker 32]   ✓  Village codes found
+[worker 86]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 279ms]
+[worker 31]   └
+[worker 31] 
+[worker 31] ↳ create-individual
+[worker 32] 
+[worker 32] ↳ search-village-boundary
+[worker 96]   ✓  Access token returned
+[worker 96]   ✓  User uuid returned
+[worker 92]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 273ms]
+[worker 86] 
+[worker 86] ↳ search-project
+[worker 96] 
+[worker 96] ↳ search-project-staff
+[worker 92] 
+[worker 92] ↳ search-project
+[worker 33]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_03_GALEWA&includeChildren=true [200 OK, 791B, 257ms]
+[worker 26]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 17.4s]
+[worker 33]   ✓  Village administrative area returned
+[worker 98]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1201ms]
+[worker 33] 
+[worker 33] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 33] 
+[worker 33] ❏ individualBased / Registration
+[worker 33] ↳ create-household
+[worker 26]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 26]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 26] 
+[worker 26] ↳ search-household-project-resource
+[worker 98]   ✓  Access token returned
+[worker 98]   ✓  User uuid returned
+[worker 26] 
+[worker 26] ↳ search-individual-project-resource
+[worker 98] 
+[worker 98] ↳ search-project-staff
+[worker 85]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 346ms]
+[worker 85] 
+[worker 85] ↳ search-project
+[worker 27]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 309ms]
+[worker 90]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 311ms]
+[worker 40]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.85kB, 278ms]
+[worker 84]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 442ms]
+[worker 32]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_04_02_SANGEDA&includeChildren=true [200 OK, 793B, 250ms]
+[worker 40]   ✓  Household clientReferenceId returned
+[worker 27]   ✓  Individual clientReferenceId returned
+[worker 27]   ┌
+[worker 27]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 27]   │ ividual","id":"IND-2026-09-16-502695"}'
+[worker 40]   ┌
+[worker 40]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 40]   │ sehold","id":"H-2026-09-16-041488"}'
+[worker 27]   └
+[worker 27] 
+[worker 27] ↳ create-member
+[worker 40]   └
+[worker 40] 
+[worker 40] ↳ create-individual
+[worker 90] 
+[worker 90] ↳ search-project
+[worker 31]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 281ms]
+[worker 32]   ✓  Village administrative area returned
+[worker 32] 
+[worker 32] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 31]   ✓  Individual clientReferenceId returned
+[worker 31]   ┌
+[worker 31]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 31]   │ ividual","id":"IND-2026-09-16-502696"}'
+[worker 84] 
+[worker 84] ↳ search-project
+[worker 32] 
+[worker 32] ❏ individualBased / Registration
+[worker 32] ↳ create-household
+[worker 31]   └
+[worker 31] 
+[worker 31] ↳ create-member
+[worker 96]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 306ms]
+[worker 89]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1432ms]
+[worker 96] 
+[worker 96] ↳ search-project
+[worker 91]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1422ms]
+[worker 33]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.86kB, 285ms]
+[worker 89]   ✓  Access token returned
+[worker 89]   ✓  User uuid returned
+[worker 33]   ✓  Household clientReferenceId returned
+[worker 33]   ┌
+[worker 33]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 33]   │ sehold","id":"H-2026-09-16-041489"}'
+[worker 33]   └
+[worker 33] 
+[worker 33] ↳ create-individual
+[worker 89] 
+[worker 89] ↳ search-project-staff
+[worker 91]   ✓  Access token returned
+[worker 91]   ✓  User uuid returned
+[worker 98]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 252ms]
+[worker 91] 
+[worker 91] ↳ search-project-staff
+[worker 25]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 1927ms]
+[worker 98] 
+[worker 98] ↳ search-project
+[worker 25]   ┌
+[worker 25]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 25]   │ seholdMember","id":"bb270ab9-9b9f-4586-ac72-8fc38be528
+[worker 25]   │ 51"}'
+[worker 26]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 303ms]
+[worker 25]   └
+[worker 25] 
+[worker 25] ↳ create-beneficiary
+[worker 26] 
+[worker 26] ↳ search-boundary-relationship
+[worker 94]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1399ms]
+[worker 95]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1346ms]
+[worker 100]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1424ms]
+[worker 94]   ✓  Access token returned
+[worker 94]   ✓  User uuid returned
+[worker 95]   ✓  Access token returned
+[worker 95]   ✓  User uuid returned
+[worker 94] 
+[worker 94] ↳ search-project-staff
+[worker 32]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.86kB, 259ms]
+[worker 95] 
+[worker 95] ↳ search-project-staff
+[worker 40]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 287ms]
+[worker 100]   ✓  Access token returned
+[worker 32]   ✓  Household clientReferenceId returned
+[worker 100]   ✓  User uuid returned
+[worker 32]   ┌
+[worker 32]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 32]   │ sehold","id":"H-2026-09-16-041490"}'
+[worker 99]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1304ms]
+[worker 40]   ✓  Individual clientReferenceId returned
+[worker 40]   ┌
+[worker 40]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 40]   │ ividual","id":"IND-2026-09-16-502697"}'
+[worker 32]   └
+[worker 32] 
+[worker 32] ↳ create-individual
+[worker 100] 
+[worker 100] ↳ search-project-staff
+[worker 40]   └
+[worker 40] 
+[worker 40] ↳ create-member
+[worker 99]   ✓  Access token returned
+[worker 99]   ✓  User uuid returned
+[worker 81]   POST https://health-demo.digit.org/user/oauth/token [200 OK, 1.08kB, 1382ms]
+[worker 22]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3.1s]
+[worker 89]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 273ms]
+[worker 99] 
+[worker 99] ↳ search-project-staff
+[worker 33]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 284ms]
+[worker 22]   ┌
+[worker 22]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 22]   │ seholdMember","id":"639a1aed-8ec4-48f4-96a5-7d87445284
+[worker 22]   │ f1"}'
+[worker 22]   └
+[worker 22] 
+[worker 22] ↳ create-beneficiary
+[worker 33]   ✓  Individual clientReferenceId returned
+[worker 33]   ┌
+[worker 33]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 33]   │ ividual","id":"IND-2026-09-16-502698"}'
+[worker 81]   ✓  Access token returned
+[worker 81]   ✓  User uuid returned
+[worker 33]   └
+[worker 33] 
+[worker 33] ↳ create-member
+[worker 89] 
+[worker 89] ↳ search-project
+[worker 81] 
+[worker 81] ↳ search-project-staff
+[worker 91]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 317ms]
+[worker 91] 
+[worker 91] ↳ search-project
+[worker 26]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_KE_KARE_PRIMARY_HEALTH_CENTRE&includeChildren=true [200 OK, 1.69kB, 289ms]
+[worker 25]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 323ms]
+[worker 26]   ✓  Village codes found
+[worker 25]   ┌
+[worker 25]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 25]   │ jectBeneficiary","id":"PTB-2026-09-16-065335"}'
+[worker 26] 
+[worker 26] ↳ search-village-boundary
+[worker 25]   └
+[worker 25] 
+[worker 25] ❏ individualBased / Delivery
+[worker 25] ↳ create-task
+[worker 94]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 302ms]
+[worker 32]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 269ms]
+[worker 32]   ✓  Individual clientReferenceId returned
+[worker 32]   ┌
+[worker 32]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 32]   │ ividual","id":"IND-2026-09-16-502699"}'
+[worker 95]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 305ms]
+[worker 32]   └
+[worker 32] 
+[worker 32] ↳ create-member
+[worker 94] 
+[worker 94] ↳ search-project
+[worker 100]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 309ms]
+[worker 95] 
+[worker 95] ↳ search-project
+[worker 100] 
+[worker 100] ↳ search-project
+[worker 99]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 285ms]
+[worker 99] 
+[worker 99] ↳ search-project
+[worker 22]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 327ms]
+[worker 22]   ┌
+[worker 22]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 22]   │ jectBeneficiary","id":"PTB-2026-09-16-065336"}'
+[worker 22]   └
+[worker 22] 
+[worker 22] ❏ individualBased / Delivery
+[worker 22] ↳ create-task
+[worker 81]   POST https://health-demo.digit.org/project/staff/v1/_search?limit=100&offset=0&tenantId=demo [200 OK, 951B, 313ms]
+[worker 81] 
+[worker 81] ↳ search-project
+[worker 26]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_02_DADIN_KOWA&includeChildren=true [200 OK, 799B, 287ms]
+[worker 25]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.68kB, 282ms]
+[worker 26]   ✓  Village administrative area returned
+[worker 23]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3.2s]
+[worker 25]   ┌
+[worker 25]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 25]   │ k","id":"PT-2026-09-16-033201"}'
+[worker 26] 
+[worker 26] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 26] 
+[worker 26] ❏ individualBased / Registration
+[worker 26] ↳ create-household
+[worker 23]   ┌
+[worker 23]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 23]   │ seholdMember","id":"0dfbf9c3-906d-4896-9656-5b57ecc1f3
+[worker 23]   │ 83"}'
+[worker 23]   └
+[worker 23] 
+[worker 23] ↳ create-beneficiary
+[worker 25]   └
+[worker 25] 
+[worker 25] ┌─────────────────────────┬─────────────────────┬────────────────────┐
+[worker 25] │                         │            executed │             failed │
+[worker 25] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 25] │              iterations │                   1 │                  0 │
+[worker 25] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 25] │                requests │                  11 │                  0 │
+[worker 25] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 25] │            test-scripts │                  11 │                  0 │
+[worker 25] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 25] │      prerequest-scripts │                   3 │                  0 │
+[worker 25] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 25] │              assertions │                   8 │                  0 │
+[worker 25] ├─────────────────────────┴─────────────────────┴────────────────────┤
+[worker 25] │ total run duration: 21.7s                                          │
+[worker 25] ├────────────────────────────────────────────────────────────────────┤
+[worker 25] │ total data received: 22.23kB (approx)                              │
+[worker 25] ├────────────────────────────────────────────────────────────────────┤
+[worker 25] │ average response time: 1755ms [min: 281ms, max: 13.5s, s.d.: 3.7s] │
+[worker 25] └────────────────────────────────────────────────────────────────────┘
+[worker 25] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578626920-375290.json
+[worker 25] All requests succeeded.
+[worker 29]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3.6s]
+[worker 29]   ┌
+[worker 29]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 29]   │ seholdMember","id":"81a7f6ec-e105-4eb0-966e-2e90019853
+[worker 29]   │ 82"}'
+[worker 29]   └
+[worker 29] 
+[worker 29] ↳ create-beneficiary
+[worker 22]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 317ms]
+[worker 22]   ┌
+[worker 22]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 22]   │ k","id":"PT-2026-09-16-033202"}'
+[worker 22]   └
+[worker 22] 
+[worker 22] ┌─────────────────────────┬─────────────────────┬────────────────────┐
+[worker 22] │                         │            executed │             failed │
+[worker 22] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 22] │              iterations │                   1 │                  0 │
+[worker 22] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 22] │                requests │                  11 │                  0 │
+[worker 22] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 22] │            test-scripts │                  11 │                  0 │
+[worker 22] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 22] │      prerequest-scripts │                   3 │                  0 │
+[worker 22] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 22] │              assertions │                   8 │                  0 │
+[worker 22] ├─────────────────────────┴─────────────────────┴────────────────────┤
+[worker 22] │ total run duration: 23.6s                                          │
+[worker 22] ├────────────────────────────────────────────────────────────────────┤
+[worker 22] │ total data received: 22.16kB (approx)                              │
+[worker 22] ├────────────────────────────────────────────────────────────────────┤
+[worker 22] │ average response time: 1981ms [min: 287ms, max: 14.2s, s.d.: 3.9s] │
+[worker 22] └────────────────────────────────────────────────────────────────────┘
+[worker 22] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578627187-375229.json
+[worker 22] All requests succeeded.
+[worker 23]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 360ms]
+[worker 23]   ┌
+[worker 23]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 23]   │ jectBeneficiary","id":"PTB-2026-09-16-065337"}'
+[worker 23]   └
+[worker 23] 
+[worker 23] ❏ individualBased / Delivery
+[worker 23] ↳ create-task
+[worker 21]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3.8s]
+[worker 21]   ┌
+[worker 21]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 21]   │ seholdMember","id":"732a3a5f-6df4-4da3-ae44-54ca3f7335
+[worker 21]   │ 7d"}'
+[worker 21]   └
+[worker 21] 
+[worker 21] ↳ create-beneficiary
+[worker 29]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 324ms]
+[worker 29]   ┌
+[worker 29]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 29]   │ jectBeneficiary","id":"PTB-2026-09-16-065338"}'
+[worker 29]   └
+[worker 29] 
+[worker 29] ❏ individualBased / Delivery
+[worker 29] ↳ create-task
+[worker 23]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 280ms]
+[worker 23]   ┌
+[worker 23]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 23]   │ k","id":"PT-2026-09-16-033203"}'
+[worker 23]   └
+[worker 23] 
+[worker 23] ┌─────────────────────────┬───────────────────┬──────────────────┐
+[worker 23] │                         │          executed │           failed │
+[worker 23] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 23] │              iterations │                 1 │                0 │
+[worker 23] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 23] │                requests │                11 │                0 │
+[worker 23] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 23] │            test-scripts │                11 │                0 │
+[worker 23] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 23] │      prerequest-scripts │                 3 │                0 │
+[worker 23] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 23] │              assertions │                 8 │                0 │
+[worker 23] ├─────────────────────────┴───────────────────┴──────────────────┤
+[worker 23] │ total run duration: 23.8s                                      │
+[worker 23] ├────────────────────────────────────────────────────────────────┤
+[worker 23] │ total data received: 23.39kB (approx)                          │
+[worker 23] ├────────────────────────────────────────────────────────────────┤
+[worker 23] │ average response time: 2s [min: 279ms, max: 15.2s, s.d.: 4.2s] │
+[worker 23] └────────────────────────────────────────────────────────────────┘
+[worker 23] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578627591-375246.json
+[worker 23] All requests succeeded.
+[worker 29]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 285ms]
+[worker 29]   ┌
+[worker 29]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 29]   │ k","id":"PT-2026-09-16-033204"}'
+[worker 29]   └
+[worker 29] 
+[worker 29] ┌─────────────────────────┬─────────────────────┬────────────────────┐
+[worker 29] │                         │            executed │             failed │
+[worker 29] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 29] │              iterations │                   1 │                  0 │
+[worker 29] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 29] │                requests │                  11 │                  0 │
+[worker 29] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 29] │            test-scripts │                  11 │                  0 │
+[worker 29] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 29] │      prerequest-scripts │                   3 │                  0 │
+[worker 29] ├─────────────────────────┼─────────────────────┼────────────────────┤
+[worker 29] │              assertions │                   8 │                  0 │
+[worker 29] ├─────────────────────────┴─────────────────────┴────────────────────┤
+[worker 29] │ total run duration: 22.9s                                          │
+[worker 29] ├────────────────────────────────────────────────────────────────────┤
+[worker 29] │ total data received: 23.37kB (approx)                              │
+[worker 29] ├────────────────────────────────────────────────────────────────────┤
+[worker 29] │ average response time: 1938ms [min: 260ms, max: 13.8s, s.d.: 3.8s] │
+[worker 29] └────────────────────────────────────────────────────────────────────┘
+[worker 29] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578627671-375336.json
+[worker 29] All requests succeeded.
+[worker 21]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 506ms]
+[worker 21]   ┌
+[worker 21]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 21]   │ jectBeneficiary","id":"PTB-2026-09-16-065339"}'
+[worker 21]   └
+[worker 21] 
+[worker 21] ❏ individualBased / Delivery
+[worker 21] ↳ create-task
+[worker 21]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 332ms]
+[worker 21]   ┌
+[worker 21]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 21]   │ k","id":"PT-2026-09-16-033205"}'
+[worker 21]   └
+[worker 21] 
+[worker 21] ┌─────────────────────────┬───────────────────┬──────────────────┐
+[worker 21] │                         │          executed │           failed │
+[worker 21] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 21] │              iterations │                 1 │                0 │
+[worker 21] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 21] │                requests │                11 │                0 │
+[worker 21] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 21] │            test-scripts │                11 │                0 │
+[worker 21] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 21] │      prerequest-scripts │                 3 │                0 │
+[worker 21] ├─────────────────────────┼───────────────────┼──────────────────┤
+[worker 21] │              assertions │                 8 │                0 │
+[worker 21] ├─────────────────────────┴───────────────────┴──────────────────┤
+[worker 21] │ total run duration: 25.3s                                      │
+[worker 21] ├────────────────────────────────────────────────────────────────┤
+[worker 21] │ total data received: 23.34kB (approx)                          │
+[worker 21] ├────────────────────────────────────────────────────────────────┤
+[worker 21] │ average response time: 2s [min: 283ms, max: 13.4s, s.d.: 3.7s] │
+[worker 21] └────────────────────────────────────────────────────────────────┘
+[worker 21] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578628205-375216.json
+[worker 21] All requests succeeded.
+[worker 31]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3s]
+[worker 27]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3s]
+[worker 31]   ┌
+[worker 31]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 31]   │ seholdMember","id":"ea7f1aeb-eba5-4743-bfa5-fe937b749b
+[worker 31]   │ b7"}'
+[worker 27]   ┌
+[worker 27]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 27]   │ seholdMember","id":"142d12bd-3474-4f4c-b677-78c1c3af23
+[worker 27]   │ 75"}'
+[worker 27]   └
+[worker 27] 
+[worker 27] ↳ create-beneficiary
+[worker 31]   └
+[worker 31] 
+[worker 31] ↳ create-beneficiary
+[worker 28]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4.2s]
+[worker 28]   ┌
+[worker 28]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 28]   │ seholdMember","id":"d04f86a3-5f5b-42a1-8dd6-dff13a6ea0
+[worker 28]   │ 8b"}'
+[worker 28]   └
+[worker 28] 
+[worker 28] ↳ create-beneficiary
+[worker 24]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4.3s]
+[worker 24]   ┌
+[worker 24]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 24]   │ seholdMember","id":"00bb7efa-7ad5-401e-a724-8308d63a68
+[worker 24]   │ 0b"}'
+[worker 31]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 282ms]
+[worker 27]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 285ms]
+[worker 31]   ┌
+[worker 31]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 31]   │ jectBeneficiary","id":"PTB-2026-09-16-065341"}'
+[worker 24]   └
+[worker 24] 
+[worker 24] ↳ create-beneficiary
+[worker 31]   └
+[worker 31] 
+[worker 31] ❏ individualBased / Delivery
+[worker 31] ↳ create-task
+[worker 27]   ┌
+[worker 27]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 27]   │ jectBeneficiary","id":"PTB-2026-09-16-065340"}'
+[worker 27]   └
+[worker 27] 
+[worker 27] ❏ individualBased / Delivery
+[worker 27] ↳ create-task
+[worker 28]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 284ms]
+[worker 28]   ┌
+[worker 28]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 28]   │ jectBeneficiary","id":"PTB-2026-09-16-065342"}'
+[worker 28]   └
+[worker 28] 
+[worker 28] ❏ individualBased / Delivery
+[worker 28] ↳ create-task
+[worker 31]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 288ms]
+[worker 27]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 284ms]
+[worker 31]   ┌
+[worker 31]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 31]   │ k","id":"PT-2026-09-16-033206"}'
+[worker 24]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 299ms]
+[worker 27]   ┌
+[worker 27]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 27]   │ k","id":"PT-2026-09-16-033207"}'
+[worker 24]   ┌
+[worker 24]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 24]   │ jectBeneficiary","id":"PTB-2026-09-16-065343"}'
+[worker 31]   └
+[worker 31] 
+[worker 31] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 31] │                         │           executed │            failed │
+[worker 31] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 31] │              iterations │                  1 │                 0 │
+[worker 31] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 31] │                requests │                 11 │                 0 │
+[worker 31] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 31] │            test-scripts │                 11 │                 0 │
+[worker 31] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 31] │      prerequest-scripts │                  3 │                 0 │
+[worker 31] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 31] │              assertions │                  8 │                 0 │
+[worker 31] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 31] │ total run duration: 23.1s                                        │
+[worker 31] ├──────────────────────────────────────────────────────────────────┤
+[worker 31] │ total data received: 22.63kB (approx)                            │
+[worker 31] ├──────────────────────────────────────────────────────────────────┤
+[worker 31] │ average response time: 1944ms [min: 272ms, max: 14.5s, s.d.: 4s] │
+[worker 31] └──────────────────────────────────────────────────────────────────┘
+[worker 24]   └
+[worker 24] 
+[worker 24] ❏ individualBased / Delivery
+[worker 24] ↳ create-task
+[worker 31] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578629709-375358.json
+[worker 31] All requests succeeded.
+[worker 27]   └
+[worker 27] 
+[worker 27] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 27] │                         │           executed │            failed │
+[worker 27] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 27] │              iterations │                  1 │                 0 │
+[worker 27] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 27] │                requests │                 11 │                 0 │
+[worker 27] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 27] │            test-scripts │                 11 │                 0 │
+[worker 27] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 27] │      prerequest-scripts │                  3 │                 0 │
+[worker 27] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 27] │              assertions │                  8 │                 0 │
+[worker 27] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 27] │ total run duration: 25.1s                                        │
+[worker 27] ├──────────────────────────────────────────────────────────────────┤
+[worker 27] │ total data received: 23.35kB (approx)                            │
+[worker 27] ├──────────────────────────────────────────────────────────────────┤
+[worker 27] │ average response time: 2.1s [min: 268ms, max: 16.6s, s.d.: 4.6s] │
+[worker 27] └──────────────────────────────────────────────────────────────────┘
+[worker 27] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578629716-375311.json
+[worker 27] All requests succeeded.
+[worker 28]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.69kB, 286ms]
+[worker 28]   ┌
+[worker 28]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 28]   │ k","id":"PT-2026-09-16-033208"}'
+[worker 28]   └
+[worker 28] 
+[worker 28] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 28] │                         │           executed │            failed │
+[worker 28] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 28] │              iterations │                  1 │                 0 │
+[worker 28] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 28] │                requests │                 11 │                 0 │
+[worker 28] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 28] │            test-scripts │                 11 │                 0 │
+[worker 28] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 28] │      prerequest-scripts │                  3 │                 0 │
+[worker 28] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 28] │              assertions │                  8 │                 0 │
+[worker 28] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 28] │ total run duration: 25s                                          │
+[worker 28] ├──────────────────────────────────────────────────────────────────┤
+[worker 28] │ total data received: 22.03kB (approx)                            │
+[worker 28] ├──────────────────────────────────────────────────────────────────┤
+[worker 28] │ average response time: 2.1s [min: 258ms, max: 15.4s, s.d.: 4.3s] │
+[worker 28] └──────────────────────────────────────────────────────────────────┘
+[worker 28] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578629760-375325.json
+[worker 28] All requests succeeded.
+[worker 24]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 291ms]
+[worker 24]   ┌
+[worker 24]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 24]   │ k","id":"PT-2026-09-16-033209"}'
+[worker 24]   └
+[worker 24] 
+[worker 24] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 24] │                         │           executed │            failed │
+[worker 24] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 24] │              iterations │                  1 │                 0 │
+[worker 24] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 24] │                requests │                 11 │                 0 │
+[worker 24] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 24] │            test-scripts │                 11 │                 0 │
+[worker 24] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 24] │      prerequest-scripts │                  3 │                 0 │
+[worker 24] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 24] │              assertions │                  8 │                 0 │
+[worker 24] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 24] │ total run duration: 25.7s                                        │
+[worker 24] ├──────────────────────────────────────────────────────────────────┤
+[worker 24] │ total data received: 22.59kB (approx)                            │
+[worker 24] ├──────────────────────────────────────────────────────────────────┤
+[worker 24] │ average response time: 2.1s [min: 265ms, max: 15.2s, s.d.: 4.3s] │
+[worker 24] └──────────────────────────────────────────────────────────────────┘
+[worker 24] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578630026-375272.json
+[worker 24] All requests succeeded.
+[worker 33]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4s]
+[worker 33]   ┌
+[worker 33]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 33]   │ seholdMember","id":"35f73ebe-255e-4afe-9bba-8c875ba394
+[worker 33]   │ b2"}'
+[worker 26]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.87kB, 3.7s]
+[worker 33]   └
+[worker 33] 
+[worker 33] ↳ create-beneficiary
+[worker 40]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4.2s]
+[worker 26]   ✓  Household clientReferenceId returned
+[worker 26]   ┌
+[worker 26]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 26]   │ sehold","id":"H-2026-09-16-041491"}'
+[worker 40]   ┌
+[worker 40]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 40]   │ seholdMember","id":"5e445fc1-ee99-44e5-bcb4-c2a4362011
+[worker 40]   │ 98"}'
+[worker 26]   └
+[worker 26] 
+[worker 26] ↳ create-individual
+[worker 40]   └
+[worker 40] 
+[worker 40] ↳ create-beneficiary
+[worker 40]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 293ms]
+[worker 40]   ┌
+[worker 40]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 40]   │ jectBeneficiary","id":"PTB-2026-09-16-065344"}'
+[worker 33]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 310ms]
+[worker 40]   └
+[worker 40] 
+[worker 40] ❏ individualBased / Delivery
+[worker 40] ↳ create-task
+[worker 33]   ┌
+[worker 33]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 33]   │ jectBeneficiary","id":"PTB-2026-09-16-065345"}'
+[worker 33]   └
+[worker 33] 
+[worker 33] ❏ individualBased / Delivery
+[worker 33] ↳ create-task
+[worker 26]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 315ms]
+[worker 26]   ✓  Individual clientReferenceId returned
+[worker 26]   ┌
+[worker 26]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 26]   │ ividual","id":"IND-2026-09-16-502700"}'
+[worker 26]   └
+[worker 26] 
+[worker 26] ↳ create-member
+[worker 40]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 263ms]
+[worker 40]   ┌
+[worker 40]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 40]   │ k","id":"PT-2026-09-16-033210"}'
+[worker 40]   └
+[worker 40] 
+[worker 40] ┌─────────────────────────┬──────────────────┬─────────────────┐
+[worker 40] │                         │         executed │          failed │
+[worker 40] ├─────────────────────────┼──────────────────┼─────────────────┤
+[worker 40] │              iterations │                1 │               0 │
+[worker 40] ├─────────────────────────┼──────────────────┼─────────────────┤
+[worker 40] │                requests │               11 │               0 │
+[worker 40] ├─────────────────────────┼──────────────────┼─────────────────┤
+[worker 40] │            test-scripts │               11 │               0 │
+[worker 40] ├─────────────────────────┼──────────────────┼─────────────────┤
+[worker 40] │      prerequest-scripts │                3 │               0 │
+[worker 40] ├─────────────────────────┼──────────────────┼─────────────────┤
+[worker 40] │              assertions │                8 │               0 │
+[worker 40] ├─────────────────────────┴──────────────────┴─────────────────┤
+[worker 40] │ total run duration: 24.4s                                    │
+[worker 40] ├──────────────────────────────────────────────────────────────┤
+[worker 40] │ total data received: 23.35kB (approx)                        │
+[worker 40] ├──────────────────────────────────────────────────────────────┤
+[worker 40] │ average response time: 2s [min: 260ms, max: 14.3s, s.d.: 4s] │
+[worker 40] └──────────────────────────────────────────────────────────────┘
+[worker 40] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578631244-375483.json
+[worker 40] All requests succeeded.
+[worker 33]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 326ms]
+[worker 33]   ┌
+[worker 33]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 33]   │ k","id":"PT-2026-09-16-033211"}'
+[worker 33]   └
+[worker 33] 
+[worker 33] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 33] │                         │           executed │            failed │
+[worker 33] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 33] │              iterations │                  1 │                 0 │
+[worker 33] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 33] │                requests │                 11 │                 0 │
+[worker 33] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 33] │            test-scripts │                 11 │                 0 │
+[worker 33] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 33] │      prerequest-scripts │                  3 │                 0 │
+[worker 33] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 33] │              assertions │                  8 │                 0 │
+[worker 33] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 33] │ total run duration: 25.9s                                        │
+[worker 33] ├──────────────────────────────────────────────────────────────────┤
+[worker 33] │ total data received: 22.59kB (approx)                            │
+[worker 33] ├──────────────────────────────────────────────────────────────────┤
+[worker 33] │ average response time: 2.2s [min: 257ms, max: 16.5s, s.d.: 4.6s] │
+[worker 33] └──────────────────────────────────────────────────────────────────┘
+[worker 33] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578631309-375385.json
+[worker 33] All requests succeeded.
+[worker 38]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 18.5s]
+[worker 38]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 38]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 38] 
+[worker 38] ↳ search-household-project-resource
+[worker 38] 
+[worker 38] ↳ search-individual-project-resource
+[worker 38]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 265ms]
+[worker 38] 
+[worker 38] ↳ search-boundary-relationship
+[worker 38]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 281ms]
+[worker 38]   ✓  Village codes found
+[worker 38] 
+[worker 38] ↳ search-village-boundary
+[worker 30]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 20.8s]
+[worker 30]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 30]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 30] 
+[worker 30] ↳ search-household-project-resource
+[worker 30] 
+[worker 30] ↳ search-individual-project-resource
+[worker 32]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 5.7s]
+[worker 32]   ┌
+[worker 32]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 32]   │ seholdMember","id":"7d848ee6-4515-414e-8e18-4750b73fb5
+[worker 32]   │ 90"}'
+[worker 38]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_04_KUKOKI&includeChildren=true [200 OK, 791B, 267ms]
+[worker 32]   └
+[worker 32] 
+[worker 32] ↳ create-beneficiary
+[worker 38]   ✓  Village administrative area returned
+[worker 38] 
+[worker 38] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 38] 
+[worker 38] ❏ individualBased / Registration
+[worker 38] ↳ create-household
+[worker 30]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 368ms]
+[worker 30] 
+[worker 30] ↳ search-boundary-relationship
+[worker 38]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.86kB, 314ms]
+[worker 38]   ✓  Household clientReferenceId returned
+[worker 38]   ┌
+[worker 38]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 38]   │ sehold","id":"H-2026-09-16-041492"}'
+[worker 38]   └
+[worker 38] 
+[worker 38] ↳ create-individual
+[worker 32]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 354ms]
+[worker 32]   ┌
+[worker 32]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 32]   │ jectBeneficiary","id":"PTB-2026-09-16-065346"}'
+[worker 32]   └
+[worker 32] 
+[worker 32] ❏ individualBased / Delivery
+[worker 32] ↳ create-task
+[worker 30]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 334ms]
+[worker 30]   ✓  Village codes found
+[worker 30] 
+[worker 30] ↳ search-village-boundary
+[worker 32]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 316ms]
+[worker 32]   ┌
+[worker 32]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 32]   │ k","id":"PT-2026-09-16-033212"}'
+[worker 32]   └
+[worker 32] 
+[worker 32] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 32] │                         │           executed │            failed │
+[worker 32] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 32] │              iterations │                  1 │                 0 │
+[worker 32] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 32] │                requests │                 11 │                 0 │
+[worker 32] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 32] │            test-scripts │                 11 │                 0 │
+[worker 32] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 32] │      prerequest-scripts │                  3 │                 0 │
+[worker 32] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 32] │              assertions │                  8 │                 0 │
+[worker 32] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 32] │ total run duration: 27.6s                                        │
+[worker 32] ├──────────────────────────────────────────────────────────────────┤
+[worker 32] │ total data received: 21.94kB (approx)                            │
+[worker 32] ├──────────────────────────────────────────────────────────────────┤
+[worker 32] │ average response time: 2.4s [min: 250ms, max: 16.8s, s.d.: 4.8s] │
+[worker 32] └──────────────────────────────────────────────────────────────────┘
+[worker 32] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578633109-375372.json
+[worker 32] All requests succeeded.
+[worker 38]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 417ms]
+[worker 38]   ✓  Individual clientReferenceId returned
+[worker 38]   ┌
+[worker 38]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 38]   │ ividual","id":"IND-2026-09-16-502701"}'
+[worker 38]   └
+[worker 38] 
+[worker 38] ↳ create-member
+[worker 30]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_01_DAKI&includeChildren=true [200 OK, 787B, 250ms]
+[worker 30]   ✓  Village administrative area returned
+[worker 30] 
+[worker 30] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 30] 
+[worker 30] ❏ individualBased / Registration
+[worker 30] ↳ create-household
+[worker 30]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.85kB, 289ms]
+[worker 30]   ✓  Household clientReferenceId returned
+[worker 30]   ┌
+[worker 30]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 30]   │ sehold","id":"H-2026-09-16-041493"}'
+[worker 30]   └
+[worker 30] 
+[worker 30] ↳ create-individual
+[worker 43]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 20.7s]
+[worker 43]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 43]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 43] 
+[worker 43] ↳ search-household-project-resource
+[worker 43] 
+[worker 43] ↳ search-individual-project-resource
+[worker 30]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 287ms]
+[worker 30]   ✓  Individual clientReferenceId returned
+[worker 30]   ┌
+[worker 30]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 30]   │ ividual","id":"IND-2026-09-16-502702"}'
+[worker 30]   └
+[worker 30] 
+[worker 30] ↳ create-member
+[worker 43]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 264ms]
+[worker 43] 
+[worker 43] ↳ search-boundary-relationship
+[worker 43]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 262ms]
+[worker 43]   ✓  Village codes found
+[worker 43] 
+[worker 43] ↳ search-village-boundary
+[worker 43]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_05_MAI_KALGO&includeChildren=true [200 OK, 797B, 268ms]
+[worker 43]   ✓  Village administrative area returned
+[worker 43] 
+[worker 43] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 43] 
+[worker 43] ❏ individualBased / Registration
+[worker 43] ↳ create-household
+[worker 43]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.87kB, 289ms]
+[worker 43]   ✓  Household clientReferenceId returned
+[worker 43]   ┌
+[worker 43]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 43]   │ sehold","id":"H-2026-09-16-041494"}'
+[worker 43]   └
+[worker 43] 
+[worker 43] ↳ create-individual
+[worker 26]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4s]
+[worker 26]   ┌
+[worker 26]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 26]   │ seholdMember","id":"fcaabd82-3ec1-49cb-998f-f584c2e58e
+[worker 26]   │ b4"}'
+[worker 26]   └
+[worker 26] 
+[worker 26] ↳ create-beneficiary
+[worker 43]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 302ms]
+[worker 43]   ✓  Individual clientReferenceId returned
+[worker 43]   ┌
+[worker 43]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 43]   │ ividual","id":"IND-2026-09-16-502703"}'
+[worker 43]   └
+[worker 43] 
+[worker 43] ↳ create-member
+[worker 26]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 304ms]
+[worker 26]   ┌
+[worker 26]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 26]   │ jectBeneficiary","id":"PTB-2026-09-16-065347"}'
+[worker 26]   └
+[worker 26] 
+[worker 26] ❏ individualBased / Delivery
+[worker 26] ↳ create-task
+[worker 26]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 263ms]
+[worker 26]   ┌
+[worker 26]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 26]   │ k","id":"PT-2026-09-16-033213"}'
+[worker 26]   └
+[worker 26] 
+[worker 26] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 26] │                         │           executed │            failed │
+[worker 26] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 26] │              iterations │                  1 │                 0 │
+[worker 26] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 26] │                requests │                 11 │                 0 │
+[worker 26] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 26] │            test-scripts │                 11 │                 0 │
+[worker 26] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 26] │      prerequest-scripts │                  3 │                 0 │
+[worker 26] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 26] │              assertions │                  8 │                 0 │
+[worker 26] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 26] │ total run duration: 30.3s                                        │
+[worker 26] ├──────────────────────────────────────────────────────────────────┤
+[worker 26] │ total data received: 22.63kB (approx)                            │
+[worker 26] ├──────────────────────────────────────────────────────────────────┤
+[worker 26] │ average response time: 2.6s [min: 263ms, max: 17.4s, s.d.: 4.8s] │
+[worker 26] └──────────────────────────────────────────────────────────────────┘
+[worker 26] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578635639-375300.json
+[worker 26] All requests succeeded.
+[worker 30]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 2.1s]
+[worker 30]   ┌
+[worker 30]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 30]   │ seholdMember","id":"c982bcb3-e0e6-41c5-b6e6-a21ee8eafc
+[worker 30]   │ 5f"}'
+[worker 36]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 20.9s]
+[worker 30]   └
+[worker 30] 
+[worker 30] ↳ create-beneficiary
+[worker 36]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 36]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 36] 
+[worker 36] ↳ search-household-project-resource
+[worker 36] 
+[worker 36] ↳ search-individual-project-resource
+[worker 30]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 306ms]
+[worker 30]   ┌
+[worker 30]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 30]   │ jectBeneficiary","id":"PTB-2026-09-16-065348"}'
+[worker 36]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 296ms]
+[worker 30]   └
+[worker 30] 
+[worker 30] ❏ individualBased / Delivery
+[worker 30] ↳ create-task
+[worker 36] 
+[worker 36] ↳ search-boundary-relationship
+[worker 30]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 274ms]
+[worker 30]   ┌
+[worker 30]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 30]   │ k","id":"PT-2026-09-16-033214"}'
+[worker 30]   └
+[worker 30] 
+[worker 30] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 30] │                         │           executed │            failed │
+[worker 30] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 30] │              iterations │                  1 │                 0 │
+[worker 30] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 30] │                requests │                 11 │                 0 │
+[worker 30] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 30] │            test-scripts │                 11 │                 0 │
+[worker 30] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 30] │      prerequest-scripts │                  3 │                 0 │
+[worker 30] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 30] │              assertions │                  8 │                 0 │
+[worker 30] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 30] │ total run duration: 29.1s                                        │
+[worker 30] ├──────────────────────────────────────────────────────────────────┤
+[worker 30] │ total data received: 23.34kB (approx)                            │
+[worker 30] ├──────────────────────────────────────────────────────────────────┤
+[worker 30] │ average response time: 2.4s [min: 250ms, max: 20.8s, s.d.: 5.8s] │
+[worker 30] └──────────────────────────────────────────────────────────────────┘
+[worker 30] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578636552-375345.json
+[worker 30] All requests succeeded.
+[worker 36]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_03_KE_LEIMA_HEALTH_CLINIC&includeChildren=true [200 OK, 1.29kB, 282ms]
+[worker 36]   ✓  Village codes found
+[worker 36] 
+[worker 36] ↳ search-village-boundary
+[worker 36]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_03_04_RUGGA_HUDU&includeChildren=true [200 OK, 799B, 266ms]
+[worker 36]   ✓  Village administrative area returned
+[worker 36] 
+[worker 36] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 36] 
+[worker 36] ❏ individualBased / Registration
+[worker 36] ↳ create-household
+[worker 36]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.87kB, 282ms]
+[worker 36]   ✓  Household clientReferenceId returned
+[worker 36]   ┌
+[worker 36]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 36]   │ sehold","id":"H-2026-09-16-041495"}'
+[worker 36]   └
+[worker 36] 
+[worker 36] ↳ create-individual
+[worker 38]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4s]
+[worker 38]   ┌
+[worker 38]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 38]   │ seholdMember","id":"115fa5fd-daca-45a8-9863-4f0ade8794
+[worker 38]   │ 56"}'
+[worker 38]   └
+[worker 38] 
+[worker 38] ↳ create-beneficiary
+[worker 36]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 361ms]
+[worker 36]   ✓  Individual clientReferenceId returned
+[worker 36]   ┌
+[worker 36]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 36]   │ ividual","id":"IND-2026-09-16-502704"}'
+[worker 36]   └
+[worker 36] 
+[worker 36] ↳ create-member
+[worker 38]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 368ms]
+[worker 38]   ┌
+[worker 38]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 38]   │ jectBeneficiary","id":"PTB-2026-09-16-065349"}'
+[worker 38]   └
+[worker 38] 
+[worker 38] ❏ individualBased / Delivery
+[worker 38] ↳ create-task
+[worker 38]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.66kB, 283ms]
+[worker 38]   ┌
+[worker 38]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 38]   │ k","id":"PT-2026-09-16-033215"}'
+[worker 38]   └
+[worker 38] 
+[worker 38] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 38] │                         │           executed │            failed │
+[worker 38] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 38] │              iterations │                  1 │                 0 │
+[worker 38] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 38] │                requests │                 11 │                 0 │
+[worker 38] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 38] │            test-scripts │                 11 │                 0 │
+[worker 38] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 38] │      prerequest-scripts │                  3 │                 0 │
+[worker 38] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 38] │              assertions │                  8 │                 0 │
+[worker 38] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 38] │ total run duration: 28.7s                                        │
+[worker 38] ├──────────────────────────────────────────────────────────────────┤
+[worker 38] │ total data received: 23.36kB (approx)                            │
+[worker 38] ├──────────────────────────────────────────────────────────────────┤
+[worker 38] │ average response time: 2.4s [min: 265ms, max: 18.5s, s.d.: 5.2s] │
+[worker 38] └──────────────────────────────────────────────────────────────────┘
+[worker 38] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578637915-375458.json
+[worker 38] All requests succeeded.
+[worker 36]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 522ms]
+[worker 36]   ┌
+[worker 36]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 36]   │ seholdMember","id":"881818a8-a075-45ae-989f-faeaeaf262
+[worker 36]   │ d9"}'
+[worker 36]   └
+[worker 36] 
+[worker 36] ↳ create-beneficiary
+[worker 39]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 22.8s]
+[worker 39]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 39]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 39] 
+[worker 39] ↳ search-household-project-resource
+[worker 39] 
+[worker 39] ↳ search-individual-project-resource
+[worker 36]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 300ms]
+[worker 36]   ┌
+[worker 36]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 36]   │ jectBeneficiary","id":"PTB-2026-09-16-065350"}'
+[worker 36]   └
+[worker 36] 
+[worker 36] ❏ individualBased / Delivery
+[worker 36] ↳ create-task
+[worker 37]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 21.9s]
+[worker 37]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 37]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 37] 
+[worker 37] ↳ search-household-project-resource
+[worker 37] 
+[worker 37] ↳ search-individual-project-resource
+[worker 39]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 304ms]
+[worker 39] 
+[worker 39] ↳ search-boundary-relationship
+[worker 36]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 327ms]
+[worker 36]   ┌
+[worker 36]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 36]   │ k","id":"PT-2026-09-16-033216"}'
+[worker 36]   └
+[worker 36] 
+[worker 36] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 36] │                         │           executed │            failed │
+[worker 36] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 36] │              iterations │                  1 │                 0 │
+[worker 36] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 36] │                requests │                 11 │                 0 │
+[worker 36] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 36] │            test-scripts │                 11 │                 0 │
+[worker 36] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 36] │      prerequest-scripts │                  3 │                 0 │
+[worker 36] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 36] │              assertions │                  8 │                 0 │
+[worker 36] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 36] │ total run duration: 27.3s                                        │
+[worker 36] ├──────────────────────────────────────────────────────────────────┤
+[worker 36] │ total data received: 22.22kB (approx)                            │
+[worker 36] ├──────────────────────────────────────────────────────────────────┤
+[worker 36] │ average response time: 2.3s [min: 266ms, max: 20.9s, s.d.: 5.8s] │
+[worker 36] └──────────────────────────────────────────────────────────────────┘
+[worker 36] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578638704-375415.json
+[worker 36] All requests succeeded.
+[worker 37]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 290ms]
+[worker 37] 
+[worker 37] ↳ search-boundary-relationship
+[worker 39]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_04_KE_MADAMFARA_HEALTH_POST&includeChildren=true [200 OK, 1.04kB, 277ms]
+[worker 39]   ✓  Village codes found
+[worker 39] 
+[worker 39] ↳ search-village-boundary
+[worker 37]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_KE_KARE_PRIMARY_HEALTH_CENTRE&includeChildren=true [200 OK, 1.69kB, 269ms]
+[worker 37]   ✓  Village codes found
+[worker 37] 
+[worker 37] ↳ search-village-boundary
+[worker 39]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_04_02_SANGEDA&includeChildren=true [200 OK, 793B, 249ms]
+[worker 39]   ✓  Village administrative area returned
+[worker 39] 
+[worker 39] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 39] 
+[worker 39] ❏ individualBased / Registration
+[worker 39] ↳ create-household
+[worker 37]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_01_AWASHAKKA&includeChildren=true [200 OK, 797B, 260ms]
+[worker 37]   ✓  Village administrative area returned
+[worker 37] 
+[worker 37] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 37] 
+[worker 37] ❏ individualBased / Registration
+[worker 37] ↳ create-household
+[worker 39]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.86kB, 295ms]
+[worker 39]   ✓  Household clientReferenceId returned
+[worker 39]   ┌
+[worker 39]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 39]   │ sehold","id":"H-2026-09-16-041496"}'
+[worker 39]   └
+[worker 39] 
+[worker 39] ↳ create-individual
+[worker 37]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.87kB, 308ms]
+[worker 37]   ✓  Household clientReferenceId returned
+[worker 37]   ┌
+[worker 37]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 37]   │ sehold","id":"H-2026-09-16-041497"}'
+[worker 37]   └
+[worker 37] 
+[worker 37] ↳ create-individual
+[worker 39]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 325ms]
+[worker 39]   ✓  Individual clientReferenceId returned
+[worker 39]   ┌
+[worker 39]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 39]   │ ividual","id":"IND-2026-09-16-502705"}'
+[worker 39]   └
+[worker 39] 
+[worker 39] ↳ create-member
+[worker 43]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 4.6s]
+[worker 43]   ┌
+[worker 43]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 43]   │ seholdMember","id":"f86b0611-4719-4157-be5c-561e213feb
+[worker 43]   │ 34"}'
+[worker 43]   └
+[worker 43] 
+[worker 43] ↳ create-beneficiary
+[worker 37]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 280ms]
+[worker 37]   ✓  Individual clientReferenceId returned
+[worker 37]   ┌
+[worker 37]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 37]   │ ividual","id":"IND-2026-09-16-502706"}'
+[worker 37]   └
+[worker 37] 
+[worker 37] ↳ create-member
+[worker 34]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 24.1s]
+[worker 34]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 34]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 34] 
+[worker 34] ↳ search-household-project-resource
+[worker 34] 
+[worker 34] ↳ search-individual-project-resource
+[worker 43]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 298ms]
+[worker 43]   ┌
+[worker 43]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 43]   │ jectBeneficiary","id":"PTB-2026-09-16-065351"}'
+[worker 43]   └
+[worker 43] 
+[worker 43] ❏ individualBased / Delivery
+[worker 43] ↳ create-task
+[worker 56]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 24.6s]
+[worker 56]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 56]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 56] 
+[worker 56] ↳ search-household-project-resource
+[worker 56] 
+[worker 56] ↳ search-individual-project-resource
+[worker 43]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 298ms]
+[worker 34]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 304ms]
+[worker 43]   ┌
+[worker 43]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 43]   │ k","id":"PT-2026-09-16-033217"}'
+[worker 34] 
+[worker 34] ↳ search-boundary-relationship
+[worker 43]   └
+[worker 43] 
+[worker 43] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 43] │                         │           executed │            failed │
+[worker 43] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 43] │              iterations │                  1 │                 0 │
+[worker 43] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 43] │                requests │                 11 │                 0 │
+[worker 43] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 43] │            test-scripts │                 11 │                 0 │
+[worker 43] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 43] │      prerequest-scripts │                  3 │                 0 │
+[worker 43] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 43] │              assertions │                  8 │                 0 │
+[worker 43] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 43] │ total run duration: 30.7s                                        │
+[worker 43] ├──────────────────────────────────────────────────────────────────┤
+[worker 43] │ total data received: 23.39kB (approx)                            │
+[worker 43] ├──────────────────────────────────────────────────────────────────┤
+[worker 43] │ average response time: 2.6s [min: 262ms, max: 20.7s, s.d.: 5.8s] │
+[worker 43] └──────────────────────────────────────────────────────────────────┘
+[worker 43] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578640537-375520.json
+[worker 43] All requests succeeded.
+[worker 56]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 268ms]
+[worker 56] 
+[worker 56] ↳ search-boundary-relationship
+[worker 34]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_KE_KARE_PRIMARY_HEALTH_CENTRE&includeChildren=true [200 OK, 1.69kB, 291ms]
+[worker 34]   ✓  Village codes found
+[worker 35]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 25.2s]
+[worker 34] 
+[worker 34] ↳ search-village-boundary
+[worker 35]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 35]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 35] 
+[worker 35] ↳ search-household-project-resource
+[worker 35] 
+[worker 35] ↳ search-individual-project-resource
+[worker 56]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 278ms]
+[worker 56]   ✓  Village codes found
+[worker 56] 
+[worker 56] ↳ search-village-boundary
+[worker 34]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_02_07_RUGGAR_AWASHAKKA&includeChildren=true [200 OK, 811B, 261ms]
+[worker 34]   ✓  Village administrative area returned
+[worker 34] 
+[worker 34] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 34] 
+[worker 34] ❏ individualBased / Registration
+[worker 34] ↳ create-household
+[worker 35]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 302ms]
+[worker 35] 
+[worker 35] ↳ search-boundary-relationship
+[worker 41]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 25s]
+[worker 41]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 41]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 41] 
+[worker 41] ↳ search-household-project-resource
+[worker 41] 
+[worker 41] ↳ search-individual-project-resource
+[worker 56]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_09_RUGGA_HUDUSSU&includeChildren=true [200 OK, 805B, 281ms]
+[worker 56]   ✓  Village administrative area returned
+[worker 56] 
+[worker 56] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 56] 
+[worker 56] ❏ individualBased / Registration
+[worker 56] ↳ create-household
+[worker 34]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.9kB, 332ms]
+[worker 34]   ✓  Household clientReferenceId returned
+[worker 34]   ┌
+[worker 34]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 34]   │ sehold","id":"H-2026-09-16-041498"}'
+[worker 34]   └
+[worker 34] 
+[worker 34] ↳ create-individual
+[worker 35]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_03_KE_LEIMA_HEALTH_CLINIC&includeChildren=true [200 OK, 1.29kB, 289ms]
+[worker 35]   ✓  Village codes found
+[worker 35] 
+[worker 35] ↳ search-village-boundary
+[worker 56]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.88kB, 280ms]
+[worker 56]   ✓  Household clientReferenceId returned
+[worker 56]   ┌
+[worker 56]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 56]   │ sehold","id":"H-2026-09-16-041499"}'
+[worker 56]   └
+[worker 56] 
+[worker 56] ↳ create-individual
+[worker 41]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 316ms]
+[worker 41] 
+[worker 41] ↳ search-boundary-relationship
+[worker 52]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 26s]
+[worker 35]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_03_03_LEIMA&includeChildren=true [200 OK, 789B, 240ms]
+[worker 52]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 52]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 35]   ✓  Village administrative area returned
+[worker 52] 
+[worker 52] ↳ search-household-project-resource
+[worker 35] 
+[worker 35] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 35] 
+[worker 35] ❏ individualBased / Registration
+[worker 35] ↳ create-household
+[worker 52] 
+[worker 52] ↳ search-individual-project-resource
+[worker 34]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 286ms]
+[worker 34]   ✓  Individual clientReferenceId returned
+[worker 34]   ┌
+[worker 34]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 34]   │ ividual","id":"IND-2026-09-16-502707"}'
+[worker 34]   └
+[worker 34] 
+[worker 34] ↳ create-member
+[worker 56]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 291ms]
+[worker 56]   ✓  Individual clientReferenceId returned
+[worker 56]   ┌
+[worker 56]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 56]   │ ividual","id":"IND-2026-09-16-502708"}'
+[worker 56]   └
+[worker 56] 
+[worker 56] ↳ create-member
+[worker 41]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_05_KE_TSAMIYA_HEALTH_POST__AREWA_&includeChildren=true [200 OK, 1.05kB, 298ms]
+[worker 41]   ✓  Village codes found
+[worker 41] 
+[worker 41] ↳ search-village-boundary
+[worker 35]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.85kB, 270ms]
+[worker 52]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 265ms]
+[worker 35]   ✓  Household clientReferenceId returned
+[worker 35]   ┌
+[worker 35]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 35]   │ sehold","id":"H-2026-09-16-041500"}'
+[worker 35]   └
+[worker 35] 
+[worker 35] ↳ create-individual
+[worker 52] 
+[worker 52] ↳ search-boundary-relationship
+[worker 41]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_05_02_RUGGAR_TSAMIYA&includeChildren=true [200 OK, 807B, 274ms]
+[worker 41]   ✓  Village administrative area returned
+[worker 41] 
+[worker 41] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 41] 
+[worker 41] ❏ individualBased / Registration
+[worker 41] ↳ create-household
+[worker 52]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_04_KE_MADAMFARA_HEALTH_POST&includeChildren=true [200 OK, 1.04kB, 279ms]
+[worker 52]   ✓  Village codes found
+[worker 52] 
+[worker 52] ↳ search-village-boundary
+[worker 35]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 296ms]
+[worker 35]   ✓  Individual clientReferenceId returned
+[worker 35]   ┌
+[worker 35]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 35]   │ ividual","id":"IND-2026-09-16-502709"}'
+[worker 35]   └
+[worker 35] 
+[worker 35] ↳ create-member
+[worker 52]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_04_02_SANGEDA&includeChildren=true [200 OK, 793B, 262ms]
+[worker 52]   ✓  Village administrative area returned
+[worker 52] 
+[worker 52] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 52] 
+[worker 52] ❏ individualBased / Registration
+[worker 52] ↳ create-household
+[worker 60]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 24.7s]
+[worker 60]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 60]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 60] 
+[worker 60] ↳ search-household-project-resource
+[worker 60] 
+[worker 60] ↳ search-individual-project-resource
+[worker 37]   POST https://health-demo.digit.org/household/member/v1/_create?tenantId=demo [202 Accepted, 1.35kB, 3s]
+[worker 37]   ┌
+[worker 37]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 37]   │ seholdMember","id":"7499dd14-b7e5-4690-8d45-fdb55a8ee4
+[worker 37]   │ 87"}'
+[worker 37]   └
+[worker 37] 
+[worker 37] ↳ create-beneficiary
+[worker 41]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.89kB, 915ms]
+[worker 41]   ✓  Household clientReferenceId returned
+[worker 41]   ┌
+[worker 41]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 41]   │ sehold","id":"H-2026-09-16-041501"}'
+[worker 52]   POST https://health-demo.digit.org/household/v1/_create?tenantId=demo [202 Accepted, 1.86kB, 519ms]
+[worker 41]   └
+[worker 41] 
+[worker 41] ↳ create-individual
+[worker 52]   ✓  Household clientReferenceId returned
+[worker 52]   ┌
+[worker 52]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Hou
+[worker 52]   │ sehold","id":"H-2026-09-16-041502"}'
+[worker 52]   └
+[worker 52] 
+[worker 52] ↳ create-individual
+[worker 60]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 257ms]
+[worker 60] 
+[worker 60] ↳ search-boundary-relationship
+[worker 37]   POST https://health-demo.digit.org/project/beneficiary/v1/_create?tenantId=demo [202 Accepted, 1.25kB, 283ms]
+[worker 37]   ┌
+[worker 37]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Pro
+[worker 37]   │ jectBeneficiary","id":"PTB-2026-09-16-065352"}'
+[worker 37]   └
+[worker 37] 
+[worker 37] ❏ individualBased / Delivery
+[worker 37] ↳ create-task
+[worker 41]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.75kB, 302ms]
+[worker 41]   ✓  Individual clientReferenceId returned
+[worker 41]   ┌
+[worker 41]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 41]   │ ividual","id":"IND-2026-09-16-502710"}'
+[worker 41]   └
+[worker 41] 
+[worker 41] ↳ create-member
+[worker 52]   POST https://health-demo.digit.org/individual/v1/_create?tenantId=demo [202 Accepted, 2.74kB, 437ms]
+[worker 52]   ✓  Individual clientReferenceId returned
+[worker 52]   ┌
+[worker 52]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Ind
+[worker 52]   │ ividual","id":"IND-2026-09-16-502711"}'
+[worker 60]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_05_KE_TSAMIYA_HEALTH_POST__AREWA_&includeChildren=true [200 OK, 1.05kB, 254ms]
+[worker 52]   └
+[worker 52] 
+[worker 52] ↳ create-member
+[worker 60]   ✓  Village codes found
+[worker 60] 
+[worker 60] ↳ search-village-boundary
+[worker 37]   POST https://health-demo.digit.org/project/task/v1/_create?tenantId=demo [202 Accepted, 2.67kB, 284ms]
+[worker 37]   ┌
+[worker 37]   │ 'RESULT_JSON:{"folder":"individualBased","entity":"Tas
+[worker 37]   │ k","id":"PT-2026-09-16-033218"}'
+[worker 37]   └
+[worker 37] 
+[worker 37] ┌─────────────────────────┬────────────────────┬───────────────────┐
+[worker 37] │                         │           executed │            failed │
+[worker 37] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 37] │              iterations │                  1 │                 0 │
+[worker 37] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 37] │                requests │                 11 │                 0 │
+[worker 37] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 37] │            test-scripts │                 11 │                 0 │
+[worker 37] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 37] │      prerequest-scripts │                  3 │                 0 │
+[worker 37] ├─────────────────────────┼────────────────────┼───────────────────┤
+[worker 37] │              assertions │                  8 │                 0 │
+[worker 37] ├─────────────────────────┴────────────────────┴───────────────────┤
+[worker 37] │ total run duration: 30s                                          │
+[worker 37] ├──────────────────────────────────────────────────────────────────┤
+[worker 37] │ total data received: 22.62kB (approx)                            │
+[worker 37] ├──────────────────────────────────────────────────────────────────┤
+[worker 37] │ average response time: 2.6s [min: 260ms, max: 21.9s, s.d.: 6.1s] │
+[worker 37] └──────────────────────────────────────────────────────────────────┘
+[worker 37] Created entity IDs written to /home/lata-ganesh-naik/Documents/Repos/Dashboard_Data/postman/output/demo-1789578643722-375446.json
+[worker 37] All requests succeeded.
+[worker 65]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 24.4s]
+[worker 65]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 65]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 65] 
+[worker 65] ↳ search-household-project-resource
+[worker 65] 
+[worker 65] ↳ search-individual-project-resource
+[worker 60]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_05_03_TSAMIYA&includeChildren=true [200 OK, 793B, 265ms]
+[worker 60]   ✓  Village administrative area returned
+[worker 60] 
+[worker 60] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 60] 
+[worker 60] ❏ individualBased / Registration
+[worker 60] ↳ create-household
+[worker 45]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 22.4s]
+[worker 45]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 45]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 45] 
+[worker 45] ↳ search-household-project-resource
+[worker 45] 
+[worker 45] ↳ search-individual-project-resource
+[worker 65]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 295ms]
+[worker 65] 
+[worker 65] ↳ search-boundary-relationship
+[worker 44]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 25.4s]
+[worker 44]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 44]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 44] 
+[worker 44] ↳ search-household-project-resource
+[worker 44] 
+[worker 44] ↳ search-individual-project-resource
+[worker 47]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 26.5s]
+[worker 47]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 47]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 47] 
+[worker 47] ↳ search-household-project-resource
+[worker 47] 
+[worker 47] ↳ search-individual-project-resource
+[worker 45]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 272ms]
+[worker 45] 
+[worker 45] ↳ search-boundary-relationship
+[worker 61]   POST https://health-demo.digit.org/project/v1/_search?limit=1000&tenantId=demo&offset=0 [200 OK, 9.41kB, 27.2s]
+[worker 61]   ✓  A project of type 'MR-DN' is staffed for this user
+[worker 61]   ✓  Project 'MR-DN' has a recognised beneficiaryType
+[worker 61] 
+[worker 61] ↳ search-household-project-resource
+[worker 61] 
+[worker 61] ↳ search-individual-project-resource
+[worker 65]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 309ms]
+[worker 65]   ✓  Village codes found
+[worker 65] 
+[worker 65] ↳ search-village-boundary
+[worker 44]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 288ms]
+[worker 44] 
+[worker 44] ↳ search-boundary-relationship
+[worker 47]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 289ms]
+[worker 47] 
+[worker 47] ↳ search-boundary-relationship
+[worker 45]   POST https://health-demo.digit.org/boundary-service/boundary-relationships/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_KE_HUDDUSSU_HEALTH_POST&includeChildren=true [200 OK, 2.47kB, 278ms]
+[worker 45]   ✓  Village codes found
+[worker 45] 
+[worker 45] ↳ search-village-boundary
+[worker 61]   POST https://health-demo.digit.org/project/resource/v1/_search?limit=1000&offset=0&tenantId=demo [200 OK, 2.54kB, 287ms]
+[worker 61] 
+[worker 61] ↳ search-boundary-relationship
+[worker 65]   POST https://health-demo.digit.org/boundary-service/boundary/_search?limit=100&offset=0&tenantId=demo&codes=NIGERIA_NI_02_02_09_01_10_RUGGAR_KANGO&includeChildren=true [200 OK, 803B, 252ms]
+[worker 65]   ✓  Village administrative area returned
+[worker 65] 
+[worker 65] Attempting to set next request to fe67d988-7fb0-46a8-bb46-98a8b0ed0353
+[worker 65] 
+[worker 65] ❏ individualBased / Registration
+[worker 65] ↳ create-household
+[worker 44]   POST http,
+       
       ]
     },
     {
