@@ -35587,10 +35587,10 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "date",
-        "requestQueryMap": "{\"cycle\":\"cycle\",\"province\":\"province\",\"campaignNumber\":\"campaignNumber\"}",
-        "indexName": "demo-population-coverage-summary-datewise-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total children administered\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -35630,7 +35630,7 @@
       }
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Numerator reads demo-project-task-index-v1 directly (same as the AP/locality/village drill-downs); the datewise summary index is not populated on demo and stores province in title case.",
     "kind": "drillDown"
   },
   "administrationCoverageBarChartAPPercentICCD": {
@@ -35791,10 +35791,10 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "date",
-        "requestQueryMap": "{\"cycle\":\"cycle\",\"province\":\"province\",\"campaignNumber\":\"campaignNumber\"}",
-        "indexName": "demo-population-coverage-summary-datewise-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total children administered\":{\"terms\":{\"field\":\"district\"},\"aggs\":{\"Count\":{\"sum\":{\"field\":\"total_population_administered\"}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"ADMINISTRATION_SUCCESS\"}}]}},\"aggs\":{\"Total children administered\":{\"terms\":{\"size\":500,\"field\":\"Data.boundaryHierarchy.district.keyword\",\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -35812,7 +35812,7 @@
       }
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Numerator reads demo-project-task-index-v1 directly (same as the AP/locality/village drill-downs); the datewise summary index is not populated on demo and stores province in title case.",
     "kind": "drillDown"
   },
   "administrationCoverageBarChartAPICCD": {
