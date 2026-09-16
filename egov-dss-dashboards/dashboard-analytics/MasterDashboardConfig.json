@@ -10277,30 +10277,6 @@
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 725,
-              "name": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "label": "DSS_HEALTH_USER_SYNC_OVERVIEW",
-              "vizType": "bannercard",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "teamSupervisorUserSyncICCD",
-                  "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISOR_USER_SYNC_RATE_ICCD",
-                  "code": "",
-                  "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 3,
-          "name": "DSS_HEALTH_SUPERVISION",
-          "vizArray": [
-            {
               "id": 726,
               "name": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
               "label": "DSS_HEALTH_SUPERVISION_NATIONAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
@@ -10339,7 +10315,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 3,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
@@ -10381,7 +10357,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 4,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
