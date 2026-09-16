@@ -33687,8 +33687,22 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Ineligible\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Total Ineligible\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Not Visited\":{\"filter\":{\"exists\":{\"field\":\"Data.householdMember.id.keyword\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},\"aggs\":{\"Not Visited\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}"
       }
     ],
     "chartType": "pie",
@@ -33698,6 +33712,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
+      "Not Visited",
       "Beneficiary Refused",
       "Total Side Effects",
       "Total Referrals",
@@ -33734,10 +33749,24 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.householdMember.id.keyword\"}},\"aggs\":{\"Not Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},\"aggs\":{\"Not Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Unique\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -33757,6 +33786,7 @@
         "postAggregationTheory": "",
         "actionName": "SumComputedField",
         "fields": [
+          "Not Visited",
           "Beneficiary Refused",
           "Total Side Effects",
           "Total Referrals",
@@ -33767,6 +33797,7 @@
       }
     ],
     "aggregationPaths": [
+      "Not Visited",
       "Beneficiary Refused",
       "Total Side Effects",
       "Total Referrals",
@@ -36909,10 +36940,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36995,10 +37026,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -37081,10 +37112,10 @@
       },
       {
         "module": "COMMON",
-        "dateRefField": "Data.householdMember.auditDetails.createdTime",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\" , \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -37350,9 +37381,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -37580,9 +37611,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -37810,9 +37841,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -38040,9 +38071,9 @@
       {
         "module": "COMMON",
         "dateRefField": "",
-        "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.isIneligible\":true}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\",\"cycle\":\"Data.additionalDetails.cycleIndex\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},{\"term\":{\"Data.administrationStatus.keyword\":\"INELIGIBLE\"}}]}},\"aggs\":{\"Total Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500},\"aggs\":{\"Total children ineligible count\":{\"value_count\":{\"field\":\"Data.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
