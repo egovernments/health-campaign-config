@@ -42,5 +42,5 @@ ServiceMaps:
           customJsonMapping:
             indexMapping: { "Data": { } }
             fieldMapping:
-             - inJsonPath: $
-               outJsonPath: $.Data
+              - inJsonPath: $
+                outJsonPath: $.Data
