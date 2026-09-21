@@ -4,7 +4,7 @@ serviceMaps:
     - version: 1.0
       name: Muster roll
       description: Persists muster roll details in DB
-      fromTopic: save-musterroll
+      fromTopic: save-musterroll-health
       isTransaction: true
       isAuditEnabled: true
       module: MST
@@ -112,7 +112,7 @@ serviceMaps:
 
     - version: 1.0
       description: Update Muster Roll details
-      fromTopic: update-musterroll
+      fromTopic: update-musterroll-health
       isTransaction: true
       isAuditEnabled: true
       module: MST

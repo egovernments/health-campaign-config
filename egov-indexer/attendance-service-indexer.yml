@@ -2,7 +2,7 @@ ServiceMaps:
   serviceName: attendance-service
   version: 1.0.0
   mappings:
-    - topic: save-attendance
+    - topic: save-attendance-health
       configKey: INDEX
       indexes:
         - name: attendance-index-v1
@@ -12,7 +12,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-attendance
+    - topic: update-attendance-health
       configKey: INDEX
       indexes:
         - name: attendance-index-v1
@@ -22,7 +22,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: save-attendee
+    - topic: save-attendee-health
       configKey: INDEX
       indexes:
         - name: attendee-index-v1
@@ -32,7 +32,7 @@ ServiceMaps:
           jsonPath: $.attendees
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-attendee
+    - topic: update-attendee-health
       configKey: INDEX
       indexes:
         - name: attendee-index-v1
@@ -42,7 +42,7 @@ ServiceMaps:
           jsonPath: $.attendees
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: save-staff
+    - topic: save-staff-health
       configKey: INDEX
       indexes:
         - name: staff-index-v1
@@ -52,7 +52,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.createdTime
 
-    - topic: update-staff
+    - topic: update-staff-health
       configKey: INDEX
       indexes:
         - name: staff-index-v1
@@ -62,7 +62,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.auditDetails.lastModifiedTime
 
-    - topic: transformer-save-attendance-register
+    - topic: transformer-save-attendance-register-health
       configKey: INDEX
       indexes:
         - name: transformed-attendance-register-index-v1
@@ -82,7 +82,7 @@ ServiceMaps:
           jsonPath: $.*
           timeStampField: $.attendanceLog.auditDetails.lastModifiedTime
 
-    - topic: update-attendance-log
+    - topic: update-attendance-log-health
       configKey: INDEX
       indexes:
         - name: attendance-log-index-v1
@@ -108,7 +108,7 @@ ServiceMaps:
                 outJsonPath: $.Data
           timeStampField: $.staff.auditDetails.createdTime
 
-    - topic: transformer-save-attendance-log
+    - topic: transformer-save-attendance-log-health
       configKey: INDEX
       indexes:
         - name: attendance-log-index-v1

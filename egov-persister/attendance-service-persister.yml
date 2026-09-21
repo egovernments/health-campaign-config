@@ -4,7 +4,7 @@ serviceMaps:
  - version: 1.0
    name: attendance
    description: Persists attendance details in eg_wms_attendance_register table
-   fromTopic: save-attendance
+   fromTopic: save-attendance-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -84,7 +84,7 @@ serviceMaps:
  - version: 1.0
    name: attendee
    description: Persists attendee details in eg_wms_attendance_attendee table
-   fromTopic: save-attendee
+   fromTopic: save-attendee-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -126,7 +126,7 @@ serviceMaps:
  - version: 1.0
    name: staff registration
    description: Persists staff registration details in eg_wms_attendance_staff table
-   fromTopic: save-staff
+   fromTopic: save-staff-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -167,7 +167,7 @@ serviceMaps:
  - version: 1.0
    name: Attendance Log
    description: Persists attendance logs and corresponding documents
-   fromTopic: save-attendance-log
+   fromTopic: save-attendance-log-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -240,7 +240,7 @@ serviceMaps:
  - version: 1.0
    name: Attendance Log
    description: Update attendance logs and corresponding documents
-   fromTopic: update-attendance-log
+   fromTopic: update-attendance-log-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -315,7 +315,7 @@ serviceMaps:
 
  - version: 1.0
    description: update Attendance
-   fromTopic: update-attendance
+   fromTopic: update-attendance-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -357,7 +357,7 @@ serviceMaps:
 
  - version: 1.0
    description: update Attendee
-   fromTopic: update-attendee
+   fromTopic: update-attendee-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -391,7 +391,7 @@ serviceMaps:
 
  - version: 1.0
    description: update staff
-   fromTopic: update-staff
+   fromTopic: update-staff-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -423,7 +423,7 @@ serviceMaps:
 
  - version: 1.0
    description: Soft-delete attendance register (sets status=INACTIVE, isdeleted=true)
-   fromTopic: delete-attendance
+   fromTopic: delete-attendance-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
@@ -448,7 +448,7 @@ serviceMaps:
  - version: 1.0
    name: Face Auth Event
    description: Persists face verification events in eg_wms_face_auth_event table
-   fromTopic: save-face-auth-event
+   fromTopic: save-face-auth-event-health
    isTransaction: true
    isAuditEnabled: true
    module: ATND
