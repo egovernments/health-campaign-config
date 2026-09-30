@@ -10443,40 +10443,6 @@
           "name": "DSS_HEALTH_TEAM_PERFORMANCE",
           "vizArray": [
             {
-              "id": 782,
-              "name": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-              "label": "DSS_HEALTH_ATTENDANCE_DISTRIBUTOR",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "attendanceFrontLineWorkersDistrictPercentICCD",
-                  "name": "DSS_HEALTH_ATTENDANCE_FRONT_LINE_WORKERS_DISTRICT_PERCENT_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "PERCENT"
-                },
-                {
-                  "id": "attendanceFrontLineWorkersDistrictICCD",
-                  "name": "DSS_HEALTH_ATTENDANCE_FRONT_LINE_WORKERS_DISTRICT_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": [],
-                  "tabName": "NUMBER"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_TEAM_PERFORMANCE",
-          "vizArray": [
-            {
               "id": 783,
               "name": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
               "label": "DSS_HEALTH_SUMMARY_TEAM_PERFORMANCE",
