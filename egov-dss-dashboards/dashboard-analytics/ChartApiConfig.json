@@ -38957,7 +38957,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Household with more than 20 members"
+      "Household with more than 10 members"
     ],
     "filterKeys": [
       {
@@ -38977,7 +38977,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 10 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -38987,7 +38987,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Household with more than 20 members"
+      "Household with more than 10 members"
     ],
     "filterKeys": [
       {
@@ -39006,7 +39006,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 10 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39016,7 +39016,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Household with more than 20 members"
+      "Household with more than 10 members"
     ],
     "filterKeys": [
       {
@@ -39035,7 +39035,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 20 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"Household with more than 10 members\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":1000},\"aggs\":{\"Count\":{\"filter\":{\"bool\":{\"must\":[{\"range\":{\"Data.household.memberCount\":{\"gt\":10}}}]}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -39045,7 +39045,7 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "Household with more than 20 members"
+      "Household with more than 10 members"
     ],
     "filterKeys": [
       {
