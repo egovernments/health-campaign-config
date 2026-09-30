@@ -28557,9 +28557,9 @@
       {
         "module": "COMMON",
         "dateRefField": "Data.createdTime",
-        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedType\":\"Data.deliveryComments.keyword\"}",
+        "requestQueryMap": "{\"projectTypeId\":\"Data.projectTypeId.keyword\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"selectedType\":\"Data.administrationStatus.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Total household not delivered\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"match_phrase\":{\"Data.productVariant\":\"PVAR\"}}],\"must_not\":[{\"term\":{\"Data.deliveryComments.keyword\":\"Entrega com sucesso\"}}]}}}},\"aggs\":{\"Not Delivered Drilldown\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Total household not delivered\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"DELIVERED\"]}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.administrationStatus.keyword\"}}}},{\"term\":{\"Data.deliveryComments.keyword\":\"Mais de 6 agregados familiares\"}}]}}}},\"aggs\":{\"Not Delivered Drilldown\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500}}}}}}"
       }
     ],
     "chartType": "pie",
@@ -28572,7 +28572,7 @@
       "Not Delivered Drilldown"
     ],
     "insight": {},
-    "_comment": " "
+    "_comment": "Not delivered = household tasks whose administrationStatus is set and is not ADMINISTRATION_SUCCESS/DELIVERED (e.g. CLOSED_HOUSEHOLD), grouped by administrationStatus. Current app records leave deliveryComments/productVariant empty on non-deliveries."
   },
   "totalHouseholdsNotDeliveredProvinceLLIN": {
     "chartName": "DSS_HEALTH_OVERVIEW_TOTAL_HOUSEHOLDS_NOT_DELIVERED_PROVINCE",
@@ -28582,7 +28582,7 @@
         "dateRefField": "Data.createdTime",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Total household not delivered\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}},{\"match_phrase\":{\"Data.productVariant\":\"PVAR\"}}],\"must_not\":[{\"term\":{\"Data.deliveryComments.keyword\":\"Mais de 6 agregados familiares\"}}]}}}},\"aggs\":{\"Not Delivered\":{\"terms\":{\"field\":\"Data.deliveryComments.keyword\"}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGR\":{\"filters\":{\"filters\":{\"Total household not delivered\":{\"bool\":{\"must\":[{\"term\":{\"Data.deliveredTo.keyword\":\"HOUSEHOLD\"}}],\"must_not\":[{\"terms\":{\"Data.administrationStatus.keyword\":[\"ADMINISTRATION_SUCCESS\",\"DELIVERED\"]}},{\"bool\":{\"must_not\":{\"exists\":{\"field\":\"Data.administrationStatus.keyword\"}}}},{\"term\":{\"Data.deliveryComments.keyword\":\"Mais de 6 agregados familiares\"}}]}}}},\"aggs\":{\"Not Delivered\":{\"terms\":{\"field\":\"Data.administrationStatus.keyword\",\"size\":20}}}}}}"
       }
     ],
     "chartType": "pie",
@@ -28595,7 +28595,7 @@
       "Not Delivered"
     ],
     "insight": {},
-    "_comment": " ",
+    "_comment": "Not delivered = household tasks whose administrationStatus is set and is not ADMINISTRATION_SUCCESS/DELIVERED (e.g. CLOSED_HOUSEHOLD), grouped by administrationStatus. Current app records leave deliveryComments/productVariant empty on non-deliveries.",
     "kind": "drillDown"
   },
   "totalHousesNotSprayedByReasonDistrictIRS": {
