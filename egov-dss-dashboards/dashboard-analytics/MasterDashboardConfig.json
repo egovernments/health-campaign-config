@@ -10123,48 +10123,6 @@
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
-              "id": 720,
-              "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
-              "label": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "inventoryTheoreticalVsManualStockDistrictICCD",
-                  "name": "DSS_HEALTH_THEORETICAL_VS_MANUAL_STOCK_DISTRICT_ICCD",
-                  "code": "",
-                  "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 721,
-              "name": "DSS_HEALTH_STOCK_TRANSACTIONS",
-              "label": "DSS_HEALTH_STOCK_TRANSACTIONS",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "stockTransactionsBreakdownProvincialICCD",
-                  "name": "DSS_HEALTH_STOCK_TRANSACTIONS_PROVINCIAL_ICCD",
-                  "code": "",
-                  "chartType": "sideBySideBar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 4,
-          "name": "DSS_HEALTH_INVENTORY",
-          "vizArray": [
-            {
               "id": 722,
               "name": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
               "label": "DSS_HEALTH_WH_DISTRIBUTION_LATLONG",
@@ -10225,7 +10183,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 4,
           "name": "DSS_HEALTH_INVENTORY",
           "vizArray": [
             {
