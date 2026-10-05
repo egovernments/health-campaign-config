@@ -38429,13 +38429,6 @@
     "queries": [
       {
         "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
-      {
-        "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-hf-referral-index-v1",
@@ -38455,7 +38448,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "ChildrenReferred Count",
       "ChildrenReferredByHF Count"
     ],
     "insight": {},
@@ -38466,13 +38458,6 @@
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_REFERRAL_SUMMARY_BY_APS_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38494,7 +38479,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "ChildrenReferred Count",
       "ChildrenReferredByHF Count"
     ],
     "insight": {},
@@ -38504,13 +38488,6 @@
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_REFERRAL_SUMMARY_BY_LOCALITY_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38523,7 +38500,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "referralSummaryByVillageICCD",
+    "drillChart": "none",
     "filterKeys": [
       {
         "key": "locality"
@@ -38532,7 +38509,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "ChildrenReferred Count",
       "ChildrenReferredByHF Count"
     ],
     "insight": {},
@@ -38542,13 +38518,6 @@
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_REFERRAL_SUMMARY_BY_VILLAGE_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38570,7 +38539,6 @@
     "documentType": "_doc",
     "action": "",
     "aggregationPaths": [
-      "ChildrenReferred Count",
       "ChildrenReferredByHF Count"
     ],
     "insight": {},
@@ -38579,13 +38547,6 @@
   "summaryOfReferredChildrenByDistrictsICCD": {
     "chartName": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_DISTRICTS_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38610,7 +38571,6 @@
       "S.N.",
       "Start Date",
       "End Date",
-      "Referred Children Count",
       "Referred Children By HFCount"
     ],
     "computedFields": [
@@ -38618,28 +38578,9 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Referred Children Count"
-        ],
-        "newField": "Children Referred",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
           "Referred Children By HFCount"
         ],
         "newField": "Children present at Health Facility",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Referred Children By HFCount",
-          "Referred Children Count"
-        ],
-        "newField": "% Children present at Health Facility",
         "_comments": ""
       }
     ],
@@ -38654,13 +38595,6 @@
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_APS_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38685,7 +38619,6 @@
       "S.N.",
       "Start Date",
       "End Date",
-      "Referred Children Count",
       "Referred Children By HFCount"
     ],
     "computedFields": [
@@ -38693,28 +38626,9 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Referred Children Count"
-        ],
-        "newField": "Children Referred",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
           "Referred Children By HFCount"
         ],
         "newField": "Children present at Health Facility",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Referred Children By HFCount",
-          "Referred Children Count"
-        ],
-        "newField": "% Children present at Health Facility",
         "_comments": ""
       }
     ],
@@ -38728,13 +38642,6 @@
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_LOCALITY_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38751,7 +38658,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "summaryOfReferredChildrenByVillageICCD",
+    "drillChart": "summaryOfReferredChildrenByHealthFaciltyICCD",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Locality",
@@ -38759,7 +38666,6 @@
       "S.N.",
       "Start Date",
       "End Date",
-      "Referred Children Count",
       "Referred Children By HFCount"
     ],
     "computedFields": [
@@ -38767,28 +38673,9 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Referred Children Count"
-        ],
-        "newField": "Children Referred",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
           "Referred Children By HFCount"
         ],
         "newField": "Children present at Health Facility",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Referred Children By HFCount",
-          "Referred Children Count"
-        ],
-        "newField": "% Children present at Health Facility",
         "_comments": ""
       }
     ],
@@ -38802,13 +38689,6 @@
     "kind": "drillDown",
     "chartName": "DSS_HEALTH_SUMMARY_REFERRED_CHILDREN_BY_VILLAGE_ICCD",
     "queries": [
-      {
-        "module": "COMMON",
-        "dateRefField": "Data.referral.auditDetails.lastModifiedTime",
-        "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferred\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferred Count\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"},\"aggs\":{\"Referred Children Count\":{\"cardinality\":{\"field\":\"Data.referral.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
-      },
       {
         "module": "COMMON",
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
@@ -38833,7 +38713,6 @@
       "S.N.",
       "Start Date",
       "End Date",
-      "Referred Children Count",
       "Referred Children By HFCount"
     ],
     "computedFields": [
@@ -38841,28 +38720,9 @@
         "postAggregationTheory": "",
         "actionName": "AdditiveComputedField",
         "fields": [
-          "Referred Children Count"
-        ],
-        "newField": "Children Referred",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
           "Referred Children By HFCount"
         ],
         "newField": "Children present at Health Facility",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "PercentageComputedField",
-        "fields": [
-          "Referred Children By HFCount",
-          "Referred Children Count"
-        ],
-        "newField": "% Children present at Health Facility",
         "_comments": ""
       }
     ],
@@ -38881,7 +38741,7 @@
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"village\": \"Data.boundaryHierarchy.village.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
         "indexName": "demo-hf-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
@@ -43812,7 +43672,7 @@
     "isCumulative": false,
     "valueType": "percentage",
     "plotLabel": "none",
-    "drillChart": "testedPositiveForMalariaVillagePercentICCD",
+    "drillChart": "none",
     "sort": "sortKeyAsc",
     "filterKeys": [
       {
