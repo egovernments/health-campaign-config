@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: demo-referral-index-v1
           type: referrals
-          id: $.id
+          id: $.referral.id
           isBulk: true
           jsonPath: $
           customJsonMapping:
@@ -15,10 +15,10 @@ ServiceMaps:
             fieldMapping:
               - inJsonPath: $
                 outJsonPath: $.Data
-          timeStampField: $.createdTime
+          timeStampField: $.referral.auditDetails.createdTime
         - name: demo-user-sync-index-v1
           type: users
-          id: $.id
+          id: $.referral.id,$.referral.tenantId
           isBulk: true
           jsonPath: $
           customJsonMapping:
