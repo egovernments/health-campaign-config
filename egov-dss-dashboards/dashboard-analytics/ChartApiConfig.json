@@ -38523,7 +38523,7 @@
     "isCumulative": false,
     "valueType": "number",
     "plotLabel": "none",
-    "drillChart": "referralSummaryByVillageICCD",
+    "drillChart": "none",
     "filterKeys": [
       {
         "key": "locality"
@@ -38751,7 +38751,7 @@
     ],
     "chartType": "xtable",
     "valueType": "number",
-    "drillChart": "summaryOfReferredChildrenByVillageICCD",
+    "drillChart": "summaryOfReferredChildrenByHealthFaciltyICCD",
     "documentType": "_doc",
     "action": "",
     "plotLabel": "Locality",
@@ -38881,7 +38881,7 @@
         "dateRefField": "Data.hfReferral.auditDetails.lastModifiedTime",
         "requestQueryMap": "{\"cycle\": \"Data.additionalDetails.cycleIndex\", \"projectTypeId\": \"Data.projectTypeId.keyword\", \"province\": \"Data.boundaryHierarchy.province.keyword\", \"district\": \"Data.boundaryHierarchy.district.keyword\", \"administrativeProvince\": \"Data.boundaryHierarchy.administrativeProvince.keyword\", \"locality\": \"Data.boundaryHierarchy.locality.keyword\", \"village\": \"Data.boundaryHierarchy.village.keyword\", \"campaignNumber\": \"Data.campaignNumber.keyword\"}",
         "indexName": "demo-hf-referral-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"ChildrenReferredByHF\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"}}]}},\"aggs\":{\"ChildrenReferredByHF Count\":{\"terms\":{\"field\":\"Data.hfReferral.projectFacilityId.keyword\"},\"aggs\":{\"Referred Children By HFCount\":{\"value_count\":{\"field\":\"Data.hfReferral.id.keyword\"}}}}}}}}"
       }
     ],
     "filterKeys": [
