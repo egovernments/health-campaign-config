@@ -36483,6 +36483,13 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Unique\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36505,18 +36512,58 @@
           "Total Children Registered",
           "Total Children Visited"
         ],
-        "newField": "Children Not Administered",
+        "newField": "Not Visited",
+        "_comments": "registered without any task"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Refused"
+        ],
+        "newField": "Refused",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Died"
+        ],
+        "newField": "Died",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Migrated"
+        ],
+        "newField": "Migrated",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Absent"
+        ],
+        "newField": "Absent",
         "_comments": ""
       }
     ],
     "aggregationPaths": [
       "Total Children Registered",
-      "Total Children Visited"
+      "Total Children Visited",
+      "Beneficiary Refused",
+      "Beneficiary Died",
+      "Beneficiary Migrated",
+      "Beneficiary Absent"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered = project beneficiaries registered (demo-project-beneficiary-index-v1; Data.* added by ingest pipeline demo-project-beneficiary-enrich) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\".",
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart.",
     "kind": "drillDown"
   },
   "beneficiariesNotAdministeredApICCD": {
@@ -36536,6 +36583,13 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Unique\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36558,18 +36612,58 @@
           "Total Children Registered",
           "Total Children Visited"
         ],
-        "newField": "Children Not Administered",
+        "newField": "Not Visited",
+        "_comments": "registered without any task"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Refused"
+        ],
+        "newField": "Refused",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Died"
+        ],
+        "newField": "Died",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Migrated"
+        ],
+        "newField": "Migrated",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Absent"
+        ],
+        "newField": "Absent",
         "_comments": ""
       }
     ],
     "aggregationPaths": [
       "Total Children Registered",
-      "Total Children Visited"
+      "Total Children Visited",
+      "Beneficiary Refused",
+      "Beneficiary Died",
+      "Beneficiary Migrated",
+      "Beneficiary Absent"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered = project beneficiaries registered (demo-project-beneficiary-index-v1; Data.* added by ingest pipeline demo-project-beneficiary-enrich) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\"."
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart."
   },
   "beneficiariesNotAdministeredLocalityICCD": {
     "kind": "drillDown",
@@ -36588,6 +36682,13 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Unique\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36610,18 +36711,58 @@
           "Total Children Registered",
           "Total Children Visited"
         ],
-        "newField": "Children Not Administered",
+        "newField": "Not Visited",
+        "_comments": "registered without any task"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Refused"
+        ],
+        "newField": "Refused",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Died"
+        ],
+        "newField": "Died",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Migrated"
+        ],
+        "newField": "Migrated",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Absent"
+        ],
+        "newField": "Absent",
         "_comments": ""
       }
     ],
     "aggregationPaths": [
       "Total Children Registered",
-      "Total Children Visited"
+      "Total Children Visited",
+      "Beneficiary Refused",
+      "Beneficiary Died",
+      "Beneficiary Migrated",
+      "Beneficiary Absent"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered = project beneficiaries registered (demo-project-beneficiary-index-v1; Data.* added by ingest pipeline demo-project-beneficiary-enrich) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\"."
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart."
   },
   "beneficiariesNotAdministeredVillageICCD": {
     "kind": "drillDown",
@@ -36640,6 +36781,13 @@
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
         "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"term\":{\"Data.deliveredTo.keyword\":\"INDIVIDUAL\"}},\"aggs\":{\"Total Children Visited\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Unique\":{\"scripted_metric\":{\"params\":{\"fieldName\":\"Data.projectBeneficiaryClientReferenceId.keyword\"},\"init_script\":\"state.list = []\",\"map_script\":\"if(doc[params.fieldName] != null) \\nstate.list.add(doc[params.fieldName].value);\",\"combine_script\":\"return state.list;\",\"reduce_script\":\"Map uniqueValueMap = new HashMap(); \\n        int count = 0;\\n        for(shardList in states) {\\n          if(shardList != null) { \\n            for(key in shardList) {\\n              if(!uniqueValueMap.containsKey(key)) {\\n                count +=1;\\n                uniqueValueMap.put(key, key);\\n              }\\n            }\\n          }\\n        } \\n        return -count;\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36662,18 +36810,58 @@
           "Total Children Registered",
           "Total Children Visited"
         ],
-        "newField": "Children Not Administered",
+        "newField": "Not Visited",
+        "_comments": "registered without any task"
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Refused"
+        ],
+        "newField": "Refused",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Died"
+        ],
+        "newField": "Died",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Migrated"
+        ],
+        "newField": "Migrated",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Absent"
+        ],
+        "newField": "Absent",
         "_comments": ""
       }
     ],
     "aggregationPaths": [
       "Total Children Registered",
-      "Total Children Visited"
+      "Total Children Visited",
+      "Beneficiary Refused",
+      "Beneficiary Died",
+      "Beneficiary Migrated",
+      "Beneficiary Absent"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered = beneficiaries registered (household-member index) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\"."
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart."
   },
   "administeredByGenderDistrictICCD": {
     "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_DISTRICT_ICCD",
