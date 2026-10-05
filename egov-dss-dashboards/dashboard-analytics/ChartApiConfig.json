@@ -36002,8 +36002,8 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.householdMember.id.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "indexName": "demo-project-beneficiary-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36053,7 +36053,7 @@
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered = beneficiaries registered (household-member index) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\".",
+    "_comment": "Not administered = project beneficiaries registered (demo-project-beneficiary-index-v1; Data.* added by ingest pipeline demo-project-beneficiary-enrich) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\".",
     "kind": "drillDown"
   },
   "beneficiariesNotAdministeredApPercentICCD": {
@@ -36246,8 +36246,8 @@
         "module": "COMMON",
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
-        "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.householdMember.id.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "indexName": "demo-project-beneficiary-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36288,7 +36288,7 @@
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered = beneficiaries registered (household-member index) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\".",
+    "_comment": "Not administered = project beneficiaries registered (demo-project-beneficiary-index-v1; Data.* added by ingest pipeline demo-project-beneficiary-enrich) minus beneficiaries with any task (project-task index, negative distinct count); reason breakdown kept where the widget is \"by reason\".",
     "kind": "drillDown"
   },
   "beneficiariesNotAdministeredApICCD": {
