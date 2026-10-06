@@ -43119,6 +43119,82 @@
     "hideHeaderDenomination": true,
     "_comment": " "
   },
+  "supervisorUserSyncLLIN": {
+    "chartName": "DSS_HEALTH_SUPERVISION_SUPERVISOR_USER_SYNC_RATE",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"TEAM_SUPERVISOR\"]}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Total Users Created\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\"]}}],\"must_not\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.province\"}}]}},\"aggs\":{\"Total National Users Created\":{\"value_count\":{\"field\":\"Data.userId.keyword\"}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "Data.createdTime",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"NAME\":{\"filter\":{\"bool\":{\"must\":[{\"terms\":{\"Data.role.keyword\":[\"NATIONAL_SUPERVISOR\",\"PROVINCIAL_SUPERVISOR\",\"DISTRICT_SUPERVISOR\",\"TEAM_SUPERVISOR\"]}},{\"exists\":{\"field\":\"Data.syncedUserId.keyword\"}}]}},\"aggs\":{\"AGGS\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.province.keyword\",\"size\":500},\"aggs\":{\"Unique Users Synced\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
+      }
+    ],
+    "filterKeys": [],
+    "chartType": "xtable",
+    "valueType": "number",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "action": "",
+    "plotLabel": "DATA SYNC",
+    "filterForCurrentDay": true,
+    "excludedColumns": [
+      "S.N.",
+      "DATA SYNC",
+      "Total Users Created",
+      "Unique Users Synced",
+      "Total National Users Created"
+    ],
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Total Users Created",
+          "Total National Users Created"
+        ],
+        "newField": "Total_Supervisors",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "AdditiveComputedField",
+        "fields": [
+          "Unique Users Synced"
+        ],
+        "newField": "Total_Supervisors_Synced_At_Least_Once",
+        "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "PercentageComputedField",
+        "fields": [
+          "Total_Supervisors_Synced_At_Least_Once",
+          "Total_Supervisors"
+        ],
+        "newField": "User_Sync_Rate",
+        "_comments": ""
+      }
+    ],
+    "insight": {},
+    "hideInsights": true,
+    "hideHeaderDenomination": true,
+    "_comment": " "
+  },
   "teamSupervisorUserSyncICCD": {
     "chartName": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISOR_USER_SYNC_RATE_ICCD",
     "queries": [
