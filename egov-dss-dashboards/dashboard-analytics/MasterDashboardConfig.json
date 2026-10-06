@@ -10272,15 +10272,15 @@
             },
             {
               "id": 729,
-              "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "name": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
+              "label": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfTeamSupervisorICCD",
-                  "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_ICCD",
+                  "id": "userSyncRateByDistrictICCD",
+                  "name": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -11638,15 +11638,15 @@
             },
             {
               "id": 729,
-              "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "name": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
+              "label": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfTeamSupervisorICCD",
-                  "name": "DSS_HEALTH_SUPERVISION_TEAM_SUPERVISORS_CHECKLISTS_COMPLETION_RATE_ICCD",
+                  "id": "userSyncRateByDistrictICCD",
+                  "name": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
