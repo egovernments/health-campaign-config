@@ -29008,6 +29008,70 @@
     "insight": {},
     "_comment": " "
   },
+  "userSyncRateByDistrictICCD": {
+    "chartName": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
+    "queries": [
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-task-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.createdBy.keyword\",\"precision_threshold\":40000}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-hf-referral-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}],\"must_not\":[{\"term\":{\"Data.hfReferral.isDeleted\":true}}]}},\"aggs\":{\"Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.hfReferral.auditDetails.createdBy.keyword\",\"precision_threshold\":40000}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-user-sync-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},{\"term\":{\"Data.role.keyword\":\"WAREHOUSE_MANAGER\"}}]}},\"aggs\":{\"Users Synced\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.syncedUserId.keyword\",\"precision_threshold\":40000}}}}}}}}"
+      },
+      {
+        "module": "COMMON",
+        "dateRefField": "",
+        "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
+        "indexName": "demo-project-staff-index-v1",
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}},\"aggs\":{\"Total Users Created\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.userId.keyword\",\"precision_threshold\":40000}}}}}}}}"
+      }
+    ],
+    "chartType": "line",
+    "isCumulative": false,
+    "valueType": "percentage",
+    "plotLabel": "none",
+    "drillChart": "none",
+    "documentType": "_doc",
+    "filterKeys": [
+      {
+        "key": "district"
+      }
+    ],
+    "sort": "sortKeyAsc",
+    "aggregationPaths": [
+      "Users Synced",
+      "Total Users Created"
+    ],
+    "insight": {},
+    "_comment": "ICCD user sync rate by district = users who synced any data / users created (project staff). The user-sync index only records stock and PGR syncs for ICCD, so synced users are counted per role from the data they sync: distributors via project tasks (Data.createdBy), health facility workers via HF referrals (Data.hfReferral.auditDetails.createdBy), warehouse managers via user-sync. Same-named \"Users Synced\" paths are summed per district; roles are disjoint.",
+    "computeMultiPaths": true,
+    "computedFields": [
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Users Synced",
+          "Total Users Created"
+        ],
+        "newField": "Sync Rate Percentage",
+        "_comments": ""
+      }
+    ]
+  },
   "userSyncSummaryDistrictIRS": {
     "chartName": "DSS_HEALTH_USER_SYNC_SUMMARY",
     "queries": [
