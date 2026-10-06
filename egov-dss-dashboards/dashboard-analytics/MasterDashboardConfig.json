@@ -2147,8 +2147,8 @@
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryDistrictLLIN",
-                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT",
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryApLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_AP",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
