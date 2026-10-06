@@ -1045,6 +1045,48 @@
               ]
             },
             {
+              "id": 263,
+              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfProvincialSupervisorLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 264,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisorLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
               "id": 262,
               "name": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
               "label": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
@@ -1065,42 +1107,34 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 263,
-              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "id": 288,
+              "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfProvincialSupervisorLLIN",
-                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryDistrictLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_DISTRICT",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "table",
                   "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 264,
-              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
                 {
-                  "id": "checklistCompletionRateOfDistrictSupervisorLLIN",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "table",
                   "filter": "",
-                  "headers": []
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
@@ -2039,6 +2073,48 @@
               ]
             },
             {
+              "id": 263,
+              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfProvincialSupervisorLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_SUPERVISION",
+          "vizArray": [
+            {
+              "id": 264,
+              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "checklistCompletionRateOfDistrictSupervisorLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            },
+            {
               "id": 262,
               "name": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
               "label": "DSS_HEALTH_SUPERVISION_USER_SYNC_RATE_BY_DISTRICT",
@@ -2059,42 +2135,34 @@
           ]
         },
         {
-          "row": 2,
+          "row": 3,
           "name": "DSS_HEALTH_SUPERVISION",
           "vizArray": [
             {
-              "id": 263,
-              "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+              "id": 388,
+              "name": "DSS_HEALTH_SUPERVISION_SUMMARY",
+              "label": "DSS_HEALTH_SUPERVISION_SUMMARY",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "checklistCompletionRateOfProvincialSupervisorLLIN",
-                  "name": "DSS_HEALTH_SUPERVISION_PROVINCIAL_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "id": "checklistCompletionRateBySupervisorsBoundarySummaryApLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_BOUNDARY_SUMMARY_AP",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "table",
                   "filter": "",
-                  "headers": []
-                }
-              ]
-            },
-            {
-              "id": 264,
-              "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "label": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
+                  "headers": [],
+                  "tabName": "BOUNDARY"
+                },
                 {
-                  "id": "checklistCompletionRateOfDistrictSupervisorLLIN",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
+                  "id": "checklistCompletionRateBySupervisorsDaySummaryLLIN",
+                  "name": "DSS_HEALTH_SUPERVISION_SUPERVISORS_CHECKLISTS_DAY_SUMMARY",
                   "code": "",
-                  "chartType": "bar",
+                  "chartType": "table",
                   "filter": "",
-                  "headers": []
+                  "headers": [],
+                  "tabName": "DAYWISE"
                 }
               ]
             }
