@@ -36003,7 +36003,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-beneficiary-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36017,7 +36017,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36092,6 +36092,16 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Beneficiary Ineligible",
+          "Registered For Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36102,15 +36112,17 @@
       "Beneficiary Died",
       "Beneficiary Migrated",
       "Beneficiary Absent",
+      "Beneficiary Ineligible",
       "Registered For Beneficiary Refused",
       "Registered For Beneficiary Died",
       "Registered For Beneficiary Migrated",
-      "Registered For Beneficiary Absent"
+      "Registered For Beneficiary Absent",
+      "Registered For Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series.",
+    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType).",
     "kind": "drillDown"
   },
   "beneficiariesNotAdministeredApPercentICCD": {
@@ -36122,7 +36134,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-beneficiary-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36136,7 +36148,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36211,6 +36223,16 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Beneficiary Ineligible",
+          "Registered For Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36221,15 +36243,17 @@
       "Beneficiary Died",
       "Beneficiary Migrated",
       "Beneficiary Absent",
+      "Beneficiary Ineligible",
       "Registered For Beneficiary Refused",
       "Registered For Beneficiary Died",
       "Registered For Beneficiary Migrated",
-      "Registered For Beneficiary Absent"
+      "Registered For Beneficiary Absent",
+      "Registered For Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series."
+    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType)."
   },
   "beneficiariesNotAdministeredLocalityPercentICCD": {
     "kind": "drillDown",
@@ -36240,7 +36264,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-beneficiary-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"exists\":{\"field\":\"Data.campaignNumber.keyword\"}}],\"must_not\":[{\"term\":{\"isDeleted\":true}}]}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}},\"Registered For Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"clientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36254,7 +36278,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36329,6 +36353,16 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Beneficiary Ineligible",
+          "Registered For Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36339,15 +36373,17 @@
       "Beneficiary Died",
       "Beneficiary Migrated",
       "Beneficiary Absent",
+      "Beneficiary Ineligible",
       "Registered For Beneficiary Refused",
       "Registered For Beneficiary Died",
       "Registered For Beneficiary Migrated",
-      "Registered For Beneficiary Absent"
+      "Registered For Beneficiary Absent",
+      "Registered For Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series."
+    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType)."
   },
   "beneficiariesNotAdministeredVillagePercentICCD": {
     "kind": "drillDown",
@@ -36358,7 +36394,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-household-member-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.householdMember.id.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"exists\":{\"field\":\"Data.householdMember.id.keyword\"}},\"aggs\":{\"Total Children Registered\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Percentage\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}},\"Registered For Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"value_count\":{\"field\":\"Data.householdMember.id.keyword\"}}}}}}}}"
       },
       {
         "module": "COMMON",
@@ -36372,7 +36408,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36447,6 +36483,16 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "StackPercentageComputedField",
+        "fields": [
+          "Beneficiary Ineligible",
+          "Registered For Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36457,15 +36503,17 @@
       "Beneficiary Died",
       "Beneficiary Migrated",
       "Beneficiary Absent",
+      "Beneficiary Ineligible",
       "Registered For Beneficiary Refused",
       "Registered For Beneficiary Died",
       "Registered For Beneficiary Migrated",
-      "Registered For Beneficiary Absent"
+      "Registered For Beneficiary Absent",
+      "Registered For Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series."
+    "_comment": "Not administered % by reason, each as % of registered. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. One registered copy per StackPercentageComputedField because computed fields consume their input series. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType)."
   },
   "beneficiariesNotAdministeredDistrictICCD": {
     "chartName": "DSS_HEALTH_BENEFICIARIES_NOT_ADMINISTERED_DISTRICT_ICCD",
@@ -36489,7 +36537,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.district.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.district.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36550,6 +36598,15 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36558,12 +36615,13 @@
       "Beneficiary Refused",
       "Beneficiary Died",
       "Beneficiary Migrated",
-      "Beneficiary Absent"
+      "Beneficiary Absent",
+      "Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart.",
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType).",
     "kind": "drillDown"
   },
   "beneficiariesNotAdministeredApICCD": {
@@ -36589,7 +36647,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36650,6 +36708,15 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36658,12 +36725,13 @@
       "Beneficiary Refused",
       "Beneficiary Died",
       "Beneficiary Migrated",
-      "Beneficiary Absent"
+      "Beneficiary Absent",
+      "Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart."
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType)."
   },
   "beneficiariesNotAdministeredLocalityICCD": {
     "kind": "drillDown",
@@ -36688,7 +36756,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.locality.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36749,6 +36817,15 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36757,12 +36834,13 @@
       "Beneficiary Refused",
       "Beneficiary Died",
       "Beneficiary Migrated",
-      "Beneficiary Absent"
+      "Beneficiary Absent",
+      "Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart."
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType)."
   },
   "beneficiariesNotAdministeredVillageICCD": {
     "kind": "drillDown",
@@ -36787,7 +36865,7 @@
         "dateRefField": "",
         "requestQueryMap": "{\"cycle\":\"Data.additionalDetails.cycleIndex\",\"province\":\"Data.boundaryHierarchy.province.keyword\",\"district\":\"Data.boundaryHierarchy.district.keyword\",\"administrativeProvince\":\"Data.boundaryHierarchy.administrativeProvince.keyword\",\"locality\":\"Data.boundaryHierarchy.locality.keyword\",\"campaignNumber\":\"Data.campaignNumber.keyword\"}",
         "indexName": "demo-project-task-index-v1",
-        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
+        "aggrQuery": "{\"size\":0,\"aggs\":{\"AGGS\":{\"filter\":{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"term\":{\"Data.additionalDetails.taskType.keyword\":\"UNABLE_TO_DELIVER\"}},{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}}],\"minimum_should_match\":1}},{\"exists\":{\"field\":\"Data.boundaryHierarchy.village.keyword\"}}]}},\"aggs\":{\"Beneficiary Refused Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_REFUSED\"}},\"aggs\":{\"Beneficiary Refused\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Died Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_DIED\"}},\"aggs\":{\"Beneficiary Died\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Migrated Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_MIGRATED\"}},\"aggs\":{\"Beneficiary Migrated\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Absent Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"BENEFICIARY_ABSENT\"}},\"aggs\":{\"Beneficiary Absent\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}},\"Beneficiary Ineligible Filter\":{\"filter\":{\"term\":{\"Data.status.keyword\":\"INELIGIBLE\"}},\"aggs\":{\"Beneficiary Ineligible\":{\"terms\":{\"field\":\"Data.boundaryHierarchy.village.keyword\",\"size\":500,\"order\":{\"_key\":\"asc\"}},\"aggs\":{\"Count\":{\"cardinality\":{\"field\":\"Data.projectBeneficiaryClientReferenceId.keyword\",\"precision_threshold\":40000}}}}}}}}}}"
       }
     ],
     "chartType": "line",
@@ -36848,6 +36926,15 @@
         ],
         "newField": "Absent",
         "_comments": ""
+      },
+      {
+        "postAggregationTheory": "",
+        "actionName": "SumComputedField",
+        "fields": [
+          "Beneficiary Ineligible"
+        ],
+        "newField": "Ineligible",
+        "_comments": ""
       }
     ],
     "aggregationPaths": [
@@ -36856,12 +36943,13 @@
       "Beneficiary Refused",
       "Beneficiary Died",
       "Beneficiary Migrated",
-      "Beneficiary Absent"
+      "Beneficiary Absent",
+      "Beneficiary Ineligible"
     ],
     "sort": "sortKeyAsc",
     "computeMultiPaths": true,
     "insight": {},
-    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart."
+    "_comment": "Not administered by reason. Not Visited = registered (project beneficiaries; household members at village) without any task. Refused/Died/Migrated/Absent = distinct beneficiaries with an UNABLE_TO_DELIVER task (Data.additionalDetails.taskType) of that Data.status. Same queries as the matching ...PercentICCD chart. Ineligible = distinct beneficiaries with a task of Data.status INELIGIBLE (no taskType)."
   },
   "administeredByGenderDistrictICCD": {
     "chartName": "DSS_HEALTH_ADMINISTERED_BY_GENDER_DISTRICT_ICCD",
