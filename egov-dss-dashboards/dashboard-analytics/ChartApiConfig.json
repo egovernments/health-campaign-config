@@ -21018,24 +21018,6 @@
         ],
         "newField": "Bednets distributed",
         "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Rejected Delivery Count"
-        ],
-        "newField": "Non Delivery HH Rejected",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Relocated Delivery Count"
-        ],
-        "newField": "Non Delivery HH Relocated",
-        "_comments": ""
       }
     ],
     "insight": {},
@@ -21775,24 +21757,6 @@
         ],
         "newField": "Bednets distributed",
         "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Rejected delivery count"
-        ],
-        "newField": "Non Delivery HH Rejected",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Relocated delivery count"
-        ],
-        "newField": "Non Delivery HH Relocated",
-        "_comments": ""
       }
     ],
     "insight": {},
@@ -22431,24 +22395,6 @@
           "Total Bednets Distributed"
         ],
         "newField": "Bednets distributed",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Rejected Delivery Count"
-        ],
-        "newField": "Non Delivery HH Rejected",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Relocated Delivery Count"
-        ],
-        "newField": "Non Delivery HH Relocated",
         "_comments": ""
       }
     ],
@@ -23187,24 +23133,6 @@
           "Bednets distributed count"
         ],
         "newField": "Bednets distributed",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Rejected delivery count"
-        ],
-        "newField": "Non Delivery HH Rejected",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Relocated delivery count"
-        ],
-        "newField": "Non Delivery HH Relocated",
         "_comments": ""
       }
     ],
@@ -23950,24 +23878,6 @@
         ],
         "newField": "Bednets distributed",
         "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Rejected delivery count"
-        ],
-        "newField": "Non Delivery HH Rejected",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Relocated delivery count"
-        ],
-        "newField": "Non Delivery HH Relocated",
-        "_comments": ""
       }
     ],
     "insight": {},
@@ -24698,24 +24608,6 @@
           "Bednets distributed count"
         ],
         "newField": "Bednets distributed",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Rejected delivery count"
-        ],
-        "newField": "Non Delivery HH Rejected",
-        "_comments": ""
-      },
-      {
-        "postAggregationTheory": "",
-        "actionName": "AdditiveComputedField",
-        "fields": [
-          "Household Relocated delivery count"
-        ],
-        "newField": "Non Delivery HH Relocated",
         "_comments": ""
       }
     ],
