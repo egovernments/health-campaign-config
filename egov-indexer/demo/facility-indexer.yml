@@ -7,7 +7,7 @@ ServiceMaps:
       indexes:
         - name: demo-facility-index-v1
           type: facility
-          id: $.clientReferenceId
+          id: $.id
           isBulk: true
           jsonPath: "$[?(@.usage nin ['OUTSIDE_HOUSEHOLD_PLACES','TRANSIT_POST'])]"
           timeStampField: $.auditDetails.createdTime
@@ -23,9 +23,9 @@ ServiceMaps:
       indexes:
         - name: demo-facility-index-v1
           type: facility
-          id: $.clientReferenceId
+          id: $.id
           isBulk: true
-          jsonPath: $.*
+          jsonPath: "$[?(@.usage nin ['OUTSIDE_HOUSEHOLD_PLACES','TRANSIT_POST'])]"
           timeStampField: $.auditDetails.lastModifiedTime
         - name: demo-outside-household-index-v1
           type: outside-household

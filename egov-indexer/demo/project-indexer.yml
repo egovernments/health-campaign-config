@@ -79,7 +79,7 @@ ServiceMaps:
           isBulk: true
           jsonPath: "$[?(@.additionalFields.schema != 'OutsideHouseholdAssignment')]"
           timeStampField: $.auditDetails.createdTime
-        - name: demo-outside-household-index-v1
+        - name: demo-outside-household-campaign-index-v1
           type: outside-household-campaign
           id: $.id
           isBulk: true
