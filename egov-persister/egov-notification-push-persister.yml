@@ -43,7 +43,16 @@ serviceMaps:
             - jsonPath: $.deviceTokens.*.deviceToken
             - jsonPath: $.deviceTokens.*.tenantId
             - jsonPath: $.deviceTokens.*.facilityId
-
+        - query: >-
+            DELETE FROM eg_push_device_tokens
+            WHERE userid = ? AND devicetoken = ? AND tenantid = ? AND ?::varchar IS NULL
+          basePath: $.deviceTokens.*
+          jsonMaps:
+            - jsonPath: $.deviceTokens.*.userId
+            - jsonPath: $.deviceTokens.*.deviceToken
+            - jsonPath: $.deviceTokens.*.tenantId
+            - jsonPath: $.deviceTokens.*.facilityId
+    
     - version: 1.0
       description: Unregister device token (delete all rows for userId+deviceToken, regardless of facilityId)
       fromTopic: unregister-push-device-token

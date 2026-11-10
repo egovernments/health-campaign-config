@@ -119,7 +119,7 @@ serviceMaps:
 
     - version: 1.0
       description: Updates Individual
-      fromTopic: update-individual-topic
+      fromTopic: update-individual-health-topic
       isTransaction: true
       isAuditEnabled: true
       module: INDIVIDUAL
@@ -294,6 +294,27 @@ serviceMaps:
             - jsonPath: $.*.skills.*.auditDetails.lastModifiedTime
             - jsonPath: $.*.skills.*.isDeleted
             - jsonPath: $.*.skills.*.id
+        - query: UPDATE individual_address SET lastModifiedBy=?, lastModifiedTime=?, isDeleted=true WHERE individualId=? AND isDeleted=false AND ?=true;
+          basePath: $.*
+          jsonMaps:
+            - jsonPath: $.*.auditDetails.lastModifiedBy
+            - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.id
+            - jsonPath: $.*.isDeleted
+        - query: UPDATE individual_identifier SET lastModifiedBy=?, lastModifiedTime=?, isDeleted=true WHERE individualId=? AND isDeleted=false AND ?=true;
+          basePath: $.*
+          jsonMaps:
+            - jsonPath: $.*.auditDetails.lastModifiedBy
+            - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.id
+            - jsonPath: $.*.isDeleted
+        - query: UPDATE individual_skill SET lastModifiedBy=?, lastModifiedTime=?, isDeleted=true WHERE individualId=? AND isDeleted=false AND ?=true;
+          basePath: $.*
+          jsonMaps:
+            - jsonPath: $.*.auditDetails.lastModifiedBy
+            - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.id
+            - jsonPath: $.*.isDeleted
 
     - version: 1.0
       description: Updates userId and userUuid received from user-service into an individual

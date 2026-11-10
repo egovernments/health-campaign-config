@@ -152,7 +152,7 @@ serviceMaps:
       fromTopic: create-dhis2-job
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_scheduler_job_history(jobID, jobType, jobName, executionStartTime, executionCompletionTime, executionStatus, executionRetryCount, createdBy,lastModifiedBy,createdTime,lastModifiedTime,syncCount,province) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO eg_scheduler_job_history(jobID, jobType, jobName, executionStartTime, executionCompletionTime, executionStatus, executionRetryCount, createdBy,lastModifiedBy,createdTime,lastModifiedTime,syncCount,ingestionNumber,userId,fileStoreId,province,ingestionDetails) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.Job
           jsonMaps:
             - jsonPath: $.Job.jobID
@@ -167,9 +167,15 @@ serviceMaps:
             - jsonPath: $.Job.auditDetails.createdTime
             - jsonPath: $.Job.auditDetails.lastModifiedTime
             - jsonPath: $.Job.syncCount
+            - jsonPath: $.Job.ingestionNumber
+            - jsonPath: $.Job.userId
+            - jsonPath: $.Job.fileStoreId
+            - jsonPath: $.Job.province
               type: JSON
               dbType: JSONB
-            - jsonPath: $.Job.province
+            - jsonPath: $.*.ingestionDetails
+              type: JSON
+              dbType: JSONB
 
     - version: 1.0
       description: Update DHIS2 to Digit transformation job history in table
@@ -351,7 +357,7 @@ serviceMaps:
       fromTopic: create-hcm-event-history
       isTransaction: true
       queryMaps:
-        - query: INSERT INTO eg_hcm_event_history(eventId, jobId, url, payload, status, message, createdBy, lastModifiedBy, createdTime, lastModifiedTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+        - query: INSERT INTO eg_hcm_event_history(eventId, jobId, url, payload, status, message, createdBy, lastModifiedBy, createdTime, lastModifiedTime, ingestionNumber,userId,fileStoreId) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
           basePath: $.*
           jsonMaps:
             - jsonPath: $.*.eventID
@@ -375,3 +381,30 @@ serviceMaps:
             - jsonPath: $.*.auditDetails.createdTime
 
             - jsonPath: $.*.auditDetails.lastModifiedTime
+
+            - jsonPath: $.*.ingestionNumber
+
+            - jsonPath: $.*.userId
+
+            - jsonPath: $.*.fileStoreId
+        
+    - version: 1.0
+      description: Reset the eg_dhis2_boundary table
+      fromTopic: reset-boundary-topic
+      isTransaction: true
+      queryMaps:
+        - query: DELETE FROM eg_dhis2_boundary where ?;
+          basePath: $
+          jsonMaps:
+            - jsonPath: $.value
+            
+    - version: 1.0
+      description: Reset the eg_digit_mapping table
+      fromTopic: reset-digitMapping-topic
+      isTransaction: true
+      queryMaps:
+        - query: DELETE FROM eg_digit_mapping where ?;
+          basePath: $
+          jsonMaps:
+            - jsonPath: $.value            
+            
