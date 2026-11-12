@@ -229,6 +229,21 @@ serviceMaps:
             - jsonPath: $.*.clientAuditDetails.lastModifiedBy
             - jsonPath: $.*.individualId
             - jsonPath: $.*.householdId
+        - query: UPDATE HOUSEHOLD_MEMBER SET isHeadOfHousehold=?, clientReferenceId = ?, additionalDetails=?, lastModifiedBy=?, lastModifiedTime=?, rowVersion=?, isDeleted=?, clientLastModifiedTime = ?, clientLastModifiedBy = ? WHERE id=? AND individualId IS NULL AND isDeleted=false;
+          basePath: $.*
+          jsonMaps:
+            - jsonPath: $.*.isHeadOfHousehold
+            - jsonPath: $.*.clientReferenceId
+            - jsonPath: $.*.additionalFields
+              type: JSON
+              dbType: JSONB
+            - jsonPath: $.*.auditDetails.lastModifiedBy
+            - jsonPath: $.*.auditDetails.lastModifiedTime
+            - jsonPath: $.*.rowVersion
+            - jsonPath: $.*.isDeleted
+            - jsonPath: $.*.clientAuditDetails.lastModifiedTime
+            - jsonPath: $.*.clientAuditDetails.lastModifiedBy
+            - jsonPath: $.*.id
         - query: UPDATE HOUSEHOLD_MEMBER_RELATIONSHIP SET relationshipType=?, relativeId=?, relativeClientReferenceId=?, lastModifiedBy=?, lastModifiedTime=?, clientLastModifiedBy=?, clientLastModifiedTime=?, rowVersion=?, isDeleted=? WHERE selfId=? AND isDeleted=false;
           basePath: $.*.memberRelationships.*
           jsonMaps:

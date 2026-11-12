@@ -679,60 +679,7 @@
               ]
             }
           ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_KIBANA_MAPS",
-          "vizArray": [
-            {
-              "id": 401,
-              "name": "DSS_HEALTH_KIBANA_SCREEN",
-              "label": "DSS_HEALTH_KIBANA_SCREEN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateOfDistrictSupervisor",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "administration-successful-national",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 2,
-          "name": "DSS_KIBANA_MAPS",
-          "vizArray": [
-            {
-              "id": 412,
-              "name": "DSS_HEALTH_KIBANA_SCREEN",
-              "label": "DSS_HEALTH_KIBANA_SCREEN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateOfDistrictSupervisor",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "checklists-fill-national",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-       
+        },   
         {
           "row": 1,
           "name": "DSS_HEALTH_COMPLAINTS",
@@ -1124,32 +1071,6 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 700,
-              "name": "DSS_CUSTOM_CHART_LLIN",
-              "label": "DSS_CUSTOM_CHART_LLIN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -1677,58 +1598,6 @@
         },
         {
           "row": 1,
-          "name": "DSS_KIBANA_MAPS",
-          "vizArray": [
-            {
-              "id": 401,
-              "name": "DSS_HEALTH_KIBANA_SCREEN",
-              "label": "DSS_HEALTH_KIBANA_SCREEN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateOfDistrictSupervisor",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "administration-successful-national",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 2,
-          "name": "DSS_KIBANA_MAPS",
-          "vizArray": [
-            {
-              "id": 412,
-              "name": "DSS_HEALTH_KIBANA_SCREEN",
-              "label": "DSS_HEALTH_KIBANA_SCREEN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "checklistCompletionRateOfDistrictSupervisor",
-                  "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "checklists-fill-national",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
           "name": "DSS_HEALTH_COMPLAINTS",
           "vizArray": [
             {
@@ -2023,15 +1892,15 @@
           "vizArray": [
             {
               "id": 243,
-              "name": "DSS_HEALTH_INVENTORY_SUMMARY",
-              "label": "DSS_HEALTH_INVENTORY_SUMMARY",
+              "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT",
+              "label": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT",
               "vizType": "chart",
               "noUnit": true,
               "isCollapsible": false,
               "charts": [
                 {
-                  "id": "InventorySummaryByApLLIN",
-                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_AP",
+                  "id": "InventorySummaryByDistrictLLIN",
+                  "name": "DSS_HEALTH_INVENTORY_SUMMARY_BY_DISTRICT",
                   "code": "",
                   "chartType": "table",
                   "filter": "",
@@ -2118,32 +1987,6 @@
                   "name": "DSS_HEALTH_SUPERVISION_DISTRICT_SUPERVISORS_CHECKLISTS_COMPLETION_RATE",
                   "code": "",
                   "chartType": "bar",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 700,
-              "name": "DSS_CUSTOM_CHART_LLIN",
-              "label": "DSS_CUSTOM_CHART_LLIN",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -3827,7 +3670,13 @@
                   "headers": []
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
             {
               "id": 2103,
               "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
@@ -3845,13 +3694,7 @@
                   "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 2,
-          "name": "DSS_HEALTH_DATA_QUALITY",
-          "vizArray": [
+            },
             {
               "id": 2104,
               "name": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED",
@@ -3863,6 +3706,30 @@
                 {
                   "id": "moreThanTwoBottlesUsedByDistrictIRS",
                   "name": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 2105,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByDistrictIRS",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -3891,7 +3758,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -3933,7 +3800,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -3957,7 +3824,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -3973,32 +3840,6 @@
                   "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_DISTRICT",
                   "code": "",
                   "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 700,
-              "name": "DSS_CUSTOM_CHART_IRS",
-              "label": "DSS_CUSTOM_CHART_IRS",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "irs",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -5445,7 +5286,13 @@
                   "headers": []
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
             {
               "id": 3103,
               "name": "DSS_HOUSE_WITH_MORE_THAN_TWENTY_MEMBERS",
@@ -5463,13 +5310,7 @@
                   "headers": []
                 }
               ]
-            }
-          ]
-        },
-        {
-          "row": 2,
-          "name": "DSS_HEALTH_DATA_QUALITY",
-          "vizArray": [
+            },
             {
               "id": 3104,
               "name": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED",
@@ -5481,6 +5322,30 @@
                 {
                   "id": "moreThanTwoBottlesUsedByAPIRS",
                   "name": "DSS_HEALTH_MORE_THAN_TWO_BOTTLES_USED_AP",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 3105,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByAPIRS",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_AP",
                   "code": "",
                   "chartType": "bar",
                   "filter": "",
@@ -5509,7 +5374,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -5551,7 +5416,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 5,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -5575,7 +5440,7 @@
           ]
         },
         {
-          "row": 5,
+          "row": 6,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -5591,32 +5456,6 @@
                   "name": "DSS_HEALTH_DATA_QUALITY_RECORDS_SUMMARY_AP",
                   "code": "",
                   "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 700,
-              "name": "DSS_CUSTOM_CHART_IRS",
-              "label": "DSS_CUSTOM_CHART_IRS",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "irs",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -7258,6 +7097,30 @@
                   "headers": []
                 }
               ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 2105,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByDistrictSMC",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_DISTRICT",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             },
             {
               "id": 2107,
@@ -7280,7 +7143,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -7322,7 +7185,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 6,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -7451,32 +7314,6 @@
                   "name": "DSS_HEALTH_SUMMARY_SIDE_EFFECTS_BY_DISTRICTS",
                   "code": "",
                   "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 700,
-              "name": "DSS_CUSTOM_CHART_SMC",
-              "label": "DSS_CUSTOM_CHART_SMC",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -8857,6 +8694,30 @@
                   "headers": []
                 }
               ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "name": "DSS_HEALTH_DATA_QUALITY",
+          "vizArray": [
+            {
+              "id": 3105,
+              "name": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "label": "DSS_HEALTH_LOCATION_NOT_ENABLED",
+              "vizType": "chart",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "locationNotEnabledByAPSMC",
+                  "name": "DSS_HEALTH_LOCATION_NOT_ENABLED_AP",
+                  "code": "",
+                  "chartType": "bar",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
             },
             {
               "id": 3107,
@@ -8879,7 +8740,7 @@
           ]
         },
         {
-          "row": 3,
+          "row": 4,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -8921,7 +8782,7 @@
           ]
         },
         {
-          "row": 4,
+          "row": 6,
           "name": "DSS_HEALTH_DATA_QUALITY",
           "vizArray": [
             {
@@ -9050,32 +8911,6 @@
                   "name": "DSS_HEALTH_SUMMARY_SIDE_EFFECTS_BY_APS",
                   "code": "",
                   "chartType": "table",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 700,
-              "name": "DSS_CUSTOM_CHART_SMC",
-              "label": "DSS_CUSTOM_CHART_SMC",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "llin",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
                   "filter": "",
                   "headers": []
                 }
@@ -9537,6 +9372,143 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_USER_ACTIVITY",
+          "vizArray": [
+            {
+              "id": 1001,
+              "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_METRICS",
+              "label": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_METRICS",
+              "vizType": "cards-list",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overallUsersMetrics",
+                  "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_METRICS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_USER_ACTIVITY",
+          "vizArray": [
+            {
+              "id": 1002,
+              "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_SUMMARY",
+              "label": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_SUMMARY",
+              "vizType": "summary-table",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "usersSummaryTable",
+                  "filters": {
+                    "userInfo": {
+                      "type": "text",
+                      "filterFields": ["userName", "userId", "nameOfUser"]
+                    },
+                    "status": {
+                      "type": "dropdown",
+                      "filterFields": ["active"],
+                      "options": ["ACTIVE", "INACTIVE"]
+                    },
+                    "roles": {
+                      "type": "dropdown",
+                      "filterFields": ["role"],
+                      "options": ["COMMUNITY_DISTRIBUTOR", "TEAM_SUPERVISOR", "DISTRIBUTOR"]
+                    },
+                    "boundary": {
+                      "type": "boundary",
+                      "filterFields": ["province", "district"]
+                    }
+                  },
+                  "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_SUMMARY",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ],
+              "drillCharts": [
+                {
+                  "row": 1,
+                  "name": "DSS_HEALTH_USER_ACTIVITY",
+                  "vizArray": [
+                    {
+                      "id": 10011,
+                      "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_OVERVIEW",
+                      "label": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_OVERVIEW",
+                      "vizType": "cards-list",
+                      "noUnit": true,
+                      "isCollapsible": false,
+                      "charts": [
+                        {
+                          "id": "individualUsersMetrics",
+                          "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_OVERVIEW",
+                          "code": "",
+                          "chartType": "metric",
+                          "filter": "",
+                          "headers": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "row": 2,
+                  "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_SUMMARY",
+                  "vizArray": [
+                    {
+                      "id": 10012,
+                      "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_SUMMARY",
+                      "label": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_SUMMARY",
+                      "vizType": "summary-table",
+                      "noUnit": true,
+                      "isCollapsible": false,
+                      "filters": {
+                        "actionTypes": {
+                          "type": "dropdown",
+                          "filterFields": ["actionType"],
+                          "options": ["Stock", "Delivery", "Complaints", "Error Record"]
+                        },
+                        "outcome": {
+                          "type": "dropdown",
+                          "filterFields": ["outcome"],
+                          "options": ["SUCCESS", "FAILED"]
+                        },
+                        "calender": {
+                          "type": "calender"
+                        },
+                        "recordId": {
+                          "type": "text",
+                          "filterFields": ["id"]
+                        }
+                      },
+                      "charts": [
+                        {
+                          "id": "usersRecordsSummaryTable",
+                          "name": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE_ICCD",
+                          "code": "",
+                          "chartType": "metric",
+                          "filter": "",
+                          "headers": []
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
@@ -10825,32 +10797,6 @@
               ]
             }
           ]
-        },
-        {
-          "row": 1,
-          "name": "DSS_CUSTOM_CHART",
-          "vizArray": [
-            {
-              "id": 810,
-              "name": "DSS_CUSTOM_CHART",
-              "label": "DSS_CUSTOM_CHART",
-              "vizType": "chart",
-              "noUnit": true,
-              "isCollapsible": false,
-              "charts": [
-                {
-                  "id": "customChart",
-                  "name": "DSS_HEALTH_CUSTOM_CHART",
-                  "code": "",
-                  "moduleName": "iccd",
-                  "pageName": "custom-chart",
-                  "chartType": "kibanaComponent",
-                  "filter": "",
-                  "headers": []
-                }
-              ]
-            }
-          ]
         }
       ]
     },
@@ -11101,6 +11047,143 @@
                   "chartType": "bar",
                   "filter": "",
                   "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "name": "DSS_HEALTH_USER_ACTIVITY",
+          "vizArray": [
+            {
+              "id": 1001,
+              "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_METRICS",
+              "label": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_METRICS",
+              "vizType": "cards-list",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "overallUsersMetrics",
+                  "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_METRICS",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "name": "DSS_HEALTH_USER_ACTIVITY",
+          "vizArray": [
+            {
+              "id": 1002,
+              "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_SUMMARY",
+              "label": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_SUMMARY",
+              "vizType": "summary-table",
+              "noUnit": true,
+              "isCollapsible": false,
+              "charts": [
+                {
+                  "id": "usersSummaryTable",
+                  "filters": {
+                    "userInfo": {
+                      "type": "text",
+                      "filterFields": ["userName", "userId", "nameOfUser"]
+                    },
+                    "status": {
+                      "type": "dropdown",
+                      "filterFields": ["active"],
+                      "options": ["ACTIVE", "INACTIVE"]
+                    },
+                    "roles": {
+                      "type": "dropdown",
+                      "filterFields": ["role"],
+                      "options": ["COMMUNITY_DISTRIBUTOR", "TEAM_SUPERVISOR", "DISTRIBUTOR"]
+                    },
+                    "boundary": {
+                      "type": "boundary",
+                      "filterFields": ["province", "district"]
+                    }
+                  },
+                  "name": "DSS_HEALTH_USER_ACTIVITY_OVERVIEW_SUMMARY",
+                  "code": "",
+                  "chartType": "metric",
+                  "filter": "",
+                  "headers": []
+                }
+              ],
+              "drillCharts": [
+                {
+                  "row": 1,
+                  "name": "DSS_HEALTH_USER_ACTIVITY",
+                  "vizArray": [
+                    {
+                      "id": 10011,
+                      "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_OVERVIEW",
+                      "label": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_OVERVIEW",
+                      "vizType": "cards-list",
+                      "noUnit": true,
+                      "isCollapsible": false,
+                      "charts": [
+                        {
+                          "id": "individualUsersMetrics",
+                          "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_OVERVIEW",
+                          "code": "",
+                          "chartType": "metric",
+                          "filter": "",
+                          "headers": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "row": 2,
+                  "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_SUMMARY",
+                  "vizArray": [
+                    {
+                      "id": 10012,
+                      "name": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_SUMMARY",
+                      "label": "DSS_HEALTH_USER_ACTIVITY_INDIVIDUAL_SUMMARY",
+                      "vizType": "summary-table",
+                      "noUnit": true,
+                      "isCollapsible": false,
+                      "filters": {
+                        "actionTypes": {
+                          "type": "dropdown",
+                          "filterFields": ["actionType"],
+                          "options": ["Stock", "Delivery", "Complaints", "Error Record"]
+                        },
+                        "outcome": {
+                          "type": "dropdown",
+                          "filterFields": ["outcome"],
+                          "options": ["SUCCESS", "FAILED"]
+                        },
+                        "calender": {
+                          "type": "calender"
+                        },
+                        "recordId": {
+                          "type": "text",
+                          "filterFields": ["id"]
+                        }
+                      },
+                      "charts": [
+                        {
+                          "id": "usersRecordsSummaryTable",
+                          "name": "DSS_HEALTH_OVERVIEW_HOUSEHOLDS_VISITED_OVER_DATERANGE_ICCD",
+                          "code": "",
+                          "chartType": "metric",
+                          "filter": "",
+                          "headers": []
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }
