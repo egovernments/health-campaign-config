@@ -1675,7 +1675,7 @@
           "pluginVersion": "7.0.5",
           "targets": [
             {
-              "expr": "sort_desc(sum(kafka_topic_partition_current_offset{topic=~\".*deadletter\"}) by (topic))",
+              "expr": "sort_desc(sum(kafka_topic_partition_current_offset{topic=~\".*deadletter.*\"}) by (topic))",
               "format": "table",
               "instant": true,
               "interval": "",
@@ -1685,7 +1685,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Dead Letters",
+          "title": "Dead Letters + Parked",
           "transformations": [
             {
               "id": "organize",
